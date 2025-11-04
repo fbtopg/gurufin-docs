@@ -1,0 +1,14 @@
+{
+  "plugins": [
+    "mermaid-gb3",
+    "-lunr",
+    "-search",
+    "search-plus"
+  ],
+  "pluginsConfig": {
+    "mermaid-gb3": {
+      "theme": "default"
+    }
+  }
+}
+
