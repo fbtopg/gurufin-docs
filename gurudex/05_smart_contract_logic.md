@@ -16,6 +16,35 @@ At the core of GuruDex is a modular smart contract architecture designed for fle
 
 When a swap is initiated, the `HybridStablePool` contract executes the following logic to distinguish between retail and institutional users.
 
+### Swap Flow Diagram
+
+```mermaid
+flowchart TD
+    A[User Initiates Swap] --> B{Check User Type}
+    B -->|Retail| C[Execute Retail Swap]
+    B -->|Institutional| D[Execute Institutional Swap]
+    
+    C --> C1[Calculate Dynamic Fee]
+    C1 --> C2[Deduct Fee from Input]
+    C2 --> C3[AMM Calculation<br/>Constant Product Formula]
+    C3 --> C4{Slippage Check<br/>Output >= Min?}
+    C4 -->|Yes| C5[Update Pool Reserves]
+    C4 -->|No| C6[Revert Transaction]
+    C5 --> C7[Transfer Tokens to User]
+    
+    D --> D1[Verify User Status]
+    D1 --> D2[Validate Oracle Price]
+    D2 --> D3{Check Trading Limits<br/>& Daily Volume}
+    D3 -->|Pass| D4[Calculate Output<br/>amountOut = amountIn × oraclePrice]
+    D3 -->|Fail| D5[Revert Transaction]
+    D4 --> D6[Apply Fixed Fee]
+    D6 --> D7[Update Pool Reserves]
+    D7 --> D8[Transfer Tokens & Record Volume]
+    
+    C7 --> E[Swap Complete]
+    D8 --> E
+```
+
 ```solidity
 function swap(address user, uint256 amountIn, bool isBaseToQuote) external {
     IInstitutionalRegistry.UserType userType = institutionalRegistry.getUserType(user);

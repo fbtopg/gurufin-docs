@@ -48,6 +48,52 @@ The integration of IBC is fundamental to achieving atomic PvP settlement, as it 
 
 ## PvP Settlement Workflow
 
+### PvP Settlement Flow Diagram
+
+```mermaid
+sequenceDiagram
+    participant Alice as Alice<br/>(Source Chain)
+    participant EscrowA as Escrow Contract<br/>Source Chain
+    participant IBC as IBC Protocol<br/>Cross-Chain Relay
+    participant EscrowB as Escrow Contract<br/>Destination Chain
+    participant Bob as Bob<br/>(Destination Chain)
+    
+    Note over Alice,Bob: ATOMIC PvP SETTLEMENT
+    
+    Alice->>EscrowA: 1. Lock Payment (e.g., 100 USGX)
+    EscrowA->>EscrowA: Funds Locked in Escrow
+    EscrowA->>IBC: 2. Send Lock Proof via IBC
+    
+    IBC->>EscrowB: Relay Lock Proof
+    EscrowB->>EscrowB: Verify Lock Proof
+    
+    Bob->>EscrowB: 3. Lock Counterpayment (e.g., 15,000 JPGX)
+    EscrowB->>EscrowB: Funds Locked in Escrow
+    EscrowB->>IBC: Send Counterpayment Lock Proof
+    
+    IBC->>EscrowA: Relay Counterpayment Proof
+    EscrowA->>EscrowA: Verify Both Locks
+    
+    Note over EscrowA,EscrowB: 4. Both Escrows Confirmed
+    
+    par Simultaneous Release
+        EscrowA->>Bob: 5. Release 100 USGX to Bob
+        EscrowB->>Alice: 5. Release 15,000 JPGX to Alice
+    end
+    
+    Note over Alice,Bob: ✅ PvP Settlement Complete
+    
+    alt Timeout Scenario
+        Note over EscrowA,EscrowB: If Counterparty Fails to Lock
+        EscrowA->>Alice: 6. Refund 100 USGX to Alice
+        Note over Alice,Bob: ⚠️ Settlement Cancelled
+    end
+    
+    style EscrowA fill:#e3f2fd
+    style EscrowB fill:#e3f2fd
+    style IBC fill:#fff3e0
+```
+
 | Step | Action                               | Description                                                                                  |
 |-------|------------------------------------|----------------------------------------------------------------------------------------------|
 | 1     | Lock Payment on Source Chain        | Sender deposits funds into escrow smart contract on the source chain.                        |

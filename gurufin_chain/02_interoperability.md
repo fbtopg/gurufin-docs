@@ -81,9 +81,57 @@ GatewayGX facilitates secure, atomic cross-chain communication and asset transfe
 
 ---
 
-## Gurufin’s Cross-Chain Connectivity: Ethereum, Solana, and Beyond
+## Gurufin's Cross-Chain Connectivity: Ethereum, Solana, and Beyond
 
-Gurufin’s interoperability stack combines the strengths of IBC, EVM Gateway, and GatewayGX to establish comprehensive connectivity with major blockchain ecosystems.
+Gurufin's interoperability stack combines the strengths of IBC, EVM Gateway, and GatewayGX to establish comprehensive connectivity with major blockchain ecosystems.
+
+### Interoperability Architecture Diagram
+
+```mermaid
+graph TB
+    subgraph Gurufin["Gurufin Chain Ecosystem"]
+        GC[Gurufin Chain<br/>Tendermint BFT + DPoS]
+        GX[GX Stablecoin Chains<br/>USGX, KRGX, JPGX, PHGX]
+    end
+    
+    subgraph IBC["IBC-First Architecture"]
+        IBC1[IBC Protocol]
+        Cosmos[Cosmos SDK Chains]
+        Other[Other IBC-Enabled Chains]
+    end
+    
+    subgraph EVM["EVM Gateway"]
+        EVMG[EVM Gateway Module]
+        ETH[Ethereum]
+        EVMC[EVM-Compatible Chains<br/>Polygon, BSC, etc.]
+    end
+    
+    subgraph Gateway["GatewayGX Module"]
+        GGX[Custom Protocol Adapters]
+        SOL[Solana]
+        OtherC[Other Non-IBC Chains]
+    end
+    
+    GC <-->|Native Integration| IBC1
+    IBC1 <--> Cosmos
+    IBC1 <--> Other
+    
+    GC <-->|Bridge Assets<br/>& Smart Contracts| EVMG
+    EVMG <--> ETH
+    EVMG <--> EVMC
+    
+    GC <-->|Custom Adapters<br/>Atomic Settlement| GGX
+    GGX <--> SOL
+    GGX <--> OtherC
+    
+    GX -.->|IBC| GC
+    
+    style GC fill:#4CAF50,color:#fff
+    style GX fill:#4CAF50,color:#fff
+    style IBC1 fill:#2196F3,color:#fff
+    style EVMG fill:#FF9800,color:#fff
+    style GGX fill:#9C27B0,color:#fff
+```
 
 ### Connecting to Ethereum
 

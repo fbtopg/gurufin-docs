@@ -70,6 +70,71 @@ The dynamic fee mechanism, which adjusts fees based on pool imbalance, further i
 
 ## GXN Token Utility Summary
 
+### GXN Token Utility Flow Diagram
+
+```mermaid
+graph TB
+    GXN[GXN Token<br/>Native Utility Token]
+    
+    subgraph Staking["Staking & Network Security"]
+        S1[Delegate to Validators]
+        S2[Support DPoS Consensus]
+        S3[Earn Staking Rewards]
+        S4[Slashing Collateral]
+    end
+    
+    subgraph Governance["Decentralized Governance"]
+        G1[Vote on Proposals]
+        G2[Protocol Parameter Tuning]
+        G3[Feature Upgrades]
+        G4[Treasury Allocation]
+    end
+    
+    subgraph Fees["Fee Payments"]
+        F1[Transaction Fees<br/>~$0.013]
+        F2[Guru-PEG Mechanism<br/>CPI-Indexed]
+        F3[Congestion Pricing]
+        F4[Fee Burning/Redistribution]
+    end
+    
+    subgraph Liquidity["Liquidity Provisioning"]
+        L1[Stake in Hybrid Pools]
+        L2[FXSwap Participation]
+        L3[Earn Swap Fee Rewards]
+        L4[Dynamic Fee Incentives]
+    end
+    
+    GXN --> S1
+    GXN --> G1
+    GXN --> F1
+    GXN --> L1
+    
+    S1 --> S2 --> S3
+    S2 --> S4
+    
+    G1 --> G2
+    G1 --> G3
+    G1 --> G4
+    
+    F1 --> F2
+    F2 --> F3
+    F3 --> F4
+    
+    L1 --> L2
+    L2 --> L3
+    L3 --> L4
+    
+    S3 -.->|Returns| GXN
+    L3 -.->|Returns| GXN
+    F4 -.->|Redistributed| GXN
+    
+    style GXN fill:#FFD700,stroke:#FF8C00,stroke-width:3px,color:#000
+    style Staking fill:#e3f2fd
+    style Governance fill:#f3e5f5
+    style Fees fill:#fff3e0
+    style Liquidity fill:#e8f5e9
+```
+
 | Utility Category       | Description                                                                                     | Benefits                                                                                       |
 |-----------------------|-------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|
 | **Staking**            | Stake GXN to support DPoS consensus and secure the network.                                     | Earn staking rewards; participate in validator selection; contribute to network security.      |

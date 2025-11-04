@@ -7,6 +7,34 @@ One of the most significant challenges for the adoption of blockchain technology
 
 The Guru-PEG mechanism is designed to maintain a stable, fiat-equivalent fee for transactions on the Gurufin Chain. This is achieved through a combination of on-chain governance, real-time price oracles, and a dynamic adjustment system.
 
+### Guru-PEG Dynamic Fee Adjustment Diagram
+
+```mermaid
+flowchart LR
+    A[Fiat Fee Target<br/>e.g., $0.013] --> B[Governance<br/>Sets Target]
+    C[Oracle Network] --> D[GXN/USD Price Feed<br/>Real-time]
+    E[Network Congestion<br/>Monitoring] --> F[Surge Multiplier<br/>During High Demand]
+    
+    B --> G{Fee Calculator}
+    D --> G
+    F --> G
+    
+    G --> H[Dynamic Fee in GXN]
+    
+    H --> I[Transaction Fee<br/>Charged to User]
+    
+    style A fill:#e1f5ff
+    style D fill:#ffe1e1
+    style H fill:#e1ffe1
+    
+    subgraph " "
+    J[If GXN Price ↑] -.-> K[Fee in GXN ↓]
+    L[If GXN Price ↓] -.-> M[Fee in GXN ↑]
+    end
+```
+
+**Formula:** `Fee (GXN) = Fiat Target / GXN Price × Surge Multiplier`
+
 | Component | Description |
 |---|---|
 | **Fiat-Indexed Fee Target** | The base transaction fee is pegged to a specific fiat value (e.g., $0.013 for a standard transfer). This target is set by on-chain governance and can be adjusted based on the Consumer Price Index (CPI) to account for inflation. |

@@ -16,6 +16,53 @@ The minting and burning of stablecoins are automated and anchored to bank API ev
 
 The mint and burn process is triggered by fiat movements detected via bank APIs. When a user deposits fiat into a custodian bank account, an automated minting event is initiated on the GX chain, crediting the user with the equivalent stablecoin amount. Conversely, when a user redeems stablecoins, the burning process is initiated, and the corresponding fiat amount is released from the bank to the user.
 
+### Mint and Burn Flow Diagram
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Bank
+    participant BankAPI as Bank API
+    participant Gateway as GX Chain Gateway
+    participant Validators as PoA Validators
+    participant Chain as GX Chain
+    
+    Note over User,Chain: MINTING PROCESS
+    User->>Bank: Deposit Fiat ($)
+    Bank->>BankAPI: Fiat Deposit Event
+    BankAPI->>Gateway: Notify Deposit (Unique ID)
+    Gateway->>Gateway: Create Mint Request
+    Gateway->>Validators: Request Quorum Authorization
+    Validators->>Validators: Verify Deposit & Compliance
+    Validators->>Chain: Multi-sig Approval
+    Chain->>Chain: Idempotency Check (Duplicate?)
+    alt Request is Unique
+        Chain->>Chain: Execute Mint Transaction
+        Chain->>User: Credit Stablecoins (1:1)
+        Chain->>Chain: Update Proof-of-Reserves
+        Note over Chain: Deterministic Finality (1-3 sec)
+    else Request is Duplicate
+        Chain->>Gateway: Reject (Already Processed)
+    end
+    
+    Note over User,Chain: BURNING PROCESS
+    User->>Gateway: Initiate Redemption (Burn Request)
+    Gateway->>Validators: Request Quorum Authorization
+    Validators->>Validators: Verify Compliance & Reserves
+    Validators->>Chain: Multi-sig Approval
+    Chain->>Chain: Idempotency Check (Duplicate?)
+    alt Request is Unique
+        Chain->>Chain: Execute Burn Transaction
+        Chain->>User: Debit Stablecoins
+        Chain->>BankAPI: Trigger Fiat Release
+        BankAPI->>Bank: Process Payout
+        Bank->>User: Transfer Fiat ($)
+        Note over Chain: Deterministic Finality (1-3 sec)
+    else Request is Duplicate
+        Chain->>Gateway: Reject (Already Processed)
+    end
+```
+
 ### Step-by-Step Process
 
 | Step | Description                                                                                       | Actor(s)                      | Outcome                                      |

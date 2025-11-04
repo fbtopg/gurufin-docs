@@ -18,6 +18,49 @@ GuruDex uses a multi-layered risk mitigation strategy to protect the platform an
 In the event of severe market volatility or unexpected threats, GuruDex includes several safety measures.
 
 - **Pause Function**: The owner of the `FXSwapMaster` contract can temporarily suspend all swap and liquidity management functions to buy time to investigate and mitigate threats. This function is activated through decentralized governance proposals.
-- **Dynamic Adjustment of Trading Limits**: Governance can adjust trading limits and daily volume in real-time to quickly reduce risk exposure. |
+- **Dynamic Adjustment of Trading Limits**: Governance can adjust trading limits and daily volume in real-time to quickly reduce risk exposure.
+
+### Risk Mitigation Flow Diagram
+
+```mermaid
+flowchart TD
+    A[Potential Risk Detected] --> B{Risk Type}
+    
+    B -->|Slippage| C[Dual Algorithm Check]
+    C -->|Retail| C1[User Sets Max Slippage]
+    C -->|Institutional| C2[Oracle-Based Pricing]
+    
+    B -->|Oracle Issue| D[Price Oracle Validation]
+    D --> D1[Deviation Check]
+    D --> D2[Confidence Score Check]
+    D --> D3[Freshness Check]
+    D1 & D2 & D3 -->|Fail| D4[Reject Price Feed]
+    
+    B -->|Pool Imbalance| E[Dynamic Fee System]
+    E --> E1[Increase Fees<br/>Discourage Trading]
+    E --> E2[Encourage Rebalancing]
+    
+    B -->|Smart Contract Bug| F[Code Audit & Upgrades]
+    F --> F1[Third-party Audits]
+    F --> F2[Proxy Pattern for Upgrades]
+    
+    B -->|Institutional Risk| G[Registry Controls]
+    G --> G1[KYC/AML Verification]
+    G --> G2[Trading Limits]
+    G --> G3[Daily Volume Caps]
+    
+    B -->|Network Congestion| H[Guru-PEG Mechanism]
+    H --> H1[Congestion Pricing]
+    H --> H2[Prevent Spam Transactions]
+    
+    B -->|Emergency| I{Governance Decision}
+    I -->|Severe Threat| I1[Activate Pause Function]
+    I -->|Market Volatility| I2[Adjust Trading Limits]
+    
+    style D4 fill:#ff6b6b
+    style I1 fill:#ff6b6b
+    style E1 fill:#ffd93d
+    style C2 fill:#6bcf7f
+```
 
 These comprehensive risk management features enable GuruDex to provide users with a safe, reliable, and resilient FX swap platform.

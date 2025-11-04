@@ -20,3 +20,32 @@ When a user initiates a swap, the system identifies the user type and routes the
 - **Institutional Trades**: Are routed to the RFQ system, where they are matched with quotes from registered market makers.
 
 This architecture ensures that the Gurufin Chain can handle both a high volume of small retail trades and large institutional block trades without compromising on performance or efficiency.
+
+### Hybrid Execution Flow Diagram
+
+```mermaid
+flowchart TD
+    A[User Initiates Swap] --> B{Identify User Type}
+    
+    B -->|Retail User| C[Route to AMM Path]
+    B -->|Institutional User| D[Route to RFQ Path]
+    
+    C --> C1[HybridStablePool<br/>Retail Area]
+    C1 --> C2[Uniswap v3 Style<br/>Concentrated Liquidity]
+    C2 --> C3[Dynamic Fees<br/>Based on Pool Imbalance]
+    C3 --> C4[Price from Bonding Curve<br/>x × y = k]
+    C4 --> E[Execute Trade]
+    
+    D --> D1[HybridStablePool<br/>Institutional Area]
+    D1 --> D2[Request Quote from<br/>Market Makers]
+    D2 --> D3[Oracle-Based Pricing<br/>Real-time Exchange Rate]
+    D3 --> D4[Custom Fee Structure<br/>Minimal Slippage]
+    D4 --> E
+    
+    E --> F[Update Pool Reserves]
+    F --> G[Settlement Complete]
+    
+    style C1 fill:#e1f5ff
+    style D1 fill:#ffe1f5
+    style E fill:#e1ffe1
+```

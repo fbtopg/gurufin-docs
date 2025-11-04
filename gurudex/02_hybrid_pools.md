@@ -43,6 +43,44 @@ While liquidity is pooled together, FXSwap maintains strict internal separation 
 - **Support Compliance:** Segregated accounting facilitates wallet-tier compliance, including KYC/AML and sanctions screening, without compromising the anonymity of retail users.
 - **Enable Custom Settings:** Institutional participants benefit from tailored fee rates, transaction limits, and risk parameters, managed independently within the pool.
 
+### Internal Separation Diagram
+
+```mermaid
+graph TB
+    subgraph HybridPool["HybridStablePool (Single Pool per Pair)"]
+        direction TB
+        
+        subgraph Retail["Retail Area - AMM"]
+            R1[Retail Liquidity Tracking]
+            R2[Dynamic Fees<br/>~0.3% + imbalance adjustment]
+            R3[Uniswap v3 Algorithm<br/>x × y = k]
+            R4[Public & Permissionless]
+        end
+        
+        subgraph Institutional["Institutional Area - Oracle-Based"]
+            I1[Institutional Liquidity Tracking]
+            I2[Custom Fees<br/>~0.1% fixed]
+            I3[Oracle Price Algorithm]
+            I4[KYC/AML Required<br/>Private]
+        end
+        
+        Common[Shared Liquidity Pool<br/>Combined Reserves]
+        
+        Retail -.->|Contributes to| Common
+        Institutional -.->|Contributes to| Common
+    end
+    
+    RT[Retail Traders] -->|Swap Request| Retail
+    IT[Institutional Clients] -->|Swap Request| Institutional
+    
+    LP[Liquidity Providers] -->|Provide Liquidity| Common
+    Common -->|LP Tokens| LP
+    
+    style Retail fill:#e3f2fd
+    style Institutional fill:#fce4ec
+    style Common fill:#f1f8e9
+```
+
 This internal separation ensures that while liquidity is combined for efficiency, the privacy and regulatory requirements of different user classes are respected and enforced.
 
 ---
