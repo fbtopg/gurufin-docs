@@ -1,4 +1,6 @@
-# Table of Contents
+# Table of contents
+
+* [README](README.md)
 
 ## Introduction
 
