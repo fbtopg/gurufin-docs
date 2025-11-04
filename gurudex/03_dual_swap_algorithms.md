@@ -1,118 +1,91 @@
-# Dual Swap Algorithms
+# 듀얼 스왑 알고리즘
 
-The Gurufin Chain’s FXSwap platform employs a sophisticated dual swap algorithm architecture designed to optimally serve both retail users and institutional participants. This hybrid approach leverages the strengths of Automated Market Maker (AMM) models for retail trades and real-time oracle-driven pricing for institutions, ensuring efficient, low-slippage swaps across a global stablecoin ecosystem. This page provides a comprehensive overview of the dual swap algorithms, detailing their mechanisms, routing, execution flows, and comparative characteristics.
+GuruDex는 소매 사용자와 기관 참여자 모두에게 최적의 서비스를 제공하도록 설계된 정교한 듀얼 스왑 알고리즘 아키텍처를 사용합니다. 이 하이브리드 접근 방식은 소매 거래를 위한 자동화된 시장 조성자(AMM) 모델의 강점과 기관을 위한 실시간 오라클 기반 가격 책정을 활용하여 효율적이고 슬리피지가 적은 스왑을 보장합니다.
 
----
+## 소매 스왑: AMM (Automated Market Maker)
 
-## Overview of Dual Swap Algorithms
+소매 스왑은 Uniswap v3의 집중된 유동성 모델에서 영감을 받은 AMM 알고리즘을 기반으로 합니다. 이 모델은 소규모의 빈번한 거래에 최적화되어 있습니다.
 
-The FXSwap system integrates two distinct swap algorithms within a unified liquidity pool architecture:
+### 수학적 모델
 
-- **Retail Swaps:** Utilize a Uniswap v3 style AMM model optimized for smaller, frequent trades by retail users.
-- **Institutional Swaps:** Employ real-time oracle pricing with Request-for-Quote (RFQ) style execution tailored for large-volume, low-slippage institutional transactions.
+핵심은 상수 곱 공식입니다:
 
-This duality enables the platform to balance liquidity depth, price accuracy, and fee efficiency, while maintaining a single pool per stablecoin pair that consolidates liquidity from both user segments.
+\[ x \times y = k \]
 
----
+여기서 \(x\)와 \(y\)는 각각 기본 스테이블코인과 견적 스테이블코인의 준비금이며, \(k\)는 상수입니다. 스왑이 발생하면, 풀에 추가된 토큰의 양과 제거된 토큰의 양이 \(k\)를 일정하게 유지하도록 조정됩니다.
 
-## Automated Market Maker (AMM) for Retail Users
+**출력 금액 계산:**
 
-### Design and Mechanism
+수수료를 고려한 후의 출력 금액(\(\Delta y\))은 다음과 같이 계산됩니다:
 
-Retail swaps on FXSwap are powered by an AMM algorithm inspired by Uniswap v3’s concentrated liquidity model. The AMM operates on the constant product formula:
+\[ \Delta y = \frac{y \times \Delta x_{fee}} {x + \Delta x_{fee}} \]
 
-\[
-x \times y = k
-\]
+여기서:
+- \(\Delta x_{fee}\) = 입력 금액(\(\Delta x\))에서 동적 수수료를 뺀 값입니다.
+- \(x\)와 \(y\)는 현재 풀의 준비금입니다.
 
-where \(x\) and \(y\) represent the reserves of the base and quote stablecoins respectively, and \(k\) is a constant.
+**동적 수수료 모델:**
 
-Key features include:
+수수료는 풀의 불균형에 따라 동적으로 조정되어 재조정을 장려합니다. 이상적인 1:1 준비금 비율에서 벗어나는 1%마다 수수료가 1%씩 증가합니다.
 
-- **Dynamic Fee Model:** Fees adjust based on pool imbalance to incentivize rebalancing and protect liquidity providers from adverse selection. The fee increases by 1% for every 1% deviation from the ideal 1:1 reserve ratio.
-- **Concentrated Liquidity:** Liquidity providers can allocate capital within specific price ranges, enhancing capital efficiency and reducing slippage.
-- **Slippage Protection:** Minimum output amounts (`minAmountOut`) are enforced to protect users from excessive price impact.
+\[ Fee_{dynamic} = Fee_{base} + (\frac{|x - y|}{x + y} \times 100) \% \]
 
-### Retail Swap Execution Flow
+### 실행 흐름
 
-1. The retail user initiates a swap by calling the `swap` function with parameters indicating direction (`isBaseToQuote`), input amount, and minimum acceptable output.
-2. The system verifies the user’s retail status and rate limits.
-3. The AMM calculates the output amount using the constant product formula after deducting dynamic fees.
-4. Reserves are updated to reflect the swap.
-5. The output amount is transferred to the user.
-6. Fees are accumulated for liquidity provider rewards.
+| 단계 | 작업 | 설명 |
+|---|---|---|
+| 1 | **스왑 시작** | 사용자가 `swap(isBaseToQuote, amountIn, minAmountOut)` 함수를 호출합니다. |
+| 2 | **사용자 확인** | 시스템이 사용자의 소매 상태를 확인하고 비율 제한을 검사합니다. |
+| 3 | **동적 수수료 계산** | `calculateDynamicFee()`를 호출하여 현재 풀 불균형에 따라 수수료를 결정합니다. |
+| 4 | **출력 계산** | AMM 공식을 사용하여 수수료 차감 후의 출력 금액을 계산합니다. |
+| 5 | **슬리피지 확인** | `amountOut >= minAmountOut`인지 확인하여 사용자를 과도한 가격 영향으로부터 보호합니다. |
+| 6 | **상태 업데이트** | 풀의 준비금을 업데이트하고 수수료를 누적합니다. |
+| 7 | **자금 이체** | 계산된 출력 금액을 사용자에게 전송합니다. |
 
-This process ensures a seamless, permissionless trading experience with predictable fee structures and efficient liquidity utilization.
+## 기관 스왑: 오라클 기반 가격 책정
 
----
+기관 스왑은 실시간 가격 오라클 네트워크를 활용하여 대규모 거래에서 최소한의 슬리피지를 보장하는 RFQ(Request-for-Quote) 스타일의 실행을 지원합니다.
 
-## Real-Time Oracle Pricing for Institutional Users
+### 수학적 모델
 
-### Design and Mechanism
+기관 스왑의 모델은 간단하며, 오라클에서 제공하는 검증된 실시간 환율을 직접 적용합니다.
 
-Institutional swaps leverage a real-time price oracle network that aggregates vetted exchange rate data from permissioned providers. This oracle-driven model supports RFQ-style swaps characterized by:
+**출력 금액 계산:**
 
-- **Price Validation:** Incoming swap requests include an oracle price that is validated against stored rates, ensuring deviation and data freshness constraints (e.g., max 5-minute age, max 5% deviation).
-- **Custom Fee Rates:** Institutions benefit from lower, negotiated fees (typically around 0.1%) reflecting their trade volume and risk profile.
-- **Transaction and Volume Limits:** Strict per-transaction and daily volume limits are enforced to manage risk and compliance.
-- **Pre-Trade Verification:** Institutional users undergo KYC/AML verification and onboarding via a dedicated registry with role-based permissions.
+\[ amountOut = amountIn \times Price_{oracle} \times (1 - Fee_{inst}) \]
 
-### Institutional Swap Execution Flow
+여기서:
+- \(amountIn\) = 입력 금액입니다.
+- \(Price_{oracle}\) = 오라클에서 제공하고 검증된 실시간 환율입니다.
+- \(Fee_{inst}\) = 기관에 대해 구성된 고정 수수료율(예: 0.1%)입니다.
 
-1. The institution submits a swap request including the oracle price.
-2. The system confirms institutional status and validates the oracle price within allowed deviation and age parameters.
-3. Transaction limits and daily volume caps are checked.
-4. The swap amount out is computed by multiplying the input amount by the validated oracle price.
-5. Reserves are updated accordingly.
-6. The output amount is transferred to the institution.
-7. The institution’s trade volume is recorded for limit enforcement.
+**가격 검증 모델:**
 
-This approach minimizes slippage and provides institutions with predictable execution aligned with real-world FX rates.
+오라클 가격은 제출 시 온체인에서 검증되어야 합니다.
 
----
+\[ |\frac{Price_{oracle} - Price_{stored}}{Price_{stored}}| \leq Deviation_{max} \]
 
-## Swap Routing and Execution Architecture
+또한, 데이터의 타임스탬프는 최대 허용 기간(예: 5분)보다 최신이어야 합니다.
 
-FXSwap’s hybrid liquidity pool architecture supports both algorithms within a single pool per stablecoin pair. Internally, the pool maintains separate accounting for retail and institutional liquidity segments, preserving privacy and operational efficiency.
+### 실행 흐름
 
-The routing logic distinguishes user types at swap initiation:
+| 단계 | 작업 | 설명 |
+|---|---|---|
+| 1 | **사전 거래 확인** | 서버 측에서 기관의 KYC/AML 상태, 권한 및 한도를 미리 확인합니다. |
+| 2 | **스왑 시작** | 기관이 `swap(amountIn, oraclePrice)` 함수를 호출합니다. |
+| 3 | **상태 확인** | 시스템이 `InstitutionalRegistry`에서 기관의 활성 상태를 확인합니다. |
+| 4 | **오라클 가격 검증** | `PriceOracle` 계약이 제출된 `oraclePrice`가 허용된 편차 및 기간 내에 있는지 검증합니다. |
+| 5 | **한도 확인** | 거래당 및 일일 거래량 한도를 확인합니다. |
+| 6 | **출력 계산** | 검증된 오라클 가격과 고정 수수료를 사용하여 출력 금액을 계산합니다. |
+| 7 | **상태 업데이트** | 풀의 준비금을 업데이트하고 기관의 거래량을 기록합니다. |
+| 8 | **자금 이체** | 계산된 출력 금액을 기관에 전송합니다. |
 
-- **Retail users** are routed to the AMM engine, which calculates output based on pool reserves and dynamic fees.
-- **Institutional users** are routed to the oracle pricing engine, which applies real-time exchange rates and enforces institutional parameters.
+## 비교 분석
 
-This unified yet segmented design maximizes liquidity utilization, reduces operational overhead, and simplifies pool management.
-
----
-
-## Comparative Analysis of Retail AMM vs. Institutional Oracle Pricing
-
-| Feature                     | Retail AMM (Uniswap v3 Style)                   | Institutional Oracle Pricing (RFQ)           |
-|-----------------------------|------------------------------------------------|----------------------------------------------|
-| **User Segment**             | Retail and small traders                        | Institutional and large-volume traders       |
-| **Pricing Model**            | Constant product formula \(x \times y = k\)    | Real-time oracle price feed                   |
-| **Fee Structure**            | Dynamic fees based on pool imbalance            | Fixed/custom low fees (e.g., 0.1%)            |
-| **Slippage**                | Variable, dependent on liquidity and trade size | Minimal, price locked to oracle rate          |
-| **Liquidity Pools**          | Single hybrid pool with concentrated liquidity | Same hybrid pool, separate institutional accounting |
-| **Trade Limits**             | Rate limits per transaction and hourly volume   | Strict per-transaction and daily volume limits |
-| **Price Validation**         | On-chain AMM math, no external price input      | Oracle price validation with deviation and freshness checks |
-| **Execution Speed**          | Instantaneous on-chain swap                      | Instantaneous with pre-verified oracle data   |
-| **User Onboarding**          | Permissionless                                  | KYC/AML verified via institutional registry  |
-| **Risk Management**          | Dynamic fees incentivize pool balance           | Volume and deviation limits enforce risk controls |
-| **Use Cases**                | Retail remittances, small FX trades              | Institutional FX trading, large cross-border settlements |
-
----
-
-## Summary
-
-The dual swap algorithm framework of FXSwap on Gurufin Chain represents a cutting-edge solution for stablecoin FX trading, harmonizing the needs of diverse market participants. Retail users enjoy the flexibility and accessibility of a Uniswap v3 style AMM with dynamic fees and concentrated liquidity, while institutions benefit from real-time, oracle-backed pricing with robust compliance and risk controls.
-
-This hybrid model, supported by a single, integrated liquidity pool per stablecoin pair, delivers deep liquidity, efficient capital utilization, and predictable execution quality. It positions Gurufin Chain as a neutral, scalable FX and DeFi hub for the Web3 economy, bridging retail accessibility with institutional-grade performance.
-
----
-
-## References
-
-- Gurufin Chain Technical Stack and Features
-- FXSwap Architecture Documentation
-- GX Stablecoin Chain Overview
-- Oracle Network and Hybrid Execution Fabric Details
+| 기능 | 소매 AMM | 기관 오라클 가격 책정 |
+|---|---|---|
+| **가격 결정** | 온체인 유동성 및 상수 곱 공식 | 외부 실시간 오라클 가격 피드 |
+| **수학적 복잡성** | 높음 (동적 곡선 및 수수료) | 낮음 (직접 곱셈) |
+| **슬리피지** | 가변적 (거래 규모에 따라 다름) | 최소화 (가격 고정) |
+| **실행 신뢰성** | 높음 (온체인 데이터에만 의존) | 높음 (오라클 검증 통과 시) |
+| **수수료 모델** | 동적 (풀 균형에 따라 변동) | 고정/맞춤형 (일반적으로 낮음) |
