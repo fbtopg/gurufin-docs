@@ -33,6 +33,8 @@
 * [Hybrid Pools](gurudex/02_hybrid_pools.md)
 * [Dual Swap Algorithms](gurudex/03_dual_swap_algorithms.md)
 * [Liquidity & Rewards](gurudex/04_liquidity_and_rewards.md)
+* [Smart Contract Logic](gurudex/05_smart_contract_logic.md)
+* [Risk Mitigation](gurudex/06_risk_mitigation.md)
 
 ## Developer Resources
 
