@@ -1,23 +1,23 @@
-# GuruDex 위험 완화
+# GuruDex Risk Mitigation
 
-GuruDex는 다층적인 위험 완화 전략을 사용하여 플랫폼과 사용자의 자산을 보호합니다. 이러한 메커니즘은 스마트 계약 수준에 내장되어 있으며, 잠재적인 위협으로부터 보호하기 위해 설계되었습니다.
+GuruDex uses a multi-layered risk mitigation strategy to protect the platform and users' assets. These mechanisms are built into the smart contract level and are designed to protect against potential threats.
 
-## 핵심 위험 완화 메커니즘
+## Core Risk Mitigation Mechanisms
 
-| 위험 유형 | 완화 메커니즘 | 설명 |
+| Risk Type | Mitigation Mechanism | Description |
 |---|---|---|
-| **슬리피지 위험** | **듀얼 스왑 알고리즘** | 기관 거래에 오라클 기반 가격 책정을 사용하여 대규모 주문에 대한 슬리피지를 최소화합니다. 소매 사용자는 스왑을 제출할 때 최대 슬리피지 허용 오차를 설정할 수 있습니다. |
-| **오라클 실패/조작** | **가격 편차 및 신뢰도 확인** | `PriceOracle`은 제출된 가격이 마지막으로 수락된 가격과 크게 벗어나지 않는지 확인합니다. 또한 데이터의 신뢰도를 검증하여 비정상적인 가격 피드를 거부합니다. |
-| **유동성 풀 고갈** | **동적 수수료 및 비율 제한** | 동적 수수료 메커니즘은 풀이 불균형해질 때 거래를 억제하여 재조정을 장려합니다. 시간당 및 거래당 비율 제한은 단일 주체가 풀을 고갈시키는 것을 방지합니다. |
-| **스마트 계약 취약점** | **코드 감사 및 업그레이드 가능성** | 모든 스마트 계약은 평판이 좋은 제3자 보안 회사에 의해 감사를 받습니다. `FXSwapMaster` 계약은 프록시 패턴을 사용하여 버그 수정 및 개선을 위한 업그레이드를 허용합니다. |
-| **기관 거래상대방 위험** | **온보딩 및 한도** | `InstitutionalRegistry`는 기관이 거래하기 전에 KYC/AML 확인을 거치도록 합니다. 각 기관에 대해 거래 한도 및 일일 거래량이 적용되어 노출을 제한합니다. |
-| **네트워크 혼잡** | **Guru-PEG 수수료 메커니즘** | Guru-PEG는 혼잡 가격 책정 모델을 통합하여 수요가 많은 기간 동안 수수료를 약간 인상하여 스팸 거래를 방지하고 네트워크 안정성을 보장합니다. |
+| **Slippage Risk** | **Dual Swap Algorithm** | Uses oracle-based pricing for institutional trades to minimize slippage on large orders. Retail users can set maximum slippage tolerance when submitting swaps. |
+| **Oracle Failure/Manipulation** | **Price Deviation and Confidence Checks** | The `PriceOracle` verifies that submitted prices do not deviate significantly from the last accepted price. It also validates the confidence of the data to reject abnormal price feeds. |
+| **Liquidity Pool Depletion** | **Dynamic Fees and Rate Limiting** | The dynamic fee mechanism discourages trading when the pool becomes imbalanced, encouraging rebalancing. Hourly and per-transaction rate limits prevent a single entity from depleting the pool. |
+| **Smart Contract Vulnerabilities** | **Code Audits and Upgradeability** | All smart contracts are audited by reputable third-party security firms. The `FXSwapMaster` contract uses a proxy pattern to allow upgrades for bug fixes and improvements. |
+| **Institutional Counterparty Risk** | **Onboarding and Limits** | The `InstitutionalRegistry` requires institutions to undergo KYC/AML verification before trading. Trading limits and daily volume caps are applied to each institution to limit exposure. |
+| **Network Congestion** | **Guru-PEG Fee Mechanism** | Guru-PEG integrates a congestion pricing model that slightly increases fees during high-demand periods to prevent spam transactions and ensure network stability. |
 
-## 긴급 안전 조치
+## Emergency Safety Measures
 
-심각한 시장 변동성이나 예기치 않은 위협이 발생하는 경우, GuruDex는 여러 가지 안전 조치를 포함하고 있습니다.
+In the event of severe market volatility or unexpected threats, GuruDex includes several safety measures.
 
-- **일시 중지 기능**: `FXSwapMaster` 계약의 소유자는 모든 스왑 및 유동성 관리 기능을 일시적으로 중지하여 위협을 조사하고 완화할 시간을 벌 수 있습니다. 이 기능은 탈중앙화된 거버넌스 제안을 통해 활성화됩니다.
-- **거래 제한 동적 조정**: 거버넌스는 실시간으로 거래 한도 및 일일 거래량을 조정하여 위험 노출을 신속하게 줄일 수 있습니다. |
+- **Pause Function**: The owner of the `FXSwapMaster` contract can temporarily suspend all swap and liquidity management functions to buy time to investigate and mitigate threats. This function is activated through decentralized governance proposals.
+- **Dynamic Adjustment of Trading Limits**: Governance can adjust trading limits and daily volume in real-time to quickly reduce risk exposure. |
 
-이러한 포괄적인 위험 관리 기능을 통해 GuruDex는 사용자에게 안전하고 신뢰할 수 있으며 탄력적인 FX 스왑 플랫폼을 제공합니다.
+These comprehensive risk management features enable GuruDex to provide users with a safe, reliable, and resilient FX swap platform.
