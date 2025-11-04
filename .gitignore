@@ -1,0 +1,24 @@
+# GitBook build output
+_book/
+.grunt
+
+# Node.js dependencies
+node_modules/
+
+# macOS
+.DS_Store
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+.env.local
