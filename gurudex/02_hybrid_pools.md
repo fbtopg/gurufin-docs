@@ -45,7 +45,7 @@ While liquidity is pooled together, FXSwap maintains strict internal separation 
 
 ### Internal Separation Diagram
 
-<figure><img src="../.gitbook/assets/hybrid_pools.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/hybrid_pools.png" alt="" width="563"><figcaption></figcaption></figure>
 
 This internal separation ensures that while liquidity is combined for efficiency, the privacy and regulatory requirements of different user classes are respected and enforced.
 
@@ -55,7 +55,7 @@ This internal separation ensures that while liquidity is combined for efficiency
 
 The following diagram illustrates the Hybrid Pool structure within the FXSwap system:
 
-<figure><img src="../.gitbook/assets/hybrid_pool_structure.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/hybrid_pool_structure.png" alt="" width="563"><figcaption></figcaption></figure>
 
 ***
 

@@ -72,7 +72,7 @@ The dynamic fee mechanism, which adjusts fees based on pool imbalance, further i
 
 ### GXN Token Utility Flow Diagram
 
-<figure><img src="../.gitbook/assets/tokenomics.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/tokenomics.png" alt="" width="563"><figcaption></figcaption></figure>
 
 | Utility Category        | Description                                                                                | Benefits                                                                                        |
 | ----------------------- | ------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |

@@ -76,7 +76,7 @@ By integrating these controls, InstitutionalRegistry ensures that institutional 
 
 The following diagram illustrates the high-level architecture of GuruDex’s FX swap system:
 
-<figure><img src="../.gitbook/assets/architecture.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/architecture.png" alt="" width="563"><figcaption></figcaption></figure>
 
 * **FXSwapMaster** acts as the control plane, coordinating pool creation and swap execution.
 * **PoolFactory** is responsible for deploying HybridStablePool instances.
