@@ -1,91 +1,125 @@
-# 듀얼 스왑 알고리즘
+# Dual Swap Algorithms
 
-GuruDex는 소매 사용자와 기관 참여자 모두에게 최적의 서비스를 제공하도록 설계된 정교한 듀얼 스왑 알고리즘 아키텍처를 사용합니다. 이 하이브리드 접근 방식은 소매 거래를 위한 자동화된 시장 조성자(AMM) 모델의 강점과 기관을 위한 실시간 오라클 기반 가격 책정을 활용하여 효율적이고 슬리피지가 적은 스왑을 보장합니다.
+GuruDex employs a sophisticated dual swap algorithm architecture designed to provide optimal service to both retail users and institutional participants. This hybrid approach leverages the strengths of an Automated Market Maker (AMM) model for retail trades and real-time oracle-based pricing for institutions, ensuring efficient, low-slippage swaps across user types.
 
-## 소매 스왑: AMM (Automated Market Maker)
+***
 
-소매 스왑은 Uniswap v3의 집중된 유동성 모델에서 영감을 받은 AMM 알고리즘을 기반으로 합니다. 이 모델은 소규모의 빈번한 거래에 최적화되어 있습니다.
+## Retail Swap: AMM (Automated Market Maker)
 
-### 수학적 모델
+Retail swaps are powered by an AMM algorithm inspired by Uniswap v3's concentrated liquidity model. This model is optimized for small, frequent trades with decentralized, permissionless access.
 
-핵심은 상수 곱 공식입니다:
+### Mathematical Model
+
+At the core is the constant product formula:
 
 \[ x \times y = k \]
 
-여기서 \(x\)와 \(y\)는 각각 기본 스테이블코인과 견적 스테이블코인의 준비금이며, \(k\)는 상수입니다. 스왑이 발생하면, 풀에 추가된 토큰의 양과 제거된 토큰의 양이 \(k\)를 일정하게 유지하도록 조정됩니다.
+Where \(x\) and \(y\) are the reserves of the base and quote stablecoins respectively, and \(k\) is a constant. When a swap occurs, the amounts of tokens added and removed from the pool are adjusted to maintain \(k\) constant.
 
-**출력 금액 계산:**
+**Output Amount Calculation:**
 
-수수료를 고려한 후의 출력 금액(\(\Delta y\))은 다음과 같이 계산됩니다:
+The output amount (\(\Delta y\)) after accounting for fees is calculated as:
 
 \[ \Delta y = \frac{y \times \Delta x_{fee}} {x + \Delta x_{fee}} \]
 
-여기서:
-- \(\Delta x_{fee}\) = 입력 금액(\(\Delta x\))에서 동적 수수료를 뺀 값입니다.
-- \(x\)와 \(y\)는 현재 풀의 준비금입니다.
+Where:
+* \(\Delta x_{fee}\) = the input amount (\(\Delta x\)) minus the dynamic fee.
+* \(x\) and \(y\) = the current pool reserves.
 
-**동적 수수료 모델:**
+**Dynamic Fee Model:**
 
-수수료는 풀의 불균형에 따라 동적으로 조정되어 재조정을 장려합니다. 이상적인 1:1 준비금 비율에서 벗어나는 1%마다 수수료가 1%씩 증가합니다.
+Fees are adjusted dynamically based on pool imbalance to encourage rebalancing. For every 1% deviation from an ideal 1:1 reserve ratio, the fee increases by approximately 1%.
 
 \[ Fee_{dynamic} = Fee_{base} + (\frac{|x - y|}{x + y} \times 100) \% \]
 
-### 실행 흐름
+### Execution Flow
 
-| 단계 | 작업 | 설명 |
-|---|---|---|
-| 1 | **스왑 시작** | 사용자가 `swap(isBaseToQuote, amountIn, minAmountOut)` 함수를 호출합니다. |
-| 2 | **사용자 확인** | 시스템이 사용자의 소매 상태를 확인하고 비율 제한을 검사합니다. |
-| 3 | **동적 수수료 계산** | `calculateDynamicFee()`를 호출하여 현재 풀 불균형에 따라 수수료를 결정합니다. |
-| 4 | **출력 계산** | AMM 공식을 사용하여 수수료 차감 후의 출력 금액을 계산합니다. |
-| 5 | **슬리피지 확인** | `amountOut >= minAmountOut`인지 확인하여 사용자를 과도한 가격 영향으로부터 보호합니다. |
-| 6 | **상태 업데이트** | 풀의 준비금을 업데이트하고 수수료를 누적합니다. |
-| 7 | **자금 이체** | 계산된 출력 금액을 사용자에게 전송합니다. |
+| Step | Action                      | Description                                                                                         |
+| ---- | --------------------------- | --------------------------------------------------------------------------------------------------- |
+| 1    | **Initiate Swap**           | User calls `swap(isBaseToQuote, amountIn, minAmountOut)` function.                                |
+| 2    | **User Verification**       | System verifies user's retail status and checks rate limits.                                       |
+| 3    | **Calculate Dynamic Fee**   | Calls `calculateDynamicFee()` to determine fee based on current pool imbalance.                    |
+| 4    | **Calculate Output**        | Uses AMM formula to compute output amount after fee deduction.                                     |
+| 5    | **Slippage Check**          | Verifies `amountOut >= minAmountOut` to protect user from excessive price impact.                 |
+| 6    | **Update State**            | Updates pool reserves and accumulates fees.                                                        |
+| 7    | **Transfer Funds**          | Sends calculated output amount to user.                                                            |
 
-## 기관 스왑: 오라클 기반 가격 책정
+***
 
-기관 스왑은 실시간 가격 오라클 네트워크를 활용하여 대규모 거래에서 최소한의 슬리피지를 보장하는 RFQ(Request-for-Quote) 스타일의 실행을 지원합니다.
+## Institutional Swap: Oracle-Based Pricing
 
-### 수학적 모델
+Institutional swaps leverage real-time price oracle networks to support RFQ (Request-for-Quote) style execution with minimal slippage for large trades.
 
-기관 스왑의 모델은 간단하며, 오라클에서 제공하는 검증된 실시간 환율을 직접 적용합니다.
+### Mathematical Model
 
-**출력 금액 계산:**
+The model for institutional swaps is straightforward, directly applying validated real-time exchange rates provided by oracles.
+
+**Output Amount Calculation:**
 
 \[ amountOut = amountIn \times Price_{oracle} \times (1 - Fee_{inst}) \]
 
-여기서:
-- \(amountIn\) = 입력 금액입니다.
-- \(Price_{oracle}\) = 오라클에서 제공하고 검증된 실시간 환율입니다.
-- \(Fee_{inst}\) = 기관에 대해 구성된 고정 수수료율(예: 0.1%)입니다.
+Where:
+* \(amountIn\) = input amount.
+* \(Price_{oracle}\) = real-time exchange rate provided and validated by the oracle.
+* \(Fee_{inst}\) = fixed fee rate configured for the institution (e.g., 0.1%).
 
-**가격 검증 모델:**
+**Price Validation Model:**
 
-오라클 가격은 제출 시 온체인에서 검증되어야 합니다.
+Oracle prices must be validated on-chain upon submission.
 
 \[ |\frac{Price_{oracle} - Price_{stored}}{Price_{stored}}| \leq Deviation_{max} \]
 
-또한, 데이터의 타임스탬프는 최대 허용 기간(예: 5분)보다 최신이어야 합니다.
+Additionally, the data timestamp must be more recent than the maximum allowed age (e.g., 5 minutes).
 
-### 실행 흐름
+### Execution Flow
 
-| 단계 | 작업 | 설명 |
-|---|---|---|
-| 1 | **사전 거래 확인** | 서버 측에서 기관의 KYC/AML 상태, 권한 및 한도를 미리 확인합니다. |
-| 2 | **스왑 시작** | 기관이 `swap(amountIn, oraclePrice)` 함수를 호출합니다. |
-| 3 | **상태 확인** | 시스템이 `InstitutionalRegistry`에서 기관의 활성 상태를 확인합니다. |
-| 4 | **오라클 가격 검증** | `PriceOracle` 계약이 제출된 `oraclePrice`가 허용된 편차 및 기간 내에 있는지 검증합니다. |
-| 5 | **한도 확인** | 거래당 및 일일 거래량 한도를 확인합니다. |
-| 6 | **출력 계산** | 검증된 오라클 가격과 고정 수수료를 사용하여 출력 금액을 계산합니다. |
-| 7 | **상태 업데이트** | 풀의 준비금을 업데이트하고 기관의 거래량을 기록합니다. |
-| 8 | **자금 이체** | 계산된 출력 금액을 기관에 전송합니다. |
+| Step | Action                        | Description                                                                                           |
+| ---- | ----------------------------- | ----------------------------------------------------------------------------------------------------- |
+| 1    | **Pre-Trade Verification**    | Server-side pre-verification of institution's KYC/AML status, authorization, and limits.             |
+| 2    | **Initiate Swap**             | Institution calls `swap(amountIn, oraclePrice)` function.                                            |
+| 3    | **Status Check**              | System verifies institution's active status in `InstitutionalRegistry`.                              |
+| 4    | **Validate Oracle Price**     | `PriceOracle` contract validates that submitted `oraclePrice` is within allowed deviation and age.   |
+| 5    | **Limit Check**               | Verifies per-transaction and daily volume limits.                                                    |
+| 6    | **Calculate Output**          | Computes output amount using validated oracle price and fixed fee.                                   |
+| 7    | **Update State**              | Updates pool reserves and records institution's transaction volume.                                  |
+| 8    | **Transfer Funds**            | Sends calculated output amount to institution.                                                       |
 
-## 비교 분석
+***
 
-| 기능 | 소매 AMM | 기관 오라클 가격 책정 |
-|---|---|---|
-| **가격 결정** | 온체인 유동성 및 상수 곱 공식 | 외부 실시간 오라클 가격 피드 |
-| **수학적 복잡성** | 높음 (동적 곡선 및 수수료) | 낮음 (직접 곱셈) |
-| **슬리피지** | 가변적 (거래 규모에 따라 다름) | 최소화 (가격 고정) |
-| **실행 신뢰성** | 높음 (온체인 데이터에만 의존) | 높음 (오라클 검증 통과 시) |
-| **수수료 모델** | 동적 (풀 균형에 따라 변동) | 고정/맞춤형 (일반적으로 낮음) |
+## Comparative Analysis
+
+| Feature                  | Retail AMM                                      | Institutional Oracle Pricing              |
+| ------------------------ | ----------------------------------------------- | ----------------------------------------- |
+| **Price Determination**  | On-chain liquidity and constant product formula | External real-time oracle price feeds     |
+| **Mathematical Complexity** | High (dynamic curves and fees)               | Low (direct multiplication)               |
+| **Slippage**             | Variable (depends on trade size)                | Minimized (price locked)                  |
+| **Execution Reliability** | High (relies only on on-chain data)            | High (if oracle validation passes)        |
+| **Fee Model**            | Dynamic (varies with pool balance)              | Fixed/Custom (typically lower)            |
+
+***
+
+## Algorithm Selection Logic
+
+The FXSwapMaster contract determines which algorithm to use based on the caller's user type:
+
+```solidity
+function determineSwapPath(address user) internal view returns (SwapPath) {
+    UserType userType = institutionalRegistry.getUserType(user);
+    
+    if (userType == UserType.INSTITUTIONAL) {
+        return SwapPath.ORACLE_BASED;
+    } else {
+        return SwapPath.AMM;
+    }
+}
+```
+
+This dual-algorithm architecture ensures that each user type receives an optimized trading experience tailored to their specific needs, while maintaining a unified liquidity pool for maximum capital efficiency.
+
+***
+
+## Conclusion
+
+The dual swap algorithm design within GuruDex represents a sophisticated balance between decentralized permissionless trading and institutional-grade execution. By offering AMM-based swaps for retail users and oracle-based pricing for institutions within a single hybrid pool, GuruDex achieves optimal liquidity utilization, minimized slippage, and compliance-ready infrastructure for a global FX trading platform.
+
+For implementation details and smart contract interfaces, please refer to the [Architecture](01_architecture.md) and [Hybrid Pools](02_hybrid_pools.md) documentation.
