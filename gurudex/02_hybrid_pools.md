@@ -55,21 +55,7 @@ This internal separation ensures that while liquidity is combined for efficiency
 
 The following diagram illustrates the Hybrid Pool structure within the FXSwap system:
 
-```
-┌────────────────────────────────────────┐
-│ HybridStablePool (Single Pool per Pair)│
-│ ┌──────────────────────────┐           │
-│ │ Retail Area (AMM)        │           │
-│ │ - Uniswap v3 style       │           │
-│ │ - Dynamic fees           │           │
-│ └──────────────────────────┘           │
-│ ┌──────────────────────────┐           │
-│ │ Institutional Area       │           │
-│ │ - Oracle-based pricing   │           │
-│ │ - Custom fees            │           │
-│ └──────────────────────────┘           │
-└────────────────────────────────────────┘
-```
+<figure><img src="../.gitbook/assets/hybrid_pool_structure.png" alt=""><figcaption></figcaption></figure>
 
 ***
 
