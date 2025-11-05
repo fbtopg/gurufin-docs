@@ -18,9 +18,7 @@ When a swap is initiated, the `HybridStablePool` contract executes the following
 
 ### Swap Flow Diagram
 
-```markdown
-![Swap Flow Diagram](/.gitbook/assets/swap_flow.png)
-```
+<figure><img src="../.gitbook/assets/swap_flow.png" alt="" width="563"><figcaption></figcaption></figure>
 
 ```solidity
 function swap(address user, uint256 amountIn, bool isBaseToQuote) external {

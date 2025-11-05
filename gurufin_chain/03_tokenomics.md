@@ -2,7 +2,7 @@
 
 The Guru native token (GXN) is the foundational utility token of the Gurufin ecosystem, designed to empower participants across the Gurufin Chain and GX Stablecoin networks. GXN plays a pivotal role in enabling decentralized governance, incentivizing network security through staking, facilitating fee payments, and supporting liquidity provisioning within the platform’s innovative DeFi and FX infrastructure. This page provides a comprehensive overview of GXN’s tokenomics, detailing its multifaceted utility and economic design.
 
----
+***
 
 ## Overview of GXN Token Utility
 
@@ -10,7 +10,7 @@ GXN serves as the native token for Gurufin Chain, a high-performance Delegated P
 
 The tokenomics model is designed to align incentives among validators, liquidity providers, governance participants, and end-users, fostering a robust, secure, and efficient ecosystem. GXN’s role extends beyond a simple transactional token to become a key economic lever that sustains network health and drives ecosystem growth.
 
----
+***
 
 ## Staking and Network Security
 
@@ -18,13 +18,13 @@ GXN holders can participate in the Gurufin Chain’s Delegated Proof-of-Stake co
 
 Staking GXN confers several benefits:
 
-- **Validator Selection:** GXN holders delegate tokens to trusted validators, influencing the validator set responsible for block production and consensus.
-- **Reward Distribution:** Stakers earn rewards proportional to their stake and validator performance, incentivizing active participation and honest behavior.
-- **Slashing and Security:** Validators are subject to slashing penalties for misbehavior, with staked GXN serving as collateral to ensure network integrity.
+* **Validator Selection:** GXN holders delegate tokens to trusted validators, influencing the validator set responsible for block production and consensus.
+* **Reward Distribution:** Stakers earn rewards proportional to their stake and validator performance, incentivizing active participation and honest behavior.
+* **Slashing and Security:** Validators are subject to slashing penalties for misbehavior, with staked GXN serving as collateral to ensure network integrity.
 
 This staking model ensures a secure, high-throughput blockchain environment with deterministic sub-second finality, critical for the Gurufin Chain’s role as a neutral settlement layer for cross-border FX and DeFi applications.
 
----
+***
 
 ## Governance Participation
 
@@ -32,13 +32,13 @@ GXN token holders possess governance rights within the Gurufin ecosystem, enabli
 
 Key governance functions include:
 
-- **Protocol Parameter Tuning:** Adjusting network parameters such as fee schedules, staking requirements, and consensus configurations.
-- **Feature Proposals:** Submitting and voting on proposals for new features, integrations, or changes to the hybrid AMM/RFQ mechanisms.
-- **Ecosystem Fund Allocation:** Deciding on the use of treasury funds for development grants, marketing, or community incentives.
+* **Protocol Parameter Tuning:** Adjusting network parameters such as fee schedules, staking requirements, and consensus configurations.
+* **Feature Proposals:** Submitting and voting on proposals for new features, integrations, or changes to the hybrid AMM/RFQ mechanisms.
+* **Ecosystem Fund Allocation:** Deciding on the use of treasury funds for development grants, marketing, or community incentives.
 
 This governance framework empowers the community to steer the evolution of the Gurufin Chain and GX Stablecoin networks in a transparent and inclusive manner.
 
----
+***
 
 ## Fee Payments and Economic Stability
 
@@ -46,13 +46,13 @@ GXN is the primary token used for paying transaction fees across the Gurufin Cha
 
 Using GXN for fee payments offers several advantages:
 
-- **Fee Stability:** The CPI-indexed fee model reduces volatility in transaction costs, enhancing user experience for retail and institutional participants.
-- **Congestion Pricing:** Dynamic fee adjustments during network congestion protect against spam and maintain service quality.
-- **Fee Burning and Redistribution:** A portion of fees paid in GXN may be burned or redistributed to stakers and liquidity providers, contributing to token scarcity and value accrual.
+* **Fee Stability:** The CPI-indexed fee model reduces volatility in transaction costs, enhancing user experience for retail and institutional participants.
+* **Congestion Pricing:** Dynamic fee adjustments during network congestion protect against spam and maintain service quality.
+* **Fee Burning and Redistribution:** A portion of fees paid in GXN may be burned or redistributed to stakers and liquidity providers, contributing to token scarcity and value accrual.
 
 This fee model supports the chain’s goal of becoming a neutral, low-cost settlement layer for cross-border payments and DeFi activities.
 
----
+***
 
 ## Liquidity Provisioning and Rewards
 
@@ -60,89 +60,28 @@ Liquidity providers (LPs) on Gurufin Chain’s FXSwap platform utilize GXN token
 
 GXN’s role in liquidity provisioning includes:
 
-- **Liquidity Staking:** LPs stake GXN alongside stablecoins in hybrid pools to facilitate efficient FX swaps and stablecoin trading.
-- **Fee Rewards:** LPs earn a share of the dynamic swap fees collected from retail AMM trades and institutional RFQ transactions, distributed proportionally based on their GXN-backed liquidity contributions.
-- **Incentive Alignment:** GXN rewards encourage sustained liquidity provision, ensuring deep pools for stablecoin FX pairs such as USGX, KRGX, JPGX, and PHGX.
+* **Liquidity Staking:** LPs stake GXN alongside stablecoins in hybrid pools to facilitate efficient FX swaps and stablecoin trading.
+* **Fee Rewards:** LPs earn a share of the dynamic swap fees collected from retail AMM trades and institutional RFQ transactions, distributed proportionally based on their GXN-backed liquidity contributions.
+* **Incentive Alignment:** GXN rewards encourage sustained liquidity provision, ensuring deep pools for stablecoin FX pairs such as USGX, KRGX, JPGX, and PHGX.
 
 The dynamic fee mechanism, which adjusts fees based on pool imbalance, further incentivizes LPs to maintain equilibrium, enhancing overall market efficiency.
 
----
+***
 
 ## GXN Token Utility Summary
 
 ### GXN Token Utility Flow Diagram
 
-```mermaid
-graph TB
-    GXN[GXN Token<br/>Native Utility Token]
-    
-    subgraph Staking["Staking & Network Security"]
-        S1[Delegate to Validators]
-        S2[Support DPoS Consensus]
-        S3[Earn Staking Rewards]
-        S4[Slashing Collateral]
-    end
-    
-    subgraph Governance["Decentralized Governance"]
-        G1[Vote on Proposals]
-        G2[Protocol Parameter Tuning]
-        G3[Feature Upgrades]
-        G4[Treasury Allocation]
-    end
-    
-    subgraph Fees["Fee Payments"]
-        F1[Transaction Fees<br/>~$0.013]
-        F2[Guru-PEG Mechanism<br/>CPI-Indexed]
-        F3[Congestion Pricing]
-        F4[Fee Burning/Redistribution]
-    end
-    
-    subgraph Liquidity["Liquidity Provisioning"]
-        L1[Stake in Hybrid Pools]
-        L2[FXSwap Participation]
-        L3[Earn Swap Fee Rewards]
-        L4[Dynamic Fee Incentives]
-    end
-    
-    GXN --> S1
-    GXN --> G1
-    GXN --> F1
-    GXN --> L1
-    
-    S1 --> S2 --> S3
-    S2 --> S4
-    
-    G1 --> G2
-    G1 --> G3
-    G1 --> G4
-    
-    F1 --> F2
-    F2 --> F3
-    F3 --> F4
-    
-    L1 --> L2
-    L2 --> L3
-    L3 --> L4
-    
-    S3 -.->|Returns| GXN
-    L3 -.->|Returns| GXN
-    F4 -.->|Redistributed| GXN
-    
-    style GXN fill:#FFD700,stroke:#FF8C00,stroke-width:3px,color:#000
-    style Staking fill:#e3f2fd
-    style Governance fill:#f3e5f5
-    style Fees fill:#fff3e0
-    style Liquidity fill:#e8f5e9
-```
+<figure><img src="../.gitbook/assets/tokenomics.png" alt=""><figcaption></figcaption></figure>
 
-| Utility Category       | Description                                                                                     | Benefits                                                                                       |
-|-----------------------|-------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|
-| **Staking**            | Stake GXN to support DPoS consensus and secure the network.                                     | Earn staking rewards; participate in validator selection; contribute to network security.      |
-| **Governance**         | Use GXN tokens to vote on protocol upgrades, parameter changes, and ecosystem proposals.        | Influence network evolution; ensure decentralized decision-making; access to governance rights.|
-| **Fee Payments**       | Pay transaction and operational fees on Gurufin Chain with CPI-indexed, predictable costs.      | Stable and low transaction fees; protection against congestion; potential fee burning.         |
-| **Liquidity Provision**| Stake GXN in hybrid liquidity pools for stablecoin FX trading and DeFi applications.            | Earn swap fee rewards; support deep liquidity; benefit from dynamic fee incentives.            |
+| Utility Category        | Description                                                                                | Benefits                                                                                        |
+| ----------------------- | ------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
+| **Staking**             | Stake GXN to support DPoS consensus and secure the network.                                | Earn staking rewards; participate in validator selection; contribute to network security.       |
+| **Governance**          | Use GXN tokens to vote on protocol upgrades, parameter changes, and ecosystem proposals.   | Influence network evolution; ensure decentralized decision-making; access to governance rights. |
+| **Fee Payments**        | Pay transaction and operational fees on Gurufin Chain with CPI-indexed, predictable costs. | Stable and low transaction fees; protection against congestion; potential fee burning.          |
+| **Liquidity Provision** | Stake GXN in hybrid liquidity pools for stablecoin FX trading and DeFi applications.       | Earn swap fee rewards; support deep liquidity; benefit from dynamic fee incentives.             |
 
----
+***
 
 ## Conclusion
 
