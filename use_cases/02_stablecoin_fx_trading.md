@@ -34,7 +34,7 @@ A retail FX swap application on Gurufin can utilize the hybrid stable pool desig
 
 1. User initiates a swap request specifying source and target stablecoins.
 2. The AMM algorithm calculates the output amount using the constant product formula, factoring in dynamic fees.
-3. The transaction executes with deterministic finality (~1-3 seconds), and the user receives the swapped stablecoins.
+3. The transaction executes with deterministic sub-second finality, and the user receives the swapped stablecoins.
 
 This design ensures deep liquidity, low slippage, and predictable costs, making FX trading accessible and efficient for retail participants.
 

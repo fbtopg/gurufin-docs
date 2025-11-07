@@ -12,7 +12,7 @@ Gurufin Chain adopts an **Inter-Blockchain Communication (IBC)-first architectur
 
 * **Atomic Cross-Chain Settlement:** IBC enables Gurufin to perform atomic Payment-versus-Payment (PvP) settlements, eliminating principal and bridge risk in cross-border FX transactions.
 * **Native Integration:** Gurufin Chain and the GX Stablecoin chains are built using the Cosmos SDK and Tendermint consensus, which natively support IBC, ensuring seamless interoperability within the Cosmos ecosystem and other IBC-enabled chains.
-* **High Throughput and Finality:** With a block time of 1-3 seconds and deterministic sub-second finality, Gurufin ensures fast and reliable cross-chain message passing.
+* **High Throughput and Finality:** With sub-second block times and deterministic sub-second finality, Gurufin ensures fast and reliable cross-chain message passing.
 * **Fee Predictability:** The Guru-PEG (Price Equilibrium Governance) mechanism maintains fiat-indexed, retail-grade predictable fees for cross-chain operations, enhancing user experience and cost transparency.
 
 ### Benefits of IBC-First Design

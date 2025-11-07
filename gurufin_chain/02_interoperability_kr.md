@@ -12,7 +12,7 @@ Gurufin Chain은 기초 상호 운용성 프로토콜로 **Inter-Blockchain Comm
 
 * **원자적 크로스체인 정산:** IBC를 통해 Gurufin은 국경 간 FX 거래에서 원금 및 브리지 위험을 제거하는 원자적 Payment-versus-Payment (PvP) 정산을 수행할 수 있습니다.
 * **네이티브 통합:** Gurufin Chain과 GX Stablecoin 체인은 IBC를 네이티브로 지원하는 Cosmos SDK 및 Tendermint 합의를 사용하여 구축되어 Cosmos 생태계 및 기타 IBC 지원 체인 내에서 원활한 상호 운용성을 보장합니다.
-* **높은 처리량 및 최종성:** 1-3초의 블록 시간과 결정적 1초 미만의 최종성을 통해 Gurufin은 빠르고 신뢰할 수 있는 크로스체인 메시지 전달을 보장합니다.
+* **높은 처리량 및 최종성:** 1초 미만의 블록 시간과 결정적 1초 미만의 최종성을 통해 Gurufin은 빠르고 신뢰할 수 있는 크로스체인 메시지 전달을 보장합니다.
 * **수수료 예측 가능성:** Guru-PEG (Price Equilibrium Governance) 메커니즘은 크로스체인 운영에 대한 법정화폐 인덱스, 소매급 예측 가능한 수수료를 유지하여 사용자 경험과 비용 투명성을 향상시킵니다.
 
 ### IBC 우선 설계의 이점

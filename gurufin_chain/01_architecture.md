@@ -6,7 +6,7 @@ Gurufin Chain is a high-performance, public Layer-1 blockchain designed as a glo
 
 ## Overview
 
-At its core, Gurufin Chain leverages a Delegated Proof-of-Stake (DPoS) consensus model integrated with a Tendermint-class Byzantine Fault Tolerant (BFT) engine. This combination delivers deterministic finality, high throughput, and low latency, enabling the chain to process thousands of transactions per second with block times ranging between 1 to 3 seconds.
+At its core, Gurufin Chain leverages a Delegated Proof-of-Stake (DPoS) consensus model integrated with a Tendermint-class Byzantine Fault Tolerant (BFT) engine. This combination delivers deterministic finality, high throughput, and low latency, enabling the chain to process thousands of transactions per second with sub-second block times.
 
 The architecture is modular and extensible, facilitating seamless integration with other blockchains through Inter-Blockchain Communication (IBC) protocols and Ethereum Virtual Machine (EVM) compatibility layers. This design supports Gurufin Chain’s role as a neutral settlement layer for cross-border FX and DeFi applications.
 
@@ -32,7 +32,7 @@ The Tendermint BFT engine provides instant finality by achieving consensus among
 
 Gurufin Chain is engineered for high throughput and low latency to meet the demands of real-time FX settlements and DeFi operations.
 
-* **Block Time:** 1 to 3 seconds per block, balancing fast confirmation with network stability.
+* **Block Time:** Sub-second per block, balancing fast confirmation with network stability.
 * **Throughput:** Capable of processing transactions in the five-figure TPS (transactions per second) range, supporting large-scale institutional and retail activity.
 * **Finality:** Achieves deterministic finality within sub-second intervals after block proposal, eliminating uncertainty in transaction settlement.
 
@@ -76,7 +76,7 @@ This design ensures:
 
 ### 2. Block Time and Throughput
 
-Gurufin Chain targets a block time between 1 and 3 seconds, optimizing for fast confirmation while maintaining network stability. This rapid block production supports transaction throughput in the range of tens of thousands per second, sufficient for high-frequency FX trading and large-scale DeFi operations.
+Gurufin Chain targets a sub-second block time, optimizing for fast confirmation while maintaining network stability. This rapid block production supports transaction throughput in the range of tens of thousands per second, sufficient for high-frequency FX trading and large-scale DeFi operations.
 
 The deterministic finality achieved by Tendermint BFT eliminates the need for probabilistic confirmation, reducing settlement risk and enabling real-time financial workflows.
 
@@ -98,7 +98,7 @@ Modules such as the Guru-PEG fee equilibrium, hybrid AMM/RFQ execution fabric, o
 | Aspect               | Specification                                                                                  |
 | -------------------- | ---------------------------------------------------------------------------------------------- |
 | Consensus Mechanism  | Delegated Proof-of-Stake (DPoS) combined with Tendermint Byzantine Fault Tolerant (BFT) engine |
-| Block Time           | 1 to 3 seconds                                                                                 |
+| Block Time           | Sub-second                                                                                 |
 | Throughput           | Five-figure transactions per second (TPS)                                                      |
 | Finality             | Deterministic, sub-second finality                                                             |
 | Interoperability     | IBC-first architecture, EVM Gateway, GatewayGX module for non-IBC chains                       |

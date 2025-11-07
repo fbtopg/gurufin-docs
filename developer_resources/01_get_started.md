@@ -52,7 +52,7 @@ Store your mnemonic securely. You will use this wallet to deploy contracts and s
 
 ## Connecting to the Testnet
 
-Gurufin Chain operates a public testnet environment that mirrors mainnet features including fast block times (1-3 seconds), deterministic finality, and IBC interoperability.
+Gurufin Chain operates a public testnet environment that mirrors mainnet features including fast block times (sub-second), deterministic finality, and IBC interoperability.
 
 ### Configuring the CLI for Testnet
 

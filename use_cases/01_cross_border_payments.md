@@ -10,7 +10,7 @@ Gurufin Chain is a public Delegated Proof-of-Stake (DPoS) Layer-1 blockchain des
 
 ### Key Architectural Advantages
 
-- **Deterministic Sub-Second Finality:** Gurufin Chain achieves block times between 1-3 seconds with Byzantine Fault Tolerant (BFT) consensus, ensuring near-instant settlement finality critical for payment certainty.
+- **Deterministic Sub-Second Finality:** Gurufin Chain achieves sub-second block times with Byzantine Fault Tolerant (BFT) consensus, ensuring near-instant settlement finality critical for payment certainty.
 - **Fiat-Predictable and Low Fees:** The Guru-PEG (Price Equilibrium Governance) mechanism indexes gas fees to stable fiat values, providing predictable and retail-grade fee stability (e.g., ~$0.013 per L1 transfer), which significantly reduces transaction costs.
 - **Atomic Payment-versus-Payment (PvP) Settlement:** The chain supports atomic cross-chain settlements via Inter-Blockchain Communication (IBC), eliminating principal and bridge risk by ensuring simultaneous exchange of payment legs.
 - **Hybrid Execution Fabric:** Combines Automated Market Maker (AMM) models for retail/small trades with Request-for-Quote (RFQ) mechanisms for institutional/large trades, optimizing liquidity and minimizing slippage.
@@ -62,7 +62,7 @@ A multinational corporation can manage treasury operations by tokenizing fiat re
 | Benefit                          | Description                                                                                      |
 |---------------------------------|--------------------------------------------------------------------------------------------------|
 | **Cost Efficiency**              | Predictable, low transaction fees (~$0.013 per transfer) reduce operational costs significantly. |
-| **Speed and Finality**           | 1-3 second block times with deterministic sub-second finality enable near-instant settlement.    |
+| **Speed and Finality**           | Sub-second block times with deterministic sub-second finality enable near-instant settlement.    |
 | **Risk Mitigation**              | Atomic PvP settlement eliminates principal and bridge risk inherent in traditional systems.      |
 | **Deep Liquidity**               | Hybrid liquidity pools combine retail and institutional liquidity, minimizing slippage.          |
 | **Regulatory Compliance**        | Built-in KYC/AML, sanctions screening, and FATF Travel Rule metadata support ensure compliance.  |

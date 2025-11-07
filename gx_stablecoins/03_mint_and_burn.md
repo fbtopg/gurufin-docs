@@ -29,7 +29,7 @@ The mint and burn process is triggered by fiat movements detected via bank APIs.
 | 3    | **Quorum Authorization**: Multi-party validator quorum reviews and signs off on the mint request.                                | Licensed Validators (PoA) | Authorization signatures collected.                   |
 | 4    | **Idempotency Check**: System verifies if the mint request has been processed previously to avoid duplication.                   | GX Chain Module           | Duplicate requests rejected; unique requests proceed. |
 | 5    | **Mint Execution**: Upon quorum approval and idempotency validation, the mint transaction is executed on-chain.                  | GX Chain Validators       | Stablecoins minted and credited to user wallet.       |
-| 6    | **Finality Confirmation**: Deterministic finality ensures the mint transaction is irreversible and finalized within sub-seconds. | GX Chain Consensus Layer  | Mint transaction finalized and recorded.              |
+| 6    | **Finality Confirmation**: Deterministic finality ensures the mint transaction is irreversible and finalized within sub-second. | GX Chain Consensus Layer  | Mint transaction finalized and recorded.              |
 | 7    | **Fiat Redemption Request**: User initiates stablecoin redemption, triggering a burn request.                                    | User & GX Chain Gateway   | Burn request created and queued.                      |
 | 8    | **Quorum Authorization**: Validators review and approve the burn request based on compliance and reserve checks.                 | Licensed Validators (PoA) | Burn request authorized.                              |
 | 9    | **Idempotency Check**: System ensures the burn request is unique and not previously processed.                                   | GX Chain Module           | Duplicate burn requests rejected.                     |
@@ -65,7 +65,7 @@ Deterministic finality guarantees that once a mint or burn transaction is commit
 | Validator Review   | Licensed validators verify deposit authenticity and compliance.                         | PoA Validators          | Multi-signature quorum required.      |
 | Idempotency Check  | System checks if mint request ID is already processed.                                  | GX Chain Mint Module    | Prevents double minting.              |
 | Mint Execution     | Mint transaction is executed on-chain, crediting stablecoins to user wallet.            | GX Chain Validators     | Transaction broadcast and committed.  |
-| Finality           | Transaction reaches deterministic finality, confirming mint completion.                 | Tendermint Consensus    | Finality within 1-3 seconds.          |
+| Finality           | Transaction reaches deterministic finality, confirming mint completion.                 | Tendermint Consensus    | Sub-second finality.          |
 | Confirmation       | User wallet balance updated; event logged for audit and proof-of-reserves transparency. | GX Chain Ledger         | Real-time proof-of-reserves updated.  |
 
 ### Burning Process Flow
@@ -76,7 +76,7 @@ Deterministic finality guarantees that once a mint or burn transaction is commit
 | Validator Review  | Validators verify burn request compliance, reserve sufficiency, and user authorization. | PoA Validators            | Multi-signature quorum required.         |
 | Idempotency Check | System verifies burn request has not been processed before.                             | GX Chain Burn Module      | Prevents double burning.                 |
 | Burn Execution    | Stablecoins are burned on-chain, reducing circulating supply.                           | GX Chain Validators       | Transaction broadcast and committed.     |
-| Finality          | Burn transaction reaches deterministic finality, confirming token destruction.          | Tendermint Consensus      | Finality within 1-3 seconds.             |
+| Finality          | Burn transaction reaches deterministic finality, confirming token destruction.          | Tendermint Consensus      | Sub-second finality.             |
 | Fiat Release      | Bank API triggers fiat release to user’s bank account per redemption request.           | Bank API & Custodian Bank | Off-chain fiat movement completes cycle. |
 
 ***

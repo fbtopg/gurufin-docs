@@ -65,7 +65,7 @@ The following table summarizes the core technical components of the GX Stablecoi
 | Component                | Description                                                                                   |
 |--------------------------|-----------------------------------------------------------------------------------------------|
 | **Consensus**            | Permissioned Proof-of-Authority (PoA) with licensed validators bound to jurisdictional mandates. |
-| **Blockchain Framework** | Cosmos SDK with Tendermint Byzantine Fault Tolerant (BFT) consensus ensures fast finality (1-3 sec). |
+| **Blockchain Framework** | Cosmos SDK with Tendermint Byzantine Fault Tolerant (BFT) consensus ensures sub-second finality. |
 | **Reserve Backing**      | 100% fiat-backed reserves with live proof-of-reserves scanning; reserves include cash and capped ultra-short government bills. |
 | **Mint/Burn Automation** | Bank API integration with idempotent, multi-party quorum authorization for secure issuance/redemption. |
 | **Interoperability**     | IBC protocol for cross-chain atomic settlement; EVM gateway for Ethereum-compatible smart contract integration. |

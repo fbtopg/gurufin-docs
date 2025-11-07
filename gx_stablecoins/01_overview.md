@@ -34,7 +34,7 @@ The GX Stablecoin chains utilize a permissioned Proof-of-Authority (PoA) consens
 This consensus approach offers several advantages for stablecoin issuance:
 
 - **Regulatory Compliance:** Validators are vetted and licensed entities, ensuring that network operations comply with jurisdictional regulations.
-- **High Performance:** PoA enables fast block times (1-3 seconds) and deterministic finality, supporting high throughput and low latency transaction processing.
+- **High Performance:** PoA enables fast block times (sub-second) and deterministic finality, supporting high throughput and low latency transaction processing.
 - **Security and Trust:** Validator identities are known and accountable, reducing the risk of malicious behavior and enhancing network integrity.
 - **Governance Control:** The permissioned nature allows for governance policies that reflect local regulatory requirements and operational standards.
 

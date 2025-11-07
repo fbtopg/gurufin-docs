@@ -10,7 +10,7 @@ Gurufin Chain is a global on-chain FX and DeFi hub designed to serve as a neutra
 
 ### Tokenized Asset Settlement
 
-Institutions can utilize Gurufin Chain to settle tokenized securities with instant Delivery-versus-Payment (DvP) finality. The blockchain’s Tendermint-class Byzantine Fault Tolerant (BFT) consensus with Delegated Proof-of-Stake (DPoS) ensures transaction finality within sub-seconds and block times between 1 to 3 seconds, enabling near real-time settlement of tokenized assets.
+Institutions can utilize Gurufin Chain to settle tokenized securities with instant Delivery-versus-Payment (DvP) finality. The blockchain's Tendermint-class Byzantine Fault Tolerant (BFT) consensus with Delegated Proof-of-Stake (DPoS) ensures transaction finality within sub-seconds with sub-second block times, enabling near real-time settlement of tokenized assets.
 
 The platform supports sovereign stablecoins issued on the GX Stablecoin Chain network, each backed 1:1 by fiat reserves and governed by licensed validators under a Proof-of-Authority (PoA) consensus. This structure guarantees regulatory-grade transparency and compliance, essential for institutional trust.
 
@@ -52,7 +52,7 @@ Institutions can leverage the platform’s oracle network for real-time price fe
 | Feature               | Specification                             | Institutional Benefit                          |
 |-----------------------|-------------------------------------------|------------------------------------------------|
 | Consensus             | Tendermint-class BFT with DPoS            | High throughput and deterministic finality for instant settlement |
-| Block Time            | 1-3 seconds                              | Near real-time transaction processing          |
+| Block Time            | Sub-second                              | Near real-time transaction processing          |
 | Throughput            | Five-figure TPS range                    | Scalability to support institutional volumes   |
 | Finality              | Sub-second deterministic finality       | Eliminates settlement uncertainty               |
 

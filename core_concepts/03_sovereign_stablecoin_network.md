@@ -40,7 +40,7 @@ The network consists of multiple sovereign Layer-1 chains, each built on the Cos
 The GX Stablecoin chains employ a permissioned PoA consensus model, where validator nodes are operated by licensed and regulated entities such as banks, payment service providers, or financial institutions. This consensus approach offers several advantages:
 
 - **Regulatory Assurance**: Validators are subject to local jurisdictional oversight, ensuring adherence to compliance standards.
-- **High Throughput and Finality**: PoA combined with Tendermint BFT consensus delivers fast block times (1-3 seconds) and deterministic finality.
+- **High Throughput and Finality**: PoA combined with Tendermint BFT consensus delivers fast block times (sub-second) and deterministic finality.
 - **Security and Trust**: Validator identities and responsibilities are transparent and accountable, reducing risks of malicious behavior.
 - **Operational Stability**: Licensed validators maintain robust infrastructure and adhere to strict operational protocols.
 
@@ -48,7 +48,7 @@ The GX Stablecoin chains employ a permissioned PoA consensus model, where valida
 |-----------------------------|-------------------------------------------------------------------------------------------------|
 | **Validator Identity**       | Known, licensed entities with regulatory approval                                              |
 | **Consensus Algorithm**      | Tendermint BFT adapted for permissioned PoA                                                     |
-| **Block Time**               | 1-3 seconds                                                                                     |
+| **Block Time**               | Sub-second                                                                                     |
 | **Finality**                 | Deterministic, sub-second finality                                                             |
 | **Validator Responsibilities** | Transaction validation, block proposal, consensus participation                                |
 | **Governance**               | Validator onboarding and removal governed by jurisdictional rules                              |
