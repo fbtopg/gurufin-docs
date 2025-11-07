@@ -1,51 +1,30 @@
-flowchart TD
-    Start([👤 Retail User Initiates Swap])
+sequenceDiagram
+    actor User as Retail User
+    participant DApp
+    participant HybridPool as HybridStablePool
+    participant FeeCalc as Fee Calculator
+    participant FeeDistributor
     
-    Start --> Input["📝 Input Parameters<br/>• Direction: USGX → KRGX<br/>• Amount In: 1,000 USGX<br/>• Min Amount Out: 1,280,000 KRGX"]
+    User->>DApp: Initiate Swap<br/>1,000 USGX → KRGX<br/>minOut: 1,280,000 KRGX
+    DApp->>HybridPool: swap(1000, true, 1280000)
     
-    Input --> Verify
+    HybridPool->>HybridPool: 1. Verify User<br/>(Check rate limits)
     
-    Verify["✅ Step 1: User Verification<br/>Check user type via InstitutionalRegistry<br/>Verify rate limits"]
+    HybridPool->>FeeCalc: 2. calculateDynamicFee()
+    FeeCalc-->>HybridPool: 0.3% (balanced pool)
     
-    Verify --> CalcFee
+    HybridPool->>HybridPool: 3. Fee Deduction<br/>997 USGX after fee
     
-    CalcFee["💰 Step 2: Calculate Dynamic Fee<br/>Check pool imbalance<br/>Formula: Fee = Base × 1 + imbalance%<br/>Result: 0.3% (balanced pool)"]
+    HybridPool->>HybridPool: 4. AMM Calculation<br/>Δy = (y × Δx_fee) / (x + Δx_fee)<br/>Result: 1,286,710 KRGX
     
-    CalcFee --> Deduct
+    HybridPool->>HybridPool: 5. Slippage Check<br/>1,286,710 >= 1,280,000 ✓
     
-    Deduct["➖ Step 3: Fee Deduction<br/>1,000 USGX × 0.997 = 997 USGX"]
+    HybridPool->>HybridPool: 6. Update Reserves<br/>Update pool state
     
-    Deduct --> CalcOut
+    HybridPool->>FeeDistributor: Transfer 3 USGX fee
+    HybridPool->>User: 7. Transfer 1,286,710 KRGX
     
-    CalcOut["🔢 Step 4: Calculate Output AMM<br/>Formula: Δy = y × Δx_fee / x + Δx_fee<br/>Result: ~1,286,710 KRGX"]
+    HybridPool->>HybridPool: 8. Emit SwapComplete Event
     
-    CalcOut --> CheckSlip
-    
-    CheckSlip{⚠️ Step 5:<br/>Slippage Check<br/>1,286,710 >= 1,280,000?}
-    
-    CheckSlip -->|Yes| Update
-    CheckSlip -->|No| Revert[❌ Transaction Reverted<br/>Slippage too high]
-    
-    Update["📊 Step 6: Update State<br/>• Update pool reserves<br/>• Accumulate fees<br/>• Update imbalance state"]
-    
-    Update --> Transfer
-    
-    Transfer["💸 Step 7: Transfer Funds<br/>Send 1,286,710 KRGX to user<br/>Send 3 USGX fee to FeeDistributor"]
-    
-    Transfer --> Event
-    
-    Event["📢 Step 8: Emit Event<br/>Record transaction on-chain<br/>for transparency"]
-    
-    Event --> End([✅ Swap Complete])
-    Revert --> EndFail([❌ Swap Failed])
-    
-    style Start fill:#e3f2fd
-    style CalcFee fill:#fff9c4
-    style CalcOut fill:#b3e5fc
-    style CheckSlip fill:#ffccbc
-    style Update fill:#c8e6c9
-    style Transfer fill:#c8e6c9
-    style End fill:#81c784
-    style Revert fill:#ef9a9a
-    style EndFail fill:#ef9a9a
-
+    HybridPool-->>DApp: Swap Successful
+    DApp-->>User: Transaction Complete

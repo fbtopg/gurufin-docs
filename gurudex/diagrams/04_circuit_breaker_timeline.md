@@ -23,4 +23,3 @@ gantt
     Test Transactions         :t9, 09:50:00, 5m
     Phased Resumption         :t10, 09:55:00, 5m
     Full Operation            :done, t11, 10:00:00, 5s
-

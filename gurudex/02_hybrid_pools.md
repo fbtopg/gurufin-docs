@@ -101,8 +101,8 @@ graph LR
         SharedLiquidity[Combined Liquidity<br/>Maximum Depth]
     end
     
-    RetailUsers[👥 Retail Users] -->|Provide Liquidity| RetailSection
-    InstUsers[🏦 Institutional Users] -->|Provide Liquidity| InstSection
+    RetailUsers[Retail Users] -->|Provide Liquidity| RetailSection
+    InstUsers[Institutional Users] -->|Provide Liquidity| InstSection
     
     RetailSection -.Internal Accounting.-> SharedLiquidity
     InstSection -.Internal Accounting.-> SharedLiquidity
@@ -110,12 +110,6 @@ graph LR
     SharedLiquidity -->|Deep Liquidity| Swaps[Low Slippage Swaps]
     
     RetailSection -.Privacy Protected.-> InstSection
-    
-    style HybridPool fill:#f5f5f5
-    style RetailSection fill:#e3f2fd
-    style InstSection fill:#fff3e0
-    style SharedLiquidity fill:#c8e6c9
-    style Swaps fill:#81c784
 ```
 
 This internal separation ensures that while liquidity is combined for efficiency, the privacy and regulatory requirements of different user classes are respected and enforced.
@@ -147,8 +141,8 @@ flowchart TB
         end
     end
     
-    RetailUser[👤 Retail User] -->|Swap Request| AMM
-    InstUser[🏦 Institution] -->|Swap Request| Oracle
+    RetailUser[Retail User] -->|Swap Request| AMM
+    InstUser[Institution] -->|Swap Request| Oracle
     
     AMM --> Reserves
     Oracle --> Reserves
@@ -158,12 +152,6 @@ flowchart TB
     
     RetailTrack -->|Fee Distribution| RetailLP[Retail LPs]
     InstTrack -->|Fee Distribution| InstLP[Institutional LPs]
-    
-    style Pool fill:#f5f5f5
-    style AMM fill:#e3f2fd
-    style Oracle fill:#fff3e0
-    style Reserves fill:#c8e6c9
-    style Tracking fill:#fff9c4
 ```
 
 ***

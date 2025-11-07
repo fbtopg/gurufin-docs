@@ -19,21 +19,23 @@ When a swap is initiated, the `HybridStablePool` contract executes the following
 ### Swap Flow Diagram
 
 ```mermaid
-flowchart TD
-    User([User Submits Swap]) --> Check{Check User Type}
+sequenceDiagram
+    actor User
+    participant HybridPool as HybridStablePool
+    participant Registry as InstitutionalRegistry
     
-    Check -->|Retail| RetailPath["Execute _swapRetail<br/>• AMM Algorithm<br/>• Dynamic Fees<br/>• Pool-based pricing"]
-    Check -->|Institutional| InstPath["Execute _swapInstitutional<br/>• Oracle Algorithm<br/>• Fixed Fees<br/>• Real-time rates"]
+    User->>HybridPool: swap(amountIn, isBaseToQuote)
+    HybridPool->>Registry: getUserType(user)
     
-    RetailPath --> Complete1[✅ Swap Complete]
-    InstPath --> Complete2[✅ Swap Complete]
-    
-    style User fill:#e3f2fd
-    style Check fill:#fff9c4
-    style RetailPath fill:#b3e5fc
-    style InstPath fill:#fff3e0
-    style Complete1 fill:#81c784
-    style Complete2 fill:#81c784
+    alt Retail User
+        Registry-->>HybridPool: UserType.RETAIL
+        HybridPool->>HybridPool: _swapRetail()<br/>• AMM Algorithm<br/>• Dynamic Fees<br/>• Pool-based pricing
+        HybridPool-->>User: Swap Complete
+    else Institutional User
+        Registry-->>HybridPool: UserType.INSTITUTIONAL
+        HybridPool->>HybridPool: _swapInstitutional()<br/>• Oracle Algorithm<br/>• Fixed Fees<br/>• Real-time rates
+        HybridPool-->>User: Swap Complete
+    end
 ```
 
 ```solidity
@@ -82,43 +84,30 @@ Unlike retail users, institutional users must undergo separate screening and reg
 ### Onboarding Workflow
 
 ```mermaid
-flowchart TD
-    Start([New Institution]) --> Step1
+sequenceDiagram
+    actor Institution
+    participant Contract as Smart Contract
+    participant Team as Operations Team
+    participant Operator
     
-    Step1["📝 Step 1: Basic Information Registration<br/>Institution → registerInstitution()<br/>Status: PENDING"]
+    Institution->>Contract: 1. registerInstitution()<br/>(name, address, contact)
+    Contract-->>Institution: Status: PENDING
     
-    Step1 --> Step2
+    Note over Team: 2. Off-chain KYC/AML Verification<br/>• Corporate registration<br/>• Identity verification<br/>• Fund source verification<br/>• Compliance check
     
-    Step2["🔍 Step 2: Off-chain KYC/AML Verification<br/>FXSwap Operations Team<br/>• Verify corporate registration<br/>• Verify representative identity<br/>• Verify fund sources<br/>• Check regulatory compliance"]
-    
-    Step2 --> Decision{Verification<br/>Passed?}
-    
-    Decision -->|No| Rejected[❌ Registration Rejected]
-    Decision -->|Yes| Step3
-    
-    Step3["✅ Step 3: Institution Activation<br/>Operator → activateInstitution()<br/>• Set transaction limits<br/>• Set custom fee rate<br/>• Set max price deviation<br/>• Set data freshness requirements<br/>Status: ACTIVE"]
-    
-    Step3 --> Step4
-    
-    Step4["🔑 Step 4: Access Authorization<br/>Operator → allowCoinForInstitution()<br/>Operator → authorizePoolForInstitution()<br/>• Specify tradeable coins<br/>• Grant pool access"]
-    
-    Step4 --> Step5
-    
-    Step5["🎉 Step 5: Trading Enabled<br/>Institution can now perform swaps"]
-    
-    Step5 --> End([Active Institution])
-    Rejected --> End2([Rejected])
-    
-    style Start fill:#e8f5e9
-    style Step1 fill:#fff9c4
-    style Step2 fill:#fff3e0
-    style Decision fill:#ffccbc
-    style Step3 fill:#c8e6c9
-    style Step4 fill:#b3e5fc
-    style Step5 fill:#c5e1a5
-    style End fill:#a5d6a7
-    style Rejected fill:#ef9a9a
-    style End2 fill:#ef9a9a
+    alt Verification Passed
+        Team->>Operator: Approve institution
+        Operator->>Contract: 3. activateInstitution()<br/>(limits, fees, parameters)
+        Contract-->>Institution: Status: ACTIVE
+        
+        Operator->>Contract: 4. allowCoinForInstitution()<br/>(institution, coins)
+        Operator->>Contract: 4. authorizePoolForInstitution()<br/>(institution, pools)
+        Contract-->>Institution: Access Granted
+        
+        Note over Institution: 5. Trading Enabled<br/>Can now perform swaps
+    else Verification Failed
+        Team-->>Institution: Registration Rejected
+    end
 ```
 
 ### Detailed Explanation of Each Step

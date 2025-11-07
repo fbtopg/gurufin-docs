@@ -6,11 +6,11 @@ GuruDex는 플랫폼과 사용자 자산을 보호하기 위해 **다층적인 4
 
 ```mermaid
 flowchart TD
-    Threat[⚠️ 환율 변동성<br/>& 시장 위협]
+    Threat[환율 변동성<br/>& 시장 위협]
     
     Threat --> Layer1
     
-    subgraph Layer1["🛡️ Layer 1: 환율 변동 준비금"]
+    subgraph Layer1["Layer 1: 환율 변동 준비금"]
         L1A["보험 기금: 유동성의 5-10%"]
         L1B["이원화 관리:<br/>• 일반 준비금 3-5%<br/>• 기관 준비금 5-10%"]
         L1C["거래 수수료로부터<br/>자동 재충전"]
@@ -19,7 +19,7 @@ flowchart TD
     
     Layer1 --> |손실 보전| Layer2
     
-    subgraph Layer2["⚖️ Layer 2: 동적 수수료 조정"]
+    subgraph Layer2["Layer 2: 동적 수수료 조정"]
         L2A["풀 상태 모니터링:<br/>• 사용률<br/>• 변동성 레벨"]
         L2B["동적 수수료 계산:<br/>Fee = Base × 1 + Coef_util + Coef_vol"]
         L2C["수수료 범위:<br/>0.30% → 0.63% 위기 시"]
@@ -28,7 +28,7 @@ flowchart TD
     
     Layer2 --> |거래 억제| Layer3
     
-    subgraph Layer3["🔒 Layer 3: 제한 및 검증"]
+    subgraph Layer3["Layer 3: 제한 및 검증"]
         L3A["스왑 크기 제한:<br/>거래당 최대 5%"]
         L3B["오라클 3중 검증:<br/>• 시간 < 5분<br/>• 편차 < 2%<br/>• 신뢰도 > 95%"]
         L3C["기관별<br/>일일 한도"]
@@ -37,7 +37,7 @@ flowchart TD
     
     Layer3 --> |조작 차단| Layer4
     
-    subgraph Layer4["🚨 Layer 4: 서킷 브레이커"]
+    subgraph Layer4["Layer 4: 서킷 브레이커"]
         L4A{위협<br/>감지?}
         L4B["Level 1: 경고<br/>대규모 거래 제한"]
         L4C["Level 2: 부분 중단<br/>특정 풀 정지"]
@@ -47,14 +47,7 @@ flowchart TD
         L4A -->|치명적| L4D
     end
     
-    Layer4 --> Protected[✅ 시스템 보호<br/>자산 안전]
-    
-    style Threat fill:#ffcdd2
-    style Layer1 fill:#c8e6c9
-    style Layer2 fill:#b3e5fc
-    style Layer3 fill:#fff9c4
-    style Layer4 fill:#ffccbc
-    style Protected fill:#a5d6a7
+    Layer4 --> Protected[시스템 보호<br/>자산 안전]
 ```
 
 ***
@@ -265,46 +258,31 @@ if (oracleFailureCount > MAX_ORACLE_FAILURES || priceDiscrepancy > MAX_DISCREPAN
 ### 서킷 브레이커 작동 프로세스
 
 ```mermaid
-flowchart TD
-    Start([🚨 위험 이벤트 발생])
+sequenceDiagram
+    participant System as 모니터링 시스템
+    participant CB as 서킷 브레이커
+    participant Ops as 운영팀
+    participant Pool as 거래 풀
     
-    Start --> Monitor
+    Note over System: 위험 이벤트 감지
+    System->>System: 1. 자동 모니터링<br/>• 가격 변동성 > 5%<br/>• 유동성 급감 > 20%<br/>• 의심스러운 패턴<br/>• 오라클 실패
     
-    Monitor["👁️ Step 1: 자동 모니터링<br/>시스템이 이상 징후 탐지:<br/>• 가격 변동성 > 5%<br/>• 유동성 급감 > 20%<br/>• 의심스러운 거래 패턴<br/>• 오라클 실패"]
+    System->>CB: 알림 발동
     
-    Monitor --> Trigger
+    CB->>Pool: 2. 작업 중단<br/>• 신규 스왑 차단<br/>• 유동성 변경 중지<br/>• 기관 거래 중단
+    Pool-->>CB: 거래 중단됨
     
-    Trigger["⚡ Step 2: 서킷 브레이커 발동<br/>즉시 작업 중단:<br/>• 신규 스왑 차단<br/>• 유동성 변경 중지<br/>• 기관 거래 중단"]
+    CB->>Ops: 3. 긴급 알림<br/>• Slack / Email / SMS<br/>• 위험 시나리오 상세<br/>• 대시보드 활성화
     
-    Trigger --> Alert
+    Ops->>Ops: 4. 상황 분석<br/>• 공격 벡터 식별<br/>• 피해 범위 평가<br/>• 대응 방안 결정
     
-    Alert["📢 Step 3: 긴급 알림<br/>운영팀에 통보:<br/>• Slack / Email / SMS<br/>• 위험 시나리오 상세<br/>• 시스템 상태 대시보드"]
-    
-    Alert --> Analyze
-    
-    Analyze["🔍 Step 4: 상황 분석<br/>팀이 조사:<br/>• 공격 벡터 식별<br/>• 피해 범위 평가<br/>• 대응 방안 결정"]
-    
-    Analyze --> Decision{문제<br/>해결?}
-    
-    Decision -->|아니오| Escalate["⚠️ 대응 확대<br/>• 보안팀 투입<br/>• 업그레이드 고려<br/>• 복구 계획 준비"]
-    
-    Escalate --> Analyze
-    
-    Decision -->|예| Resume
-    
-    Resume["✅ Step 5: 시스템 복구<br/>단계적 재개:<br/>• 테스트 거래<br/>• 단계적 재개<br/>• 모니터링 강화"]
-    
-    Resume --> End([✅ 시스템 운영 중])
-    
-    style Start fill:#ffcdd2
-    style Monitor fill:#fff9c4
-    style Trigger fill:#ef5350,color:#fff
-    style Alert fill:#ff9800,color:#fff
-    style Analyze fill:#b3e5fc
-    style Decision fill:#ffccbc
-    style Escalate fill:#ff9800
-    style Resume fill:#c8e6c9
-    style End fill:#81c784
+    alt 문제 해결
+        Ops->>CB: 재개 승인
+        CB->>Pool: 5. 단계적 복구<br/>• 테스트 거래<br/>• 단계적 재개<br/>• 모니터링 강화
+        Pool-->>System: 시스템 운영 중
+    else 문제 지속
+        Ops->>Ops: 대응 확대<br/>• 보안팀 투입<br/>• 업그레이드 준비
+    end
 ```
 
 ### 서킷 브레이커 레벨
@@ -380,7 +358,7 @@ GuruDex는 위협의 심각도에 따라 **3단계 서킷 브레이커**를 운�
 
 ```mermaid
 flowchart LR
-    subgraph L1["Layer 1<br/>💰 준비금"]
+    subgraph L1["Layer 1: 준비금"]
         direction TB
         R1[5-10% 유동성<br/>예비 확보]
         R2[이원화 준비금<br/>일반 + 기관]
@@ -388,7 +366,7 @@ flowchart LR
         R1 --> R2 --> R3
     end
     
-    subgraph L2["Layer 2<br/>⚖️ 동적 수수료"]
+    subgraph L2["Layer 2: 동적 수수료"]
         direction TB
         F1[사용률<br/>모니터링]
         F2[수수료 조정<br/>0.3% - 0.63%]
@@ -396,7 +374,7 @@ flowchart LR
         F1 --> F2 --> F3
     end
     
-    subgraph L3["Layer 3<br/>🔒 검증"]
+    subgraph L3["Layer 3: 검증"]
         direction TB
         V1[크기 제한<br/>최대 5%]
         V2[3중 검증<br/>오라클 데이터]
@@ -404,7 +382,7 @@ flowchart LR
         V1 --> V2 --> V3
     end
     
-    subgraph L4["Layer 4<br/>🚨 서킷 브레이커"]
+    subgraph L4["Layer 4: 서킷 브레이커"]
         direction TB
         C1[이상<br/>탐지]
         C2[자동<br/>중단]
@@ -413,11 +391,6 @@ flowchart LR
     end
     
     L1 ==> L2 ==> L3 ==> L4
-    
-    style L1 fill:#c8e6c9
-    style L2 fill:#b3e5fc
-    style L3 fill:#fff9c4
-    style L4 fill:#ffccbc
 ```
 
 ***

@@ -38,4 +38,3 @@ stateDiagram-v2
         Permanently Banned
         All operations forbidden
     end note
-

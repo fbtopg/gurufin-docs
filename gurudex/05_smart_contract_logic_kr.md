@@ -19,21 +19,23 @@ GuruDex의 핵심은 유연성, 보안 및 효율성을 위해 설계된 모듈�
 ### 스왑 흐름 다이어그램
 
 ```mermaid
-flowchart TD
-    User([사용자가 스왑 제출]) --> Check{사용자 유형 확인}
+sequenceDiagram
+    actor User as 사용자
+    participant HybridPool as HybridStablePool
+    participant Registry as InstitutionalRegistry
     
-    Check -->|일반| RetailPath["_swapRetail 실행<br/>• AMM 알고리즘<br/>• 동적 수수료<br/>• 풀 기반 가격"]
-    Check -->|기관| InstPath["_swapInstitutional 실행<br/>• 오라클 알고리즘<br/>• 고정 수수료<br/>• 실시간 환율"]
+    User->>HybridPool: swap(amountIn, isBaseToQuote)
+    HybridPool->>Registry: getUserType(user)
     
-    RetailPath --> Complete1[✅ 스왑 완료]
-    InstPath --> Complete2[✅ 스왑 완료]
-    
-    style User fill:#e3f2fd
-    style Check fill:#fff9c4
-    style RetailPath fill:#b3e5fc
-    style InstPath fill:#fff3e0
-    style Complete1 fill:#81c784
-    style Complete2 fill:#81c784
+    alt 일반 사용자
+        Registry-->>HybridPool: UserType.RETAIL
+        HybridPool->>HybridPool: _swapRetail()<br/>• AMM 알고리즘<br/>• 동적 수수료<br/>• 풀 기반 가격
+        HybridPool-->>User: 스왑 완료
+    else 기관 사용자
+        Registry-->>HybridPool: UserType.INSTITUTIONAL
+        HybridPool->>HybridPool: _swapInstitutional()<br/>• 오라클 알고리즘<br/>• 고정 수수료<br/>• 실시간 환율
+        HybridPool-->>User: 스왑 완료
+    end
 ```
 
 ```solidity
@@ -82,43 +84,30 @@ function swap(address user, uint256 amountIn, bool isBaseToQuote) external {
 ### 온보딩 워크플로
 
 ```mermaid
-flowchart TD
-    Start([신규 기관]) --> Step1
+sequenceDiagram
+    actor Institution as 기관
+    participant Contract as 스마트 컨트랙트
+    participant Team as 운영팀
+    participant Operator as 운영자
     
-    Step1["📝 Step 1: 기본 정보 등록<br/>Institution → registerInstitution()<br/>Status: PENDING"]
+    Institution->>Contract: 1. registerInstitution()<br/>(이름, 주소, 연락처)
+    Contract-->>Institution: Status: PENDING
     
-    Step1 --> Step2
+    Note over Team: 2. 오프체인 KYC/AML 검증<br/>• 법인 등록 증명서 확인<br/>• 신원 확인<br/>• 자금 출처 검증<br/>• 규제 준수 확인
     
-    Step2["🔍 Step 2: 오프체인 KYC/AML 검증<br/>FXSwap 운영팀<br/>• 법인 등록 증명서 확인<br/>• 대표자 신원 확인<br/>• 자금 출처 검증<br/>• 규제 준수 여부 확인"]
-    
-    Step2 --> Decision{검증<br/>통과?}
-    
-    Decision -->|아니오| Rejected[❌ 등록 거부]
-    Decision -->|예| Step3
-    
-    Step3["✅ Step 3: 기관 활성화 및 파라미터 설정<br/>Operator → activateInstitution()<br/>• 거래 한도 설정<br/>• 맞춤형 수수료율 설정<br/>• 최대 가격 편차 설정<br/>• 데이터 신선도 요구사항 설정<br/>Status: ACTIVE"]
-    
-    Step3 --> Step4
-    
-    Step4["🔑 Step 4: 코인 및 풀 접근 권한 부여<br/>Operator → allowCoinForInstitution()<br/>Operator → authorizePoolForInstitution()<br/>• 거래 가능한 코인 지정<br/>• 풀 접근 권한 부여"]
-    
-    Step4 --> Step5
-    
-    Step5["🎉 Step 5: 거래 개시 가능<br/>기관이 스왑을 수행할 수 있습니다"]
-    
-    Step5 --> End([활성 기관])
-    Rejected --> End2([거부됨])
-    
-    style Start fill:#e8f5e9
-    style Step1 fill:#fff9c4
-    style Step2 fill:#fff3e0
-    style Decision fill:#ffccbc
-    style Step3 fill:#c8e6c9
-    style Step4 fill:#b3e5fc
-    style Step5 fill:#c5e1a5
-    style End fill:#a5d6a7
-    style Rejected fill:#ef9a9a
-    style End2 fill:#ef9a9a
+    alt 검증 통과
+        Team->>Operator: 기관 승인
+        Operator->>Contract: 3. activateInstitution()<br/>(한도, 수수료, 파라미터)
+        Contract-->>Institution: Status: ACTIVE
+        
+        Operator->>Contract: 4. allowCoinForInstitution()<br/>(기관, 코인)
+        Operator->>Contract: 4. authorizePoolForInstitution()<br/>(기관, 풀)
+        Contract-->>Institution: 접근 권한 부여
+        
+        Note over Institution: 5. 거래 개시 가능<br/>스왑을 수행할 수 있습니다
+    else 검증 실패
+        Team-->>Institution: 등록 거부
+    end
 ```
 
 ### 각 단계별 상세 설명

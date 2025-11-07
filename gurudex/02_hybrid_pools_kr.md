@@ -100,8 +100,8 @@ graph LR
         SharedLiquidity[통합 유동성<br/>최대 깊이]
     end
     
-    RetailUsers[👥 일반 사용자] -->|유동성 공급| RetailSection
-    InstUsers[🏦 기관 사용자] -->|유동성 공급| InstSection
+    RetailUsers[일반 사용자] -->|유동성 공급| RetailSection
+    InstUsers[기관 사용자] -->|유동성 공급| InstSection
     
     RetailSection -.내부 회계.-> SharedLiquidity
     InstSection -.내부 회계.-> SharedLiquidity
@@ -109,12 +109,6 @@ graph LR
     SharedLiquidity -->|깊은 유동성| Swaps[낮은 슬리피지 스왑]
     
     RetailSection -.프라이버시 보호.-> InstSection
-    
-    style HybridPool fill:#f5f5f5
-    style RetailSection fill:#e3f2fd
-    style InstSection fill:#fff3e0
-    style SharedLiquidity fill:#c8e6c9
-    style Swaps fill:#81c784
 ```
 
 이 내부 분리는 효율성을 위해 유동성이 결합되는 동안 서로 다른 사용자 클래스의 프라이버시 및 규제 요구 사항이 존중되고 시행되도록 보장합니다.
@@ -146,8 +140,8 @@ flowchart TB
         end
     end
     
-    RetailUser[👤 일반 사용자] -->|스왑 요청| AMM
-    InstUser[🏦 기관] -->|스왑 요청| Oracle
+    RetailUser[일반 사용자] -->|스왑 요청| AMM
+    InstUser[기관] -->|스왑 요청| Oracle
     
     AMM --> Reserves
     Oracle --> Reserves
@@ -157,12 +151,6 @@ flowchart TB
     
     RetailTrack -->|수수료 분배| RetailLP[소매 LP]
     InstTrack -->|수수료 분배| InstLP[기관 LP]
-    
-    style Pool fill:#f5f5f5
-    style AMM fill:#e3f2fd
-    style Oracle fill:#fff3e0
-    style Reserves fill:#c8e6c9
-    style Tracking fill:#fff9c4
 ```
 
 ***

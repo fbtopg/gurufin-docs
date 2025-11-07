@@ -6,11 +6,11 @@ GuruDex has established a **multi-layered 4-layer defense strategy** to protect 
 
 ```mermaid
 flowchart TD
-    Threat[⚠️ Exchange Rate Volatility<br/>& Market Threats]
+    Threat[Exchange Rate Volatility<br/>& Market Threats]
     
     Threat --> Layer1
     
-    subgraph Layer1["🛡️ Layer 1: Exchange Rate Risk Reserve"]
+    subgraph Layer1["Layer 1: Exchange Rate Risk Reserve"]
         L1A["Insurance Fund: 5-10% of liquidity"]
         L1B["Dual Management:<br/>• Retail Reserve 3-5%<br/>• Institutional Reserve 5-10%"]
         L1C["Auto-replenishment<br/>from trading fees"]
@@ -19,7 +19,7 @@ flowchart TD
     
     Layer1 --> |Loss Compensated| Layer2
     
-    subgraph Layer2["⚖️ Layer 2: Dynamic Fee Adjustment"]
+    subgraph Layer2["Layer 2: Dynamic Fee Adjustment"]
         L2A["Monitor Pool State:<br/>• Utilization Rate<br/>• Volatility Level"]
         L2B["Calculate Dynamic Fee:<br/>Fee = Base × 1 + Coef_util + Coef_vol"]
         L2C["Fee Range:<br/>0.30% → 0.63% in crisis"]
@@ -28,7 +28,7 @@ flowchart TD
     
     Layer2 --> |Trading Suppressed| Layer3
     
-    subgraph Layer3["🔒 Layer 3: Limits & Validation"]
+    subgraph Layer3["Layer 3: Limits & Validation"]
         L3A["Swap Size Limits:<br/>Max 5% of pool per tx"]
         L3B["Oracle Triple Validation:<br/>• Time < 5 min<br/>• Deviation < 2%<br/>• Confidence > 95%"]
         L3C["Daily Limits<br/>per Institution"]
@@ -37,7 +37,7 @@ flowchart TD
     
     Layer3 --> |Manipulation Blocked| Layer4
     
-    subgraph Layer4["🚨 Layer 4: Circuit Breaker"]
+    subgraph Layer4["Layer 4: Circuit Breaker"]
         L4A{Threat<br/>Detected?}
         L4B["Level 1: Warning<br/>Limit large trades"]
         L4C["Level 2: Partial Halt<br/>Stop specific pool"]
@@ -47,14 +47,7 @@ flowchart TD
         L4A -->|Critical| L4D
     end
     
-    Layer4 --> Protected[✅ System Protected<br/>Assets Safe]
-    
-    style Threat fill:#ffcdd2
-    style Layer1 fill:#c8e6c9
-    style Layer2 fill:#b3e5fc
-    style Layer3 fill:#fff9c4
-    style Layer4 fill:#ffccbc
-    style Protected fill:#a5d6a7
+    Layer4 --> Protected[System Protected<br/>Assets Safe]
 ```
 
 ***
@@ -265,46 +258,31 @@ if (oracleFailureCount > MAX_ORACLE_FAILURES || priceDiscrepancy > MAX_DISCREPAN
 ### Circuit Breaker Operation Process
 
 ```mermaid
-flowchart TD
-    Start([🚨 Risk Event Occurs])
+sequenceDiagram
+    participant System as Monitoring System
+    participant CB as Circuit Breaker
+    participant Ops as Operations Team
+    participant Pool as Trading Pool
     
-    Start --> Monitor
+    Note over System: Risk Event Detected
+    System->>System: 1. Automated Monitoring<br/>• Price volatility > 5%<br/>• Liquidity drop > 20%<br/>• Suspicious patterns<br/>• Oracle failures
     
-    Monitor["👁️ Step 1: Automated Monitoring<br/>System detects anomaly:<br/>• Price volatility > 5%<br/>• Liquidity drop > 20%<br/>• Suspicious tx pattern<br/>• Oracle failures"]
+    System->>CB: Trigger Alert
     
-    Monitor --> Trigger
+    CB->>Pool: 2. Halt Operations<br/>• Block new swaps<br/>• Suspend liquidity changes<br/>• Halt institutional trading
+    Pool-->>CB: Trading Suspended
     
-    Trigger["⚡ Step 2: Circuit Breaker Triggered<br/>Immediately halt operations:<br/>• Block new swaps<br/>• Suspend liquidity changes<br/>• Halt institutional trading"]
+    CB->>Ops: 3. Emergency Alert<br/>• Slack / Email / SMS<br/>• Risk scenario details<br/>• Dashboard activated
     
-    Trigger --> Alert
+    Ops->>Ops: 4. Situation Analysis<br/>• Identify attack vector<br/>• Assess damage scope<br/>• Determine response
     
-    Alert["📢 Step 3: Emergency Alert<br/>Notify operations team:<br/>• Slack / Email / SMS<br/>• Risk scenario details<br/>• System status dashboard"]
-    
-    Alert --> Analyze
-    
-    Analyze["🔍 Step 4: Situation Analysis<br/>Team investigates:<br/>• Identify attack vector<br/>• Assess damage scope<br/>• Determine response"]
-    
-    Analyze --> Decision{Issue<br/>Resolved?}
-    
-    Decision -->|No| Escalate["⚠️ Escalate Response<br/>• Engage security team<br/>• Consider upgrades<br/>• Prepare recovery plan"]
-    
-    Escalate --> Analyze
-    
-    Decision -->|Yes| Resume
-    
-    Resume["✅ Step 5: System Recovery<br/>Gradually resume:<br/>• Test transactions<br/>• Phased resumption<br/>• Enhanced monitoring"]
-    
-    Resume --> End([✅ System Operational])
-    
-    style Start fill:#ffcdd2
-    style Monitor fill:#fff9c4
-    style Trigger fill:#ef5350,color:#fff
-    style Alert fill:#ff9800,color:#fff
-    style Analyze fill:#b3e5fc
-    style Decision fill:#ffccbc
-    style Escalate fill:#ff9800
-    style Resume fill:#c8e6c9
-    style End fill:#81c784
+    alt Issue Resolved
+        Ops->>CB: Approve Resume
+        CB->>Pool: 5. Gradual Recovery<br/>• Test transactions<br/>• Phased resumption<br/>• Enhanced monitoring
+        Pool-->>System: System Operational
+    else Issue Persists
+        Ops->>Ops: Escalate Response<br/>• Engage security team<br/>• Prepare upgrades
+    end
 ```
 
 ### Circuit Breaker Levels
@@ -380,7 +358,7 @@ GuruDex operates a **3-tier circuit breaker** based on threat severity:
 
 ```mermaid
 flowchart LR
-    subgraph L1["Layer 1<br/>💰 Reserve Fund"]
+    subgraph L1["Layer 1: Reserve Fund"]
         direction TB
         R1[5-10% Liquidity<br/>Reserved]
         R2[Dual Reserves<br/>Retail + Institutional]
@@ -388,7 +366,7 @@ flowchart LR
         R1 --> R2 --> R3
     end
     
-    subgraph L2["Layer 2<br/>⚖️ Dynamic Fees"]
+    subgraph L2["Layer 2: Dynamic Fees"]
         direction TB
         F1[Monitor<br/>Utilization]
         F2[Adjust Fees<br/>0.3% - 0.63%]
@@ -396,7 +374,7 @@ flowchart LR
         F1 --> F2 --> F3
     end
     
-    subgraph L3["Layer 3<br/>🔒 Validation"]
+    subgraph L3["Layer 3: Validation"]
         direction TB
         V1[Size Limits<br/>Max 5%]
         V2[Triple Check<br/>Oracle Data]
@@ -404,7 +382,7 @@ flowchart LR
         V1 --> V2 --> V3
     end
     
-    subgraph L4["Layer 4<br/>🚨 Circuit Breaker"]
+    subgraph L4["Layer 4: Circuit Breaker"]
         direction TB
         C1[Detect<br/>Anomalies]
         C2[Auto Halt<br/>Trading]
@@ -413,11 +391,6 @@ flowchart LR
     end
     
     L1 ==> L2 ==> L3 ==> L4
-    
-    style L1 fill:#c8e6c9
-    style L2 fill:#b3e5fc
-    style L3 fill:#fff9c4
-    style L4 fill:#ffccbc
 ```
 
 ***

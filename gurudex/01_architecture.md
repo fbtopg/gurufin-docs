@@ -56,12 +56,6 @@ graph TD
     C5 --> C8
     C5 --> C9
     C5 --> C10
-    
-    style Frontend fill:#e1f5ff
-    style ServerSide fill:#fff4e1
-    style SmartContract fill:#f0f0f0
-    style C1 fill:#ffcccc
-    style C5 fill:#ccffcc
 ```
 
 **Frontend Layer**
@@ -172,11 +166,6 @@ flowchart TB
     PriceOracle -.Price Data.-> FXSwapMaster
     
     FXSwapMaster -->|Swap Execution| Pools
-    
-    style FXSwapMaster fill:#ffcccc
-    style PoolFactory fill:#ccffcc
-    style InstitutionalRegistry fill:#fff9c4
-    style PriceOracle fill:#b3e5fc
 ```
 
 * **FXSwapMaster** acts as the control plane, coordinating pool creation and swap execution.
