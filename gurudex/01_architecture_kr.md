@@ -1,6 +1,6 @@
 # 아키텍처
 
-GuruDex 플랫폼은 높은 효율성, 유동성 및 규정 준수로 소매 및 기관 사용자 모두에게 서비스를 제공하도록 설계된 정교한 탈중앙화 외환(FX) 스왑 시스템입니다. Gurufin Chain 위에 구축되고 GX Stablecoin 생태계를 활용하여 GuruDex는 주권 스테이블코인 간의 원활한 FX 스왑을 제공하기 위해 고급 스마트 계약 구성 요소를 통합합니다. 이 페이지는 핵심 스마트 계약인 **FXSwapMaster**, **HybridStablePool**, **PriceOracle** 및 **InstitutionalRegistry**에 대한 포괄적인 개요를 제공하고 GuruDex의 고유한 하이브리드 유동성 및 듀얼 알고리즘 실행 모델을 가능하게 하는 아키텍처 원칙을 강조하는 전체 시스템 설계를 설명합니다.
+GuruDex 플랫폼은 높은 효율성, 유동성 및 규정 준수로 소매 및 기관 사용자 모두에게 서비스를 제공하도록 설계된 정교한 탈중앙화 외환(FX) 스왑 시스템입니다. Gurufin Chain을 위해 설계되었으며 GX Stablecoin 생태계를 활용할 계획으로, GuruDex는 주권 스테이블코인 간의 원활한 FX 스왑을 제공하기 위해 고급 스마트 계약 구성 요소를 통합할 것입니다. 이 페이지는 핵심 스마트 계약인 **FXSwapMaster**, **HybridStablePool**, **PriceOracle** 및 **InstitutionalRegistry**에 대한 포괄적인 개요를 제공하고 GuruDex의 고유한 하이브리드 유동성 및 듀얼 알고리즘 실행 모델을 가능하게 하는 아키텍처 원칙을 강조하는 전체 시스템 설계를 설명합니다.
 
 ***
 
@@ -16,28 +16,28 @@ GuruDex는 온체인의 탈중앙성과 투명성을 유지하면서도 오프�
 
 ```mermaid
 graph TD
-    subgraph Frontend["Frontend Layer"]
-        A1[User DApp<br/>Web3 Interface]
-        A2[Admin Tool<br/>Operator Panel]
+    subgraph Frontend["프론트엔드 계층"]
+        A1[사용자 DApp<br/>Web3 인터페이스]
+        A2[관리자 도구<br/>운영자 패널]
     end
     
-    subgraph ServerSide["Server Side Layer"]
+    subgraph ServerSide["서버 사이드 계층"]
         B1[KYC/AML 검증]
         B2[실시간 환율 조회<br/>외부 API]
         B3[거래 승인 및<br/>파라미터 생성]
-        B4[오라클 가격 피드<br/>Reporter 역할]
+        B4[오라클 가격 피드<br/>리포터 역할]
     end
     
-    subgraph SmartContract["Smart Contract Layer"]
-        C1[HybridPoolManager<br/>Core]
-        C2[Institutional<br/>Registry]
-        C3[Oracle<br/>Validator]
-        C4[Fee<br/>Distributor]
-        C5[PoolFactory]
-        C6[USGX Pool]
-        C7[KRGX Pool]
-        C8[JPGX Pool]
-        C9[PHGX Pool]
+    subgraph SmartContract["스마트 컨트랙트 계층"]
+        C1[HybridPoolManager<br/>핵심]
+        C2[기관<br/>레지스트리]
+        C3[오라클<br/>검증기]
+        C4[수수료<br/>분배기]
+        C5[풀팩토리]
+        C6[USGX 풀]
+        C7[KRGX 풀]
+        C8[JPGX 풀]
+        C9[PHGX 풀]
         C10[... 확장 가능]
     end
     
@@ -144,16 +144,16 @@ PriceOracle은 기관 스왑 가격 책정 및 수수료 균형 메커니즘을 
 flowchart TB
     FXSwapMaster[FXSwapMaster<br/>중앙 제어]
     
-    PoolFactory[PoolFactory<br/>풀 배포]
+    PoolFactory[풀팩토리<br/>풀 배포]
     
-    InstitutionalRegistry[InstitutionalRegistry<br/>기관 관리]
+    InstitutionalRegistry[기관 레지스트리<br/>기관 관리]
     
-    PriceOracle[PriceOracle<br/>검증된 FX 환율]
+    PriceOracle[가격 오라클<br/>검증된 FX 환율]
     
     subgraph Pools["하이브리드 스테이블 풀"]
-        Pool1[USGX/KRGX Pool<br/>소매 + 기관]
-        Pool2[USGX/JPGX Pool<br/>소매 + 기관]
-        Pool3[KRGX/JPGX Pool<br/>소매 + 기관]
+        Pool1[USGX/KRGX 풀<br/>소매 + 기관]
+        Pool2[USGX/JPGX 풀<br/>소매 + 기관]
+        Pool3[KRGX/JPGX 풀<br/>소매 + 기관]
     end
     
     FXSwapMaster --> PoolFactory
@@ -190,9 +190,9 @@ flowchart TB
 
 ***
 
-## 지원되는 스테이블코인
+## 지원 예정 스테이블코인
 
-GuruDex는 현재 GX Stablecoin 체인에서 발행된 다음 주권 스테이블코인 간의 FX 스왑을 지원합니다:
+GuruDex는 GX Stablecoin 생태계를 위해 계획된 다음 주권 스테이블코인 간의 FX 스왑을 지원하도록 설계되었습니다:
 
 | 스테이블코인 | 페그 통화 | 설명 |
 | ---------- | --------------- | --------------------------- |
@@ -201,7 +201,7 @@ GuruDex는 현재 GX Stablecoin 체인에서 발행된 다음 주권 스테이�
 | **JPGX** | JPY | 일본 엔 페그 |
 | **PHGX** | PHP | 필리핀 페소 페그 |
 
-각 스테이블코인은 법정화폐 준비금에 의해 1:1로 뒷받침되며 PoA 합의를 가진 독립 Layer-1 체인에서 운영되어 주권급 안정성과 규정 준수를 보장합니다.
+각 스테이블코인은 법정화폐 준비금에 의해 1:1로 뒷받침될 예정이며 PoA 합의를 가진 독립 Layer-1 체인에서 운영되어 주권급 안정성과 규정 준수를 보장할 것입니다.
 
 ***
 
@@ -245,7 +245,7 @@ GuruDex가 사용하는 하이브리드 풀 모델은 여러 전략적 이점을
 
 ## 결론
 
-GuruDex 아키텍처는 소매 접근성과 기관 엄격성을 조화시키는 최첨단 FX 스왑 플랫폼을 예시합니다. 통합 하이브리드 유동성 프레임워크 내에서 **FXSwapMaster**, **HybridStablePool**, **PriceOracle** 및 **InstitutionalRegistry** 계약을 통합함으로써 GuruDex는 확장 가능하고 규정을 준수하며 효율적인 FX 거래 환경을 제공합니다. 이 설계는 예측 가능한 수수료, 깊은 유동성 및 규제급 제어로 원활한 국경 간 스테이블코인 스왑을 가능하게 하는 글로벌 온체인 FX/DeFi 허브인 Gurufin Chain의 비전을 지원합니다.
+GuruDex 아키텍처는 소매 접근성과 기관 엄격성을 조화시키는 최첨단 FX 스왑 플랫폼을 예시합니다. 통합 하이브리드 유동성 프레임워크 내에서 **FXSwapMaster**, **HybridStablePool**, **PriceOracle** 및 **InstitutionalRegistry** 계약을 통합함으로써 GuruDex는 확장 가능하고 규정을 준수하며 효율적인 FX 거래 환경을 제공하도록 설계되었습니다. 이 설계는 예측 가능한 수수료, 깊은 유동성 및 규제급 제어로 원활한 국경 간 스테이블코인 스왑을 가능하게 하는 글로벌 온체인 FX/DeFi 허브인 Gurufin Chain의 비전을 지원합니다.
 
 개발자와 통합자에게 이러한 핵심 구성 요소 간의 상호 작용을 이해하는 것은 차세대 FX 및 DeFi 애플리케이션을 구축하는 데 GuruDex의 전체 잠재력을 활용하는 데 필수적입니다.
 

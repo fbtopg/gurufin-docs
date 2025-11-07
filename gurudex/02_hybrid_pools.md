@@ -66,7 +66,7 @@ The Hybrid Pool architecture delivers multiple strategic advantages over separat
 | **Unified Fee Mechanism**    | Dynamic fees for retail trades and custom institutional fees coexist within one pool, optimizing revenue and incentives. |
 | **Enhanced User Experience** | Both retail and institutional users access the same liquidity, ensuring consistent pricing and availability.             |
 
-By consolidating liquidity, FXSwap achieves a more robust and scalable FX trading environment that supports a broad range of use cases—from retail remittances to high-volume institutional FX settlement.
+By consolidating liquidity, FXSwap is designed to achieve a more robust and scalable FX trading environment that supports a broad range of use cases—from retail remittances to high-volume institutional FX settlement.
 
 ***
 
@@ -196,7 +196,7 @@ This mechanism maintains pool equilibrium and protects against adverse selection
 
 ## Conclusion
 
-The Hybrid Pool design within FXSwap on Gurufin Chain exemplifies a sophisticated approach to liquidity management in decentralized FX markets. By integrating institutional and retail liquidity into a single, privacy-preserving pool with dual execution algorithms, the platform achieves superior liquidity depth, operational efficiency, and compliance readiness. This architecture supports a wide range of FX trading use cases, from retail remittances to institutional settlement, positioning Gurufin Chain as a leading global on-chain FX and DeFi hub.
+The Hybrid Pool design within FXSwap on Gurufin Chain exemplifies a sophisticated approach to liquidity management in decentralized FX markets. By integrating institutional and retail liquidity into a single, privacy-preserving pool with dual execution algorithms, the platform is designed to achieve superior liquidity depth, operational efficiency, and compliance readiness. This architecture will support a wide range of FX trading use cases, from retail remittances to institutional settlement, positioning Gurufin Chain as a leading global on-chain FX and DeFi hub.
 
 ***
 

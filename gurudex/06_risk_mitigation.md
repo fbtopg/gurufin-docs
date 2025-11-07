@@ -287,7 +287,7 @@ sequenceDiagram
 
 ### Circuit Breaker Levels
 
-GuruDex operates a **3-tier circuit breaker** based on threat severity:
+GuruDex is designed to operate a **3-tier circuit breaker** based on threat severity:
 
 | Level | Name | Trigger Condition | Impact Scope | Release Authority |
 |---|---|---|---|---|
@@ -406,4 +406,4 @@ GuruDex's 4-layer defense strategy is a powerful safety mechanism that ensures p
 
 Through this multi-layered approach, GuruDex positions itself as an **enterprise-grade decentralized FX platform** capable of meeting real financial market requirements beyond mere technical experimentation.
 
-Users can trade in a safe, reliable, and resilient FX swap environment through these comprehensive risk management features.
+Users will be able to trade in a safe, reliable, and resilient FX swap environment through these comprehensive risk management features.

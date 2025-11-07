@@ -1,12 +1,12 @@
 # Liquidity & Rewards
 
-This section provides a comprehensive overview of liquidity provision, LP token mechanics, fee accumulation, and reward distribution within the FXSwap platform. Designed to facilitate efficient FX stablecoin swaps for both retail and institutional users, FXSwap leverages a hybrid liquidity pool architecture and dynamic fee mechanisms to optimize trading experience and incentivize liquidity providers.
+This section provides a comprehensive overview of liquidity provision, LP token mechanics, fee accumulation, and reward distribution within the FXSwap platform. Designed to facilitate efficient FX stablecoin swaps for both retail and institutional users, FXSwap is architected to leverage a hybrid liquidity pool architecture and dynamic fee mechanisms to optimize trading experience and incentivize liquidity providers.
 
 ---
 
 ## Providing Liquidity
 
-Liquidity provision in FXSwap is fundamental to enabling seamless swaps between supported sovereign stablecoins such as USGX (USD-pegged), KRGX (KRW-pegged), JPGX (JPY-pegged), and PHGX (PHP-pegged). Each stablecoin pair is served by a **single hybrid liquidity pool**, which integrates both retail and institutional liquidity to maximize depth and efficiency.
+Liquidity provision in FXSwap is designed to enable seamless swaps between planned sovereign stablecoins such as USGX (USD-pegged), KRGX (KRW-pegged), JPGX (JPY-pegged), and PHGX (PHP-pegged). Each stablecoin pair will be served by a **single hybrid liquidity pool**, which integrates both retail and institutional liquidity to maximize depth and efficiency.
 
 ### Virtual-Pair Mechanism
 
@@ -185,4 +185,4 @@ Each LP receives fees exactly proportional to their stake.
 
 ## Conclusion
 
-The FXSwap liquidity and rewards system is engineered to provide a robust, efficient, and fair environment for liquidity providers. By combining hybrid pools, dynamic fees, and transparent reward cycles, FXSwap ensures deep liquidity, minimized slippage, and consistent incentives aligned with the interests of both retail and institutional participants. This design supports the broader Gurufin Chain vision of a global, interoperable FX and DeFi hub anchored by sovereign stablecoins.
+The FXSwap liquidity and rewards system is engineered to provide a robust, efficient, and fair environment for liquidity providers. By combining hybrid pools, dynamic fees, and transparent reward cycles, FXSwap is designed to deliver deep liquidity, minimized slippage, and consistent incentives aligned with the interests of both retail and institutional participants. This design supports the broader Gurufin Chain vision of a global, interoperable FX and DeFi hub anchored by sovereign stablecoins.

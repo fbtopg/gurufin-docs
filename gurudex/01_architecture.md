@@ -1,6 +1,6 @@
 # Architecture
 
-The GuruDex platform is a sophisticated decentralized foreign exchange (FX) swap system designed to serve both retail and institutional users with high efficiency, liquidity, and compliance. Built atop the Gurufin Chain and leveraging the GX Stablecoin ecosystem, GuruDex integrates advanced smart contract components to deliver seamless FX swaps between sovereign stablecoins. This page provides a comprehensive overview of the core smart contracts—**FXSwapMaster**, **HybridStablePool**, **PriceOracle**, and **InstitutionalRegistry**—and explains the overall system design, highlighting the architectural principles that enable GuruDex’s unique hybrid liquidity and dual-algorithm execution model.
+The GuruDex platform is a sophisticated decentralized foreign exchange (FX) swap system designed to serve both retail and institutional users with high efficiency, liquidity, and compliance. Designed for the Gurufin Chain and planned to leverage the GX Stablecoin ecosystem, GuruDex will integrate advanced smart contract components to deliver seamless FX swaps between sovereign stablecoins. This page provides a comprehensive overview of the core smart contracts—**FXSwapMaster**, **HybridStablePool**, **PriceOracle**, and **InstitutionalRegistry**—and explains the overall system design, highlighting the architectural principles that enable GuruDex’s unique hybrid liquidity and dual-algorithm execution model.
 
 ***
 
@@ -192,7 +192,7 @@ flowchart TB
 
 ## Supported Stablecoins
 
-GuruDex currently supports FX swaps among the following sovereign stablecoins issued on the GX Stablecoin chain:
+GuruDex is designed to support FX swaps among the following sovereign stablecoins planned for the GX Stablecoin ecosystem:
 
 | Stablecoin | Pegged Currency | Description                 |
 | ---------- | --------------- | --------------------------- |
@@ -201,7 +201,7 @@ GuruDex currently supports FX swaps among the following sovereign stablecoins is
 | **JPGX**   | JPY             | Japanese Yen pegged         |
 | **PHGX**   | PHP             | Philippine Peso pegged      |
 
-Each stablecoin is backed 1:1 by fiat reserves and operates on independent Layer-1 chains with PoA consensus, ensuring sovereign-grade stability and compliance.
+Each stablecoin will be backed 1:1 by fiat reserves and operate on independent Layer-1 chains with PoA consensus, ensuring sovereign-grade stability and compliance.
 
 ***
 
@@ -245,6 +245,6 @@ Institutional swaps leverage oracle-based pricing and customized parameters:
 
 ## Conclusion
 
-The GuruDex architecture exemplifies a cutting-edge FX swap platform that harmonizes retail accessibility with institutional rigor. By integrating the **FXSwapMaster**, **HybridStablePool**, **PriceOracle**, and **InstitutionalRegistry** contracts within a unified, hybrid liquidity framework, GuruDex delivers a scalable, compliant, and efficient FX trading environment. This design supports the Gurufin Chain’s vision of a global on-chain FX/DeFi hub, enabling seamless cross-border stablecoin swaps with predictable fees, deep liquidity, and regulatory-grade controls.
+The GuruDex architecture exemplifies a cutting-edge FX swap platform that harmonizes retail accessibility with institutional rigor. By integrating the **FXSwapMaster**, **HybridStablePool**, **PriceOracle**, and **InstitutionalRegistry** contracts within a unified, hybrid liquidity framework, GuruDex is designed to deliver a scalable, compliant, and efficient FX trading environment. This design supports the Gurufin Chain's vision of a global on-chain FX/DeFi hub, enabling seamless cross-border stablecoin swaps with predictable fees, deep liquidity, and regulatory-grade controls.
 
 For developers and integrators, understanding the interplay between these core components is essential to leveraging GuruDex’s full potential in building next-generation FX and DeFi applications.

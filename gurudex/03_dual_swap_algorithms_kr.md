@@ -177,7 +177,7 @@ function determineSwapPath(address user) internal view returns (SwapPath) {
 
 ## 결론
 
-GuruDex 내의 듀얼 스왑 알고리즘 설계는 탈중앙화 무허가 거래와 기관급 실행 간의 정교한 균형을 나타냅니다. 단일 하이브리드 풀 내에서 소매 사용자를 위한 AMM 기반 스왑과 기관을 위한 오라클 기반 가격 책정을 제공함으로써 GuruDex는 최적의 유동성 활용, 최소화된 슬리피지 및 글로벌 FX 거래 플랫폼을 위한 규정 준수 준비 인프라를 달성합니다.
+GuruDex 내의 듀얼 스왑 알고리즘 설계는 탈중앙화 무허가 거래와 기관급 실행 간의 정교한 균형을 나타냅니다. 단일 하이브리드 풀 내에서 소매 사용자를 위한 AMM 기반 스왑과 기관을 위한 오라클 기반 가격 책정을 제공함으로써 GuruDex는 최적의 유동성 활용, 최소화된 슬리피지 및 글로벌 FX 거래 플랫폼을 위한 규정 준수 준비 인프라를 제공하도록 설계되었습니다.
 
 구현 세부 사항 및 스마트 계약 인터페이스는 [Architecture](01_architecture.md) 및 [Hybrid Pools](02_hybrid_pools.md) 문서를 참조하십시오.
 

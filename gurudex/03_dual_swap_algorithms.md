@@ -177,6 +177,6 @@ This dual-algorithm architecture ensures that each user type receives an optimiz
 
 ## Conclusion
 
-The dual swap algorithm design within GuruDex represents a sophisticated balance between decentralized permissionless trading and institutional-grade execution. By offering AMM-based swaps for retail users and oracle-based pricing for institutions within a single hybrid pool, GuruDex achieves optimal liquidity utilization, minimized slippage, and compliance-ready infrastructure for a global FX trading platform.
+The dual swap algorithm design within GuruDex represents a sophisticated balance between decentralized permissionless trading and institutional-grade execution. By offering AMM-based swaps for retail users and oracle-based pricing for institutions within a single hybrid pool, GuruDex is designed to achieve optimal liquidity utilization, minimized slippage, and compliance-ready infrastructure for a global FX trading platform.
 
 For implementation details and smart contract interfaces, please refer to the [Architecture](01_architecture.md) and [Hybrid Pools](02_hybrid_pools.md) documentation.
