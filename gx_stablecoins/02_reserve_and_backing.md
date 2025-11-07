@@ -14,14 +14,14 @@ The 1:1 fiat backing is enforced through automated minting and burning mechanism
 
 ## Reserve Composition
 
-The reserve assets consist primarily of highly liquid and low-risk instruments to maintain capital preservation and immediate liquidity. The composition is designed to optimize safety, regulatory compliance, and operational efficiency.
+The reserve assets consist primarily of highly liquid and low-risk instruments to maintain capital preservation and immediate liquidity. The composition is designed to optimize safety, regulatory compliance, and operational efficiency. **Note: Reserve composition may differ by jurisdiction based on local regulatory requirements and banking partner capabilities.**
 
 | Reserve Asset Type              | Description                                                                                   | Characteristics                          |
 |--------------------------------|-----------------------------------------------------------------------------------------------|----------------------------------------|
 | **Cash**                       | Fiat currency held in segregated accounts at licensed financial institutions                  | Immediate liquidity, zero market risk  |
-| **Ultra-Short Government Bills** | Short-dated government securities with maturities typically under 3 months, capped by policy | Low credit risk, slightly higher yield than cash, high liquidity |
+| **Ultra-Short Government Bills** | Short-dated government securities with maturities typically under 3 months, capped by policy (where permitted by jurisdiction) | Low credit risk, slightly higher yield than cash, high liquidity |
 
-The inclusion of ultra-short government bills, subject to a predefined cap, allows the reserve to earn modest returns without compromising liquidity or safety. This prudent diversification aligns with best practices for reserve management and regulatory expectations.
+The inclusion of ultra-short government bills, subject to a predefined cap and **jurisdictional regulatory approval**, allows the reserve to earn modest returns without compromising liquidity or safety. This prudent diversification aligns with best practices for reserve management and regulatory expectations where permitted.
 
 ---
 
@@ -58,7 +58,7 @@ By applying these Basel-aligned metrics, the GX Stablecoin network ensures that 
 | Aspect                       | Description                                                                                         |
 |------------------------------|---------------------------------------------------------------------------------------------------|
 | **Fiat Backing Ratio**        | 1:1 fiat currency backing for every stablecoin issued                                             |
-| **Reserve Composition**       | Cash and capped ultra-short government bills                                                      |
+| **Reserve Composition**       | Cash and capped ultra-short government bills (composition varies by jurisdiction)                                                      |
 | **Transparency Mechanism**    | 24/7 live proof-of-reserves with cryptographic verification and public dashboards                  |
 | **Regulatory Alignment**      | Basel LCR and NSFR adapted metrics (GX-LCR(H) and GX-NSFR) for liquidity and funding stability     |
 | **Automated Mint/Burn**       | Bank API integration with multi-party authorization and deterministic finality                     |

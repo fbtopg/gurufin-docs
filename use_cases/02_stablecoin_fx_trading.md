@@ -60,7 +60,7 @@ This approach ensures regulatory compliance, price integrity, and efficient exec
 | Benefit                      | Description                                                                                         |
 |------------------------------|-------------------------------------------------------------------------------------------------|
 | **Fiat-Predictable Fees**     | Guru-PEG mechanism stabilizes gas and transaction fees indexed to CPI, enabling retail-grade cost predictability. |
-| **High Throughput & Finality**| Five-figure TPS and deterministic sub-second finality support high-frequency trading and instant settlement. |
+| **High Throughput & Finality**| Up to 10,000 TPS and deterministic sub-second finality support high-frequency trading and instant settlement. |
 | **Hybrid Liquidity Pools**    | Single pool design combining retail AMM and institutional RFQ liquidity maximizes depth and efficiency. |
 | **IBC-First Interoperability**| Atomic cross-chain settlement enables seamless FX swaps and arbitrage across sovereign stablecoin chains. |
 | **Regulatory Compliance**     | Wallet-tier KYC/AML, sanctions screening, and FATF Travel Rule metadata support embedded at consensus layer. |

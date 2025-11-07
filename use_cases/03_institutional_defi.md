@@ -53,7 +53,7 @@ Institutions can leverage the platform’s oracle network for real-time price fe
 |-----------------------|-------------------------------------------|------------------------------------------------|
 | Consensus             | Tendermint-class BFT with DPoS            | High throughput and deterministic finality for instant settlement |
 | Block Time            | Sub-second                              | Near real-time transaction processing          |
-| Throughput            | Five-figure TPS range                    | Scalability to support institutional volumes   |
+| Throughput            | Up to 10,000 TPS                    | Scalability to support institutional volumes   |
 | Finality              | Sub-second deterministic finality       | Eliminates settlement uncertainty               |
 
 ### Interoperability and Compliance

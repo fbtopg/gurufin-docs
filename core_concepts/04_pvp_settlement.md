@@ -101,7 +101,7 @@ The PvP settlement mechanism leverages:
 | **Atomicity**               | Ensures simultaneous settlement of both payment legs, eliminating principal risk.                    |
 | **Bridge Risk Elimination** | Removes reliance on intermediaries or bridges by using trustless escrow and IBC verification.        |
 | **Regulatory Compliance**   | Built-in KYC/AML and travel rule metadata support across escrow and mint/burn operations.            |
-| **High Performance**        | Sub-second finality and five-figure TPS throughput enable scalable, real-time cross-border payments. |
+| **High Performance**        | Sub-second finality and up to 10,000 TPS throughput enable scalable, real-time cross-border payments. |
 | **Interoperability**        | IBC-first design supports seamless integration with sovereign stablecoins and external chains.       |
 | **Fee Predictability**      | Guru-PEG mechanism ensures stable, low-cost fees for settlement operations.                          |
 

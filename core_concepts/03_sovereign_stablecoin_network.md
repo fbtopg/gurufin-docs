@@ -28,7 +28,7 @@ The network consists of multiple sovereign Layer-1 chains, each built on the Cos
 | **Consensus Mechanism**       | Permissioned Proof-of-Authority (PoA) with licensed validators                                  |
 | **Validator Licensing**       | Validators are regulated entities authorized by local financial authorities                     |
 | **Technology Stack**          | Cosmos SDK, Tendermint BFT, IBC protocol, EVM compatibility                                    |
-| **Reserve Backing**           | 100% fiat-backed reserves, including cash and capped ultra-short government bills               |
+| **Reserve Backing**           | 100% fiat-backed reserves, including cash and capped ultra-short government bills (varies by jurisdiction)               |
 | **Proof-of-Reserves**         | 24/7 live transparency via cryptographic scanning                                              |
 | **Mint/Burn Automation**      | Bank API integration with multi-party quorum authorization and idempotent processing            |
 | **Compliance Features**       | Embedded KYC/AML, sanctions screening, FATF Travel Rule metadata support                        |

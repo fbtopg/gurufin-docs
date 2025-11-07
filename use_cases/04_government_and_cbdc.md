@@ -15,7 +15,7 @@ The GX Stablecoin platform is designed as a network of independent, jurisdiction
 ### Key Features for Government and Central Banks
 
 - **Permissioned PoA Consensus:** Validators are regulated entities authorized by the jurisdiction, ensuring trust and compliance.
-- **100% Fiat-Backed Reserves:** Stablecoins are fully backed by fiat currency or capped ultra-short government bills, with continuous 24/7 proof-of-reserves transparency.
+- **100% Fiat-Backed Reserves:** Stablecoins are fully backed by fiat currency or capped ultra-short government bills (reserve composition differs by jurisdiction), with continuous 24/7 proof-of-reserves transparency.
 - **Automated Mint/Burn Mechanism:** Integration with bank APIs enables real-time, automated issuance and redemption of stablecoins anchored to on-chain bank events, reducing operational risk and latency.
 - **Regulatory-Grade Compliance:** Embedded KYC/AML, sanctions screening, and FATF Travel Rule metadata support at the consensus layer facilitate supervisory oversight and legal adherence.
 - **Privacy Options:** zk-proof privacy modes (zkGuru) allow confidential transactions while preserving compliance requirements.
@@ -66,7 +66,7 @@ The following table summarizes the core technical components of the GX Stablecoi
 |--------------------------|-----------------------------------------------------------------------------------------------|
 | **Consensus**            | Permissioned Proof-of-Authority (PoA) with licensed validators bound to jurisdictional mandates. |
 | **Blockchain Framework** | Cosmos SDK with Tendermint Byzantine Fault Tolerant (BFT) consensus ensures sub-second finality. |
-| **Reserve Backing**      | 100% fiat-backed reserves with live proof-of-reserves scanning; reserves include cash and capped ultra-short government bills. |
+| **Reserve Backing**      | 100% fiat-backed reserves with live proof-of-reserves scanning; reserves include cash and capped ultra-short government bills (composition varies by jurisdiction). |
 | **Mint/Burn Automation** | Bank API integration with idempotent, multi-party quorum authorization for secure issuance/redemption. |
 | **Interoperability**     | IBC protocol for cross-chain atomic settlement; EVM gateway for Ethereum-compatible smart contract integration. |
 | **Fee Model**            | CPI-indexed gas fees (~$0.013 per L1 transfer), congestion pricing with circuit breakers for fee stability. |
