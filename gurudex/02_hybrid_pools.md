@@ -4,41 +4,56 @@ Hybrid Pools represent a core innovation within the FXSwap platform on Gurufin C
 
 ***
 
-## Single Pool vs Separated Pool vs Hybrid Pool: Structural Design Analysis
+## Single Unified Pool vs Pair Pool: Structural Design Choice
 
-Traditionally, liquidity pools for FX swaps or stablecoin trading have been segregated by user type, with separate pools for retail Automated Market Maker (AMM) participants and institutional Request-for-Quote (RFQ) clients. One of GuruDex's core design decisions is the structure of pools that manage liquidity.
+GuruDex has **adopted the Single Unified Pool approach** for managing liquidity. This is a fundamentally different and innovative approach from the traditional Pair Pool method.
 
-Initially, two approaches were considered: the **Single Pool** approach, which concentrates all liquidity into one pool, and the **Separated Pool** approach, which divides pools by user type (institutional/retail). However, both approaches had clear advantages and disadvantages. Ultimately, the **Hybrid Dual-Layer** approach was proposed as the optimal solution, combining the strengths of both.
+### Comparative Analysis
 
-### Comparative Model Analysis
+| Criteria | Pair Pool Approach | Single Unified Pool Approach ⭐ |
+| :--- | :--- | :--- |
+| **Pool Count** | N×(N-1)/2 | N |
+| **4 Currency Example** | 6 pools | 4 pools |
+| **Liquidity Efficiency** | ⭐⭐ | ⭐⭐⭐⭐⭐ |
+| **Slippage** | High | Low |
+| **Management Complexity** | High | Low |
+| **Gas Cost** | High | Low |
+| **Scalability** | Difficult | Easy |
 
-| Evaluation Criteria | Single Pool (Shared) | Separated Pool (Independent) | Hybrid (Optimal) |
-| :--- | :--- | :--- | :--- |
-| **Capital Efficiency** | 🟢 Best (Liquidity Concentration) | 🔴 Worst (Liquidity Fragmentation) | 🟡 Excellent (Core Pool + Dedicated Pools) |
-| **Swap Efficiency** | 🟢 Best (Minimal Slippage) | 🔴 Worst (Maximum Slippage) | 🟡 Excellent (Optimal Pool Selection by Volume) |
-| **Revenue Fairness** | 🔴 Worst (Contribution-Distribution Mismatch) | 🟢 Best (Perfect Separation) | 🟢 Best (Independent Revenue Distribution per Pool) |
-| **Risk Management** | 🔴 Risky (Risk Propagation) | 🟢 Safe (Risk Isolation) | 🟡 Safe (Core Pool Risk + Isolation) |
-| **Management Complexity** | 🟢 Simple | 🔴 Complex (2x Pools) | 🟡 Moderate (Hierarchical Structure) |
-| **Overall Score** | 72 / 100 | 58 / 100 | **88 / 100** |
+### Design Rationale
 
-### Single Pool Problem: Revenue Unfairness
+1. **Liquidity Concentration**: All liquidity concentrates in a single pool per coin, minimizing slippage
+2. **Efficiency**: Only 4 pools needed instead of 6 for 4 currencies (66% reduction)
+3. **Scalability**: Adding a new currency requires creating just 1 pool
+4. **Management Simplicity**: Simplified management with single pool per coin
 
-While single pools maximize capital efficiency, they suffer from a critical problem of **revenue distribution unfairness**. For example, when institutional users generating large volumes with low fees and retail users generating small volumes with high fees share liquidity, the total fees are distributed according to liquidity shares. This creates a reverse phenomenon where institutions with lower fee contributions receive more revenue, while retail users with higher contributions actually experience losses.
+### Single Pool Structure Characteristics
 
-### Hybrid Dual-Layer: The Optimal Compromise
+GuruDex **creates one single pool per currency**, with institutions and retail users sharing the same liquidity pool:
 
-The proposed hybrid model solves this problem with the following hierarchical structure:
+- ✅ **Excellent Capital Efficiency**: All liquidity concentrated in one pool
+- ✅ **Optimal Swap Efficiency**: Deep liquidity minimizes slippage
+- ⚠️ **Revenue Imbalance Addressed**: Institutional LP rewards capped at 7% annual return
+- ⚠️ **Risk Propagation Prevention**: Circuit breaker and security mechanisms applied
 
-- **Layer 1: Shared Core Pool (Base Pool)**
-  - Comprises approximately 50% of total liquidity, accessible to both institutions and retail users
-  - Handles large trades to minimize slippage, with fees distributed fairly based on contributions
-  - Fees generated from this pool are distributed equitably according to contribution
+### Security Measures for Single Pool
 
-- **Layer 2: Dedicated Pools**
-  - Remaining liquidity is separated into institutional-dedicated and retail-dedicated pools
-  - Trades occurring in each pool distribute fees independently only to that pool's liquidity providers, ensuring 100% revenue fairness
+To address revenue fairness issues, the following mechanisms are applied:
 
-The smart contract automatically selects the most efficient pool (core pool or dedicated pool) based on trade size and user type to execute the swap. Through this structure, GuruDex achieves the optimal balance between **capital efficiency and revenue fairness**.
+**1. Legal Interest Rate Cap (7% Annual)**
+- Compliance with Korean Interest Rate Limitation Act (Loan Business Act: 20% cap)
+- Conservative application of 7% annual cap for safety margin
+- Prevents excessive returns to institutional investors
+
+**2. Differentiated Reward Distribution**
+- Institutional LPs: Capped at 7% annual legal interest rate
+- Retail LPs: (Institutional Rewards - 7%) + Retail Rewards → Higher returns expected
+
+**3. Additional Security Mechanisms**
+- Stake limits: Maximum stake settings
+- Withdrawal limits: Cooldown period, max 30% per request
+- Flash Loan defense
+- Trust score system
 
 ## Combining Institutional and Retail Liquidity
 

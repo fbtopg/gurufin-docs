@@ -23,7 +23,7 @@ flowchart TD
     
     subgraph Layer3["Layer 3: Limits & Validation"]
         L3A["Swap Size Limits:<br/>Max 5% of pool per tx"]
-        L3B["Oracle Triple Validation:<br/>• Time < 5 min<br/>• Deviation < 2%<br/>• Confidence > 95%"]
+        L3B["Oracle Triple Validation:<br/>• Time < 5 min<br/>• Deviation < 1%<br/>• Confidence > 95%"]
         L3C["Daily Limits<br/>per Institution"]
         L3A --> L3B --> L3C
     end

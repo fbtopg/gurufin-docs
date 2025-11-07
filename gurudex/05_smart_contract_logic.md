@@ -154,7 +154,7 @@ function activateInstitution(
   * **perTxLimit**: Maximum amount per single transaction (e.g., 1,000,000 USGX)
   * **dailyLimit**: Daily cumulative transaction limit (e.g., 10,000,000 USGX)
   * **customFeeRate**: Institution-specific fee rate (e.g., 0.1% = 10 basis points)
-  * **maxPriceDeviation**: Oracle price allowed deviation (e.g., 2%)
+  * **maxPriceDeviation**: Oracle price allowed deviation (default: 1%, max 5%)
   * **maxStaleness**: Oracle data maximum age (e.g., 5 minutes = 300 seconds)
 - Changes status to `ACTIVE`
 

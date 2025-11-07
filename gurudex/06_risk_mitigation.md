@@ -30,7 +30,7 @@ flowchart TD
     
     subgraph Layer3["Layer 3: Limits & Validation"]
         L3A["Swap Size Limits:<br/>Max 5% of pool per tx"]
-        L3B["Oracle Triple Validation:<br/>• Time < 5 min<br/>• Deviation < 2%<br/>• Confidence > 95%"]
+        L3B["Oracle Triple Validation:<br/>• Time < 5 min<br/>• Deviation < 1%<br/>• Confidence > 95%"]
         L3C["Daily Limits<br/>per Institution"]
         L3A --> L3B --> L3C
     end
@@ -171,7 +171,7 @@ require(deviation <= maxPriceDeviation, "Price deviation too large");
 ```
 
 - **Purpose**: Detect rapid price fluctuations or oracle errors
-- **Standard**: Only allow fluctuations within 2% of previous price
+- **Standard**: Only allow fluctuations within 1% of previous price (default, configurable up to 5%)
 - **Effect**: Prevent system damage from abnormal price jumps
 
 #### ③ Confidence Validation
@@ -285,15 +285,16 @@ sequenceDiagram
     end
 ```
 
-### Circuit Breaker Levels
+### Circuit Breaker Levels (Liquidity-Based)
 
-GuruDex is designed to operate a **3-tier circuit breaker** based on threat severity:
+GuruDex is designed to operate a **4-tier circuit breaker based on pool liquidity state**:
 
-| Level | Name | Trigger Condition | Impact Scope | Release Authority |
+| Level | Name | Liquidity State | Automatic Actions | Impact Scope |
 |---|---|---|---|---|
-| **Level 1** | **Warning** | Medium threat detected | - Temporarily limit large trades<br/>- Enhanced monitoring | Auto-release (after 30 minutes) |
-| **Level 2** | **Partial Halt** | Serious threat detected | - Halt all swaps in specific pool<br/>- Suspend liquidity changes in that pool<br/>- Other pools operate normally | Operator approval required |
-| **Level 3** | **Full Halt** | Systemic crisis | - Halt all swaps<br/>- Halt all liquidity changes<br/>- Complete institutional trading suspension | Owner + Governance approval required |
+| **Level 1** | **HEALTHY<br/>(Normal)** | 80%+ | - Normal operation<br/>- Standard fees apply | All trades operate normally |
+| **Level 2** | **WARNING** | 60-80% | - Dynamic fee increase begins<br/>- Limit swaps per block<br/>- Enhanced monitoring | Some large trades limited |
+| **Level 3** | **CRITICAL** | 40-60% | - Significantly increase dynamic fees<br/>- Strengthen per-trade max limits<br/>- Request emergency liquidity | Swap restrictions enforced<br/>Some trades may be blocked |
+| **Level 4** | **EMERGENCY** | Below 40% | - Halt all new swaps<br/>- Execute emergency liquidity supply<br/>- Activate RFQ<br/>- Auto-rebalance between pools | Complete trading halt<br/>Operator intervention required |
 
 ### Real Operation Example
 

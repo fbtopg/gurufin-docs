@@ -19,7 +19,7 @@ sequenceDiagram
     Registry-->>Pool: Status: ACTIVE ✓
     
     Pool->>Oracle: 5. Validate Oracle Price
-    Oracle->>Oracle: Triple Validation:<br/>• Time: 2 min < 5 min ✓<br/>• Deviation: 0.08% < 2% ✓<br/>• Confidence: 99.5% > 95% ✓
+    Oracle->>Oracle: Triple Validation:<br/>• Time: 2 min < 5 min ✓<br/>• Deviation: 0.08% < 1% ✓<br/>• Confidence: 99.5% > 95% ✓
     Oracle-->>Pool: Price Valid
     
     Pool->>Registry: 6. Check Limits<br/>perTx: 100K <= 500K ✓<br/>daily: 300K <= 1M ✓

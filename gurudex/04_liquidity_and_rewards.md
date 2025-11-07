@@ -91,9 +91,23 @@ FXSwap generates fees from every swap transaction executed within the pools. The
 
 ### Fee Structure
 
-- **Retail Users**: Fees are dynamically calculated based on pool imbalance, following a Uniswap v3 style AMM model. The fee rate increases by 1% for every 1% deviation from a balanced 1:1 liquidity ratio between base and quote assets. This dynamic fee mechanism encourages rebalancing and protects against adverse selection.
+GuruDex separates Base Fees and Protocol Fees:
 
-- **Institutional Users**: Fees are fixed, typically around 0.1%, applied on real-time exchange rate-based swaps. Institutional fees are lower to accommodate large-volume trades with minimal slippage.
+| User Type | Base Fee | Protocol Fee | Total Fee |
+|---|---|---|---|
+| **Retail Users** | 0.3% (dynamic) | 0.05% | **0.35%** |
+| **Institutional Users** | 0.1% (fixed) | 0.05% | **0.15%** |
+
+**Retail User Fees (Dynamic)**:
+- Dynamically calculated based on pool imbalance following Uniswap v3 style AMM model
+- Fee rate increases by 1% for every 1% deviation from balanced 1:1 liquidity ratio between base and quote assets
+- Base fee 0.3% plus protocol fee 0.05%
+- Dynamic fee mechanism encourages rebalancing and protects against adverse selection
+
+**Institutional User Fees (Fixed)**:
+- Base fee 0.1% + Protocol fee 0.05% = Total 0.15%
+- Applied on real-time exchange rate-based swaps
+- Lower fees to accommodate large-volume trades with minimal slippage
 
 ### Fee Accumulation Process
 
@@ -105,11 +119,40 @@ Fees collected from swaps are accumulated in the pool’s **accumulatedFees** re
 
 Reward distribution to liquidity providers is managed through the **FeeDistributor** contract and occurs in discrete 24-hour cycles, ensuring timely and predictable compensation for liquidity provision.
 
+### Legal Interest Rate Cap (Core Innovation)
+
+**Background: Korean Interest Rate Limitation Act Compliance**
+
+GuruDex implements a differentiated reward distribution system for regulatory compliance:
+
+- **Loan Business Act**: 20% annual interest cap
+- **GuruDex Application**: **Conservative 7% annual cap** (safety margin)
+- **Purpose**: Prevent excessive returns to institutional investors + regulatory compliance
+
+### Differentiated Reward Distribution System
+
+| LP Type | Reward Calculation | Expected Returns |
+|---|---|---|
+| **Institutional LPs** | Capped at 7% annual legal interest rate | Max 7% |
+| **Retail LPs** | (Institutional Rewards - 7%) + Retail Rewards | **Higher Returns Expected** |
+
+**Mechanism**:
+1. Calculate portion of institutional LP fees exceeding 7% annual return
+2. Redistribute excess portion to retail LP pool
+3. Retail LPs receive their contribution + institutional excess rewards
+4. Result: Retail LP returns become higher than institutional LP returns
+
+**Example**:
+- Institutional LP original return: 10% → 7% cap applied → 3% excess generated
+- Retail LP original return: 5% → 3% excess added → Final 8% return
+- Result: Retail LPs achieve higher returns (improved revenue fairness)
+
 ### FeeDistributor Role
 
 **FeeDistributor** is a dedicated contract that collects swap fees generated and distributes them fairly to liquidity providers (LPs) according to their shares:
 
 - **Fee Collection**: Automatically collects fees from all HybridStablePool instances
+- **Differentiated Distribution**: Applies 7% cap for institutions and redistributes excess
 - **Segregated Accounting**: Separately tracks retail pool fees and institutional pool fees
 - **Proportional Distribution**: Calculates rewards precisely proportional to LP token holdings
 - **Efficient Claiming**: Gas-efficient batch distribution and claiming mechanism

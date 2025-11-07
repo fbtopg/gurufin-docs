@@ -125,7 +125,7 @@ Additionally, the data timestamp must be more recent than the maximum allowed ag
 
 3. **Price Validation (Triple Check)**:
    - ✅ Time: 2 minutes difference from current time (within 5 minutes)
-   - ✅ Deviation: 0.08% difference from previous price (1,299 KRW) (within 2% allowed range)
+   - ✅ Deviation: 0.08% difference from previous price (1,299 KRW) (within 1% allowed range)
    - ✅ Confidence: 99.5% (exceeds 95% threshold)
 
 4. **Limit Check**:

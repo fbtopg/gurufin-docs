@@ -154,7 +154,7 @@ function activateInstitution(
   * **perTxLimit**: 단일 거래당 최대 금액 (예: 1,000,000 USGX)
   * **dailyLimit**: 일일 누적 거래 한도 (예: 10,000,000 USGX)
   * **customFeeRate**: 기관 전용 수수료율 (예: 0.1% = 10 basis points)
-  * **maxPriceDeviation**: 오라클 가격 허용 편차 (예: 2%)
+  * **maxPriceDeviation**: 오라클 가격 허용 편차 (기본: 1%, 최대 5%)
   * **maxStaleness**: 오라클 데이터 최대 기간 (예: 5분 = 300초)
 - 상태를 `ACTIVE`로 변경
 
