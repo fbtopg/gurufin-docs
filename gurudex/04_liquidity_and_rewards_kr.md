@@ -8,23 +8,55 @@
 
 FXSwap의 유동성 제공은 USGX(USD 페그), KRGX(KRW 페그), JPGX(JPY 페그) 및 PHGX(PHP 페그)와 같은 지원되는 주권 스테이블코인 간의 원활한 스왑을 가능하게 하는 데 기본입니다. 각 스테이블코인 쌍은 깊이와 효율성을 극대화하기 위해 소매 및 기관 유동성을 모두 통합하는 **단일 하이브리드 유동성 풀**에 의해 서비스됩니다.
 
-### 유동성 추가 방법
+### Virtual-Pair 메커니즘
 
-유동성 제공자(LP)는 풀의 기본 및 견적 스테이블코인에 해당하는 쌍으로 자산을 기여합니다. 프로세스는 처음으로 유동성이 추가되는지 또는 기존 풀에 추가되는지에 따라 약간 다릅니다:
+FXSwap의 유동성은 **Virtual-Pair**라는 독특한 방식을 통해 공급됩니다. 이는 전통적인 페어 풀(Pair Pool) 방식과 구별되는 혁신적인 접근법입니다:
 
-- **첫 번째 유동성 추가**: 풀이 초기화되면 유동성 금액은 제공된 기본 및 견적 코인 금액의 기하 평균으로 계산됩니다:
+**전통적인 페어 풀 방식의 문제점**:
+- USGX-KRGX, USGX-JPGX, KRGX-JPGX 등 모든 통화 쌍마다 별도의 풀이 필요
+- n개의 통화가 있을 때 n×(n-1)/2개의 풀이 필요 (예: 4개 통화 = 6개 풀)
+- 유동성이 파편화되어 자본 효율성 저하
+- 관리 및 배포 비용 증가
 
-  \[
-  \text{liquidity} = \sqrt{\text{baseAmount} \times \text{quoteAmount}}
-  \]
+**Virtual-Pair 방식의 장점**:
+- 각 스테이블코인마다 **단일 풀(Single Pool)**만 생성
+- 사용자가 두 개의 다른 단일 풀에 동시에 유동성을 공급
+- 하나의 **가상 LP 토큰(Virtual LP Token)**으로 관리
+- n개의 통화에 대해 n개의 풀만 필요 (예: 4개 통화 = 4개 풀)
+- 유동성이 집중되어 자본 효율성 최대화
+- 관리 복잡도 약 66% 감소
 
-- **후속 유동성 추가**: 기존 풀의 경우 유동성은 현재 준비금에 대한 추가된 금액의 비율에 비례하여 발행됩니다:
+### 유동성 추가 방법 (Virtual-Pair 기반)
 
-  \[
-  \text{liquidity} = \min\left(\frac{\text{baseAmount}}{\text{baseReserve}}, \frac{\text{quoteAmount}}{\text{quoteReserve}}\right) \times \text{totalLiquidity}
-  \]
+Virtual-Pair 메커니즘을 사용하는 유동성 추가는 다음과 같은 프로세스를 따릅니다:
 
-성공적인 유동성 추가 시 LP는 풀의 지분을 나타내는 **LP 토큰**을 받습니다.
+**예시: USGX-KRGX 거래 쌍에 유동성 공급**
+
+1. **두 개의 단일 풀에 동시 예치**:
+   - LP는 USGX 풀에 1,000 USGX를 예치
+   - 동시에 KRGX 풀에 1,300,000 KRGX를 예치
+
+2. **가상 LP 토큰 발행**:
+   - 두 자산의 가치를 기반으로 Virtual LP 토큰을 발행
+   - 첫 번째 유동성 추가 시:
+     \[
+     \text{virtualLP} = \sqrt{\text{amount}_{\text{USGX}} \times \text{amount}_{\text{KRGX}}}
+     \]
+   - 후속 유동성 추가 시:
+     \[
+     \text{virtualLP} = \min\left(\frac{\text{amount}_{\text{USGX}}}{\text{reserve}_{\text{USGX}}}, \frac{\text{amount}_{\text{KRGX}}}{\text{reserve}_{\text{KRGX}}}\right) \times \text{totalVirtualLP}
+     \]
+
+3. **지분 관리**:
+   - 하나의 Virtual LP 토큰으로 두 풀에 대한 지분을 표시
+   - 수수료 수익은 두 풀 모두에서 발생하여 LP에게 분배
+
+**유동성 제거 (`removeLiquidity`)**:
+- LP가 Virtual LP 토큰을 소각하면
+- 두 풀에서 지분에 해당하는 자산을 동시에 인출
+- 누적된 수수료 수익도 함께 수령
+
+이 방식을 통해 LP는 복잡한 관리 없이 효율적으로 다중 통화 쌍에 유동성을 제공할 수 있습니다.
 
 ### 하이브리드 풀 설계
 
@@ -71,20 +103,61 @@ FXSwap은 풀 내에서 실행되는 모든 스왑 거래에서 수수료를 생
 
 ## 보상 분배
 
-유동성 제공자에 대한 보상 분배는 24시간 주기로 발생하여 유동성 제공에 대한 시기적절하고 예측 가능한 보상을 보장합니다.
+유동성 제공자에 대한 보상 분배는 **FeeDistributor** 컨트랙트를 통해 관리되며, 24시간 주기로 발생하여 유동성 제공에 대한 시기적절하고 예측 가능한 보상을 보장합니다.
+
+### FeeDistributor 역할
+
+**FeeDistributor**는 발생한 스왑 수수료를 수집하여 유동성 공급자(LP)들의 지분에 따라 공정하게 분배하는 전담 컨트랙트입니다:
+
+- **수수료 수집**: 모든 HybridStablePool에서 발생한 수수료를 자동으로 수집
+- **분리된 회계**: 소매 풀 수수료와 기관 풀 수수료를 별도로 추적
+- **비례 분배**: LP 토큰 보유량에 정확히 비례하여 보상 계산
+- **효율적인 청구**: 가스 효율적인 일괄 분배 및 청구 메커니즘
 
 ### 분배 워크플로
 
-1. **수수료 누적**: 24시간 동안 스왑 수수료가 풀의 수수료 준비금에 누적됩니다.
-2. **분배 실행**: 각 주기가 끝나면 `distributeRewards()` 함수가 실행되어 LP 토큰 보유자에게 수수료를 비례적으로 할당합니다.
-3. **지분 계산**: 각 LP의 보상 지분은 총 유동성에 대한 LP 토큰 잔액을 기반으로 계산됩니다:
+1. **수수료 누적**: 
+   - 24시간 동안 스왑 수수료가 각 풀에서 발생
+   - FeeDistributor가 실시간으로 수수료를 추적
+   - 소매 거래 수수료와 기관 거래 수수료가 별도로 기록
 
+2. **분배 실행**: 
+   - 각 주기가 끝나면 `distributeRewards()` 함수가 자동으로 실행
+   - 또는 거버넌스/운영자가 수동으로 실행 가능
+   - LP 토큰 보유자에게 수수료를 비례적으로 할당
+
+3. **지분 계산**: 
+   - 각 LP의 보상 지분은 총 유동성에 대한 LP 토큰 잔액을 기반으로 계산:
    \[
-   \text{share} = \text{accumulatedFees} \times \frac{\text{lpTokens}}{\text{totalLiquidity}}
+   \text{reward}_{\text{LP}} = \text{totalFees} \times \frac{\text{lpTokens}_{\text{LP}}}{\text{totalLPTokens}}
    \]
 
-4. **보상 할당**: 계산된 보상이 각 LP의 **accumulatedRewards** 잔액에 적립됩니다.
-5. **보상 청구**: LP는 `claimRewards()` 함수를 통해 언제든지 보상을 청구하여 누적된 수수료의 지분을 받을 수 있습니다.
+4. **보상 할당**: 
+   - 계산된 보상이 각 LP의 **accumulatedRewards** 잔액에 적립
+   - 온체인에 투명하게 기록되어 검증 가능
+
+5. **보상 청구**: 
+   - LP는 `claimRewards()` 함수를 통해 언제든지 보상을 청구
+   - 누적된 수수료의 지분을 자신의 지갑으로 인출
+   - 가스 비용 절감을 위해 여러 풀의 보상을 한 번에 청구 가능
+
+### 수수료 분배 예시
+
+**시나리오**: 24시간 동안 USGX-KRGX 풀에서 1,000 USGX 상당의 수수료가 발생
+
+- **LP A**: 10,000 Virtual LP 토큰 보유 (전체의 40%)
+  - 보상: 400 USGX 상당
+  
+- **LP B**: 7,500 Virtual LP 토큰 보유 (전체의 30%)
+  - 보상: 300 USGX 상당
+  
+- **LP C**: 5,000 Virtual LP 토큰 보유 (전체의 20%)
+  - 보상: 200 USGX 상당
+  
+- **기타 LP**: 2,500 Virtual LP 토큰 보유 (전체의 10%)
+  - 보상: 100 USGX 상당
+
+각 LP는 자신의 지분에 정확히 비례하여 수수료를 받습니다.
 
 ---
 

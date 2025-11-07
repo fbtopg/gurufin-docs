@@ -8,23 +8,55 @@ This section provides a comprehensive overview of liquidity provision, LP token 
 
 Liquidity provision in FXSwap is fundamental to enabling seamless swaps between supported sovereign stablecoins such as USGX (USD-pegged), KRGX (KRW-pegged), JPGX (JPY-pegged), and PHGX (PHP-pegged). Each stablecoin pair is served by a **single hybrid liquidity pool**, which integrates both retail and institutional liquidity to maximize depth and efficiency.
 
-### How to Add Liquidity
+### Virtual-Pair Mechanism
 
-Liquidity providers (LPs) contribute assets in pairs corresponding to the base and quote stablecoins of the pool. The process differs slightly depending on whether liquidity is being added for the first time or to an existing pool:
+FXSwap's liquidity is provided through a unique mechanism called **Virtual-Pair**. This is an innovative approach that distinguishes itself from traditional Pair Pool methods:
 
-- **First Liquidity Addition**: When a pool is initialized, the liquidity amount is calculated as the geometric mean of the base and quote coin amounts provided:
+**Problems with Traditional Pair Pool Approach**:
+- Requires separate pools for every currency pair (USGX-KRGX, USGX-JPGX, KRGX-JPGX, etc.)
+- For n currencies, requires n×(n-1)/2 pools (e.g., 4 currencies = 6 pools)
+- Liquidity fragmentation reduces capital efficiency
+- Increased management and deployment costs
 
-  \[
-  \text{liquidity} = \sqrt{\text{baseAmount} \times \text{quoteAmount}}
-  \]
+**Advantages of Virtual-Pair Approach**:
+- Creates only a **single pool** per stablecoin
+- Users provide liquidity simultaneously to two different single pools
+- Managed through one **Virtual LP Token**
+- For n currencies, only n pools needed (e.g., 4 currencies = 4 pools)
+- Concentrated liquidity maximizes capital efficiency
+- Management complexity reduced by approximately 66%
 
-- **Subsequent Liquidity Additions**: For existing pools, liquidity is minted proportionally based on the ratio of the amounts added relative to current reserves:
+### How to Add Liquidity (Virtual-Pair Based)
 
-  \[
-  \text{liquidity} = \min\left(\frac{\text{baseAmount}}{\text{baseReserve}}, \frac{\text{quoteAmount}}{\text{quoteReserve}}\right) \times \text{totalLiquidity}
-  \]
+Liquidity addition using the Virtual-Pair mechanism follows this process:
 
-Upon successful liquidity addition, LPs receive **LP tokens** representing their share of the pool.
+**Example: Providing Liquidity for USGX-KRGX Trading Pair**
+
+1. **Simultaneous Deposit to Two Single Pools**:
+   - LP deposits 1,000 USGX to USGX pool
+   - Simultaneously deposits 1,300,000 KRGX to KRGX pool
+
+2. **Virtual LP Token Issuance**:
+   - Virtual LP tokens issued based on value of both assets
+   - First liquidity addition:
+     \[
+     \text{virtualLP} = \sqrt{\text{amount}_{\text{USGX}} \times \text{amount}_{\text{KRGX}}}
+     \]
+   - Subsequent liquidity additions:
+     \[
+     \text{virtualLP} = \min\left(\frac{\text{amount}_{\text{USGX}}}{\text{reserve}_{\text{USGX}}}, \frac{\text{amount}_{\text{KRGX}}}{\text{reserve}_{\text{KRGX}}}\right) \times \text{totalVirtualLP}
+     \]
+
+3. **Stake Management**:
+   - One Virtual LP token represents stakes in both pools
+   - Fee revenue generated from both pools distributed to LP
+
+**Liquidity Removal (`removeLiquidity`)**:
+- When LP burns Virtual LP tokens
+- Simultaneously withdraws assets from both pools proportional to stake
+- Also receives accumulated fee rewards
+
+This approach allows LPs to efficiently provide liquidity to multiple currency pairs without complex management.
 
 ### Hybrid Pool Design
 
@@ -71,20 +103,61 @@ Fees collected from swaps are accumulated in the pool’s **accumulatedFees** re
 
 ## Reward Distribution
 
-Reward distribution to liquidity providers occurs in discrete 24-hour cycles, ensuring timely and predictable compensation for liquidity provision.
+Reward distribution to liquidity providers is managed through the **FeeDistributor** contract and occurs in discrete 24-hour cycles, ensuring timely and predictable compensation for liquidity provision.
+
+### FeeDistributor Role
+
+**FeeDistributor** is a dedicated contract that collects swap fees generated and distributes them fairly to liquidity providers (LPs) according to their shares:
+
+- **Fee Collection**: Automatically collects fees from all HybridStablePool instances
+- **Segregated Accounting**: Separately tracks retail pool fees and institutional pool fees
+- **Proportional Distribution**: Calculates rewards precisely proportional to LP token holdings
+- **Efficient Claiming**: Gas-efficient batch distribution and claiming mechanism
 
 ### Distribution Workflow
 
-1. **Fee Accumulation**: Throughout the 24-hour period, swap fees accumulate in the pool’s fee reserve.
-2. **Distribution Execution**: At the end of each cycle, the `distributeRewards()` function is executed to allocate fees proportionally to LP token holders.
-3. **Share Calculation**: Each LP’s reward share is calculated based on their LP token balance relative to the total liquidity:
+1. **Fee Accumulation**: 
+   - Swap fees generated from each pool over 24 hours
+   - FeeDistributor tracks fees in real-time
+   - Retail transaction fees and institutional transaction fees recorded separately
 
+2. **Distribution Execution**: 
+   - At end of each cycle, `distributeRewards()` function executed automatically
+   - Or manually executed by governance/operator
+   - Fees allocated proportionally to LP token holders
+
+3. **Share Calculation**: 
+   - Each LP's reward share calculated based on LP token balance relative to total liquidity:
    \[
-   \text{share} = \text{accumulatedFees} \times \frac{\text{lpTokens}}{\text{totalLiquidity}}
+   \text{reward}_{\text{LP}} = \text{totalFees} \times \frac{\text{lpTokens}_{\text{LP}}}{\text{totalLPTokens}}
    \]
 
-4. **Reward Allocation**: The calculated rewards are credited to each LP’s **accumulatedRewards** balance.
-5. **Claiming Rewards**: LPs can claim their rewards at any time via the `claimRewards()` function, receiving their share of accumulated fees.
+4. **Reward Allocation**: 
+   - Calculated rewards credited to each LP's **accumulatedRewards** balance
+   - Transparently recorded on-chain for verification
+
+5. **Claiming Rewards**: 
+   - LPs can claim rewards anytime via `claimRewards()` function
+   - Withdraw accumulated fee share to their wallet
+   - Can batch claim rewards from multiple pools to save gas costs
+
+### Fee Distribution Example
+
+**Scenario**: Over 24 hours, USGX-KRGX pool generates 1,000 USGX worth of fees
+
+- **LP A**: Holds 10,000 Virtual LP tokens (40% of total)
+  - Reward: 400 USGX worth
+  
+- **LP B**: Holds 7,500 Virtual LP tokens (30% of total)
+  - Reward: 300 USGX worth
+  
+- **LP C**: Holds 5,000 Virtual LP tokens (20% of total)
+  - Reward: 200 USGX worth
+  
+- **Other LPs**: Hold 2,500 Virtual LP tokens (10% of total)
+  - Reward: 100 USGX worth
+
+Each LP receives fees exactly proportional to their stake.
 
 ### Reward Distribution Table
 

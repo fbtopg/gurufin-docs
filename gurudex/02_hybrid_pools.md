@@ -4,9 +4,45 @@ Hybrid Pools represent a core innovation within the FXSwap platform on Gurufin C
 
 ***
 
+## Single Pool vs Separated Pool vs Hybrid Pool: Structural Design Analysis
+
+Traditionally, liquidity pools for FX swaps or stablecoin trading have been segregated by user type, with separate pools for retail Automated Market Maker (AMM) participants and institutional Request-for-Quote (RFQ) clients. One of GuruDex's core design decisions is the structure of pools that manage liquidity.
+
+Initially, two approaches were considered: the **Single Pool** approach, which concentrates all liquidity into one pool, and the **Separated Pool** approach, which divides pools by user type (institutional/retail). However, both approaches had clear advantages and disadvantages. Ultimately, the **Hybrid Dual-Layer** approach was proposed as the optimal solution, combining the strengths of both.
+
+### Comparative Model Analysis
+
+| Evaluation Criteria | Single Pool (Shared) | Separated Pool (Independent) | Hybrid (Optimal) |
+| :--- | :--- | :--- | :--- |
+| **Capital Efficiency** | 🟢 Best (Liquidity Concentration) | 🔴 Worst (Liquidity Fragmentation) | 🟡 Excellent (Core Pool + Dedicated Pools) |
+| **Swap Efficiency** | 🟢 Best (Minimal Slippage) | 🔴 Worst (Maximum Slippage) | 🟡 Excellent (Optimal Pool Selection by Volume) |
+| **Revenue Fairness** | 🔴 Worst (Contribution-Distribution Mismatch) | 🟢 Best (Perfect Separation) | 🟢 Best (Independent Revenue Distribution per Pool) |
+| **Risk Management** | 🔴 Risky (Risk Propagation) | 🟢 Safe (Risk Isolation) | 🟡 Safe (Core Pool Risk + Isolation) |
+| **Management Complexity** | 🟢 Simple | 🔴 Complex (2x Pools) | 🟡 Moderate (Hierarchical Structure) |
+| **Overall Score** | 72 / 100 | 58 / 100 | **88 / 100** |
+
+### Single Pool Problem: Revenue Unfairness
+
+While single pools maximize capital efficiency, they suffer from a critical problem of **revenue distribution unfairness**. For example, when institutional users generating large volumes with low fees and retail users generating small volumes with high fees share liquidity, the total fees are distributed according to liquidity shares. This creates a reverse phenomenon where institutions with lower fee contributions receive more revenue, while retail users with higher contributions actually experience losses.
+
+### Hybrid Dual-Layer: The Optimal Compromise
+
+The proposed hybrid model solves this problem with the following hierarchical structure:
+
+- **Layer 1: Shared Core Pool (Base Pool)**
+  - Comprises approximately 50% of total liquidity, accessible to both institutions and retail users
+  - Handles large trades to minimize slippage, with fees distributed fairly based on contributions
+  - Fees generated from this pool are distributed equitably according to contribution
+
+- **Layer 2: Dedicated Pools**
+  - Remaining liquidity is separated into institutional-dedicated and retail-dedicated pools
+  - Trades occurring in each pool distribute fees independently only to that pool's liquidity providers, ensuring 100% revenue fairness
+
+The smart contract automatically selects the most efficient pool (core pool or dedicated pool) based on trade size and user type to execute the swap. Through this structure, GuruDex achieves the optimal balance between **capital efficiency and revenue fairness**.
+
 ## Combining Institutional and Retail Liquidity
 
-Traditionally, liquidity pools for FX swaps or stablecoin trading have been segregated by user type, with separate pools for retail Automated Market Maker (AMM) participants and institutional Request-for-Quote (RFQ) clients. FXSwap’s Hybrid Pool design consolidates these liquidity sources into a single pool per stablecoin pair, leveraging a dual-algorithm approach to serve both retail and institutional users effectively.
+GuruDex's Hybrid Pool design consolidates these liquidity sources into a single pool per stablecoin pair, leveraging a dual-algorithm approach to serve both retail and institutional users effectively.
 
 Within each Hybrid Pool, liquidity is managed in two distinct internal areas:
 

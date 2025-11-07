@@ -10,6 +10,69 @@ GuruDex is architected as a coin-based FX swap platform that consolidates instit
 
 At the heart of the system lies the **FXSwapMaster** contract, which orchestrates pool creation, management, and user interactions. It interfaces with the **HybridStablePool** contracts that maintain liquidity reserves and execute swaps. The **PriceOracle** contract provides authoritative, real-time FX rates with strict validation mechanisms, while the **InstitutionalRegistry** manages institutional onboarding, permissions, and risk parameters.
 
+### Three-Layer Architecture
+
+GuruDex adopts a 3-layer hybrid structure to combine the decentralization and transparency of on-chain systems with the efficiency and security of off-chain systems:
+
+```
+┌───────────────────────────────────────────────────────────────────┐
+│                        Frontend Layer                              │
+│   ┌──────────────────┐         ┌─────────────────────┐           │
+│   │   User DApp      │         │    Admin Tool       │           │
+│   │ (Web3 Interface) │         │  (Operator Panel)   │           │
+│   └──────────────────┘         └─────────────────────┘           │
+└───────────────────────────────────────────────────────────────────┘
+                                  │
+                                  ▼
+┌───────────────────────────────────────────────────────────────────┐
+│                      Server Side Layer                             │
+│   ┌────────────────────────────────────────────────────────────┐  │
+│   │  - KYC/AML Verification                                    │  │
+│   │  - Real-time Exchange Rate Query (External API)            │  │
+│   │  - Transaction Approval & Parameter Generation            │  │
+│   │  - Oracle Price Feed (Reporter Role)                       │  │
+│   └────────────────────────────────────────────────────────────┘  │
+└───────────────────────────────────────────────────────────────────┘
+                                  │
+                                  ▼
+┌───────────────────────────────────────────────────────────────────┐
+│                    Smart Contract Layer                            │
+│   ┌─────────────────────────────────────────────────────────────┐│
+│   │           HybridPoolManager (Core)                          ││
+│   └─────────────────────────────────────────────────────────────┘│
+│           ▼              ▼              ▼                         │
+│   ┌──────────────┐ ┌──────────────┐ ┌──────────────┐            │
+│   │Institutional │ │   Oracle     │ │     Fee      │            │
+│   │  Registry    │ │  Validator   │ │ Distributor  │            │
+│   └──────────────┘ └──────────────┘ └──────────────┘            │
+│                           ▼                                        │
+│   ┌─────────────────────────────────────────────────────────────┐│
+│   │                    PoolFactory                              ││
+│   └─────────────────────────────────────────────────────────────┘│
+│                           ▼                                        │
+│   ┌────────┬────────┬────────┬────────┬─────────────────────────┐│
+│   │  USGX  │  KRGX  │  JPGX  │  PHGX  │   ... (Scalable)        ││
+│   │  Pool  │  Pool  │  Pool  │  Pool  │                         ││
+│   └────────┴────────┴────────┴────────┴─────────────────────────┘│
+└───────────────────────────────────────────────────────────────────┘
+```
+
+**Frontend Layer**
+- Provides web interface for user interaction
+- Offers operational panel for institutional administrators
+- Integrates with Web3 wallets to communicate with blockchain
+
+**Server Side Layer**
+- Performs KYC/AML verification for institutional users
+- Collects real-time exchange rate data via external APIs
+- Handles transaction approval and parameter generation
+- Acts as Reporter to provide oracle prices on-chain
+
+**Smart Contract Layer**
+- All assets and trading logic executed on-chain
+- Ensures decentralization and transparency
+- Maintains immutable transaction records
+
 ***
 
 ## Core Contracts
@@ -90,10 +153,13 @@ The following diagram illustrates the high-level architecture of GuruDex’s FX 
 
 | Contract                  | Primary Responsibilities                                                               | Key Interactions                                                                |
 | ------------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| **FXSwapMaster**          | Central management of pools, swap routing, fee aggregation, rate limiting              | Calls HybridStablePool for swaps; queries InstitutionalRegistry and PriceOracle |
-| **HybridStablePool**      | Maintains liquidity reserves; executes retail AMM and institutional oracle-based swaps | Receives swap requests from FXSwapMaster; updates reserves and fees             |
-| **PriceOracle**           | Stores and validates FX rate data; enforces deviation and freshness constraints        | Provides price data to HybridStablePool and FXSwapMaster                        |
-| **InstitutionalRegistry** | Manages institutional user onboarding, permissions, and risk parameters                | Authorizes institutional swaps; enforces limits and fee rates                   |
+| **FXSwapMaster**          | Acts as the central management contract for the system, deploying all sub-components and managing major roles such as Owner and Operator. Responsible for central pool management, swap routing, fee aggregation, and rate limiting | Calls HybridStablePool for swaps; queries InstitutionalRegistry and PriceOracle |
+| **HybridPoolManager**     | Handles core orchestration of swap execution, calling different swap logic (real-time exchange rate or AMM) based on whether the user is institutional or retail | Integrates with FXSwapMaster; selects appropriate algorithm based on user type |
+| **HybridStablePool**      | The single pool where liquidity for each FX stablecoin is actually stored. Consolidates liquidity from both institutional and retail users. Executes retail AMM and institutional oracle-based swaps | Receives swap requests from FXSwapMaster; updates reserves and fees             |
+| **InstitutionalRegistry** | Manages and validates all information about institutional users including registration, KYC/AML status, trading limits, and customized fee rates | Authorizes institutional swaps; enforces limits and fee rates; manages onboarding workflow |
+| **PriceOracle**           | Records real-time exchange rate data provided by server-side and validates price data validity (time, deviation, confidence) during swaps | Provides price data to HybridStablePool and FXSwapMaster; performs triple validation |
+| **PoolFactory**           | Creates and registers single pools for the coin when new FX stablecoins are added to the system | Deploys new HybridStablePool instances upon FXSwapMaster's instruction |
+| **FeeDistributor**        | Collects swap fees generated and distributes them to liquidity providers (LPs) according to their shares | Collects fees from HybridStablePool; distributes to LP token holders |
 
 ***
 
