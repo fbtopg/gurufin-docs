@@ -81,7 +81,42 @@ While liquidity is pooled together, FXSwap maintains strict internal separation 
 
 ### Internal Separation Diagram
 
-<figure><img src="../.gitbook/assets/hybrid_pools.png" alt="" width="563"><figcaption></figcaption></figure>
+```mermaid
+graph LR
+    subgraph HybridPool["Hybrid Pool - Single Pool Structure"]
+        direction TB
+        
+        subgraph RetailSection["Retail Section (Internal)"]
+            R1[Retail Liquidity]
+            R2[Retail Balances]
+            R3[Retail Transactions]
+        end
+        
+        subgraph InstSection["Institutional Section (Internal)"]
+            I1[Institutional Liquidity]
+            I2[Institutional Balances]
+            I3[Institutional Transactions]
+        end
+        
+        SharedLiquidity[Combined Liquidity<br/>Maximum Depth]
+    end
+    
+    RetailUsers[👥 Retail Users] -->|Provide Liquidity| RetailSection
+    InstUsers[🏦 Institutional Users] -->|Provide Liquidity| InstSection
+    
+    RetailSection -.Internal Accounting.-> SharedLiquidity
+    InstSection -.Internal Accounting.-> SharedLiquidity
+    
+    SharedLiquidity -->|Deep Liquidity| Swaps[Low Slippage Swaps]
+    
+    RetailSection -.Privacy Protected.-> InstSection
+    
+    style HybridPool fill:#f5f5f5
+    style RetailSection fill:#e3f2fd
+    style InstSection fill:#fff3e0
+    style SharedLiquidity fill:#c8e6c9
+    style Swaps fill:#81c784
+```
 
 This internal separation ensures that while liquidity is combined for efficiency, the privacy and regulatory requirements of different user classes are respected and enforced.
 
@@ -91,7 +126,45 @@ This internal separation ensures that while liquidity is combined for efficiency
 
 The following diagram illustrates the Hybrid Pool structure within the FXSwap system:
 
-<figure><img src="../.gitbook/assets/hybrid_pool_structure.png" alt="" width="563"><figcaption></figcaption></figure>
+```mermaid
+flowchart TB
+    subgraph Pool["HybridStablePool - USGX/KRGX Example"]
+        direction TB
+        
+        subgraph Algorithms["Dual Algorithm Execution"]
+            AMM["AMM Algorithm<br/>Retail Users<br/>Dynamic Fees 0.3%+<br/>Constant Product x×y=k"]
+            Oracle["Oracle Algorithm<br/>Institutional Users<br/>Fixed Fees ~0.1%<br/>Real-time Rates"]
+        end
+        
+        subgraph Reserves["Combined Reserves"]
+            USGX[USGX Reserve<br/>100,000]
+            KRGX[KRGX Reserve<br/>130,000,000]
+        end
+        
+        subgraph Tracking["Separate Internal Tracking"]
+            RetailTrack[Retail Balance<br/>Volume & Fees]
+            InstTrack[Institutional Balance<br/>Volume & Fees]
+        end
+    end
+    
+    RetailUser[👤 Retail User] -->|Swap Request| AMM
+    InstUser[🏦 Institution] -->|Swap Request| Oracle
+    
+    AMM --> Reserves
+    Oracle --> Reserves
+    
+    Reserves --> RetailTrack
+    Reserves --> InstTrack
+    
+    RetailTrack -->|Fee Distribution| RetailLP[Retail LPs]
+    InstTrack -->|Fee Distribution| InstLP[Institutional LPs]
+    
+    style Pool fill:#f5f5f5
+    style AMM fill:#e3f2fd
+    style Oracle fill:#fff3e0
+    style Reserves fill:#c8e6c9
+    style Tracking fill:#fff9c4
+```
 
 ***
 

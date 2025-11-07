@@ -14,47 +14,54 @@ At the heart of the system lies the **FXSwapMaster** contract, which orchestrate
 
 GuruDex adopts a 3-layer hybrid structure to combine the decentralization and transparency of on-chain systems with the efficiency and security of off-chain systems:
 
-```
-┌───────────────────────────────────────────────────────────────────┐
-│                        Frontend Layer                              │
-│   ┌──────────────────┐         ┌─────────────────────┐           │
-│   │   User DApp      │         │    Admin Tool       │           │
-│   │ (Web3 Interface) │         │  (Operator Panel)   │           │
-│   └──────────────────┘         └─────────────────────┘           │
-└───────────────────────────────────────────────────────────────────┘
-                                  │
-                                  ▼
-┌───────────────────────────────────────────────────────────────────┐
-│                      Server Side Layer                             │
-│   ┌────────────────────────────────────────────────────────────┐  │
-│   │  - KYC/AML Verification                                    │  │
-│   │  - Real-time Exchange Rate Query (External API)            │  │
-│   │  - Transaction Approval & Parameter Generation            │  │
-│   │  - Oracle Price Feed (Reporter Role)                       │  │
-│   └────────────────────────────────────────────────────────────┘  │
-└───────────────────────────────────────────────────────────────────┘
-                                  │
-                                  ▼
-┌───────────────────────────────────────────────────────────────────┐
-│                    Smart Contract Layer                            │
-│   ┌─────────────────────────────────────────────────────────────┐│
-│   │           HybridPoolManager (Core)                          ││
-│   └─────────────────────────────────────────────────────────────┘│
-│           ▼              ▼              ▼                         │
-│   ┌──────────────┐ ┌──────────────┐ ┌──────────────┐            │
-│   │Institutional │ │   Oracle     │ │     Fee      │            │
-│   │  Registry    │ │  Validator   │ │ Distributor  │            │
-│   └──────────────┘ └──────────────┘ └──────────────┘            │
-│                           ▼                                        │
-│   ┌─────────────────────────────────────────────────────────────┐│
-│   │                    PoolFactory                              ││
-│   └─────────────────────────────────────────────────────────────┘│
-│                           ▼                                        │
-│   ┌────────┬────────┬────────┬────────┬─────────────────────────┐│
-│   │  USGX  │  KRGX  │  JPGX  │  PHGX  │   ... (Scalable)        ││
-│   │  Pool  │  Pool  │  Pool  │  Pool  │                         ││
-│   └────────┴────────┴────────┴────────┴─────────────────────────┘│
-└───────────────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph Frontend["Frontend Layer"]
+        A1[User DApp<br/>Web3 Interface]
+        A2[Admin Tool<br/>Operator Panel]
+    end
+    
+    subgraph ServerSide["Server Side Layer"]
+        B1[KYC/AML Verification]
+        B2[Real-time Exchange Rate Query<br/>External API]
+        B3[Transaction Approval &<br/>Parameter Generation]
+        B4[Oracle Price Feed<br/>Reporter Role]
+    end
+    
+    subgraph SmartContract["Smart Contract Layer"]
+        C1[HybridPoolManager<br/>Core]
+        C2[Institutional<br/>Registry]
+        C3[Oracle<br/>Validator]
+        C4[Fee<br/>Distributor]
+        C5[PoolFactory]
+        C6[USGX Pool]
+        C7[KRGX Pool]
+        C8[JPGX Pool]
+        C9[PHGX Pool]
+        C10[... Scalable]
+    end
+    
+    A1 --> ServerSide
+    A2 --> ServerSide
+    
+    ServerSide --> C1
+    
+    C1 --> C2
+    C1 --> C3
+    C1 --> C4
+    C1 --> C5
+    
+    C5 --> C6
+    C5 --> C7
+    C5 --> C8
+    C5 --> C9
+    C5 --> C10
+    
+    style Frontend fill:#e1f5ff
+    style ServerSide fill:#fff4e1
+    style SmartContract fill:#f0f0f0
+    style C1 fill:#ffcccc
+    style C5 fill:#ccffcc
 ```
 
 **Frontend Layer**
@@ -139,7 +146,38 @@ By integrating these controls, InstitutionalRegistry ensures that institutional 
 
 The following diagram illustrates the high-level architecture of GuruDex’s FX swap system:
 
-<figure><img src="../.gitbook/assets/architecture.png" alt="" width="563"><figcaption></figcaption></figure>
+```mermaid
+flowchart TB
+    FXSwapMaster[FXSwapMaster<br/>Control Plane]
+    
+    PoolFactory[PoolFactory<br/>Pool Deployment]
+    
+    InstitutionalRegistry[InstitutionalRegistry<br/>Manages Institutions]
+    
+    PriceOracle[PriceOracle<br/>Validated FX Rates]
+    
+    subgraph Pools["Hybrid Stable Pools"]
+        Pool1[USGX/KRGX Pool<br/>Retail + Institutional]
+        Pool2[USGX/JPGX Pool<br/>Retail + Institutional]
+        Pool3[KRGX/JPGX Pool<br/>Retail + Institutional]
+    end
+    
+    FXSwapMaster --> PoolFactory
+    FXSwapMaster --> InstitutionalRegistry
+    FXSwapMaster --> PriceOracle
+    
+    PoolFactory --> Pools
+    
+    InstitutionalRegistry -.Authorize.-> FXSwapMaster
+    PriceOracle -.Price Data.-> FXSwapMaster
+    
+    FXSwapMaster -->|Swap Execution| Pools
+    
+    style FXSwapMaster fill:#ffcccc
+    style PoolFactory fill:#ccffcc
+    style InstitutionalRegistry fill:#fff9c4
+    style PriceOracle fill:#b3e5fc
+```
 
 * **FXSwapMaster** acts as the control plane, coordinating pool creation and swap execution.
 * **PoolFactory** is responsible for deploying HybridStablePool instances.

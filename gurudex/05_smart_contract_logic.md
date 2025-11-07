@@ -18,7 +18,23 @@ When a swap is initiated, the `HybridStablePool` contract executes the following
 
 ### Swap Flow Diagram
 
-<figure><img src="../.gitbook/assets/swap_flow.png" alt="" width="563"><figcaption></figcaption></figure>
+```mermaid
+flowchart TD
+    User([User Submits Swap]) --> Check{Check User Type}
+    
+    Check -->|Retail| RetailPath["Execute _swapRetail<br/>• AMM Algorithm<br/>• Dynamic Fees<br/>• Pool-based pricing"]
+    Check -->|Institutional| InstPath["Execute _swapInstitutional<br/>• Oracle Algorithm<br/>• Fixed Fees<br/>• Real-time rates"]
+    
+    RetailPath --> Complete1[✅ Swap Complete]
+    InstPath --> Complete2[✅ Swap Complete]
+    
+    style User fill:#e3f2fd
+    style Check fill:#fff9c4
+    style RetailPath fill:#b3e5fc
+    style InstPath fill:#fff3e0
+    style Complete1 fill:#81c784
+    style Complete2 fill:#81c784
+```
 
 ```solidity
 function swap(address user, uint256 amountIn, bool isBaseToQuote) external {
@@ -27,7 +43,7 @@ function swap(address user, uint256 amountIn, bool isBaseToQuote) external {
     if (userType == IInstitutionalRegistry.UserType.INSTITUTIONAL) {
         _swapInstitutional(user, amountIn, isBaseToQuote);
     } else {
-        _swapRetail(user, amountIn, isBaseTo-Quote);
+        _swapRetail(user, amountIn, isBaseToQuote);
     }
 }
 ```
@@ -65,49 +81,44 @@ Unlike retail users, institutional users must undergo separate screening and reg
 
 ### Onboarding Workflow
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│              Step 1: Basic Information Registration          │
-│   Institution → registerInstitution()                       │
-│   Status: PENDING                                           │
-└─────────────────────────────────────────────────────────────┘
-                            │
-                            ▼
-┌─────────────────────────────────────────────────────────────┐
-│          Step 2: Off-chain KYC/AML Verification             │
-│   FXSwap operations team performs identity verification     │
-│   and anti-money laundering verification                    │
-│   - Verify corporate registration documents                 │
-│   - Verify representative identity                          │
-│   - Verify fund sources                                     │
-│   - Check regulatory compliance                             │
-└─────────────────────────────────────────────────────────────┘
-                            │
-                            ▼
-┌─────────────────────────────────────────────────────────────┐
-│     Step 3: Institution Activation & Parameter Setting      │
-│   Operator → activateInstitution()                          │
-│   - Set transaction limits (perTxLimit, dailyLimit)         │
-│   - Set custom fee rate (customFeeRate)                     │
-│   - Set max price deviation (maxPriceDeviation)             │
-│   - Set data freshness requirements (maxStaleness)          │
-│   Status: ACTIVE                                            │
-└─────────────────────────────────────────────────────────────┘
-                            │
-                            ▼
-┌─────────────────────────────────────────────────────────────┐
-│       Step 4: Coin and Pool Access Authorization            │
-│   Operator → allowCoinForInstitution()                      │
-│   Operator → authorizePoolForInstitution()                  │
-│   - Specify tradeable stablecoin types                      │
-│   - Grant access to liquidity pools                         │
-└─────────────────────────────────────────────────────────────┘
-                            │
-                            ▼
-┌─────────────────────────────────────────────────────────────┐
-│              Step 5: Trading Can Begin                       │
-│   Institution can now perform swaps                         │
-└─────────────────────────────────────────────────────────────┘
+```mermaid
+flowchart TD
+    Start([New Institution]) --> Step1
+    
+    Step1["📝 Step 1: Basic Information Registration<br/>Institution → registerInstitution()<br/>Status: PENDING"]
+    
+    Step1 --> Step2
+    
+    Step2["🔍 Step 2: Off-chain KYC/AML Verification<br/>FXSwap Operations Team<br/>• Verify corporate registration<br/>• Verify representative identity<br/>• Verify fund sources<br/>• Check regulatory compliance"]
+    
+    Step2 --> Decision{Verification<br/>Passed?}
+    
+    Decision -->|No| Rejected[❌ Registration Rejected]
+    Decision -->|Yes| Step3
+    
+    Step3["✅ Step 3: Institution Activation<br/>Operator → activateInstitution()<br/>• Set transaction limits<br/>• Set custom fee rate<br/>• Set max price deviation<br/>• Set data freshness requirements<br/>Status: ACTIVE"]
+    
+    Step3 --> Step4
+    
+    Step4["🔑 Step 4: Access Authorization<br/>Operator → allowCoinForInstitution()<br/>Operator → authorizePoolForInstitution()<br/>• Specify tradeable coins<br/>• Grant pool access"]
+    
+    Step4 --> Step5
+    
+    Step5["🎉 Step 5: Trading Enabled<br/>Institution can now perform swaps"]
+    
+    Step5 --> End([Active Institution])
+    Rejected --> End2([Rejected])
+    
+    style Start fill:#e8f5e9
+    style Step1 fill:#fff9c4
+    style Step2 fill:#fff3e0
+    style Decision fill:#ffccbc
+    style Step3 fill:#c8e6c9
+    style Step4 fill:#b3e5fc
+    style Step5 fill:#c5e1a5
+    style End fill:#a5d6a7
+    style Rejected fill:#ef9a9a
+    style End2 fill:#ef9a9a
 ```
 
 ### Detailed Explanation of Each Step

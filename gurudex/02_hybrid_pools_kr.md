@@ -80,7 +80,42 @@ GuruDex의 하이브리드 풀 설계는 이러한 유동성 소스를 스테이
 
 ### 내부 분리 다이어그램
 
-<figure><img src="../.gitbook/assets/hybrid_pools.png" alt="" width="563"><figcaption></figcaption></figure>
+```mermaid
+graph LR
+    subgraph HybridPool["하이브리드 풀 - 단일 풀 구조"]
+        direction TB
+        
+        subgraph RetailSection["소매 영역 (내부)"]
+            R1[소매 유동성]
+            R2[소매 잔액]
+            R3[소매 거래]
+        end
+        
+        subgraph InstSection["기관 영역 (내부)"]
+            I1[기관 유동성]
+            I2[기관 잔액]
+            I3[기관 거래]
+        end
+        
+        SharedLiquidity[통합 유동성<br/>최대 깊이]
+    end
+    
+    RetailUsers[👥 일반 사용자] -->|유동성 공급| RetailSection
+    InstUsers[🏦 기관 사용자] -->|유동성 공급| InstSection
+    
+    RetailSection -.내부 회계.-> SharedLiquidity
+    InstSection -.내부 회계.-> SharedLiquidity
+    
+    SharedLiquidity -->|깊은 유동성| Swaps[낮은 슬리피지 스왑]
+    
+    RetailSection -.프라이버시 보호.-> InstSection
+    
+    style HybridPool fill:#f5f5f5
+    style RetailSection fill:#e3f2fd
+    style InstSection fill:#fff3e0
+    style SharedLiquidity fill:#c8e6c9
+    style Swaps fill:#81c784
+```
 
 이 내부 분리는 효율성을 위해 유동성이 결합되는 동안 서로 다른 사용자 클래스의 프라이버시 및 규제 요구 사항이 존중되고 시행되도록 보장합니다.
 
@@ -90,7 +125,45 @@ GuruDex의 하이브리드 풀 설계는 이러한 유동성 소스를 스테이
 
 다음 다이어그램은 FXSwap 시스템 내의 하이브리드 풀 구조를 보여줍니다:
 
-<figure><img src="../.gitbook/assets/hybrid_pool_structure.png" alt="" width="563"><figcaption></figcaption></figure>
+```mermaid
+flowchart TB
+    subgraph Pool["HybridStablePool - USGX/KRGX 예시"]
+        direction TB
+        
+        subgraph Algorithms["듀얼 알고리즘 실행"]
+            AMM["AMM 알고리즘<br/>소매 사용자<br/>동적 수수료 0.3%+<br/>상수 곱 x×y=k"]
+            Oracle["오라클 알고리즘<br/>기관 사용자<br/>고정 수수료 ~0.1%<br/>실시간 환율"]
+        end
+        
+        subgraph Reserves["통합 준비금"]
+            USGX[USGX 준비금<br/>100,000]
+            KRGX[KRGX 준비금<br/>130,000,000]
+        end
+        
+        subgraph Tracking["별도 내부 추적"]
+            RetailTrack[소매 잔액<br/>거래량 및 수수료]
+            InstTrack[기관 잔액<br/>거래량 및 수수료]
+        end
+    end
+    
+    RetailUser[👤 일반 사용자] -->|스왑 요청| AMM
+    InstUser[🏦 기관] -->|스왑 요청| Oracle
+    
+    AMM --> Reserves
+    Oracle --> Reserves
+    
+    Reserves --> RetailTrack
+    Reserves --> InstTrack
+    
+    RetailTrack -->|수수료 분배| RetailLP[소매 LP]
+    InstTrack -->|수수료 분배| InstLP[기관 LP]
+    
+    style Pool fill:#f5f5f5
+    style AMM fill:#e3f2fd
+    style Oracle fill:#fff3e0
+    style Reserves fill:#c8e6c9
+    style Tracking fill:#fff9c4
+```
 
 ***
 
