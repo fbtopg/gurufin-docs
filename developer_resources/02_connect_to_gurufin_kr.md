@@ -1,8 +1,8 @@
-# Gurufin에 연결
+# 🇰🇷 한국어
 
 이 가이드는 다양한 프로토콜 및 인터페이스를 사용하여 애플리케이션을 Gurufin Chain에 연결하는 방법을 설명합니다. IBC, EVM Gateway, GatewayGX 및 REST API를 통한 상호 운용성에 중점을 둡니다.
 
----
+***
 
 ## RPC 및 API 엔드포인트
 
@@ -25,7 +25,7 @@ REST: https://testnet-api.gurufin.io
 gRPC: testnet-grpc.gurufin.io:9090
 ```
 
----
+***
 
 ## Web3 지갑 연결
 
@@ -50,7 +50,7 @@ await window.ethereum.request({
 });
 ```
 
----
+***
 
 ## IBC를 통한 상호 운용성
 
@@ -71,7 +71,7 @@ gurufincli tx ibc-transfer transfer \
   --from mywallet
 ```
 
----
+***
 
 ## REST API 사용
 
@@ -89,7 +89,7 @@ const tx = await fetch(
 );
 ```
 
----
+***
 
 ## GatewayGX를 통한 Solana 통합
 
@@ -113,7 +113,7 @@ await bridge.transferToSolana({
 });
 ```
 
----
+***
 
 ## 스마트 계약 상호 작용
 
@@ -137,7 +137,7 @@ const balance = await contract.balanceOf(userAddress);
 console.log('Balance:', balance.toString());
 ```
 
----
+***
 
 ## FXSwap API 통합
 
@@ -163,7 +163,6 @@ const swap = await sdk.fxswap.swap({
 console.log('Swap completed:', swap.txHash);
 ```
 
----
+***
 
 이 통합 가이드를 통해 Gurufin Chain의 모든 주요 기능 및 상호 운용성 레이어에 연결할 수 있습니다.
-

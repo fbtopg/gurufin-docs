@@ -1,41 +1,9 @@
-# Gurufin Documentation
+# Welcome to Gurufin
 
-Welcome to the official documentation for the **Gurufin ecosystem**, a global on-chain FX/DeFi hub designed to power the next generation of cross-border payments, stablecoin infrastructure, and decentralized finance.
+Gurufin is a global on-chain FX/DeFi hub for the Web3 economy, designed to provide a secure, efficient, and compliant infrastructure for stablecoins, tokenized assets, and cross-border payments. The ecosystem is built upon two core pillars: the **Gurufin Chain**, a public DPoS Layer-1 blockchain, and the **GX Stablecoin network**, a system of jurisdiction-specific, sovereign stablecoin chains.
 
-This documentation provides comprehensive information about the Gurufin Chain, GX Stablecoins, GuruDex, and the tools and resources available for developers, institutions, and users.
+Our vision is to create a neutral settlement layer that unifies global digital finance, enabling seamless and low-cost value transfer across borders. By combining a high-performance blockchain with a network of regulated stablecoins, Gurufin offers a unique platform for developers, financial institutions, and users to build and access the next generation of financial services.
 
-## What is Gurufin?
+## Core Components
 
-Gurufin is a purpose-built blockchain ecosystem consisting of two core components:
-
-**Gurufin Chain** is a public DPoS Layer-1 blockchain that serves as a neutral settlement layer for stablecoins, tokenized assets, and cross-border payments. It features a hybrid execution model combining AMM and RFQ systems, fiat-predictable transaction fees through the Guru-PEG mechanism, and robust interoperability via IBC and EVM compatibility.
-
-**GX Stablecoins** represent a network of jurisdiction-specific, sovereign stablecoin chains. Each GX stablecoin operates as an independent Layer-1 blockchain using Proof-of-Authority consensus with licensed validators, ensuring regulatory compliance and embedded governance at the protocol level.
-
-## Key Features
-
-The Gurufin ecosystem offers several unique advantages that make it an ideal platform for building the future of digital finance:
-
-**Fiat-Predictable Fees** through the Guru-PEG mechanism ensure that transaction costs remain stable and affordable, making blockchain technology accessible for everyday financial applications. This innovative approach indexes gas fees to fiat currencies and adjusts them dynamically based on real-time oracle data.
-
-**Deep Liquidity and Efficient FX** are achieved through a hybrid execution model that combines automated market makers for retail users with request-for-quote systems for institutional clients. This dual approach provides optimal trading experiences for all market participants while maximizing capital efficiency.
-
-**Embedded Compliance** is built into the core of the GX Stablecoin network through a jurisdictional Proof-of-Authority model with licensed validators. This design ensures that regulatory requirements are met at the consensus layer, providing a compliant foundation for financial services.
-
-**High Performance and Scalability** are delivered through Tendermint BFT consensus, which provides sub-second finality and throughput of up to 10,000 transactions per second. This performance enables the Gurufin ecosystem to scale to meet global demand.
-
-**Seamless Interoperability** is achieved through an IBC-first architecture and EVM Gateway, allowing applications built on Gurufin to connect to a wide range of blockchain ecosystems and access diverse assets and liquidity.
-
-## Getting Started
-
-If you are new to Gurufin, we recommend starting with the **Introduction** section to understand the core concepts and design principles. Developers can jump directly to the **Developer Resources** section for quick-start guides and API documentation.
-
-For more information about specific components, explore the dedicated sections for **Gurufin Chain**, **GX Stablecoins**, and **GuruDex**.
-
-## Community and Support
-
-Join our growing community of developers, institutions, and users building the future of digital finance on Gurufin. Connect with us through our official channels and contribute to the open-source ecosystem.
-
----
-
-**Ready to build?** Start with our [Get Started](developer_resources/01_get_started.md) guide for developers.
+<table><thead><tr><th width="197">Component</th><th>Description</th></tr></thead><tbody><tr><td><strong>Gurufin Chain</strong></td><td>A public, permissionless DPoS Layer-1 blockchain that serves as the neutral settlement layer for the ecosystem. It features a hybrid execution model, fiat-predictable fees, and robust interoperability.</td></tr><tr><td><strong>GX Stablecoins</strong></td><td>A network of sovereign stablecoin chains, each operating under its own jurisdiction with licensed validators. These stablecoins are fully backed by fiat reserves and feature automated, bank-API-anchored minting and burning.</td></tr></tbody></table>

@@ -1,10 +1,8 @@
 # Table of contents
 
-* [README](README.md)
-
 ## Introduction
 
-* [Welcome to Gurufin](introduction/01_welcome.md)
+* [Welcome to Gurufin](README.md)
   * [🇰🇷 한국어](introduction/01_welcome_kr.md)
 * [Why Build on Gurufin?](introduction/02_why_build_on_gurufin.md)
   * [🇰🇷 한국어](introduction/02_why_build_on_gurufin_kr.md)
