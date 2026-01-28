@@ -3,8 +3,10 @@
 ## Introduction
 
 * [Welcome to Gurufin](README.md)
-* [Why Build on Gurufin?](introduction/02_why_build_on_gurufin.md)
-* [Core Principles](introduction/03_core_principles.md)
+* [Vision & Mission](introduction/01_vision_mission.md)
+* [What is Gurufin?](introduction/02_what_is_gurufin.md)
+* [Why Gurufin?](introduction/03_why_gurufin.md)
+* [Roadmap](introduction/04_roadmap.md)
 
 ## Core Concepts
 
