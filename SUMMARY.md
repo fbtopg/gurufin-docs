@@ -2,7 +2,6 @@
 
 ## Introduction
 
-* [Welcome to Gurufin](README.md)
 * [Vision & Mission](introduction/01_vision_mission.md)
 * [What is Gurufin?](introduction/02_what_is_gurufin.md)
 * [Roadmap](introduction/03_roadmap.md)
