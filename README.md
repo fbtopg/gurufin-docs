@@ -1,9 +1,7 @@
-# Welcome to Gurufin
+# Vision & Mission
 
-Gurufin is a global on-chain FX/DeFi hub for the Web3 economy, designed to provide a secure, efficient, and compliant infrastructure for stablecoins, tokenized assets, and cross-border payments. The ecosystem is built upon two core pillars: the **Gurufin Chain**, a public DPoS Layer-1 blockchain, and the **GX Stablecoin network**, a system of jurisdiction-specific, sovereign stablecoin chains.
+Gurufin was founded to solve the fundamental inefficiencies in global finance. Despite rapid technological advancement, moving money across borders remains slow, expensive, and inaccessible to billions. International transfers take 2-5 days to settle, cost 6-7% in fees, and require extensive banking infrastructure that excludes emerging markets from participating in the global economy.
 
-Our vision is to create a neutral settlement layer that unifies global digital finance, enabling seamless and low-cost value transfer across borders. By combining a high-performance blockchain with a network of regulated stablecoins, Gurufin offers a unique platform for developers, financial institutions, and users to build and access the next generation of financial services.
+Our vision is a world where value moves as freely and instantly as information. We are building the **Stablecoin FX Layer**—a unified global settlement infrastructure where transactions settle in seconds, fees are near-zero and predictable, and anyone with internet access can participate. By combining high-performance blockchain technology with a network of regulated, fiat-backed stablecoins, Gurufin creates the bridge between traditional finance and the decentralized economy.
 
-## Core Components
-
-<table><thead><tr><th width="197">Component</th><th>Description</th></tr></thead><tbody><tr><td><strong>Gurufin Chain</strong></td><td>A public, permissionless DPoS Layer-1 blockchain that serves as the neutral settlement layer for the ecosystem. It features a hybrid execution model, fiat-predictable fees, and robust interoperability.</td></tr><tr><td><strong>GX Stablecoins</strong></td><td>A network of sovereign stablecoin chains, each operating under its own jurisdiction with licensed validators. These stablecoins are fully backed by fiat reserves and feature automated, bank-API-anchored minting and burning.</td></tr></tbody></table>
+Our mission is to become the definitive infrastructure layer for stablecoin-based foreign exchange and cross-border payments, enabling developers, institutions, and users worldwide to build and access the next generation of financial services.
