@@ -2,11 +2,7 @@
 
 ## Introduction
 
-<<<<<<< HEAD
 * [Vision & Mission](introduction/01_vision_mission.md)
-=======
-* [Vision & Mission](README.md)
->>>>>>> 0f3343b2e456a2abba8af3819c8a122ee052c00a
 * [What is Gurufin?](introduction/02_what_is_gurufin.md)
 * [Roadmap](introduction/03_roadmap.md)
 

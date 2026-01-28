@@ -1,8 +1,12 @@
+---
+description: >-
+  Gurufin follows a milestone-driven development approach with security-first
+  principles.
+---
+
 # Roadmap
 
-Gurufin follows a milestone-driven development approach with security-first principles. Every component undergoes rigorous auditing before mainnet deployment, and major protocol changes go through governance proposals and community feedback.
-
-**Phase 1: Foundation** _(Completed)_
+#### **Phase 1: Foundation** _(Completed)_
 
 * Gurufin Chain mainnet launch with Tendermint BFT consensus
 * GXN token deployment with staking enabled
@@ -10,7 +14,7 @@ Gurufin follows a milestone-driven development approach with security-first prin
 * Basic on-chain governance (proposals and voting)
 * Public testnet program with documentation
 
-**Phase 2: Expansion** _(In Progress)_
+#### **Phase 2: Expansion** _(In Progress)_
 
 * GuruDex deployment with hybrid AMM + RFQ execution
 * First GX Stablecoin sovereign chains with licensed validators
@@ -19,7 +23,7 @@ Gurufin follows a milestone-driven development approach with security-first prin
 * EVM Gateway for Ethereum compatibility
 * Price oracle network for FX rates
 
-**Phase 3: Scale** _(Planned)_
+#### **Phase 3: Scale** _(Planned)_
 
 * GX Stablecoin network expansion to additional jurisdictions
 * Enhanced PvP settlement with multi-leg support
@@ -28,10 +32,14 @@ Gurufin follows a milestone-driven development approach with security-first prin
 * Layer-2 scaling for high-frequency applications
 * Advanced governance (quadratic voting, treasury management)
 
-**Phase 4: Global** _(Future)_
+#### **Phase 4: Global** _(Future)_
 
 * CBDC bridge integration as central bank digital currencies launch
 * Partnerships with traditional financial market infrastructures
 * Active participation in shaping global stablecoin regulations
 * Transition to fully community-governed protocol
 * Target scale: 100M+ users, 50+ sovereign stablecoins, 1,000+ applications
+
+
+
+Every component undergoes rigorous auditing before mainnet deployment, and major protocol changes go through governance proposals and community feedback.
