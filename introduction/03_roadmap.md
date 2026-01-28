@@ -2,6 +2,36 @@
 
 Gurufin follows a milestone-driven development approach with security-first principles. Every component undergoes rigorous auditing before mainnet deployment, and major protocol changes go through governance proposals and community feedback.
 
-**Phase 1 (Foundation)** has been completed, establishing the core infrastructure: Gurufin Chain mainnet launch with Tendermint BFT consensus, GXN token deployment with staking, CosmWasm smart contract integration, and basic on-chain governance. **Phase 2 (Expansion)** is currently in progress, focusing on deploying GuruDex with hybrid AMM + RFQ execution, launching the first GX Stablecoin sovereign chains, implementing IBC connectivity, and rolling out the Guru-PEG fiat-predictable fee mechanism along with EVM Gateway compatibility.
+**Phase 1: Foundation** _(Completed)_
 
-Looking ahead, **Phase 3 (Scale)** will expand the GX Stablecoin network to additional jurisdictions, introduce enhanced PvP settlement with multi-leg support, and deliver institutional API suites for FIX protocol integration. **Phase 4 (Global)** represents our long-term vision: CBDC bridge integration, partnerships with traditional financial market infrastructures, and transition to a fully community-governed protocol serving 100M+ users worldwide.
+* Gurufin Chain mainnet launch with Tendermint BFT consensus
+* GXN token deployment with staking enabled
+* CosmWasm smart contract runtime integration
+* Basic on-chain governance (proposals and voting)
+* Public testnet program with documentation
+
+**Phase 2: Expansion** _(In Progress)_
+
+* GuruDex deployment with hybrid AMM + RFQ execution
+* First GX Stablecoin sovereign chains with licensed validators
+* IBC connectivity with Cosmos ecosystem
+* Guru-PEG fiat-predictable fee mechanism
+* EVM Gateway for Ethereum compatibility
+* Price oracle network for FX rates
+
+**Phase 3: Scale** _(Planned)_
+
+* GX Stablecoin network expansion to additional jurisdictions
+* Enhanced PvP settlement with multi-leg support
+* Institutional API suite (FIX protocol, prime brokerage integration)
+* Cross-chain DEX for direct trading with other chains
+* Layer-2 scaling for high-frequency applications
+* Advanced governance (quadratic voting, treasury management)
+
+**Phase 4: Global** _(Future)_
+
+* CBDC bridge integration as central bank digital currencies launch
+* Partnerships with traditional financial market infrastructures
+* Active participation in shaping global stablecoin regulations
+* Transition to fully community-governed protocol
+* Target scale: 100M+ users, 50+ sovereign stablecoins, 1,000+ applications
