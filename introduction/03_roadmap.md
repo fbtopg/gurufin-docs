@@ -8,7 +8,7 @@
 - Completion of a comprehensive independent security audit by Sherlock
 
 **Phase 2: Expansion** *(In Progress)*
-- Public Testnet Season 1 (Complete)
+- Launch of Public Testnet (Season 1 Complete)
 - Deployment of GuruDex hybrid AMM and RFQ execution fabric
 - GX Stablecoin sovereign chain PoC using licensed validators
 - IBC connectivity for trust-minimized Cosmos ecosystem settlement
