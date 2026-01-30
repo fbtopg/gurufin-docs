@@ -28,4 +28,24 @@ When a user redeems stablecoins, the burning process is initiated and fiat is re
 
 ---
 
+**Live Reserve Scanner (LRS)**
+
+Throughout both minting and burning processes, the Live Reserve Scanner operates continuously, monitoring custody accounts in real time. LRS ensures every issued token remains fully backed and provides on-demand telemetry to authorized supervisory entities. The Scanner reports:
+
+- Total reserves vs. circulation
+- Cash headroom and maturity ladder
+- Committed repo capacity and haircuts
+- Redemption-queue depth with SLA meter
+- Derived prudential metrics (GX-LCR, utilization ρ*)
+
+This removes the informational opacity that historically triggers panic during market stress.
+
+---
+
+**RTGS Settlement Alignment**
+
+The burning process follows a real-time gross settlement (RTGS) sequence, ensuring fiat liabilities are settled with finality before token destruction. This design aligns with PFMI (Principles for Financial Market Infrastructures) expectations and practices from systems like TARGET (Eurosystem), Fedwire (Federal Reserve), and BOJ-NET.
+
+---
+
 These mechanisms ensure that stablecoin supply is always fully backed and accurately reflects real-world fiat reserves, maintaining the trustworthiness and regulatory alignment of GX stablecoins.

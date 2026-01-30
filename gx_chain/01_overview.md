@@ -26,4 +26,16 @@ By decentralizing issuance across sovereign chains, the GX network mitigates ris
 
 The GX chains utilize a permissioned Proof-of-Authority consensus mechanism implemented via Cosmos SDK and Tendermint BFT. PoA consensus relies on pre-approved, licensed validators authorized to produce blocks and validate transactions.
 
-This approach offers regulatory compliance through vetted and licensed validators, high performance with sub-second block times and deterministic finality, security through known and accountable validator identities, and governance control reflecting local regulatory requirements. The PoA model is complemented by interoperability protocols such as IBC and EVM compatibility, enabling GX stablecoins to interact seamlessly with other blockchains and DeFi ecosystems.
+This approach offers regulatory compliance through vetted and licensed validators, high performance with sub-second confirmations and five-figure TPS on commodity hardware (consistent with CBDC pilot benchmarks), security through known and accountable validator identities, and governance control reflecting local regulatory requirements. The PoA model is complemented by interoperability protocols such as IBC and EVM compatibility, enabling GX stablecoins to interact seamlessly with other blockchains and DeFi ecosystems.
+
+---
+
+**Fees and Gas Model**
+
+Gas is paid in the local GX stablecoin, with transaction fees denominated and fixed in fiat terms within narrow bands (e.g., ~$0.013 per transaction). Unlike congestion-auction fee models on public chains, GX's fixed-fee design ensures predictable point-of-sale usability. Fees may be optionally indexed to CPI for long-run sustainability. Paymaster contracts allow institutions to sponsor end-user fees during early adoption.
+
+---
+
+**Offline Payments**
+
+For intermittent-connectivity environments, GX supports an offline mode for low-value flows. Value transfers are recorded locally with secure hardware attestations, policy caps, and time-bounded validity, then reconciled to the chain when connectivity returns. Double-spend controls include spend limits, rolling counters, and post-reconciliation checks.

@@ -36,4 +36,24 @@ The 24/7 live proof-of-reserves system provides transparent, continuously update
 
 ---
 
+---
+
+**Key Security and Governance Controls**
+
+Validator keys are secured in **Hardware Security Modules (HSMs)** with multi-party control mechanisms (MPC quorum) to enforce quorum-based authorization and eliminate single points of failure. Proposed changes follow a formal change-management pipeline: pre-announced release proposals, testing gates, scheduled deployment windows, and rollback mechanisms with immutable audit trails.
+
+---
+
+**Emergency Procedures and Circuit Breakers**
+
+GX includes an Emergency Procedures Playbook defining supervised circuit breakers—rate limits, mint/burn suspension, or settlement pauses—activated only under strictly defined stress conditions with regulator involvement and post-event disclosure. These align with MiFID II-style built-in halt mechanisms.
+
+---
+
+**Zero-Knowledge Proofs and Privacy**
+
+GX integrates Zero-Knowledge Proofs (ZKPs) to balance transparency with privacy. Wallets can demonstrate compliance with sanctions or KYC requirements without exposing personal data. The system can prove full reserve coverage without revealing custodian account details. Selective-disclosure "view keys" allow authorized supervisors to inspect provenance without broad data exposure, consistent with domestic privacy law.
+
+---
+
 By embedding compliance at the consensus layer and leveraging licensed validators, GX stablecoins provide legal certainty, operational transparency, cross-border compliance, and reduced exposure to illicit finance risks—making them suitable for institutional settlement, cross-border payments, and interoperable DeFi applications.

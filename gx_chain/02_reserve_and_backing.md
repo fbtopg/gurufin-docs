@@ -10,7 +10,9 @@ The 1:1 fiat backing is enforced through automated minting and burning mechanism
 
 The reserve assets consist primarily of highly liquid and low-risk instruments to maintain capital preservation and immediate liquidity. Reserve composition may differ by jurisdiction based on local regulatory requirements and banking partner capabilities.
 
-The primary reserve asset is cash—fiat currency held in segregated accounts at licensed financial institutions, providing immediate liquidity and zero market risk. Where permitted by jurisdiction, a portion may be held in ultra-short government bills (typically under 3 months maturity) to earn modest returns without compromising liquidity or safety. This prudent diversification aligns with best practices for reserve management and regulatory expectations.
+**At launch, 100% of reserves are maintained in cash** at licensed custodian banks with binding concentration limits to ensure immediate redemption capacity. Over time, only where expressly permitted by domestic regulation, a **capped fraction** may be allocated to ultra-short Treasury bills (typically under 3 months maturity) managed on a roll-down ladder.
+
+Liquidity against such securities is raised via **pre-arranged repo facilities—not secondary-market sales**—ensuring same-day cash availability without forced asset liquidation. This prudent diversification aligns with best practices for reserve management and regulatory expectations.
 
 ---
 
@@ -29,3 +31,9 @@ This live proof-of-reserves system surpasses traditional periodic audits by prov
 To align with international banking regulatory standards, GX reserve management incorporates liquidity metrics adapted from Basel Committee standards. These include the Liquidity Coverage Ratio (LCR) to measure the ability to cover net cash outflows over a 30-day stress period, and the Net Stable Funding Ratio (NSFR) to assess funding stability over a one-year horizon.
 
 By applying these Basel-aligned metrics, the GX network ensures that its reserve portfolio is not only fully backed but also resilient under stress scenarios, meeting supervisory-grade liquidity standards.
+
+The horizon-specific liquidity coverage formula is:
+
+**GX-LCR(H) = (H₀ + (1−h)·ρ) / ES_α[RD_H]**
+
+Where H₀ is same-day cash headroom, ρ is committed repo capacity, h is the conservative haircut, and ES_α is the Expected Shortfall of redemptions over horizon H. The target is GX-LCR(H) ≥ 1 with a supervisory buffer. The utilization ratio ρ* = λ/μ must remain below 1 for operational stability, where λ is the redemption arrival rate and μ is the service rate.

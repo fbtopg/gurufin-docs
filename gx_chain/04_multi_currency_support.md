@@ -22,6 +22,16 @@ When stablecoins move from their native GX chain to Gurufin Chain for trading or
 
 ---
 
+**FX Settlement and PvP**
+
+GX includes a native Foreign Exchange layer that functions like a real-time on-chain CLS (Continuous Linked Settlement) system. Cross-currency flows use **Payment-versus-Payment (PvP)** settlement with escrowed holds via IBC/HTLCs (Hash Time-Locked Contracts), ensuring neither leg settles unless both do—eliminating principal (Herstatt) risk.
+
+For correlated stablecoin pairs, pools use **low-curvature stable-swap curves** to minimize slippage near parity. Large tickets can be time-weighted (TWAP/TWAMM) to reduce market footprint. Pool telemetry (depth, slippage, utilization) is published in real time to the Scanner.
+
+FX liquidity is supplied by regulated LPs, banks, PSPs, and market makers who post two-sided inventory with concentration caps and transparent maker–taker fees.
+
+---
+
 **Onboarding New Currencies**
 
 The GX framework is designed for extensibility. New sovereign stablecoins can be onboarded through a structured process that includes regulatory assessment to evaluate the legal framework and licensing requirements of the target jurisdiction. Validator recruitment identifies and licenses regulated entities to serve as validators. Banking integration establishes custodial relationships with local banks for reserve management. Technical deployment launches the new GX chain with IBC connectivity to Gurufin Chain. Ongoing compliance ensures continuous regulatory monitoring and proof-of-reserves transparency.
