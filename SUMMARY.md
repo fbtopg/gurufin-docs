@@ -6,13 +6,6 @@
 * [What is Gurufin?](introduction/02_what_is_gurufin.md)
 * [Roadmap](introduction/03_roadmap.md)
 
-## Core Concepts
-
-* [Hybrid Execution Model](core_concepts/01_hybrid_execution_model.md)
-* [Guru-PEG: Fiat-Predictable Fees](core_concepts/02_guru_peg.md)
-* [Sovereign Stablecoin Network](core_concepts/03_sovereign_stablecoin_network.md)
-* [Payment-vs-Payment (PvP) Settlement](core_concepts/04_pvp_settlement.md)
-
 ## Gurufin Chain (Layer 1)
 
 * [Protocol Overview](gurufin_chain/01_protocol_overview.md)
