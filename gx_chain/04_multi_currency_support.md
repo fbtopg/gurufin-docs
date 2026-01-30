@@ -26,6 +26,24 @@ When stablecoins move from their native GX chain to Gurufin Chain for trading or
 
 GX includes a native Foreign Exchange layer that functions like a real-time on-chain CLS (Continuous Linked Settlement) system. Cross-currency flows use **Payment-versus-Payment (PvP)** settlement with escrowed holds via IBC/HTLCs (Hash Time-Locked Contracts), ensuring neither leg settles unless both do—eliminating principal (Herstatt) risk.
 
+```mermaid
+flowchart LR
+    subgraph GX-USD ["GX Chain (USD)"]
+        A[User A<br/>holds USGX]
+    end
+    subgraph GX-EUR ["GX Chain (EUR)"]
+        B[User B<br/>holds EURGX]
+    end
+    subgraph FX ["FX Hub / GuruDex"]
+        E[Escrow via HTLC]
+    end
+
+    A -- "Lock USGX" --> E
+    B -- "Lock EURGX" --> E
+    E -- "Atomic swap" --> A
+    E -- "Atomic swap" --> B
+```
+
 For correlated stablecoin pairs, pools use **low-curvature stable-swap curves** to minimize slippage near parity. Large tickets can be time-weighted (TWAP/TWAMM) to reduce market footprint. Pool telemetry (depth, slippage, utilization) is published in real time to the Scanner.
 
 FX liquidity is supplied by regulated LPs, banks, PSPs, and market makers who post two-sided inventory with concentration caps and transparent maker–taker fees.
