@@ -4,11 +4,11 @@
 
 
 
-Gurufin is a specialized financial infrastructure that combines the efficiency of blockchain technology with the stability and regulatory compliance required for institutional adoption.&#x20;
+Gurufin is a specialized financial infrastructure that combines the efficiency of blockchain technology with the stability and regulatory compliance required for institutional adoption.
 
 _The ecosystem is built on two interconnected pillars:_
 
-
+---
 
 **Gurufin Chain**
 
@@ -18,7 +18,7 @@ _The ecosystem is built on two interconnected pillars:_
 * Native token (GXN) for staking, governance, and fee payment
 * CosmWasm smart contracts with EVM Gateway for interoperability
 
-
+---
 
 **GX Stablecoin Network**
 
@@ -28,6 +28,6 @@ _The ecosystem is built on two interconnected pillars:_
 * Automated minting and burning via bank API integration
 * 24/7 live proof-of-reserves attestation
 
-
+---
 
 Together, these components create a complete system: GX Stablecoins are minted when users deposit fiat through licensed partners, flow to Gurufin Chain via IBC for trading and DeFi activities, and can be redeemed back to fiat at any time.
