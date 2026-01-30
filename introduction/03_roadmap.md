@@ -1,45 +1,36 @@
----
-description: >-
-  Gurufin follows a milestone-driven development approach with security-first
-  principles.
----
-
 # Roadmap
 
-#### **Phase 1: Foundation** _(Completed)_
+**Phase 1: Foundation** *(Completed)*
+- Gurufin Chain mainnet launch utilizing Tendermint BFT consensus
+- GXN token deployment with native staking and governance enabled
+- Integration of CosmWasm smart contract runtime for modular logic
+- LRS Live Reserve Scanner for real-time proof of reserves
+- Automated Mint and Burn Mechanism using bank API orchestration
+- Guru-PEG implementation for fiat-predictable transaction fees
+- Completion of comprehensive security audit by Sherlock
 
-* Gurufin Chain mainnet launch with Tendermint BFT consensus
-* GXN token deployment with staking enabled
-* CosmWasm smart contract runtime integration
-* Basic on-chain governance (proposals and voting)
-* Public testnet program with documentation
+**Phase 2: Expansion** *(In Progress)*
+- Completion of Public Testnet Season 1 with 16,000 active participants
+- Processing of 900,000 transactions with 100% network uptime
+- Deployment of GuruDex hybrid AMM and RFQ execution fabric
+- GX Stablecoin sovereign chain PoC using licensed validators
+- IBC connectivity for trust-minimized Cosmos ecosystem settlement
+- EVM Gateway for seamless Ethereum asset compatibility
+- Price oracle network for FX and benchmark rates
+- Launch of the Gurufin Ecosystem Development Fund for builders
+- Onboarding of dApps to the growing network ecosystem
+- Implementation of initial governance models and parameter registries
 
-#### **Phase 2: Expansion** _(In Progress)_
+**Phase 3: Scale** *(Planned)*
+- Expansion of sovereign stablecoins to additional jurisdictions
+- Enhanced PvP settlement with multi-leg cross-currency support
+- Layer-2 scaling solutions for high-frequency retail applications
+- Advanced governance models including quadratic voting
+- Institutional API suite supporting FIX protocol and prime brokerage
 
-* GuruDex deployment with hybrid AMM + RFQ execution
-* First GX Stablecoin sovereign chains with licensed validators
-* IBC connectivity with Cosmos ecosystem
-* Guru-PEG fiat-predictable fee mechanism
-* EVM Gateway for Ethereum compatibility
-* Price oracle network for FX rates
-
-#### **Phase 3: Scale** _(Planned)_
-
-* GX Stablecoin network expansion to additional jurisdictions
-* Enhanced PvP settlement with multi-leg support
-* Institutional API suite (FIX protocol, prime brokerage integration)
-* Cross-chain DEX for direct trading with other chains
-* Layer-2 scaling for high-frequency applications
-* Advanced governance (quadratic voting, treasury management)
-
-#### **Phase 4: Global** _(Future)_
-
-* CBDC bridge integration as central bank digital currencies launch
-* Partnerships with traditional financial market infrastructures
-* Active participation in shaping global stablecoin regulations
-* Transition to fully community-governed protocol
-* Target scale: 100M+ users, 50+ sovereign stablecoins, 1,000+ applications
-
-
-
-Every component undergoes rigorous auditing before mainnet deployment, and major protocol changes go through governance proposals and community feedback.
+**Phase 4: Global** *(Future)*
+- CBDC bridge integration for central bank digital currency launches
+- Partnerships with traditional financial market infrastructures
+- Active participation in shaping global stablecoin regulations
+- Transition to fully community-governed protocol status
+- Target of 100M users and 50 sovereign stablecoins
