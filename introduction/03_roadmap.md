@@ -8,8 +8,7 @@
 - Completion of a comprehensive independent security audit by Sherlock
 
 **Phase 2: Expansion** *(In Progress)*
-- Completion of Public Testnet Season 1 with 16,000 active participants
-- Processing of 900,000 transactions with 100% network uptime
+- Public Testnet Season 1 (Complete)
 - Deployment of GuruDex hybrid AMM and RFQ execution fabric
 - GX Stablecoin sovereign chain PoC using licensed validators
 - IBC connectivity for trust-minimized Cosmos ecosystem settlement
