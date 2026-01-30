@@ -26,7 +26,7 @@ Fee (GXN) = 0.013 ÷ 0.10 × 1.0 = 0.13 GXN
 
 So the user pays 0.13 GXN and experiences a stable cost of about $0.013.
 
-Standard transfers cost approximately $0.013, token operations around $0.040, smart contract calls about $0.050, and cross-chain transfers roughly $0.100. These fee targets are adjusted annually using the Consumer Price Index (CPI) for inflation.
+Standard L1 transfers cost approximately $0.013 and asset/NFT operations around $0.040. These fee targets are adjusted periodically (annually or quarterly) using the Consumer Price Index (CPI) for inflation, with a maximum step cap of 2% per update.
 
 ---
 
@@ -34,7 +34,7 @@ Standard transfers cost approximately $0.013, token operations around $0.040, sm
 
 Automatic circuit breakers prevent extreme fee changes. Price deviation limits cap fee adjustments if oracle prices move too rapidly, congestion caps prevent fees from exceeding 2-3x normal rates, and governance can override in abnormal market conditions.
 
-A decentralized oracle network ensures accurate, manipulation-resistant price feeds. Multiple independent oracle providers submit price data, weighted median aggregation filters outliers, and bonding with slashing mechanisms incentivizes honest reporting.
+A permissioned oracle network ensures accurate, manipulation-resistant price feeds. Vetted providers—exchanges, data firms, and institutional operators—submit signed observations to the on-chain Oracle Module. The module enforces quorum rules, staleness bounds, and outlier filters, then aggregates inputs using weighted median to resist manipulation. Provider bonds and slashing mechanisms incentivize honest reporting.
 
 ---
 

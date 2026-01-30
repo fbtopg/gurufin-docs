@@ -15,10 +15,16 @@ The tokenomics model is carefully designed to align incentives among validators,
 
 ---
 
-**Token Distribution**
+**Supply & Allocation**
 
-Detailed distribution schedule and vesting information will be published in the upcoming token economics paper.
+The maximum supply at genesis is 100 billion GXN. Key allocations include a Node Pool (25%) for validator staking rewards and emissions, an Ecosystem Development fund (20%) for builders, grants, and public goods, with the remainder distributed across team, strategic partners, and community programs with multi-year vesting schedules.
 
 ---
 
-*This page provides an introductory overview. Comprehensive tokenomics details including distribution, emission schedule, and economic modeling will be added in future documentation updates.*
+**Economic Sustainability**
+
+A portion of all collected GXN fees is permanently burned to the Gurufin Abyss Ledger (GAL), a keyless on-chain burn address. This creates deflationary pressure as network usage grows. Validators earn rewards from both emissions and an increasing share of fee revenue, while liquidity providers earn swap fees with optional governance-approved incentive top-ups during bootstrap phases.
+
+---
+
+*This page provides an introductory overview. Comprehensive tokenomics details including vesting schedules and emission curves will be added in future documentation updates.*

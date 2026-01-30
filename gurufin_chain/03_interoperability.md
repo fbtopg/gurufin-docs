@@ -6,9 +6,9 @@ Gurufin Chain is designed to connect multiple blockchain ecosystems, enabling se
 
 **IBC (Inter-Blockchain Communication)**
 
-Gurufin Chain adopts an IBC-first architecture as its foundation for cross-chain communication. IBC is the native Cosmos SDK protocol that enables trust-minimized communication using light client verification. It supports token transfers, cross-chain contract calls, and PvP settlement with any IBC-enabled blockchain including Cosmos Hub, Osmosis, and Celestia.
+Gurufin Chain adopts an IBC-first architecture as its foundation for cross-chain communication. IBC uses escrowed message passing (ICS-20/27 standards) to enforce Payment-versus-Payment (PvP) settlement across ledgers, ensuring assets move only when both sides are securely validated. IBC assets are represented on-chain with full provenance tracking via denom traces.
 
-The IBC-first approach ensures atomic transactions where cross-chain operations either fully succeed or fully revert, eliminates reliance on central bridge operators by using cryptographic proofs, and provides native integration since IBC is built into the Cosmos SDK that Gurufin Chain uses.
+The IBC-first approach ensures atomic transactions where cross-chain operations either fully succeed or fully revert, eliminates reliance on central bridge operators by using light client verification and cryptographic proofs, and reduces systemic bridge risk compared to custodial wrapped-token bridges.
 
 ---
 
@@ -24,10 +24,16 @@ Supported chains include Ethereum, Polygon, Arbitrum, Optimism, BNB Chain, and o
 
 For blockchains that don't support IBC or EVM, Gurufin uses the custom GatewayGX module. This includes Solana integration through a custom adapter for its Proof-of-History runtime, with a modular adapter framework designed for future chain integrations.
 
-The module works through custom protocol adapters that translate messages between chain formats, licensed validators that verify and relay cross-chain transactions, and atomic settlement guarantees that prevent double-spending.
+Gateway-wrapped assets are minted via the tokenfactory/CW-20 module and clearly marked with a `gw` prefix (e.g., gwUSDC, gwUSDT) to distinguish them from canonical IBC imports. The module operates under dual control: oracles validate transfer conditions, and timeout safeguards automatically reverse incomplete transactions to prevent bridge risk.
+
+---
+
+**Canonical Asset Registry**
+
+To prevent liquidity fragmentation, governance maintains a Canonical Asset Registry that designates authoritative representations of each currency. IBC-based imports are preferred as canonical, while gateway-wrapped versions are recognized under lower risk weights and transaction limits. Optional parity pools keep narrow-band alignment between canonical and non-canonical representations without forcing users into a single venue.
 
 ---
 
 **Summary**
 
-Gurufin's multi-layer approach ensures connectivity with virtually any blockchain ecosystem. IBC provides the fastest and most trust-minimized path for Cosmos chains, EVM Gateway enables seamless Ethereum integration, and GatewayGX extends reach to non-standard chains—all while maintaining security and efficiency.
+Gurufin's multi-layer approach ensures connectivity with virtually any blockchain ecosystem. IBC provides the most trust-minimized path for Cosmos chains, EVM Gateway enables seamless Ethereum integration, and GatewayGX extends reach to non-standard chains—all governed by the canonical asset registry to concentrate liquidity and maintain security.

@@ -21,10 +21,16 @@ The proposal lifecycle follows a structured process—from submission with depos
 
 ---
 
-**Emergency Controls**
+**Voting & Timelocks**
 
-For urgent situations, the governance system includes expedited proposals with shortened voting periods, automatic circuit breakers that pause certain protocol functions during abnormal conditions, and higher validator quorum requirements for critical decisions.
+Standard proposals follow a 7-day voting window with a 72-hour timelock before execution. Parameter changes require a quorum of 10–20% of bonded voting power with >50% yes votes. Economic changes and chain upgrades require higher thresholds (up to 40% quorum and ≥66.7% supermajority for hard forks). A "No with Veto" option allows ≥33.4% to reject proposals outright.
 
 ---
 
-*This page provides an introductory overview. Detailed governance procedures, voting thresholds, and deposit requirements will be added in future documentation updates.*
+**Emergency Controls**
+
+A Security Council (n-of-m multisig with external members) holds narrowly scoped, time-bounded emergency powers for operational safety—such as freezing affected pairs during oracle degradation or pausing specific routes on extreme basis divergence. Emergency actions auto-expire within 72 hours unless ratified by token vote, and all actions are logged with mandatory post-mortem disclosure.
+
+---
+
+*This page provides an introductory overview. Detailed governance procedures and deposit requirements will be added in future documentation updates.*

@@ -8,7 +8,7 @@ The chain addresses three fundamental challenges that have hindered blockchain a
 
 **High Performance**
 
-Gurufin Chain delivers sub-second block finality and throughput of up to 10,000 transactions per second. Unlike probabilistic consensus mechanisms that require multiple confirmations, transactions on Gurufin Chain are deterministically final once committed—critical for financial applications where settlement certainty matters.
+Gurufin Chain delivers sub-second finality and throughput of up to 10,000 transactions per second. Unlike probabilistic consensus mechanisms that require multiple confirmations, transactions on Gurufin Chain are deterministically final once committed—critical for financial applications where settlement certainty matters.
 
 **Interoperability**
 

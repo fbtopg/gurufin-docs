@@ -8,22 +8,22 @@ Validators are elected through a stake-weighted voting process where token holde
 
 **Requirements**
 
-* **Hardware** — Enterprise-grade server with high CPU, memory, and storage specifications
-* **Stake** — Minimum GXN bond required to register as a validator candidate
-* **Uptime** — Maintain high availability (99%+ recommended)
-* **Security** — Secure key management and infrastructure practices
+* **Hardware** — Enterprise-grade server with specifications published by the network
+* **Stake** — Minimum GXN bond required to register as a validator candidate (threshold set by governance)
+* **Uptime** — Maintain high availability with sentry node architecture for DDoS protection
+* **Security** — Key material held in HSMs or managed via Multi-Party Computation (MPC) with threshold signatures; rotation policies and break-glass procedures required
 
 ---
 
-**Slashing Conditions**
+**Slashing & Jailing**
 
-Violations result in slashing penalties where a portion of staked tokens is confiscated. Downtime causes partial stake slash for extended unavailability. Double-signing results in severe slash and permanent removal for signing conflicting blocks. Governance abuse leads to penalties for malicious proposal or voting behavior.
+Violations result in slashing penalties where a portion of staked tokens is confiscated. Extended downtime causes partial stake slash and temporary jailing (exclusion from the active set). Double-signing (equivocation) results in severe slash and permanent jailing for signing conflicting blocks. Un-jailing requires liveness proofs; repeat offenders face extended quarantines.
 
 ---
 
 **Rewards**
 
-Validators earn rewards from block production (newly minted GXN), transaction fee distribution, and delegator commission fees.
+Validators earn rewards from the Node Pool emissions (25% of total supply allocated for staking rewards) plus an increasing share of transaction fee revenue as network usage grows. Delegators share in these rewards proportionally, minus the validator's commission rate.
 
 ---
 

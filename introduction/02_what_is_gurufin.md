@@ -14,9 +14,9 @@ _The ecosystem is built on two interconnected pillars:_
 
 * Public, permissionless Layer-1 blockchain built on Cosmos SDK with Tendermint BFT consensus
 * Sub-second finality and throughput of up to 10,000 TPS
-* Serves as the neutral settlement layer where FX trading, DeFi applications, and cross-chain transactions occur
-* Native token (GXN) for staking, governance, and fee payment
-* CosmWasm smart contracts with EVM Gateway for interoperability
+* Serves as a neutral FX/DeFi settlement hub where cross-border payments and trading occur
+* Native token (GXN) for staking, governance, and fee payment via Guru-PEG
+* IBC-first interoperability with EVM Gateway for Ethereum ecosystem compatibility
 
 ---
 
