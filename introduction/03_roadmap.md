@@ -1,13 +1,11 @@
 # Roadmap
 
 **Phase 1: Foundation** *(Completed)*
-- Gurufin Chain mainnet launch utilizing Tendermint BFT consensus
-- GXN token deployment with native staking and governance enabled
-- Integration of CosmWasm smart contract runtime for modular logic
-- LRS Live Reserve Scanner for real-time proof of reserves
-- Automated Mint and Burn Mechanism using bank API orchestration
-- Guru-PEG implementation for fiat-predictable transaction fees
-- Completion of comprehensive security audit by Sherlock
+- Development of basic technical infrastructure for the Gurufin and GX chains
+- Implementation of the LRS Live Reserve Scanner for real-time proof of reserves
+- Integration of the Automated Mint and Burn Mechanism using bank API orchestration
+- Launch of the Guru-PEG mechanism for fiat-predictable transaction fees
+- Completion of a comprehensive independent security audit by Sherlock
 
 **Phase 2: Expansion** *(In Progress)*
 - Completion of Public Testnet Season 1 with 16,000 active participants
@@ -19,14 +17,14 @@
 - Price oracle network for FX and benchmark rates
 - Launch of the Gurufin Ecosystem Development Fund for builders
 - Onboarding of dApps to the growing network ecosystem
-- Implementation of initial governance models and parameter registries
+- Implementation of governance models and parameter registries
 
 **Phase 3: Scale** *(Planned)*
 - Expansion of sovereign stablecoins to additional jurisdictions
 - Enhanced PvP settlement with multi-leg cross-currency support
 - Layer-2 scaling solutions for high-frequency retail applications
 - Advanced governance models including quadratic voting
-- Institutional API suite supporting FIX protocol and prime brokerage
+- Official mainnet launch of the Gurufin Chain
 
 **Phase 4: Global** *(Future)*
 - CBDC bridge integration for central bank digital currency launches
