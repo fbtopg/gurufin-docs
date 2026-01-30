@@ -16,12 +16,13 @@
 * [Governance](gurufin_chain/06_governance.md)
 * [Validator Guide](gurufin_chain/07_validator_guide.md)
 
-## GX Stablecoins
+## GX Chain (Stablecoin Framework)
 
-* [Overview](gx_stablecoins/01_overview.md)
-* [Reserve & Backing](gx_stablecoins/02_reserve_and_backing.md)
-* [Mint & Burn Mechanism](gx_stablecoins/03_mint_and_burn.md)
-* [Compliance & Regulation](gx_stablecoins/04_compliance_and_regulation.md)
+* [GX Overview](gx_chain/01_overview.md)
+* [Reserve & Backing](gx_chain/02_reserve_and_backing.md)
+* [Mint & Burn Mechanism](gx_chain/03_mint_and_burn.md)
+* [Multi-Currency Support](gx_chain/04_multi_currency_support.md)
+* [Compliance & Regulation](gx_chain/05_compliance_and_regulation.md)
 
 ## GuruDex (FX Swap)
 

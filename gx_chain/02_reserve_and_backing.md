@@ -1,0 +1,31 @@
+# Reserve & Backing
+
+The integrity and stability of GX stablecoins rest fundamentally on a robust reserve and backing framework. Every stablecoin issued on a GX chain is fully collateralized by fiat currency held in reserve at a 1:1 ratio. This strict backing model underpins the stablecoin's price stability and trustworthiness, ensuring that holders can redeem their tokens for fiat currency at any time without risk of shortfall.
+
+The 1:1 fiat backing is enforced through automated minting and burning mechanisms integrated with licensed banking partners via secure APIs. Token issuance only occurs upon verified receipt of fiat funds, and redemption triggers the corresponding fiat transfer, maintaining continuous parity between tokens in circulation and fiat reserves.
+
+---
+
+**Reserve Composition**
+
+The reserve assets consist primarily of highly liquid and low-risk instruments to maintain capital preservation and immediate liquidity. Reserve composition may differ by jurisdiction based on local regulatory requirements and banking partner capabilities.
+
+The primary reserve asset is cash—fiat currency held in segregated accounts at licensed financial institutions, providing immediate liquidity and zero market risk. Where permitted by jurisdiction, a portion may be held in ultra-short government bills (typically under 3 months maturity) to earn modest returns without compromising liquidity or safety. This prudent diversification aligns with best practices for reserve management and regulatory expectations.
+
+---
+
+**24/7 Live Proof-of-Reserves**
+
+Transparency is a cornerstone of the GX ecosystem. To provide continuous assurance to users and regulators, the network implements a 24/7 live proof-of-reserves system leveraging blockchain technology and cryptographic proofs.
+
+The system features real-time reserve scanning that automatically and continuously verifies reserve account balances. Cryptographic verification uses zero-knowledge proofs and Merkle tree structures to confirm reserves without exposing sensitive financial details. Proof-of-reserves data is published on-chain and accessible via public dashboards, enabling independent audits and community scrutiny. Any discrepancies or anomalies trigger immediate alerts to governance and compliance teams for rapid investigation.
+
+This live proof-of-reserves system surpasses traditional periodic audits by providing ongoing, tamper-evident transparency.
+
+---
+
+**Liquidity Standards**
+
+To align with international banking regulatory standards, GX reserve management incorporates liquidity metrics adapted from Basel Committee standards. These include the Liquidity Coverage Ratio (LCR) to measure the ability to cover net cash outflows over a 30-day stress period, and the Net Stable Funding Ratio (NSFR) to assess funding stability over a one-year horizon.
+
+By applying these Basel-aligned metrics, the GX network ensures that its reserve portfolio is not only fully backed but also resilient under stress scenarios, meeting supervisory-grade liquidity standards.
