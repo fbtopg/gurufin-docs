@@ -8,11 +8,25 @@ Traditional blockchains have unpredictable fees that spike during congestion and
 
 **How Guru-PEG Works**
 
-The mechanism uses a simple formula: Fee (GXN) = Fiat Target ÷ GXN Price × Surge Multiplier.
+The fee in GXN is calculated as follows:
 
-The Fiat Target is the base fee pegged to a fiat value set by governance, such as $0.013 for standard transfers. The GXN Price comes from a real-time oracle network—if GXN trades at $0.10, a $0.013 fee equals 0.13 GXN. The Surge Multiplier provides dynamic adjustment during congestion, typically 1.0x under normal conditions and up to 2x during high demand.
+```
+Fee (GXN) = Fiat Target ÷ GXN Price × Surge Multiplier
+```
 
-Standard transfers cost approximately $0.013, token operations around $0.040, smart contract calls about $0.050, and cross-chain transfers roughly $0.100. These fees are adjusted annually based on Consumer Price Index (CPI) to account for inflation.
+* **Fiat Target** — The base fee in fiat (e.g. $0.013 for a standard transfer), set by governance.
+* **GXN Price** — Current GXN price in fiat from the oracle network (e.g. $0.10).
+* **Surge Multiplier** — Congestion factor: 1.0 under normal load, up to ~2× during high demand.
+
+*Example:* With Fiat Target = $0.013, GXN Price = $0.10, and Surge Multiplier = 1.0:
+
+```
+Fee (GXN) = 0.013 ÷ 0.10 × 1.0 = 0.13 GXN
+```
+
+So the user pays 0.13 GXN and experiences a stable cost of about $0.013.
+
+Standard transfers cost approximately $0.013, token operations around $0.040, smart contract calls about $0.050, and cross-chain transfers roughly $0.100. These fee targets are adjusted annually using the Consumer Price Index (CPI) for inflation.
 
 ---
 
