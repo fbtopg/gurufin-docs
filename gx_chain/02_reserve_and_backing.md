@@ -34,6 +34,14 @@ By applying these Basel-aligned metrics, the GX network ensures that its reserve
 
 The horizon-specific liquidity coverage formula is:
 
-**GX-LCR(H) = (H₀ + (1−h)·ρ) / ES_α[RD_H]**
+$$
+\text{GX-LCR}(H) = \frac{H_0 + (1 - h) \cdot \rho}{\text{ES}_\alpha[R_D^H]}
+$$
 
-Where H₀ is same-day cash headroom, ρ is committed repo capacity, h is the conservative haircut, and ES_α is the Expected Shortfall of redemptions over horizon H. The target is GX-LCR(H) ≥ 1 with a supervisory buffer. The utilization ratio ρ* = λ/μ must remain below 1 for operational stability, where λ is the redemption arrival rate and μ is the service rate.
+**Notation:**
+- \(H_0\) — same-day cash headroom  
+- \(\rho\) — committed repo capacity  
+- \(h\) — conservative haircut  
+- \(\text{ES}_\alpha[R_D^H]\) — Expected Shortfall of redemptions over horizon \(H\) at confidence level \(\alpha\)
+
+The target is GX-LCR(H) ≥ 1 with a supervisory buffer. The utilization ratio \(\rho^* = \lambda/\mu\) must remain below 1 for operational stability, where \(\lambda\) is the redemption arrival rate and \(\mu\) is the service rate.
