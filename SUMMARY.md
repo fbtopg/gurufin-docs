@@ -34,8 +34,10 @@
 
 ## Developer Resources
 
-* [Get Started](developer_resources/01_get_started.md)
-* [Connect to Gurufin](developer_resources/02_connect_to_gurufin.md)
+* [Testnet Access](developer_resources/01_testnet_access.md)
+* [API Reference](developer_resources/02_api_reference.md)
+* [Full Developer Docs](developer_resources/03_full_developer_docs.md)
+* [Ecosystem Grant Program](developer_resources/04_ecosystem_grant_program.md)
 
 ## Use Cases
 
