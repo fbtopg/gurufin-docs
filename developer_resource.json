@@ -1,0 +1,84 @@
+{
+    "gurufin_testnet": {
+      "network_name": "Guru Testnet",
+      "network_name_citation": "https://docs.gurufin.com/develop/faucet",
+      "chain_id": "guru_631-1",
+      "chain_id_citation": "https://docs.gurufin.com/validate/testnet",
+      "rpc_endpoint": "https://trpc.gurufin.io",
+      "rpc_endpoint_citation": "https://docs.gurufin.com/validate/testnet",
+      "rest_api": "Port 9091",
+      "rest_api_citation": "https://docs.gurufin.com/develop/api",
+      "grpc": "Port 9090",
+      "grpc_citation": "https://docs.gurufin.com/develop/api",
+      "block_explorer": "https://tscan.gurufin.io/",
+      "block_explorer_citation": "https://docs.gurufin.com/develop/faucet",
+      "faucet_url": "https://faucet.gurufin.io/",
+      "faucet_url_citation": "https://docs.gurufin.com/develop/faucet",
+      "websocket": "wss://trpc.gurufin.io/websocket",
+      "websocket_citation": "https://docs.gurufin.com/validate/testnet",
+      "cosmos_sdk_endpoints": [
+        {
+          "value": "Cosmos gRPC (Port 9090)",
+          "value_citation": "https://docs.gurufin.com/develop/api"
+        },
+        {
+          "value": "Cosmos REST (Port 9091)",
+          "value_citation": "https://docs.gurufin.com/develop/api"
+        },
+        {
+          "value": "CometBFT RPC (Port 26657)",
+          "value_citation": "https://docs.gurufin.com/develop/api"
+        }
+      ],
+      "evm_json_rpc_endpoints": [
+        {
+          "value": "Ethereum JSON-RPC (Port 8545)",
+          "value_citation": "https://docs.gurufin.com/develop/api"
+        },
+        {
+          "value": "Ethereum WebSocket (Port 8546)",
+          "value_citation": "https://docs.gurufin.com/develop/api"
+        }
+      ]
+    },
+    "gurufin_mainnet": {
+      "network_name": "GURUFIN mainnet",
+      "network_name_citation": "https://www.guruscan.io/",
+      "chain_id": "Coming Soon",
+      "chain_id_citation": "https://docs.gurufin.com/validate/mainnet",
+      "rpc_endpoint": "Coming Soon",
+      "rpc_endpoint_citation": "https://docs.gurufin.com/validate/mainnet",
+      "rest_api": "Coming Soon",
+      "rest_api_citation": "https://docs.gurufin.com/validate/mainnet",
+      "grpc": "Coming Soon",
+      "grpc_citation": "https://docs.gurufin.com/validate/mainnet",
+      "block_explorer": "https://www.guruscan.io/",
+      "block_explorer_citation": "https://www.guruscan.io/",
+      "websocket": "Coming Soon",
+      "websocket_citation": "https://docs.gurufin.com/validate/mainnet",
+      "cosmos_sdk_endpoints": [
+        {
+          "value": "Cosmos gRPC (Port 9090)",
+          "value_citation": "https://docs.gurufin.com/develop/api"
+        },
+        {
+          "value": "Cosmos REST (Port 9091)",
+          "value_citation": "https://docs.gurufin.com/develop/api"
+        },
+        {
+          "value": "CometBFT RPC (Port 26657)",
+          "value_citation": "https://docs.gurufin.com/develop/api"
+        }
+      ],
+      "evm_json_rpc_endpoints": [
+        {
+          "value": "Ethereum JSON-RPC (Port 8545)",
+          "value_citation": "https://docs.gurufin.com/develop/api"
+        },
+        {
+          "value": "Ethereum WebSocket (Port 8546)",
+          "value_citation": "https://docs.gurufin.com/develop/api"
+        }
+      ]
+    }
+  }

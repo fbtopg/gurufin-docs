@@ -1,36 +1,43 @@
 # API Reference
 
-Gurufin Chain exposes standard Cosmos SDK and EVM-compatible APIs for querying chain state, submitting transactions, and integrating with your applications.
+Gurufin Chain exposes both Cosmos SDK and EVM-compatible APIs for querying chain state, submitting transactions, and integrating with your applications.
 
 ---
 
-**REST API Endpoints**
+**Cosmos SDK Endpoints**
 
-| Endpoint | Description |
-|----------|-------------|
-| `/cosmos/bank/v1beta1/balances/{address}` | Query account balances |
-| `/cosmos/tx/v1beta1/txs` | Broadcast and query transactions |
-| `/cosmos/staking/v1beta1/validators` | List validators and delegation info |
-| `/cosmos/gov/v1beta1/proposals` | Query governance proposals |
+| Service | Port | Description |
+|---------|------|-------------|
+| Cosmos gRPC | 9090 | Protocol buffer-based RPC for efficient querying |
+| Cosmos REST | 9091 | RESTful API for account balances, transactions, staking |
+| CometBFT RPC | 26657 | Tendermint consensus and block data |
 
 ---
 
-**EVM JSON-RPC**
+**EVM JSON-RPC Endpoints**
 
-Standard Ethereum JSON-RPC methods are supported for EVM compatibility:
+| Service | Port | Description |
+|---------|------|-------------|
+| Ethereum JSON-RPC | 8545 | Standard Ethereum JSON-RPC methods |
+| Ethereum WebSocket | 8546 | Real-time event subscriptions |
+
+---
+
+**Common JSON-RPC Methods**
 
 | Method | Description |
 |--------|-------------|
 | `eth_blockNumber` | Get current block number |
-| `eth_getBalance` | Query ETH-equivalent balance |
+| `eth_getBalance` | Query account balance |
 | `eth_sendRawTransaction` | Submit signed transaction |
 | `eth_call` | Execute read-only contract call |
+| `eth_getLogs` | Query event logs |
 
 ---
 
-**WebSocket**
+**Testnet Base URL**
 
-Subscribe to real-time events via WebSocket at `wss://ws-testnet.gurufin.io`.
+All endpoints are accessible via the testnet RPC base: `https://trpc.gurufin.io`
 
 ---
 
