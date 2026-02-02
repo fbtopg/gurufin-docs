@@ -102,7 +102,3 @@ Corporates can integrate Gurufin’s FX trading infrastructure into treasury sys
 ## Summary
 
 Gurufin Chain’s stablecoin FX trading infrastructure offers a robust, scalable, and compliant platform for building next-generation FX trading, arbitrage, and derivatives applications. Its unique combination of sovereign stablecoin Layer-1 chains, hybrid liquidity pools, and advanced oracle networks delivers deep liquidity, predictable fees, and seamless cross-border interoperability. Whether for retail users seeking efficient FX swaps or institutions requiring low-slippage RFQ trading, Gurufin provides the foundational technology to innovate and scale in the evolving Web3 economy.
-
----
-
-For detailed developer resources, API references, and integration guides, please refer to the [Gurufin Developer Portal](#) and the [GX Stablecoin Chain Documentation](#).

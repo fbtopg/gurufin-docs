@@ -79,5 +79,3 @@ Institutions can leverage the platform’s oracle network for real-time price fe
 ## Conclusion
 
 Gurufin Chain offers a uniquely positioned infrastructure for Institutional DeFi, combining high-performance blockchain technology with regulatory-grade compliance and interoperability. Institutions can leverage Gurufin to streamline tokenized asset settlement, optimize collateral management, and innovate with structured products, all within a secure and transparent ecosystem. By integrating Gurufin Chain into their workflows, financial institutions can unlock the full potential of DeFi while maintaining the rigor and trust required in traditional finance.
-
-For detailed developer guides, API references, and onboarding procedures, please refer to the [Gurufin Developer Documentation](#).

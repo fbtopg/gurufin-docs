@@ -93,13 +93,3 @@ The GX Stablecoin platform’s IBC-first design enables seamless interoperabilit
 The GX Stablecoin platform offers a comprehensive, sovereign-grade infrastructure for governments and central banks to issue jurisdictional stablecoins and integrate CBDCs. Its permissioned PoA consensus, automated bank API integration, and compliance-first design provide a secure and transparent foundation for digital currency issuance. Coupled with advanced interoperability and liquidity management features, the platform enables efficient cross-border payments, FX trading, and programmable monetary policy applications.
 
 By adopting the GX Stablecoin platform, central banks can accelerate their digital currency initiatives with confidence, leveraging a proven, scalable, and interoperable blockchain ecosystem purpose-built for the Web3 economy.
-
----
-
-## Further Resources
-
-- [Gurufin Chain Technical Overview](../architecture/gurufin-chain)
-- [GX Stablecoin Chain Architecture](../architecture/gx-stablecoin)
-- [CBDC Use Cases and Integration Guide](../use-cases/cbdc-integration)
-- [Compliance and Privacy Features](../features/compliance-privacy)
-- [Cross-Border Payments and FX Trading](../use-cases/cross-border-payments)
