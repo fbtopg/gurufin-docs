@@ -16,21 +16,17 @@ Gurufin is built on two interconnected pillars:
 
 ### Connect to Testnet
 
-| Parameter | Value |
-|-----------|-------|
-| Chain ID | `guru_631-1` |
-| RPC Endpoint | `https://trpc.gurufin.io` |
-| Block Explorer | `https://tscan.gurufin.io/` |
-| Faucet | `https://faucet.gurufin.io/` |
+- **Chain ID:** `guru_631-1`
+- **RPC Endpoint:** `https://trpc.gurufin.io`
+- **Block Explorer:** `https://tscan.gurufin.io/`
+- **Faucet:** `https://faucet.gurufin.io/`
 
 ### API Endpoints
 
-| Service | Port |
-|---------|------|
-| Cosmos gRPC | 9090 |
-| Cosmos REST | 9091 |
-| CometBFT RPC | 26657 |
-| Ethereum JSON-RPC | 8545 |
+- **Cosmos gRPC:** 9090
+- **Cosmos REST:** 9091
+- **CometBFT RPC:** 26657
+- **Ethereum JSON-RPC:** 8545
 
 ## Documentation Structure
 
