@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gurufin OPRS Architecture — Technical Overview</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: #1a1a2e;
+            background: #ffffff;
+            font-size: 11pt;
+        }
+        
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 2cm;
+        }
+        
+        /* Cover Page */
+        .cover {
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh;
+            text-align: center;
+        }
+        
+        .cover-logo {
+            font-size: 48pt;
+            font-weight: 800;
+            color: #0f3460;
+            margin-bottom: 0.5cm;
+            letter-spacing: -2px;
+        }
+        
+        .cover-logo span {
+            color: #00d9ff;
+        }
+        
+        .cover-subtitle {
+            font-size: 18pt;
+            color: #16213e;
+            margin-bottom: 1cm;
+            font-weight: 300;
+        }
+        
+        .cover-tagline {
+            font-size: 12pt;
+            color: #666;
+            max-width: 400px;
+            margin-bottom: 2cm;
+        }
+        
+        .cover-meta {
+            font-size: 10pt;
+            color: #888;
+        }
+        
+        .cover-divider {
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #0f3460, #00d9ff);
+            margin: 1cm 0;
+        }
+        
+        /* Table of Contents */
+        .toc {
+            page-break-after: always;
+        }
+        
+        .toc h2 {
+            font-size: 20pt;
+            color: #0f3460;
+            margin-bottom: 1cm;
+            border-bottom: 2px solid #00d9ff;
+            padding-bottom: 0.3cm;
+        }
+        
+        .toc-list {
+            list-style: none;
+        }
+        
+        .toc-list li {
+            padding: 0.4cm 0;
+            border-bottom: 1px dotted #ddd;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .toc-list li a {
+            color: #16213e;
+            text-decoration: none;
+        }
+        
+        .toc-section {
+            font-weight: 600;
+            color: #0f3460;
+            margin-top: 0.8cm;
+        }
+        
+        /* Section Headings */
+        h1 {
+            font-size: 26pt;
+            color: #0f3460;
+            margin: 1.5cm 0 0.5cm 0;
+            page-break-after: avoid;
+        }
+        
+        h2 {
+            font-size: 18pt;
+            color: #0f3460;
+            margin: 1.2cm 0 0.4cm 0;
+            padding-bottom: 0.2cm;
+            border-bottom: 1px solid #e0e0e0;
+            page-break-after: avoid;
+        }
+        
+        h3 {
+            font-size: 14pt;
+            color: #16213e;
+            margin: 0.8cm 0 0.3cm 0;
+            page-break-after: avoid;
+        }
+        
+        h4 {
+            font-size: 12pt;
+            color: #0f3460;
+            margin: 0.6cm 0 0.2cm 0;
+        }
+        
+        /* Paragraphs */
+        p {
+            margin-bottom: 0.5cm;
+            text-align: justify;
+        }
+        
+        /* Key Points Box */
+        .key-point {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e8f4ff 100%);
+            border-left: 4px solid #0f3460;
+            padding: 0.6cm 1cm;
+            margin: 0.8cm 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .key-point-title {
+            font-weight: 700;
+            color: #0f3460;
+            margin-bottom: 0.2cm;
+        }
+        
+        /* Info Box */
+        .info-box {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 0.6cm 1cm;
+            margin: 0.8cm 0;
+        }
+        
+        .info-box.highlight {
+            background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+            color: white;
+            border: none;
+        }
+        
+        .info-box.highlight h4 {
+            color: #00d9ff;
+        }
+        
+        /* Lists */
+        ul, ol {
+            margin: 0.4cm 0 0.6cm 1.5cm;
+        }
+        
+        li {
+            margin-bottom: 0.2cm;
+        }
+        
+        /* Architecture Diagram */
+        .diagram {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 12px;
+            padding: 1cm;
+            margin: 1cm 0;
+            text-align: center;
+        }
+        
+        .diagram-title {
+            font-weight: 700;
+            color: #0f3460;
+            margin-bottom: 0.5cm;
+            font-size: 12pt;
+        }
+        
+        .diagram-content {
+            font-family: 'Courier New', monospace;
+            font-size: 9pt;
+            line-height: 1.4;
+            text-align: left;
+            display: inline-block;
+            white-space: pre;
+        }
+        
+        /* Comparison Table */
+        .comparison {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.8cm 0;
+            font-size: 10pt;
+        }
+        
+        .comparison th {
+            background: #0f3460;
+            color: white;
+            padding: 0.4cm 0.6cm;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .comparison td {
+            padding: 0.4cm 0.6cm;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .comparison tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .comparison .winner {
+            background: #e8f5e9;
+            font-weight: 600;
+        }
+        
+        /* Component Cards */
+        .component-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.6cm;
+            margin: 0.8cm 0;
+        }
+        
+        .component-card {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 0.6cm;
+        }
+        
+        .component-card h4 {
+            color: #0f3460;
+            margin-bottom: 0.2cm;
+            font-size: 11pt;
+        }
+        
+        .component-card p {
+            font-size: 10pt;
+            margin-bottom: 0;
+        }
+        
+        /* Flow Steps */
+        .flow-steps {
+            counter-reset: step-counter;
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        .flow-steps li {
+            counter-increment: step-counter;
+            padding: 0.5cm 0 0.5cm 2cm;
+            position: relative;
+            border-left: 2px solid #00d9ff;
+            margin-left: 0.5cm;
+        }
+        
+        .flow-steps li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: -0.7cm;
+            top: 0.4cm;
+            width: 1.2cm;
+            height: 1.2cm;
+            background: #0f3460;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 10pt;
+        }
+        
+        .flow-steps li:last-child {
+            border-left: 2px solid transparent;
+        }
+        
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5cm;
+            margin: 0.8cm 0;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+            color: white;
+            padding: 0.6cm;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 20pt;
+            font-weight: 700;
+            color: #00d9ff;
+        }
+        
+        .stat-label {
+            font-size: 9pt;
+            opacity: 0.9;
+        }
+        
+        /* Layer Diagram */
+        .layer-stack {
+            margin: 0.8cm 0;
+        }
+        
+        .layer {
+            padding: 0.5cm 1cm;
+            margin-bottom: 0.2cm;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .layer-1 { background: #0f3460; color: white; }
+        .layer-2 { background: #16213e; color: white; }
+        .layer-3 { background: #1a365d; color: white; }
+        .layer-4 { background: #2c5282; color: white; }
+        
+        .layer-name {
+            font-weight: 700;
+        }
+        
+        .layer-desc {
+            font-size: 10pt;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        .footer {
+            margin-top: 2cm;
+            padding-top: 0.5cm;
+            border-top: 1px solid #e0e0e0;
+            font-size: 9pt;
+            color: #888;
+            text-align: center;
+        }
+        
+        /* Page Breaks */
+        .page-break {
+            page-break-before: always;
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                font-size: 10pt;
+            }
+            .cover {
+                min-height: 100vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Cover Page -->
+        <div class="cover">
+            <div class="cover-logo">Guru<span>fin</span></div>
+            <div class="cover-divider"></div>
+            <div class="cover-subtitle">OPRS Architecture</div>
+            <div class="cover-tagline">
+                Oracle Priced Reserve Swap — A purpose-built infrastructure for 
+                stablecoin foreign exchange and cross-border payments
+            </div>
+            <div class="cover-meta">
+                Technical Architecture Overview<br>
+                For Investors & Partners<br>
+                March 2026
+            </div>
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="toc">
+            <h2>Contents</h2>
+            <ul class="toc-list">
+                <li class="toc-section">Executive Summary</li>
+                <li><a href="#problem">The Problem with Global Finance</a></li>
+                <li><a href="#solution">Gurufin's Value Proposition</a></li>
+                
+                <li class="toc-section">System Architecture</li>
+                <li><a href="#pillars">The Two-Pillar Architecture</a></li>
+                <li><a href="#gurufin-chain">Gurufin Chain — Settlement Layer</a></li>
+                <li><a href="#gx-chain">GX Stablecoin Network</a></li>
+                
+                <li class="toc-section">OPRS Deep Dive</li>
+                <li><a href="#oprs-intro">What is OPRS?</a></li>
+                <li><a href="#oprs-components">Core Components</a></li>
+                <li><a href="#oprs-flow">Transaction Flow</a></li>
+                <li><a href="#oprs-vs-amm">OPRS vs Traditional AMM</a></li>
+                
+                <li class="toc-section">Risk & Compliance</li>
+                <li><a href="#risk">Four-Layer Risk Mitigation</a></li>
+                <li><a href="#compliance">Regulatory Framework</a></li>
+                
+                <li class="toc-section">Market Opportunity</li>
+                <li><a href="#use-cases">Key Use Cases</a></li>
+                <li><a href="#differentiation">Technical Differentiation</a></li>
+            </ul>
+        </div>
+
+        <!-- Executive Summary -->
+        <h1 id="problem">The Problem with Global Finance</h1>
+        
+        <p>
+            Despite rapid technological advancement, moving money across borders remains slow, expensive, and inaccessible to billions. International transfers take 2–5 days to settle, cost 6–7% in fees, and require extensive banking infrastructure that excludes emerging markets from participating in the global economy.
+        </p>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value">2-5</div>
+                <div class="stat-label">Days to Settle<br>Cross-Border Payments</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">6-7%</div>
+                <div class="stat-label">Average Fee<br>on International Transfers</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">1.4B</div>
+                <div class="stat-label">Unbanked Adults<br>Excluded from Global Finance</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">$7T</div>
+                <div class="stat-label">Daily FX<br>Trading Volume</div>
+            </div>
+        </div>
+
+        <h3>The Blockchain Promise — and Its Shortcomings</h3>
+        
+        <p>
+            Blockchain technology promised to solve these problems, but existing solutions have introduced new challenges:
+        </p>
+
+        <ul>
+            <li><strong>Unpredictable fees:</strong> Gas prices on Ethereum and other chains fluctuate wildly, making business planning impossible</li>
+            <li><strong>Cross-chain fragmentation:</strong> Assets are siloed across incompatible networks, requiring complex bridging solutions</li>
+            <li><strong>Regulatory uncertainty:</strong> Permissionless DeFi protocols operate outside regulatory frameworks, limiting institutional adoption</li>
+            <li><strong>AMM limitations:</strong> Automated Market Makers introduce slippage and fail to reflect actual FX rates for stablecoin pairs</li>
+        </ul>
+
+        <div class="page-break"></div>
+
+        <!-- Solution Overview -->
+        <h1 id="solution">Gurufin's Value Proposition</h1>
+        
+        <p>
+            Gurufin is building a <strong>Neutral FX/DeFi Hub</strong> — a unified global settlement infrastructure where transactions settle in seconds, fees are fiat-predictable, and anyone with internet access can participate. By combining high-performance blockchain technology with a network of regulated, fiat-backed stablecoins, Gurufin creates the bridge between traditional finance and the decentralized economy.
+        </p>
+
+        <div class="key-point">
+            <div class="key-point-title">Vision</div>
+            A world where value moves as freely and instantly as information.
+        </div>
+
+        <h3>What Makes Gurufin Different</h3>
+
+        <div class="component-grid">
+            <div class="component-card">
+                <h4>Sub-Second Finality</h4>
+                <p>Transactions are deterministically final once committed — critical for financial settlement</p>
+            </div>
+            <div class="component-card">
+                <h4>Predictable Fees</h4>
+                <p>Guru-PEG mechanism indexes fees to fiat currency, eliminating gas price volatility</p>
+            </div>
+            <div class="component-card">
+                <h4>No Slippage</h4>
+                <p>OPRS architecture executes trades at precise oracle-verified rates</p>
+            </div>
+            <div class="component-card">
+                <h4>Regulatory Ready</h4>
+                <p>Built-in compliance modules and jurisdictional sovereign chains</p>
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- Architecture -->
+        <h1 id="pillars">The Two-Pillar Architecture</h1>
+        
+        <p>
+            Gurufin's ecosystem is built on two interconnected pillars that work together to create a complete financial infrastructure:
+        </p>
+
+        <div class="diagram">
+            <div class="diagram-title">Gurufin Ecosystem Architecture</div>
+            <div class="diagram-content">
+┌─────────────────────────────────────────────────────────────────────┐
+│                         GURUFIN CHAIN                               │
+│                    (Neutral Settlement Layer)                        │
+│                                                                     │
+│    ┌─────────────┐   ┌─────────────┐   ┌─────────────────────┐     │
+│    │  GuruDex    │   │  Guru-PEG   │   │  Interoperability   │     │
+│    │   (OPRS)    │   │   Fees      │   │  IBC / EVM / GWGX   │     │
+│    └─────────────┘   └─────────────┘   └─────────────────────┘     │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
+                              ▲ IBC ▲
+        ┌─────────────────────┼─────┼─────────────────────┐
+        │                     │     │                     │
+        ▼                     ▼     ▼                     ▼
+┌───────────────┐   ┌───────────────┐   ┌───────────────┐   ┌───────────────┐
+│   USGX Chain  │   │   KRGX Chain  │   │   EURGX Chain │   │   JPGX Chain  │
+│  (USD Pegged) │   │  (KRW Pegged) │   │  (EUR Pegged) │   │  (JPY Pegged) │
+│   US Juris.   │   │  KR Juris.    │   │  EU Juris.    │   │  JP Juris.    │
+└───────────────┘   └───────────────┘   └───────────────┘   └───────────────┘
+        │                     │                     │                     │
+        └─────────────────────┴─────────────────────┴─────────────────────┘
+                              GX Stablecoin Network
+                          (Sovereign Chain Federation)
+            </div>
+        </div>
+
+        <h2 id="gurufin-chain">Gurufin Chain — The Settlement Layer</h2>
+        
+        <p>
+            Gurufin Chain is a purpose-built Layer-1 blockchain designed to serve as a global on-chain FX and DeFi hub. Built on Cosmos SDK with Tendermint BFT consensus, it delivers the performance and reliability required for institutional finance.
+        </p>
+
+        <div class="info-box">
+            <h4>Technical Specifications</h4>
+            <ul>
+                <li><strong>Consensus:</strong> Tendermint BFT with Delegated Proof-of-Stake</li>
+                <li><strong>Finality:</strong> Sub-second deterministic finality</li>
+                <li><strong>Throughput:</strong> Up to 10,000 TPS</li>
+                <li><strong>Interoperability:</strong> Native IBC, EVM Gateway, GatewayGX Module</li>
+            </ul>
+        </div>
+
+        <h3>Key Capabilities</h3>
+        
+        <ul>
+            <li><strong>Oracle Priced Reserve Swap (OPRS):</strong> Purpose-built execution mechanism for stablecoin FX trading</li>
+            <li><strong>Payment-versus-Payment (PvP):</strong> Atomic settlement eliminating counterparty risk</li>
+            <li><strong>Guru-PEG Fees:</strong> Transaction fees indexed to fiat currency, not volatile crypto assets</li>
+            <li><strong>IBC-First Design:</strong> Trust-minimized cross-chain communication with sovereign GX chains</li>
+        </ul>
+
+        <h2 id="gx-chain">GX Stablecoin Network</h2>
+        
+        <p>
+            The GX Network is a federation of sovereign stablecoin chains, each operating under its own jurisdiction with licensed validators. Every GX stablecoin is fully backed 1:1 by fiat reserves held in regulated custodians.
+        </p>
+
+        <div class="component-grid">
+            <div class="component-card">
+                <h4>Sovereign Architecture</h4>
+                <p>Each currency operates on its own dedicated Layer-1 with jurisdiction-specific validators</p>
+            </div>
+            <div class="component-card">
+                <h4>Proof-of-Authority</h4>
+                <p>Licensed, regulated validators ensure compliance with local requirements</p>
+            </div>
+            <div class="component-card">
+                <h4>1:1 Fiat Backing</h4>
+                <p>Live proof-of-reserves available 24/7 with transparent attestation</p>
+            </div>
+            <div class="component-card">
+                <h4>Bank API Integration</h4>
+                <p>Automated minting and burning anchored to real-world banking events</p>
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- OPRS Deep Dive -->
+        <h1 id="oprs-intro">OPRS — Oracle Priced Reserve Swap</h1>
+        
+        <p>
+            At the heart of Gurufin's differentiation is the <strong>Oracle Priced Reserve Swap (OPRS)</strong> architecture — a novel approach to decentralized exchange purpose-built for stablecoin foreign exchange trading.
+        </p>
+
+        <div class="key-point">
+            <div class="key-point-title">The Fundamental Insight</div>
+            Stablecoin FX trading is fundamentally different from volatile asset trading. Prices are determined by real-world exchange rates, not on-chain supply/demand dynamics. OPRS is designed specifically for this use case.
+        </div>
+
+        <h3>Why Not Automated Market Makers?</h3>
+        
+        <p>
+            AMMs (Automated Market Makers) work well for volatile asset pairs where price discovery emerges from trading activity. However, they are poorly suited for stablecoin FX:
+        </p>
+
+        <table class="comparison">
+            <tr>
+                <th>Characteristic</th>
+                <th>Traditional AMM</th>
+                <th>OPRS (GuruDex)</th>
+            </tr>
+            <tr>
+                <td>Price Source</td>
+                <td>On-chain supply/demand</td>
+                <td class="winner">Real-time oracle feeds</td>
+            </tr>
+            <tr>
+                <td>Slippage</td>
+                <td>Increases with trade size</td>
+                <td class="winner">Zero — oracle-verified rates</td>
+            </tr>
+            <tr>
+                <td>Liquidity Required</td>
+                <td>Deep pools needed</td>
+                <td class="winner">Minimal (mint/burn model)</td>
+            </tr>
+            <tr>
+                <td>Price Accuracy</td>
+                <td>Arbitrage-dependent</td>
+                <td class="winner">Oracle validation</td>
+            </tr>
+            <tr>
+                <td>Best For</td>
+                <td>Volatile pairs</td>
+                <td class="winner">Stablecoin FX</td>
+            </tr>
+        </table>
+
+        <h2 id="oprs-components">Core Components</h2>
+        
+        <p>
+            GuruDex is powered by a modular smart contract system with four primary components:
+        </p>
+
+        <div class="layer-stack">
+            <div class="layer layer-1">
+                <span class="layer-name">FXSwapMaster</span>
+                <span class="layer-desc">Central orchestration, governance, and system parameters</span>
+            </div>
+            <div class="layer layer-2">
+                <span class="layer-name">OPRSProcessor</span>
+                <span class="layer-desc">Oracle-priced swap execution via mint/burn mechanism</span>
+            </div>
+            <div class="layer layer-3">
+                <span class="layer-name">PriceOracle</span>
+                <span class="layer-desc">Real-time FX rate validation with triple-check mechanism</span>
+            </div>
+            <div class="layer layer-4">
+                <span class="layer-name">InstitutionalRegistry</span>
+                <span class="layer-desc">KYC/AML compliance and institutional onboarding</span>
+            </div>
+        </div>
+
+        <h3>Component Details</h3>
+
+        <h4>FXSwapMaster</h4>
+        <p>
+            The central orchestration contract that manages system governance, parameters, and routing. It coordinates between all other components and serves as the entry point for swap operations.
+        </p>
+
+        <h4>OPRSProcessor</h4>
+        <p>
+            The core execution engine that implements the Oracle Priced Reserve Swap mechanism. Instead of swapping tokens in a pool, it burns the input stablecoin on its native chain and mints the output stablecoin on the destination chain.
+        </p>
+
+        <h4>PriceOracle</h4>
+        <p>
+            Provides real-time FX rates with triple validation: freshness (data less than 5 minutes old), deviation (within 1% of stored rate), and confidence (oracle score above 95%). If validation fails, the swap reverts.
+        </p>
+
+        <h4>InstitutionalRegistry</h4>
+        <p>
+            Manages institutional profiles, KYC/AML status, and custom trading parameters. Institutions undergo a multi-step onboarding process before trading is enabled.
+        </p>
+
+        <div class="page-break"></div>
+
+        <h2 id="oprs-flow">Transaction Flow</h2>
+        
+        <p>
+            When a user initiates a cross-currency swap, the OPRS mechanism executes the following sequence:
+        </p>
+
+        <div class="diagram">
+            <div class="diagram-title">OPRS Swap Flow: USGX → KRGX</div>
+            <div class="diagram-content">
+    User                GuruDex              USGX Chain           KRGX Chain
+     │                    │                      │                    │
+     │  1. Initiate Swap  │                      │                    │
+     │  (1,000 USGX)      │                      │                    │
+     │───────────────────>│                      │                    │
+     │                    │                      │                    │
+     │                    │  2. Query Oracle     │                    │
+     │                    │  (1 USD = 1,300 KRW) │                    │
+     │                    │─────────────────────>│                    │
+     │                    │                      │                    │
+     │                    │  3. Validate Price   │                    │
+     │                    │  • Freshness ✓       │                    │
+     │                    │  • Deviation ✓       │                    │
+     │                    │  • Confidence ✓      │                    │
+     │                    │                      │                    │
+     │                    │  4. Burn Input       │                    │
+     │                    │─────────────────────>│                    │
+     │                    │                      │  Burn 1,000 USGX   │
+     │                    │                      │                    │
+     │                    │  5. Mint Output      │                    │
+     │                    │───────────────────────────────────────────>
+     │                    │                      │  Mint 1,300,000 KRGX
+     │                    │                      │                    │
+     │  6. Settlement     │                      │                    │
+     │  Complete          │                      │                    │
+     │<───────────────────│                      │                    │
+     │                    │                      │                    │
+            </div>
+        </div>
+
+        <h3>Key Advantages of This Flow</h3>
+        
+        <ol>
+            <li><strong>Atomic Settlement:</strong> IBC/HTLCs ensure either both operations succeed or neither does</li>
+            <li><strong>No Counterparty Risk:</strong> Cross-chain transfers are trustless and verifiable</li>
+            <li><strong>Precise Pricing:</strong> Oracle-verified rates eliminate slippage</li>
+            <li><strong>Capital Efficient:</strong> No need for deep liquidity pools</li>
+        </ol>
+
+        <h2 id="oprs-vs-amm">OPRS vs Traditional AMM</h2>
+        
+        <p>
+            The fundamental difference between OPRS and AMM architectures reflects the different nature of stablecoin FX trading:
+        </p>
+
+        <div class="info-box highlight">
+            <h4>The AMM Problem for Stablecoins</h4>
+            <p>
+                AMMs require arbitrageurs to maintain peg alignment between stablecoins and their fiat references. This creates unnecessary friction and fails to leverage the fact that GX stablecoins are already precisely pegged via their sovereign chain architecture and oracle validation.
+            </p>
+        </div>
+
+        <p>
+            OPRS eliminates this inefficiency by treating stablecoin swaps as conversions between precisely-pegged assets, using external price feeds rather than internal pool dynamics. This results in zero slippage, lower capital requirements, and prices that accurately reflect real-world FX rates.
+        </p>
+
+        <div class="page-break"></div>
+
+        <!-- Risk & Compliance -->
+        <h1 id="risk">Four-Layer Risk Mitigation</h1>
+        
+        <p>
+            GuruDex implements a comprehensive defense strategy to protect against FX volatility, market manipulation, and operational risks:
+        </p>
+
+        <div class="layer-stack">
+            <div class="layer layer-1">
+                <span class="layer-name">Layer 1: Reserve Fund</span>
+                <span class="layer-desc">5–10% insurance fund for loss compensation</span>
+            </div>
+            <div class="layer layer-2">
+                <span class="layer-name">Layer 2: Dynamic Fees</span>
+                <span class="layer-desc">Real-time fee adjustment based on volatility</span>
+            </div>
+            <div class="layer layer-3">
+                <span class="layer-name">Layer 3: Limits & Validation</span>
+                <span class="layer-desc">Swap caps and oracle triple-validation</span>
+            </div>
+            <div class="layer layer-4">
+                <span class="layer-name">Layer 4: Circuit Breaker</span>
+                <span class="layer-desc">Automatic trading halt on critical thresholds</span>
+            </div>
+        </div>
+
+        <h3>Layer Details</h3>
+
+        <h4>Layer 1 — Reserve Fund</h4>
+        <p>
+            An insurance fund holding 5–10% of pool liquidity compensates losses from rapid rate fluctuations. Reserves are managed separately for retail (3–5%) and institutional (5–10%) segments, with automatic replenishment from trading fees.
+        </p>
+
+        <h4>Layer 2 — Dynamic Fees</h4>
+        <p>
+            Retail fees adjust in real-time based on pool utilization and market volatility. During normal conditions, fees remain at the 0.3% base. Under stress, fees can scale up to 0.63%, suppressing speculative trading and protecting pool equilibrium.
+        </p>
+
+        <h4>Layer 3 — Limits & Validation</h4>
+        <p>
+            Individual swaps are capped at 5% of pool liquidity to prevent whale manipulation. Institutional trades undergo oracle triple validation checking freshness (less than 5 minutes), deviation (within 1%), and confidence (above 95%).
+        </p>
+
+        <h4>Layer 4 — Circuit Breaker</h4>
+        <p>
+            Trading halts automatically when critical thresholds are breached: greater than 5% price swing, greater than 20% liquidity drain, or suspicious transaction patterns. This provides response time for operators and prevents cascading losses.
+        </p>
+
+        <h2 id="compliance">Regulatory Framework</h2>
+        
+        <p>
+            Gurufin's architecture is designed from the ground up for regulatory compliance:
+        </p>
+
+        <ul>
+            <li><strong>Jurisdictional Sovereignty:</strong> Each GX chain operates under its own jurisdiction with licensed validators</li>
+            <li><strong>Proof-of-Authority:</strong> Known, regulated entities validate transactions</li>
+            <li><strong>Wallet-Tier Compliance:</strong> KYC/AML enforcement at the consensus layer</li>
+            <li><strong>Proof-of-Reserves:</strong> 24/7 live attestation of fiat backing</li>
+            <li><strong>Institutional Controls:</strong> Custom limits, fees, and access parameters</li>
+        </ul>
+
+        <div class="page-break"></div>
+
+        <!-- Use Cases -->
+        <h1 id="use-cases">Key Use Cases</h1>
+        
+        <p>
+            Gurufin's infrastructure enables a range of financial applications:
+        </p>
+
+        <h3>Cross-Border Payments</h3>
+        <p>
+            Remittance and B2B payment solutions that settle in seconds rather than days, with predictable fees indexed to local currencies. Workers can send money home instantly; businesses can pay international suppliers without correspondent banking delays.
+        </p>
+
+        <h3>Stablecoin FX Trading</h3>
+        <p>
+            Trading, arbitrage, and derivatives markets built on precisely-priced stablecoin pairs. The OPRS architecture ensures traders receive exact market rates without slippage, enabling sophisticated FX strategies.
+        </p>
+
+        <h3>Institutional DeFi</h3>
+        <p>
+            Tokenized assets and collateral management for institutions requiring regulatory compliance. The InstitutionalRegistry and KYC/AML integration allow institutions to participate in DeFi while maintaining compliance obligations.
+        </p>
+
+        <h3>Government & CBDC</h3>
+        <p>
+            Central bank and financial market infrastructure applications. The sovereign chain architecture and PoA consensus align with CBDC pilot requirements for controlled, compliant digital currency networks.
+        </p>
+
+        <h2 id="differentiation">Technical Differentiation</h2>
+        
+        <p>
+            For investors and partners evaluating Gurufin's position, the key technical differentiators are:
+        </p>
+
+        <ol>
+            <li><strong>Purpose-Built Architecture:</strong> Unlike general-purpose blockchains adapted for finance, Gurufin is designed specifically for stablecoin FX and cross-border payments</li>
+            
+            <li><strong>OPRS Innovation:</strong> The Oracle Priced Reserve Swap mechanism solves the fundamental AMM limitation for stablecoin trading, enabling zero-slippage execution</li>
+            
+            <li><strong>Sovereign Chain Federation:</strong> Jurisdictional compliance through separate chains with licensed validators, rather than attempting to fit all regulatory regimes into one protocol</li>
+            
+            <li><strong>Complete Settlement Stack:</strong> From stablecoin issuance (GX Chain) through trading (GuruDex) to settlement (Gurufin Chain), the entire value chain is integrated</li>
+            
+            <li><strong>Institutional-Grade Risk Management:</strong> Four-layer defense strategy, dynamic fees, and circuit breakers provide the robustness expected by traditional financial institutions</li>
+        </ol>
+
+        <div class="info-box">
+            <h4>Market Opportunity</h4>
+            <p>
+                The global FX market trades approximately $7 trillion daily, with cross-border payments representing trillions more in annual volume. Current blockchain solutions capture only a fraction of this market due to the limitations OPRS addresses: slippage, regulatory uncertainty, and unpredictable fees. Gurufin's architecture is purpose-built to unlock this opportunity.
+            </p>
+        </div>
+
+        <div class="footer">
+            <p>
+                <strong>Gurufin Foundation</strong><br>
+                Technical Architecture Overview — For Investor & Partner Review<br>
+                © 2026 Gurufin Foundation. All rights reserved.<br><br>
+                For more information: gurufin.io | docs.gurufin.com
+            </p>
+        </div>
+    </div>
+</body>
+</html>
