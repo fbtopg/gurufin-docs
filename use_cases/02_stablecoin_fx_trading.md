@@ -8,7 +8,7 @@ Stablecoin FX trading on Gurufin Chain represents a transformative approach to f
 
 Gurufin Chain serves as a neutral, global on-chain FX and DeFi hub designed specifically for stablecoins and tokenized fiat assets. It supports deep liquidity pools for stablecoin pairs, enabling retail remittances, enterprise FX flows, and institutional trading with minimal slippage and predictable fees. The GX Stablecoin Chain network complements this by providing sovereign, fiat-backed stablecoins with robust compliance and reserve transparency.
 
-The FX trading ecosystem on Gurufin is powered by a hybrid execution fabric that combines Automated Market Maker (AMM) models for retail users with Request-for-Quote (RFQ) venues for institutional participants. This dual-algorithm approach, together with Gurufin’s innovative liquidity layer and oracle network, ensures efficient price discovery, liquidity concentration, and regulatory compliance.
+The FX trading ecosystem on Gurufin is powered by the Oracle Priced Reserve Swap (OPRS) architecture, which uses oracle-guided pricing with mint/burn mechanics for all swap executions. This approach ensures swaps execute at precise market rates without slippage, while Gurufin's innovative liquidity layer and oracle network ensure efficient price discovery, liquidity concentration, and regulatory compliance.
 
 ---
 
@@ -16,7 +16,7 @@ The FX trading ecosystem on Gurufin is powered by a hybrid execution fabric that
 
 Developers and financial institutions can build a variety of FX trading applications on Gurufin, including:
 
-- **Stablecoin Spot Trading Platforms:** Leverage Gurufin’s hybrid AMM and RFQ pools to offer retail and institutional users seamless FX swaps between sovereign stablecoins such as USGX (USD), KRGX (KRW), JPGX (JPY), and PHGX (PHP).
+- **Stablecoin Spot Trading Platforms:** Leverage GuruDex's OPRS architecture to offer retail and institutional users seamless FX swaps between sovereign stablecoins pegged to local fiat currencies.
 
 - **Arbitrage Bots and Strategies:** Utilize Gurufin’s deterministic sub-second finality and IBC-enabled interoperability to execute cross-chain arbitrage opportunities with minimal settlement risk and near-instant trade finality.
 

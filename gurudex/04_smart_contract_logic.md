@@ -6,10 +6,12 @@ GuruDex's swap execution is orchestrated by a modular smart contract system. Eac
 
 **Swap Routing**
 
-When a swap is initiated, the HybridStablePool queries the InstitutionalRegistry to determine user type:
+When a swap is initiated, the OPRSProcessor queries the InstitutionalRegistry to determine user type:
 
-* **Retail users** → Routed to AMM algorithm (constant product formula with dynamic fees and slippage protection)
-* **Institutional users** → Routed to oracle algorithm (real-time rates from PriceOracle with triple validation)
+* **Retail users** → Routed to the standard OPRS execution path with appropriate fee tiers
+* **Institutional users** → Routed to the institutional OPRS path with oracle-verified pricing and custom parameters
+
+All swaps execute through the Oracle Priced Reserve Swap (OPRS) mechanism, ensuring consistent oracle-guided pricing regardless of user type.
 
 ---
 
@@ -27,7 +29,7 @@ Institutions follow a multi-step workflow before trading is enabled:
 **Core Contracts**
 
 * **FXSwapMaster** — Central orchestration, governance, and system parameters
-* **HybridStablePool** — Liquidity storage and swap execution for each currency
+* **OPRSProcessor** — Oracle-priced swap execution via mint/burn mechanism
 * **PoolFactory** — Deploys new pool instances as currencies are added
 * **PriceOracle** — Stores and validates real-time FX rates
 * **InstitutionalRegistry** — Manages institutional profiles and permissions

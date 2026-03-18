@@ -1,6 +1,6 @@
 # Tokenomics ($GXN)
 
-The GXN token is the native utility token of the Gurufin ecosystem, serving as the fundamental economic layer that powers the Gurufin Chain and GX Stablecoin networks. GXN enables four core functions: staking for network security through the Delegated Proof-of-Stake consensus mechanism, governance participation for protocol decision-making and parameter adjustments, fee payments for all on-chain transactions using the Guru-PEG fiat-indexed model, and liquidity provisioning within the hybrid AMM/RFQ trading infrastructure.
+The GXN token is the native utility token of the Gurufin ecosystem, serving as the fundamental economic layer that powers the Gurufin Chain and GX Stablecoin networks. GXN enables four core functions: staking for network security through the Delegated Proof-of-Stake consensus mechanism, governance participation for protocol decision-making and parameter adjustments, fee payments for all on-chain transactions using the Guru-PEG fiat-indexed model, and liquidity provisioning within the GuruDex OPRS trading infrastructure.
 
 The tokenomics model is carefully designed to align incentives among validators, liquidity providers, governance participants, and end-users, fostering a robust ecosystem where each stakeholder benefits from network growth and stability.
 

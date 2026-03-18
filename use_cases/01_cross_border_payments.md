@@ -13,8 +13,8 @@ Gurufin Chain is a public Delegated Proof-of-Stake (DPoS) Layer-1 blockchain des
 - **Deterministic Sub-Second Finality:** Gurufin Chain achieves sub-second block times with Byzantine Fault Tolerant (BFT) consensus, ensuring near-instant settlement finality critical for payment certainty.
 - **Fiat-Predictable and Low Fees:** The Guru-PEG (Price Equilibrium Governance) mechanism indexes gas fees to stable fiat values, providing predictable and retail-grade fee stability (e.g., ~$0.013 per L1 transfer), which significantly reduces transaction costs.
 - **Atomic Payment-versus-Payment (PvP) Settlement:** The chain supports atomic cross-chain settlements via Inter-Blockchain Communication (IBC), eliminating principal and bridge risk by ensuring simultaneous exchange of payment legs.
-- **Hybrid Execution Fabric:** Combines Automated Market Maker (AMM) models for retail/small trades with Request-for-Quote (RFQ) mechanisms for institutional/large trades, optimizing liquidity and minimizing slippage.
-- **Jurisdictional Sovereign Stablecoins:** Through the GX Stablecoin Chain network, Gurufin supports fiat-backed stablecoins pegged to various currencies (USD, KRW, JPY, PHP), each issued under regulated, licensed validators ensuring compliance and transparency.
+- **Oracle Priced Reserve Swap (OPRS) Execution:** The GuruDex platform uses oracle-guided pricing with mint/burn mechanics, ensuring swaps execute at precise market rates without slippage.
+- **Jurisdictional Sovereign Stablecoins:** Through the GX Stablecoin Chain network, Gurufin supports fiat-backed stablecoins pegged to local fiat currencies, each issued under regulated, licensed validators ensuring compliance and transparency.
 - **Embedded Compliance and Privacy:** Wallet-tiered KYC/AML, sanctions screening, FATF Travel Rule metadata, and optional zk-proof privacy modes enable regulatory adherence without compromising user confidentiality.
 
 ---

@@ -13,7 +13,7 @@
 
 **Phase 2: Expansion** *(In Progress)*
 - Launch of Public Testnet (Season 1 Complete)
-- Deployment of GuruDex hybrid AMM and RFQ execution fabric
+- Deployment of GuruDex Oracle Priced Reserve Swap (OPRS) architecture
 - GX Stablecoin sovereign chain PoC using licensed validators
 - IBC connectivity for trust-minimized Cosmos ecosystem settlement
 - EVM Gateway for seamless Ethereum asset compatibility

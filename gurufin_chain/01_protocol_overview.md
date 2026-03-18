@@ -16,7 +16,7 @@ The chain connects multiple blockchain ecosystems through a three-layer approach
 
 **Financial Infrastructure**
 
-Built specifically for financial use cases, Gurufin Chain supports hybrid execution combining AMM and RFQ models for optimal pricing, Payment-versus-Payment (PvP) atomic settlement for eliminating counterparty risk, and sovereign stablecoin issuance with transparent reserve backing.
+Built specifically for financial use cases, Gurufin Chain supports Oracle Priced Reserve Swap (OPRS) execution for optimal pricing, Payment-versus-Payment (PvP) atomic settlement for eliminating counterparty risk, and sovereign stablecoin issuance with transparent reserve backing.
 
 ---
 

@@ -8,7 +8,7 @@ At the core of GX Chain is a permissioned Proof-of-Authority (PoA) consensus mec
 
 **Multi-Currency Stablecoin Engine**
 
-GX Chain supports multiple fiat currencies through its sovereign chain architecture. Each currency operates on its own dedicated chain with jurisdiction-specific validators, enabling regulatory compliance while maintaining interoperability with the broader Gurufin ecosystem.
+GX Chain supports local fiat currencies through its sovereign chain architecture. Each currency operates on its own dedicated chain with jurisdiction-specific validators, enabling regulatory compliance while maintaining interoperability with the broader Gurufin ecosystem.
 
 The stablecoins are fully backed by fiat reserves held in regulated custodial accounts, with live proof-of-reserves available 24/7 to ensure transparency and trust. Automated minting and burning are anchored directly to bank API events, ensuring that the digital supply always corresponds to real-world fiat reserves.
 
@@ -32,7 +32,7 @@ This approach offers regulatory compliance through vetted and licensed validator
 
 **Fees and Gas Model**
 
-Gas is paid in the local GX stablecoin, with transaction fees denominated and fixed in fiat terms within narrow bands (e.g., ~$0.013 per transaction). Unlike congestion-auction fee models on public chains, GX's fixed-fee design ensures predictable point-of-sale usability. Fees may be optionally indexed to CPI for long-run sustainability. Paymaster contracts allow institutions to sponsor end-user fees during early adoption.
+Gas is paid in the local GX stablecoin, with transaction fees denominated and fixed in local fiat terms within narrow bands. Unlike congestion-auction fee models on public chains, GX's fixed-fee design ensures predictable point-of-sale usability. Fees may be optionally indexed to CPI for long-run sustainability. Paymaster contracts allow institutions to sponsor end-user fees during early adoption.
 
 ---
 
