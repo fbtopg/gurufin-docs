@@ -26,5 +26,3 @@ Violations result in slashing penalties where a portion of staked tokens is conf
 Validators earn rewards from the Node Pool emissions (25% of total supply allocated for staking rewards) plus an increasing share of transaction fee revenue as network usage grows. Delegators share in these rewards proportionally, minus the validator's commission rate.
 
 ---
-
-*This page provides an introductory overview. Detailed hardware specifications, setup instructions, and operational best practices will be added in future documentation updates.*

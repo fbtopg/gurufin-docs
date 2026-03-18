@@ -26,5 +26,3 @@ Fees accumulate continuously and are distributed to LP token holders proportiona
 Rewards are calculated and allocated every 24 hours based on LP token holdings. To ensure regulatory compliance and revenue fairness, institutional LP returns are capped at 7% annually. Excess rewards above this cap are redistributed to retail LPs, resulting in higher expected returns for retail participants.
 
 ---
-
-*This page provides an introductory overview.*

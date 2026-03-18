@@ -40,5 +40,3 @@ Gurufin Chain exposes both Cosmos SDK and EVM-compatible APIs for querying chain
 All endpoints are accessible via the testnet RPC base: `https://trpc.gurufin.io`
 
 ---
-
-*This page provides an introductory overview.*

@@ -32,5 +32,3 @@ Standard proposals follow a 7-day voting window with a 72-hour timelock before e
 A Security Council (n-of-m multisig with external members) holds narrowly scoped, time-bounded emergency powers for operational safety—such as freezing affected pairs during oracle degradation or pausing specific routes on extreme basis divergence. Emergency actions auto-expire within 72 hours unless ratified by token vote, and all actions are logged with mandatory post-mortem disclosure.
 
 ---
-
-*This page provides an introductory overview. Detailed governance procedures and deposit requirements will be added in future documentation updates.*

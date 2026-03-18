@@ -34,5 +34,3 @@ Institutions follow a multi-step workflow before trading is enabled:
 * **FeeDistributor** — Allocates rewards proportionally to LP token holders
 
 ---
-
-*This page provides an introductory overview.*

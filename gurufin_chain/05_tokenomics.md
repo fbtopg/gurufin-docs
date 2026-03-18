@@ -26,5 +26,3 @@ The maximum supply at genesis is 100 billion GXN. Key allocations include a Node
 A portion of all collected GXN fees is permanently burned to the Gurufin Abyss Ledger (GAL), a keyless on-chain burn address. This creates deflationary pressure as network usage grows. Validators earn rewards from both emissions and an increasing share of fee revenue, while liquidity providers earn swap fees with optional governance-approved incentive top-ups during bootstrap phases.
 
 ---
-
-*This page provides an introductory overview. Comprehensive tokenomics details including vesting schedules and emission curves will be added in future documentation updates.*

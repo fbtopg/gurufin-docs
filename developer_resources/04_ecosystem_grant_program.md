@@ -29,5 +29,3 @@ Gurufin Foundation supports builders creating applications, tools, and infrastru
 For grant inquiries, reach out via the official channels listed on [gurufin.io](https://gurufin.io).
 
 ---
-
-*This page provides an introductory overview.*

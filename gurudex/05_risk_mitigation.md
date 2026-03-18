@@ -31,5 +31,3 @@ Individual swaps are capped at 5% of pool liquidity to prevent whale manipulatio
 Trading halts automatically when critical thresholds are breached—such as >5% price swing, >20% liquidity drain, or suspicious transaction patterns. This secures response time for operators and prevents cascading losses during attacks or market crises.
 
 ---
-
-*This page provides an introductory overview.*
