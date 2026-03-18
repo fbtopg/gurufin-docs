@@ -15,6 +15,7 @@
     ".gitbook.yaml",
     ".gitbook/assets/Gemini_Generated_Image_iljs2xiljs2xiljs.jpg",
     ".gitignore",
+    "README.md",
     "STRUCTURE.md",
     "SUMMARY.md",
     "book.json",
@@ -53,7 +54,7 @@
   "pages": [],
   "env_vars": [],
   "created": 1773716693.211852,
-  "updated": 1773813377.4193466,
+  "updated": 1773826069.256583,
   "source": "project-scan-v1 git:https://github.com/fbtopg/gurufin-docs.git"
 }
 ```
@@ -64,5 +65,5 @@
 - Framework: gitbook
 - Deploy Target: gitbook
 - Directory: /home/geonu/workspace/projects/gurufin-gitbook
-- Updated: 1773813377.419347
-- Files: .gitbook.yaml, .gitbook/assets/Gemini_Generated_Image_iljs2xiljs2xiljs.jpg, .gitignore, STRUCTURE.md, SUMMARY.md, book.json, developer_resource.json, developer_resources/01_testnet_access.md, developer_resources/02_api_reference.md, developer_resources/03_full_developer_docs.md
+- Updated: 1773826069.256583
+- Files: .gitbook.yaml, .gitbook/assets/Gemini_Generated_Image_iljs2xiljs2xiljs.jpg, .gitignore, README.md, STRUCTURE.md, SUMMARY.md, book.json, developer_resource.json, developer_resources/01_testnet_access.md, developer_resources/02_api_reference.md
