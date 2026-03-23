@@ -1,10 +1,16 @@
 # Gurufin GitBook Structure Documentation
 
-## Overview
+## Project Overview
 
-This GitBook documentation provides a comprehensive guide to the Gurufin ecosystem, covering high-level concepts, technical specifications, and developer resources.
+The Gurufin GitBook is the official documentation hub for the Gurufin ecosystem — a specialized financial infrastructure combining blockchain technology with institutional-grade regulatory compliance for globally interoperable cross-border settlement.
 
-## Documentation Structure (28 pages)
+### Core Pillars
+
+1. **Gurufin Chain** — A public Delegated Proof-of-Stake (DPoS) Layer-1 blockchain built on Cosmos SDK with Tendermint BFT consensus
+2. **GX Stablecoin Network** — A federation of sovereign stablecoin chains with 1:1 fiat backing and embedded compliance
+3. **GuruDex (OPRS)** — An Oracle Priced Reserve Swap exchange for slippage-free stablecoin FX trading
+
+## Documentation Structure (33 pages)
 
 ### 1. Introduction (3 pages)
 - **Vision & Mission**: The foundational purpose and goals of Gurufin
@@ -46,7 +52,7 @@ This GitBook documentation provides a comprehensive guide to the Gurufin ecosyst
 - **Institutional DeFi**: Tokenized assets and collateral management
 - **Government & CBDC**: Central bank and FMI applications
 
-## Total Pages: 28
+## Total Pages: 33
 
 ## Content Approach
 
@@ -68,12 +74,19 @@ This documentation is based on:
 - Gurufin Chain Whitepaper (September 2025)
 - GX Stablecoin Litepaper
 - GuruDex OPRS Architecture Documentation
-- Cosmos SDK documentation patterns
-
 ## Maintenance
 
 This documentation should be updated regularly to reflect:
 - New features and capabilities
+- Updated technical specifications
+- Additional use cases and examples
+- Community feedback and frequently asked questions
+
+## Repository Information
+
+- **GitHub**: https://github.com/fbtopg/gurufin-docs
+- **Deploy Target**: Vercel-hosted GitBook
+- **Framework**: GitBook with mermaid-gb3 and search-plus plugins
 - Updated technical specifications
 - Additional use cases and examples
 - Community feedback and frequently asked questions
