@@ -25,7 +25,11 @@
     [
       "GX Stablecoin Network",
       [
-        "docs/gx_chain/01_overview"
+        "docs/gx_chain/01_overview",
+        "docs/gx_chain/02_reserve_and_backing",
+        "docs/gx_chain/03_mint_and_burn",
+        "docs/gx_chain/04_multi_currency_support",
+        "docs/gx_chain/05_compliance_and_regulation"
       ]
     ],
     [
