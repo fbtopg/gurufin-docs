@@ -4,7 +4,7 @@
 {
   "schema": "hachi/project-memory-status/v1",
   "project_name": "gurufin-gitbook",
-  "purpose": "Official documentation hub for the Gurufin ecosystem — a specialized financial infrastructure combining blockchain technology with institutional-grade regulatory compliance for globally interoperable cross-border settlement.",
+  "purpose": "Official documentation hub for the Gurufin ecosystem \u2014 a specialized financial infrastructure combining blockchain technology with institutional-grade regulatory compliance for globally interoperable cross-border settlement.",
   "status": "active",
   "skill_name": "",
   "framework": "gitbook",
@@ -41,6 +41,7 @@
     "gurufin_chain/05_tokenomics.md",
     "gurufin_chain/06_governance.md",
     "gurufin_chain/07_validator_guide.md",
+    "gurufin_chain/gurufin_chain_whitepaper.md",
     "gurufin_chain_whitepaper.md",
     "gx_chain/01_overview.md",
     "gx_chain/02_reserve_and_backing.md",
@@ -64,6 +65,7 @@
     "pdf-sections/09-conclusion.md",
     "pdf-sections/10-glossary.md",
     "pdf-style.css",
+    "project_purpose.md",
     "use_cases/01_cross_border_payments.md",
     "use_cases/02_stablecoin_fx_trading.md",
     "use_cases/03_institutional_defi.md",
@@ -72,7 +74,7 @@
   "pages": [],
   "env_vars": [],
   "created": 1773716693.211852,
-  "updated": 1774159794.3686566,
+  "updated": 1775809800.0550497,
   "source": "project-scan-v1 git:https://github.com/fbtopg/gurufin-docs.git"
 }
 ```
@@ -80,8 +82,9 @@
 ## Summary
 - Project: gurufin-gitbook
 - Status: active
+- Purpose: Official documentation hub for the Gurufin ecosystem — a specialized financial infrastructure combining blockchain technology with institutional-grade regulatory compliance for globally interoperable cross-border settlement.
 - Framework: gitbook
 - Deploy Target: gitbook
 - Directory: /home/geonu/workspace/projects/gurufin-gitbook
-- Updated: 1774159794.368657
+- Updated: 1775809800.055050
 - Files: .gitbook.yaml, .gitbook/assets/Gemini_Generated_Image_iljs2xiljs2xiljs.jpg, .gitignore, Gurufin_OPRS_Architecture.pdf, Gurufin_OPRS_Architecture_v2.html, Gurufin_OPRS_Architecture_v2.pdf, README.md, STRUCTURE.md, SUMMARY.md, book.json
