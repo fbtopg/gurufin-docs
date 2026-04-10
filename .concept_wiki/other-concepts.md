@@ -1,0 +1,43 @@
+# Other Concepts
+
+- **Arbitrage Across Sovereign Stablecoin Chains** (confidence: 1.0) — docs/use_cases/02_stablecoin_fx_trading.md
+- **Architecture Diagram** (confidence: 1.0) — docs/gurudex/01_dex_overview.md
+- **Benchmarks** (confidence: 1.0) — docs/gx_chain/01_overview.md
+- **Benefits for Jurisdictional Stablecoin Issuance** (confidence: 1.0) — docs/use_cases/04_government_and_cbdc.md
+- **Building Efficient and Low-Cost Remittance and B2B Payment Solutions on Gurufin** (confidence: 1.0) — docs/use_cases/01_cross_border_payments.md
+- **CBDC Integration with GX Stablecoin** (confidence: 1.0) — docs/use_cases/04_government_and_cbdc.md
+- **Central orchestration and governance contract** (confidence: 1.0) — docs/gurudex/01_dex_overview.md
+- **Collateral Management** (confidence: 1.0) — docs/use_cases/03_institutional_defi.md
+- **Consensus Mechanism** (confidence: 1.0) — docs/gurufin_chain/gurufin_chain_whitepaper.md
+- **Consensus and Performance** (confidence: 1.0) — docs/use_cases/03_institutional_defi.md
+- **Core Smart Contracts** (confidence: 1.0) — docs/gurudex/01_dex_overview.md
+- **Derivatives on Tokenized FX Pairs** (confidence: 1.0) — docs/use_cases/02_stablecoin_fx_trading.md
+- **Developer Ecosystem** (confidence: 1.0) — docs/gurufin_chain/gurufin_chain_whitepaper.md
+- **Enterprise FX Treasury Management** (confidence: 1.0) — docs/use_cases/02_stablecoin_fx_trading.md
+- **Fee Predictability** (confidence: 1.0) — docs/gx_chain/01_overview.md
+- **Fees and Gas Model** (confidence: 1.0) — docs/gx_chain/01_overview.md
+- **Fees: Guru-PEG** (confidence: 1.0) — docs/gurufin_chain/gurufin_chain_whitepaper.md
+- **GX Stablecoin Platform for Jurisdictional Stablecoin Issuance** (confidence: 1.0) — docs/use_cases/04_government_and_cbdc.md
+- **GuruDex (OPRS)** (confidence: 1.0) — SUMMARY.md
+- **Incident Response** (confidence: 1.0) — docs/gurufin_chain/gurufin_chain_whitepaper.md
+- **KYC/AML and institutional onboarding** (confidence: 1.0) — docs/gurudex/01_dex_overview.md
+- **Layered Design** (confidence: 1.0) — docs/gurufin_chain/gurufin_chain_whitepaper.md
+- **Leveraging Gurufin for Institutional DeFi** (confidence: 1.0) — docs/use_cases/03_institutional_defi.md
+- **Mint & Burn Mechanics** (confidence: 1.0) — docs/gx_chain/01_overview.md
+- **Multi-Currency Stablecoin Engine** (confidence: 1.0) — docs/gx_chain/01_overview.md
+- **Offline Payments** (confidence: 1.0) — docs/gx_chain/01_overview.md
+- **Oracle-priced swap execution via mint/burn** (confidence: 1.0) — docs/gurudex/01_dex_overview.md
+- **Overview of Stablecoin FX Trading on Gurufin** (confidence: 1.0) — docs/use_cases/02_stablecoin_fx_trading.md
+- **Phase 2: Ecosystem 🚧** (confidence: 1.0) — docs/gurufin_chain/gurufin_chain_whitepaper.md
+- **Phase 3: Expansion 📈** (confidence: 1.0) — docs/gurufin_chain/gurufin_chain_whitepaper.md
+- **Real-time FX rate validation** (confidence: 1.0) — docs/gurudex/01_dex_overview.md
+- **Related Pages** (confidence: 1.0) — docs/gurufin_chain/01_protocol_overview.md
+- **SDK Examples** (confidence: 1.0) — docs/gurudex/01_dex_overview.md
+- **Security & Compliance** (confidence: 1.0) — docs/gurudex/01_dex_overview.md
+- **Step-by-Step Swap Flow** (confidence: 1.0) — docs/gurudex/01_dex_overview.md
+- **Structured Products** (confidence: 1.0) — docs/use_cases/03_institutional_defi.md
+- **Technical Overview of Institutional Features** (confidence: 1.0) — docs/use_cases/03_institutional_defi.md
+- **Tokenized Asset Settlement** (confidence: 1.0) — docs/use_cases/03_institutional_defi.md
+- **Use Case Examples** (confidence: 1.0) — docs/use_cases/01_cross_border_payments.md
+- **Use Case Scenarios** (confidence: 1.0) — docs/use_cases/02_stablecoin_fx_trading.md
+- **What is GX Chain?** (confidence: 1.0) — docs/gx_chain/01_overview.md

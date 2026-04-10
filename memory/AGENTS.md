@@ -15,6 +15,22 @@ It defines every page and its position in the book.
 - `SUMMARY.md`
 - `_sidebar.json`
 
+### .concept_graph/
+- `.concept_graph/graph.json`
+
+### .concept_wiki/
+- `.concept_wiki/100-fiat-backed-reserves.md`
+- `.concept_wiki/24-7-live-proof-of-reserves.md`
+- `.concept_wiki/activation.md`
+- `.concept_wiki/api-ports.md`
+- `.concept_wiki/api-reference.md`
+- `.concept_wiki/application-process.md`
+- `.concept_wiki/atomic-pvp-settlement.md`
+- `.concept_wiki/bank-api-connectivity.md`
+- `.concept_wiki/benefits.md`
+- `.concept_wiki/block-explorer.md`
+- ... and 41 more files
+
 ### .gitbook/
 - `.gitbook/assets/Gemini_Generated_Image_iljs2xiljs2xiljs.jpg`
 
