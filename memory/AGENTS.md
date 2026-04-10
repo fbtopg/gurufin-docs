@@ -1,12 +1,19 @@
 # AGENTS.md
 
 Project: gurufin-gitbook
-Type: general
+Type: gitbook
+
+## Navigation
+
+**SUMMARY.md is the master table of contents.** Always read it first.
+It defines every page and its position in the book.
 
 ## Structure
 
 ### Root files
 - `.gitignore`
+- `SUMMARY.md`
+- `_sidebar.json`
 
 ### .gitbook/
 - `.gitbook/assets/Gemini_Generated_Image_iljs2xiljs2xiljs.jpg`
@@ -26,10 +33,13 @@ Type: general
 
 ## How To Make Changes
 
-1. Check related files before editing
-2. Verify consistency across docs, config, and implementation
-3. Prefer small, scoped changes with verification
+1. Read SUMMARY.md to understand where target content sits in the book
+2. If changing a concept, grep across ALL .md files — docs cross-reference each other
+3. After editing any doc, check if SUMMARY.md needs updating
+4. Files with `-legacy` in the name are outdated — prefer new files over editing them
 
 ## Conventions
 
-- Follow existing patterns in the codebase
+- SUMMARY.md defines the sidebar navigation
+- Cross-references use relative markdown links
+- Legacy docs are suffixed with `-legacy` in filename
