@@ -22,9 +22,9 @@ Supported chains include Ethereum, Polygon, Arbitrum, Optimism, BNB Chain, and o
 
 **GatewayGX Module**
 
-For blockchains that don't support IBC or EVM, Gurufin uses the custom GatewayGX module. This includes Solana integration through a custom adapter for its Proof-of-History runtime, with a modular adapter framework designed for future chain integrations.
+> **Note:** The GatewayGX module is not yet implemented. Future work may include integration with non-standard chains like Solana through a custom adapter framework.
 
-Gateway-wrapped assets are minted via the tokenfactory/CW-20 module and clearly marked with a `gw` prefix (e.g., gwUSDC, gwUSDT) to distinguish them from canonical IBC imports. The module operates under dual control: oracles validate transfer conditions, and timeout safeguards automatically reverse incomplete transactions to prevent bridge risk.
+**Note:** CosmWasm is not supported on Gurufin Chain at this time.
 
 ---
 

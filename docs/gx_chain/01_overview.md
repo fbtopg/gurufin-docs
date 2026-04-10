@@ -174,10 +174,7 @@ See: [`Institutional DeFi Use Case`](/use_cases/03_institutional_defi.md)
 
 ### Zero-Knowledge Privacy
 
-Optional ZK-proof technology for transaction privacy while maintaining regulatory compliance:
-- **Selective Disclosure**: Prove compliance without revealing details
-- **Private Transactions**: ZK-enabled transaction privacy
-- **Audit Compatibility**: Regulator-accessible proofs
+> **Note:** This feature is not yet implemented. Discussion ongoing regarding privacy-preserving ZK protocols to enable confidential transactions while maintaining auditability. ZK-proofs could demonstrate compliance with regulatory requirements without revealing sensitive transaction details, enabling institutional adoption while preserving user privacy.
 
 ---
 

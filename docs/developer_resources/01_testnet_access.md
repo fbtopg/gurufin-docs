@@ -30,11 +30,7 @@ Connect to Guru Testnet to develop and test your applications before deploying t
 
 **Faucet**
 
-Request testnet tokens for development at the official faucet:
-
-| Resource | URL |
-|----------|-----|
-| Faucet | `https://faucet.gurufin.io/` |
+> **Note:** The Season 1 testnet is being shut down. A new testnet phase will be announced separately. This documentation will be updated when the new testnet becomes available.
 
 ---
 

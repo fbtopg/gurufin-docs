@@ -21,9 +21,13 @@ The proposal lifecycle follows a structured process—from submission with depos
 
 ---
 
-**Voting & Timelocks**
+**Voting & Execution**
 
-Standard proposals follow a 7-day voting window with a 72-hour timelock before execution. Parameter changes require a quorum of 10–20% of bonded voting power with >50% yes votes. Economic changes and chain upgrades require higher thresholds (up to 40% quorum and ≥66.7% supermajority for hard forks). A "No with Veto" option allows ≥33.4% to reject proposals outright.
+Standard proposals follow a **14-day voting window**. With a quorum of **33.4%** of bonded voting power:
+- **Basic parameter changes**: >50% yes votes
+- **Economic changes / chain upgrades**: ≥66.7% supermajority
+
+Gurufin Chain does **not** use timelocks—approved proposals execute immediately upon passing. A "No with Veto" option allows ≥33.4% to reject proposals outright.
 
 ---
 

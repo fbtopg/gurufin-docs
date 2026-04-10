@@ -12,17 +12,13 @@ Gurufin Chain delivers sub-second finality and throughput of up to 10,000 transa
 
 **Interoperability**
 
-The chain connects multiple blockchain ecosystems through a three-layer approach: native Cosmos IBC for trust-minimized cross-chain communication, an EVM Gateway for Ethereum ecosystem compatibility, and the GatewayGX module for connecting to non-standard chains like Solana.
-
-**Financial Infrastructure**
-
-Built specifically for financial use cases, Gurufin Chain supports Oracle Priced Reserve Swap (OPRS) execution for optimal pricing, Payment-versus-Payment (PvP) atomic settlement for eliminating counterparty risk, and sovereign stablecoin issuance with transparent reserve backing.
+The chain connects multiple blockchain ecosystems through a two-layer approach: native Cosmos IBC for trust-minimized cross-chain communication, and an EVM Gateway for Ethereum ecosystem compatibility.
 
 ---
 
 **Technology Stack**
 
-Gurufin Chain is built on the Cosmos SDK framework, leveraging Tendermint BFT consensus for Byzantine fault tolerance and instant finality, Delegated Proof-of-Stake (DPoS) for balancing decentralization with performance, and a modular architecture that enables independent upgrades and feature additions.
+Gurufin Chain is built on the Cosmos SDK framework, leveraging **Tendermint BFT (Comet BFT)** consensus for Byzantine fault tolerance and instant finality, Delegated Proof-of-Stake (DPoS) for balancing decentralization with performance, and a modular architecture that enables independent upgrades and feature additions.
 
 **What Makes Gurufin Different**
 

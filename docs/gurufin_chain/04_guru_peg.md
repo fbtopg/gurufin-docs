@@ -14,8 +14,8 @@ The fee in GXN is calculated as follows:
 Fee (GXN) = Fiat Target ÷ GXN Price × Surge Multiplier
 ```
 
-* **Fiat Target** — The base fee in fiat (e.g. $0.013 for a standard transfer), set by governance.
-* **GXN Price** — Current GXN price in fiat from the oracle network (e.g. $0.10).
+* **Fiat Target** — The base fee target in fiat (e.g., $0.013 for a standard transfer), set by governance.
+* **GXN Price** — Current GXN price in fiat from the oracle network (e.g., $0.10).
 * **Surge Multiplier** — Congestion factor: 1.0 under normal load, up to ~2× during high demand.
 
 *Example:* With Fiat Target = $0.013, GXN Price = $0.10, and Surge Multiplier = 1.0:
@@ -25,6 +25,11 @@ Fee (GXN) = 0.013 ÷ 0.10 × 1.0 = 0.13 GXN
 ```
 
 So the user pays 0.13 GXN and experiences a stable cost of about $0.013.
+
+**Formula Explanation:**
+- **Fiat Target / GXN Price** — Converts the fixed fiat fee amount into the required GXN amount based on the current oracle price.
+- **× Surge Multiplier** — Scales the fee based on network congestion (1.0 = normal, 2.0 = high congestion).
+- **Result** — The final fee in GXN tokens, which may fluctuate slightly as the GXN price changes, but the fiat-equivalent cost remains predictable.
 
 Standard L1 transfers cost approximately $0.013 and asset/NFT operations around $0.040. These fee targets are adjusted periodically (annually or quarterly) using the Consumer Price Index (CPI) for inflation, with a maximum step cap of 2% per update.
 
