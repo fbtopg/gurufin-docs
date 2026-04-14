@@ -19,7 +19,7 @@ All swaps execute through the Oracle Priced Reserve Swap (OPRS) mechanism, ensur
 
 Institutions follow a multi-step workflow before trading is enabled:
 
-1. **Registration** — Submit basic information via `registerInstitution()`
+1. **Registration** — Submit basic information via registerInstitution()
 2. **Verification** — Off-chain KYC/AML review by operations team
 3. **Activation** — Operator sets custom limits, fees, and parameters
 4. **Authorization** — Approve specific coins and pools for access

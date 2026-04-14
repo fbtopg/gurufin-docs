@@ -27,16 +27,16 @@ Gurufin Chain exposes both Cosmos SDK and EVM-compatible APIs for querying chain
 
 | Method | Description |
 |--------|-------------|
-| `eth_blockNumber` | Get current block number |
-| `eth_getBalance` | Query account balance |
-| `eth_sendRawTransaction` | Submit signed transaction |
-| `eth_call` | Execute read-only contract call |
-| `eth_getLogs` | Query event logs |
+| eth_blockNumber | Get current block number |
+| eth_getBalance | Query account balance |
+| eth_sendRawTransaction | Submit signed transaction |
+| eth_call | Execute read-only contract call |
+| eth_getLogs | Query event logs |
 
 ---
 
 **Testnet Base URL**
 
-All endpoints are accessible via the testnet RPC base: `https://trpc.gurufin.io`
+All endpoints are accessible via the testnet RPC base:
 
 ---

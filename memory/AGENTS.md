@@ -12,26 +12,12 @@ It defines every page and its position in the book.
 
 ### Root files
 - `remove_links.py`
+- `remove_links_v2.py`
 - `.gitignore`
 - `SUMMARY.md`
 - `_sidebar.json`
+- `clean_links.py`
 - `gurufin-x-posts.md`
-
-### .concept_graph/
-- `.concept_graph/graph.json`
-
-### .concept_wiki/
-- `.concept_wiki/100-fiat-backed-reserves.md`
-- `.concept_wiki/24-7-live-proof-of-reserves.md`
-- `.concept_wiki/activation.md`
-- `.concept_wiki/api-ports.md`
-- `.concept_wiki/api-reference.md`
-- `.concept_wiki/application-process.md`
-- `.concept_wiki/atomic-pvp-settlement.md`
-- `.concept_wiki/bank-api-connectivity.md`
-- `.concept_wiki/benefits.md`
-- `.concept_wiki/block-explorer.md`
-- ... and 41 more files
 
 ### .gitbook/
 - `.gitbook/assets/Gemini_Generated_Image_iljs2xiljs2xiljs.jpg`
@@ -47,7 +33,7 @@ It defines every page and its position in the book.
 - `docs/gurudex/04_smart_contract_logic.md`
 - `docs/gurudex/05_risk_mitigation.md`
 - `docs/gurufin_chain/01_protocol_overview.md`
-- ... and 19 more files
+- ... and 18 more files
 
 ## How To Make Changes
 

@@ -6,12 +6,12 @@
 
 ## 🚀 Quick Links
 
-- **Introduction**: `01 Vision & Mission` | `02 What is Gurufin?`
-- **GX Stablecoins**: `02 Reserve & Backing` | `03 Mint & Burn` | `04 Multi-Currency` | `05 Compliance`
-- **GuruDex**: `DEX Overview` | `OPRS Architecture`
-- **Gurufin Chain**: `Whitepaper`
-- **Use Cases**: `01 Cross-Border Payments` | `02 Stablecoin FX Trading`
-- **Developer**: `Testnet Access`
+- **Introduction**: 01 Vision & Mission | 02 What is Gurufin?
+- **GX Stablecoins**: 02 Reserve & Backing | 03 Mint & Burn | 04 Multi-Currency | 05 Compliance
+- **GuruDex**: DEX Overview | OPRS Architecture
+- **Gurufin Chain**: Whitepaper
+- **Use Cases**: 01 Cross-Border Payments | 02 Stablecoin FX Trading
+- **Developer**: Testnet Access
 
 ---
 
@@ -41,7 +41,7 @@ Each GX chain is an independent Layer-1 blockchain governed by licensed validato
 - **EURGX Chain** — EUR-pegged, EU jurisdiction validators
 - **JPGX Chain** — JPY-pegged, Japan jurisdiction validators
 
-See: `Sovereign Chain Architecture`
+See: Sovereign Chain Architecture
 
 ### Proof-of-Authority Consensus
 
@@ -65,7 +65,7 @@ GX Chain supports local fiat currencies through its sovereign chain architecture
 
 The stablecoins are fully backed by fiat reserves held in regulated custodial accounts, with live proof-of-reserves available 24/7 to ensure transparency and trust. Automated minting and burning are anchored directly to bank API events, ensuring that the digital supply always corresponds to real-world fiat reserves.
 
-See: `Reserve & Backing`
+See: Reserve & Backing
 
 ### Mint & Burn Mechanics
 
@@ -81,9 +81,9 @@ When a user redeems USGX:
 3. USD is withdrawn from custodial account
 4. USD is transferred to user's bank account
 
-This process is fully automated and auditable in real-time via the `Live Reserve Scanner`.
+This process is fully automated and auditable in real-time via the Live Reserve Scanner.
 
-See: `Mint & Burn Process`
+See: Mint & Burn Process
 
 ---
 
@@ -99,7 +99,7 @@ Gas is paid in the local GX stablecoin, with transaction fees denominated and fi
 | Institutional | Negotiated rates | Volume-based discounts |
 | Cross-Chain | IBC relay + execution | ~$0.05 per transfer |
 
-See: `Gurufin Chain Guru-PEG`
+See: Gurufin Chain Guru-PEG
 
 ---
 
@@ -119,7 +119,7 @@ Every validator is legally bound to a jurisdiction, embedding AML, CFT, and KYC 
 - **Jurisdictional Rules**: Chain-specific compliance policies
 - **Audit Trail**: Complete transaction history for regulators
 
-See: `GX Compliance & Regulation`
+See: GX Compliance & Regulation
 
 ---
 
@@ -129,14 +129,12 @@ See: `GX Compliance & Regulation`
 
 GX chains use IBC (Inter-Blockchain Communication) for seamless cross-chain transfers:
 
-```
 Cross-Chain Transfer Flow:
 1. User initiates transfer on source chain
 2. Source chain locks tokens
 3. IBC packet sent to destination chain
 4. Destination chain mints/reveals tokens
 5. Recipient receives tokens
-```
 
 ### Gurufin Chain Integration
 
@@ -145,7 +143,7 @@ GX stablecoins integrate with Gurufin Chain (the neutral settlement layer) for:
 - **DeFi Applications**: EVM-compatible smart contracts
 - **Cross-Chain Bridges**: Non-IBC interoperability
 
-See: `Gurufin Chain Whitepaper` | `GuruDex Overview`
+See: Gurufin Chain Whitepaper | GuruDex Overview
 
 ---
 
@@ -159,7 +157,7 @@ GX chains provide regulated foundations for tokenized assets (e.g., RWAs, STOs, 
 - **Programmable Payments**: Automated payroll, subscriptions
 - **NFT Credentials**: Digital certificates, licenses
 
-See: `Institutional DeFi Use Case`
+See: Institutional DeFi Use Case
 
 ---
 
@@ -198,37 +196,36 @@ Consistent with CBDC pilot benchmarks and institutional-grade requirements.
 ### Getting Started
 
 **Testnet Access**:
-- Chain ID: `guru_631-1`
-- RPC: `https://trpc.gurufin.io`
-- Faucet: `https://faucet.gurufin.io/`
-- Explorer: `https://tscan.gurufin.io/`
+- Chain ID: guru_631-1
+- RPC:
+- Faucet:
+- Explorer:
 
 **Documentation**:
-- `API Reference`
-- `Full Developer Docs`
-- `Ecosystem Grant Program`
+- API Reference
+- Full Developer Docs
+- Ecosystem Grant Program
 
 ### SDK Support
 
-```typescript
+typescript
 // Example: Check USGX balance
 import { GXChainClient } from '@gurufin/sdk';
 
 const client = new GXChainClient('usgx_631-1');
 const balance = await client.getBalance('guru1...');
-console.log(`Balance: ${balance.amount} USGX`);
-```
+console.log(Balance: ${balance.amount} USGX);
 
-See more examples: `Full Developer Docs`
+See more examples: Full Developer Docs
 
 ---
 
 ## Related Documentation
 
-- **Gurufin Chain**: `Whitepaper`
-- **GuruDex**: `DEX Overview` | `OPRS Architecture`
-- **Reserves**: `Live Reserve Scanner` | `Reserve & Backing`
-- **Use Cases**: `Cross-Border Payments` | `Stablecoin FX Trading`
+- **Gurufin Chain**: Whitepaper
+- **GuruDex**: DEX Overview | OPRS Architecture
+- **Reserves**: Live Reserve Scanner | Reserve & Backing
+- **Use Cases**: Cross-Border Payments | Stablecoin FX Trading`
 
 ---
 

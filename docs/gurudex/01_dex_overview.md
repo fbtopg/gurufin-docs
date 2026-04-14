@@ -6,10 +6,10 @@
 
 ## 🚀 Quick Links
 
-- **Architecture**: `02 OPRS Architecture` | `04 Smart Contracts`
-- **GX Stablecoins**: `01 GX Overview` | `03 Mint & Burn`
-- **Use Cases**: `02 Stablecoin FX Trading` | `01 Cross-Border Payments`
-- **Developer**: `Testnet Access` | `API Reference`
+- **Architecture**: 02 OPRS Architecture | 04 Smart Contracts
+- **GX Stablecoins**: 01 GX Overview | 03 Mint & Burn
+- **Use Cases**: 02 Stablecoin FX Trading | 01 Cross-Border Payments
+- **Developer**: Testnet Access | API Reference
 
 ---
 
@@ -41,7 +41,7 @@ AMMs (Automated Market Makers) are designed for volatile asset pairs where price
 
 AMM pools would introduce unnecessary slippage and fail to reflect actual FX rates. OPRS uses oracle-guided pricing with mint/burn mechanics, ensuring swaps execute at precise market rates.
 
-See: `OPRS Architecture Details`
+See: OPRS Architecture Details
 
 ---
 
@@ -58,7 +58,6 @@ GuruDex uses a mint-and-burn mechanism guided by oracle FX rates rather than liq
 
 ### Step-by-Step Swap Flow
 
-```
 Example: User swaps 1,000 USGX → KRGX
 1. User initiates swap on GuruDex
 2. Oracle provides real-time FX rate (e.g., 1 USD = 1,300 KRW)
@@ -66,9 +65,8 @@ Example: User swaps 1,000 USGX → KRGX
 4. 1,298,700 KRGX minted on KRGX Chain
 5. IBC ensures atomic cross-chain settlement
 6. User receives KRGX in their wallet
-```
 
-See detailed flow: `OPRS Architecture`
+See detailed flow: OPRS Architecture
 
 ---
 
@@ -85,7 +83,6 @@ GuruDex on Gurufin Chain acts as the FX settlement hub, connecting these soverei
 
 ### Architecture Diagram
 
-```
 ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
 │  USGX Chain │    │  KRGX Chain │    │  EURGX Chain│
 │   (US PoA)  │    │  (KR PoA)   │    │   (EU PoA)  │
@@ -105,9 +102,8 @@ GuruDex on Gurufin Chain acts as the FX settlement hub, connecting these soverei
                     │   OPRS    │
                     │   DEX     │
                     └───────────┘
-```
 
-See: `GX Chain Overview` | `Gurufin Chain Whitepaper`
+See: GX Chain Overview | Gurufin Chain Whitepaper
 
 ---
 
@@ -139,7 +135,7 @@ The platform is powered by four key contracts:
 - Enforces compliance requirements
 - Tier-based access control
 
-See complete contract details: `Smart Contract Logic`
+See complete contract details: Smart Contract Logic
 
 ---
 
@@ -160,7 +156,7 @@ If validation fails, the swap reverts and the user is notified.
 - **Transaction Monitoring**: Real-time AML checks
 - **Jurisdictional Rules**: Chain-specific compliance policies
 
-See: `GX Compliance Framework`
+See: GX Compliance Framework
 
 ---
 
@@ -173,7 +169,7 @@ GuruDex enables several key use cases:
 3. **Institutional Settlement**: FMI-grade settlement for large trades
 4. **CBDC Integration**: Bridge fiat and digital currency ecosystems
 
-See detailed use cases: `01 Cross-Border Payments` | `02 Stablecoin FX Trading` | `03 Institutional DeFi`
+See detailed use cases: 01 Cross-Border Payments | 02 Stablecoin FX Trading | 03 Institutional DeFi
 
 ---
 
@@ -182,19 +178,19 @@ See detailed use cases: `01 Cross-Border Payments` | `02 Stablecoin FX Trading` 
 ### Getting Started
 
 **Testnet Access**:
-- Chain ID: `guru_631-1`
-- RPC: `https://trpc.gurufin.io`
-- Faucet: `https://faucet.gurufin.io/`
-- Explorer: `https://tscan.gurufin.io/`
+- Chain ID: guru_631-1
+- RPC:
+- Faucet:
+- Explorer:
 
 **Documentation**:
-- `API Reference`
-- `Full Developer Docs`
-- `Ecosystem Grant Program`
+- API Reference
+- Full Developer Docs
+- Ecosystem Grant Program
 
 ### SDK Examples
 
-```typescript
+typescript
 // Example: Swap 1000 USGX → KRGX
 import { GuruDexClient } from '@gurufin/sdk';
 
@@ -205,18 +201,17 @@ const result = await client.swap({
   amount: 1000,
   recipient: 'guru1...'
 });
-```
 
-See more examples: `Full Developer Docs`
+See more examples: Full Developer Docs
 
 ---
 
 ## Related Documentation
 
-- **Architecture**: `GX Chain Overview`
-- **Settlement Layer**: `Gurufin Chain Whitepaper`
-- **Reserves**: `GX Reserve & Backing`
-- **Liquidity**: `Liquidity & Rewards`
+- **Architecture**: GX Chain Overview
+- **Settlement Layer**: Gurufin Chain Whitepaper
+- **Reserves**: GX Reserve & Backing
+- **Liquidity**: Liquidity & Rewards`
 
 ---
 

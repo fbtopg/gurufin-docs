@@ -6,10 +6,10 @@
 
 ## 🚀 Quick Links
 
-- **GuruDex Overview**: `01 DEX Overview`
-- **Smart Contracts**: `04 Smart Contract Logic`
-- **GX Stablecoins**: `01 GX Overview` | `03 Mint & Burn`
-- **Use Cases**: `02 Stablecoin FX Trading`
+- **GuruDex Overview**: 01 DEX Overview
+- **Smart Contracts**: 04 Smart Contract Logic
+- **GX Stablecoins**: 01 GX Overview | 03 Mint & Burn
+- **Use Cases**: 02 Stablecoin FX Trading
 
 ---
 
@@ -19,7 +19,7 @@ GuruDex uses an **Oracle Priced Reserve Swap (OPRS)** architecture instead of tr
 
 **Key Principle**: Instead of relying on liquidity pool dynamics, OPRS uses oracle-guided mint/burn mechanics to ensure trades execute at precise market rates with zero slippage.
 
-See: `GuruDex Overview`
+See: GuruDex Overview
 
 ---
 

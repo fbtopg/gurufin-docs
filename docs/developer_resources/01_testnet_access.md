@@ -9,10 +9,10 @@ Connect to Guru Testnet to develop and test your applications before deploying t
 | Parameter | Value |
 |-----------|-------|
 | Network Name | Guru Testnet |
-| Chain ID | `guru_631-1` |
-| RPC Endpoint | `https://trpc.gurufin.io` |
-| WebSocket | `wss://trpc.gurufin.io/websocket` |
-| Block Explorer | `https://tscan.gurufin.io/` |
+| Chain ID | guru_631-1 |
+| RPC Endpoint | https://trpc.gurufin.io |
+| WebSocket | wss://trpc.gurufin.io/websocket |
+| Block Explorer | https://tscan.gurufin.io/ |
 
 ---
 

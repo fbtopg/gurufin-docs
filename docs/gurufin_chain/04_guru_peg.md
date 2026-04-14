@@ -10,9 +10,7 @@ Traditional blockchains have unpredictable fees that spike during congestion and
 
 The fee in GXN is calculated as follows:
 
-```
 Fee (GXN) = Fiat Target ÷ GXN Price × Surge Multiplier
-```
 
 * **Fiat Target** — The base fee target in fiat (e.g., $0.013 for a standard transfer), set by governance.
 * **GXN Price** — Current GXN price in fiat from the oracle network (e.g., $0.10).
@@ -20,9 +18,7 @@ Fee (GXN) = Fiat Target ÷ GXN Price × Surge Multiplier
 
 *Example:* With Fiat Target = $0.013, GXN Price = $0.10, and Surge Multiplier = 1.0:
 
-```
 Fee (GXN) = 0.013 ÷ 0.10 × 1.0 = 0.13 GXN
-```
 
 So the user pays 0.13 GXN and experiences a stable cost of about $0.013.
 
