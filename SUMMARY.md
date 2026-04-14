@@ -1,7 +1,7 @@
 # Summary
 
 ## Introduction
-* [Vision & Mission](./docs/introduction/01_vision_and_mission.md)
+* [Vision & Mission](./docs/introduction/01_vision_mission.md)
 * [What is Gurufin?](./docs/introduction/02_what_is_gurufin.md)
 * [Roadmap](./docs/introduction/03_roadmap.md)
 
@@ -13,7 +13,7 @@
 * [Tokenomics](./docs/gurufin_chain/05_tokenomics.md)
 * [Governance](./docs/gurufin_chain/06_governance.md)
 * [Validator Guide](./docs/gurufin_chain/07_validator_guide.md)
-* [Whitepaper](./docs/gurufin_chain/08_whitepaper.md)
+
 
 ## GX Stablecoin Network
 * [Overview](./docs/gx_stablecoin_network/01_overview.md)
