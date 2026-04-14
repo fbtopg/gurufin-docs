@@ -8,3 +8,4 @@
 - **2026-04-11 10:56** [writer]: Write ten X posts about Gurufin by understanding gurufin-gitbook project. Ten individual posts talking about each different concepts. — wrote 1 file(s): gurufin-x-posts.md
 - **2026-04-14 15:35**: each file has links, hyperlinks, cross reference links that are making docs messy. remove all those links. — wrote 5 file(s): SUMMARY.md, 01_protocol_overview.md, 01_vision_mission.md, 02_what_is_gurufin.md, remove_links.py
 - **2026-04-14 15:57**: go ahead — wrote 2 file(s): clean_links.py, 02_what_is_gurufin.md
+- **2026-04-14 16:19**: Not the SUMMARY.md though.. — wrote 1 file(s): SUMMARY.md
