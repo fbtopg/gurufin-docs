@@ -40,13 +40,13 @@ For detailed technical information about Gurufin Chain:
 
 | Topic | Page |
 |-------|------|
-| **Protocol Overview** | [Learn about the purpose-built Layer-1 for FX/DeFi](../gurufin_chain/01_protocol_overview.md) |
-| **Network Architecture** | [DPoS consensus and Tendermint BFT details](../gurufin_chain/02_network_architecture.md) |
-| **Interoperability** | [IBC, EVM Gateway, and cross-chain communication](../gurufin_chain/03_interoperability.md) |
-| **Guru-PEG Fees** | [Fiat-indexed transaction fee mechanism](../gurufin_chain/04_guru_peg.md) |
-| **Tokenomics** | [$GXN token utility and supply allocation](../gurufin_chain/05_tokenomics.md) |
-| **Governance** | [On-chain decision-making framework](../gurufin_chain/06_governance.md) |
-| **Validator Setup** | [Requirements and operational standards](../gurufin_chain/07_validator_guide.md) |
+| **Protocol Overview** | Learn about the purpose-built Layer-1 for FX/DeFi |
+| **Network Architecture** | DPoS consensus and Tendermint BFT details |
+| **Interoperability** | IBC, EVM Gateway, and cross-chain communication |
+| **Guru-PEG Fees** | Fiat-indexed transaction fee mechanism |
+| **Tokenomics** | $GXN token utility and supply allocation |
+| **Governance** | On-chain decision-making framework |
+| **Validator Setup** | Requirements and operational standards |
 
 ---
 
@@ -56,11 +56,11 @@ For detailed information about the GX stablecoin framework:
 
 | Topic | Page |
 |-------|------|
-| **GX Overview** | [Sovereign stablecoin network architecture](../gx_chain/01_overview.md) |
-| **Reserve & Backing** | [1:1 fiat backing and proof-of-reserves](../gx_chain/02_reserve_and_backing.md) |
-| **Mint & Burn** | [Automated bank-API-anchored issuance](../gx_chain/03_mint_and_burn.md) |
-| **Multi-Currency** | [Jurisdictional sovereignty and cross-chain FX](../gx_chain/04_multi_currency_support.md) |
-| **Compliance** | [PoA consensus and regulatory framework](../gx_chain/05_compliance_and_regulation.md) |
+| **GX Overview** | Sovereign stablecoin network architecture |
+| **Reserve & Backing** | 1:1 fiat backing and proof-of-reserves |
+| **Mint & Burn** | Automated bank-API-anchored issuance |
+| **Multi-Currency** | Jurisdictional sovereignty and cross-chain FX |
+| **Compliance** | PoA consensus and regulatory framework |
 
 ---
 
@@ -70,11 +70,11 @@ For detailed information about the exchange:
 
 | Topic | Page |
 |-------|------|
-| **DEX Overview** | [OPRS architecture for stablecoin FX trading](../gurudex/01_dex_overview.md) |
-| **Hybrid Pools** | [Combined institutional and retail liquidity](../gurudex/02_hybrid_pools.md) |
-| **Liquidity & Rewards** | [LP mechanics and fee distribution](../gurudex/03_liquidity_and_rewards.md) |
-| **Smart Contracts** | [Core contracts and swap routing](../gurudex/04_smart_contract_logic.md) |
-| **Risk Mitigation** | [Four-layer defense strategy](../gurudex/05_risk_mitigation.md) |
+| **DEX Overview** | OPRS architecture for stablecoin FX trading |
+| **Hybrid Pools** | Combined institutional and retail liquidity |
+| **Liquidity & Rewards** | LP mechanics and fee distribution |
+| **Smart Contracts** | Core contracts and swap routing |
+| **Risk Mitigation** | Four-layer defense strategy |
 
 ---
 
@@ -82,10 +82,10 @@ For detailed information about the exchange:
 
 Looking to build on Gurufin? Start here:
 
-- **[Testnet Access](../developer_resources/01_testnet_access.md)** - Get testnet tokens and network configuration
-- **[API Reference](../developer_resources/02_api_reference.md)** - Cosmos SDK and EVM endpoints
-- **[Full Developer Docs](../developer_resources/03_full_developer_docs.md)** - Comprehensive documentation portal
-- **[Ecosystem Grants](../developer_resources/04_ecosystem_grant_program.md)** - Funding for builders
+- Testnet Access - Get testnet tokens and network configuration
+- API Reference - Cosmos SDK and EVM endpoints
+- Full Developer Docs - Comprehensive documentation portal
+- Ecosystem Grants - Funding for builders
 
 ---
 
@@ -93,7 +93,7 @@ Looking to build on Gurufin? Start here:
 
 Real-world applications built on Gurufin:
 
-- **[Cross-Border Payments](../use_cases/01_cross_border_payments.md)** - Remittance and B2B solutions
-- **[FX Trading](../use_cases/02_stablecoin_fx_trading.md)** - Stablecoin exchange and arbitrage
-- **[Institutional DeFi](../use_cases/03_institutional_defi.md)** - Tokenized assets and custody
-- **[Government & CBDC](../use_cases/04_government_and_cbdc.md)** - Central bank applications
+- Cross-Border Payments - Remittance and B2B solutions
+- FX Trading - Stablecoin exchange and arbitrage
+- Institutional DeFi - Tokenized assets and custody
+- Government & CBDC - Central bank applications

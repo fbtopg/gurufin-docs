@@ -10,9 +10,9 @@ Our mission is to become the definitive infrastructure layer for stablecoin-base
 
 ## Related Resources
 
-- **[What is Gurufin?](./02_what_is_gurufin.md)** - Ecosystem overview and two-pillar architecture
-- **[Gurufin Chain Protocol](../gurufin_chain/01_protocol_overview.md)** - Layer-1 blockchain specifications
-- **[GX Stablecoin Network](../gx_chain/01_overview.md)** - Sovereign stablecoin framework
-- **[GuruDex OPRS](../gurudex/01_dex_overview.md)** - Oracle-priced reserve swap exchange
-- **[Cross-Border Payments Use Case](../use_cases/01_cross_border_payments.md)** - Remittance and B2B solutions
-- **[FX Trading Use Case](../use_cases/02_stablecoin_fx_trading.md)** - Stablecoin exchange applications
+- What is Gurufin? - Ecosystem overview and two-pillar architecture
+- Gurufin Chain Protocol - Layer-1 blockchain specifications
+- GX Stablecoin Network - Sovereign stablecoin framework
+- GuruDex OPRS - Oracle-priced reserve swap exchange
+- Cross-Border Payments Use Case - Remittance and B2B solutions
+- FX Trading Use Case - Stablecoin exchange applications

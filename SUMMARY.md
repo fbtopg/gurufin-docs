@@ -1,42 +1,42 @@
 # Summary
 
 ## Introduction
-* [Vision & Mission](docs/introduction/01_vision_mission.md)
-* [What is Gurufin?](docs/introduction/02_what_is_gurufin.md)
-* [Roadmap](docs/introduction/03_roadmap.md)
+* Vision & Mission
+* What is Gurufin?
+* Roadmap
 
 ## Gurufin Chain
-* [Protocol Overview](docs/gurufin_chain/01_protocol_overview.md)
-* [Network Architecture](docs/gurufin_chain/02_network_architecture.md)
-* [Interoperability](docs/gurufin_chain/03_interoperability.md)
-* [Guru Peg](docs/gurufin_chain/04_guru_peg.md)
-* [Tokenomics](docs/gurufin_chain/05_tokenomics.md)
-* [Governance](docs/gurufin_chain/06_governance.md)
-* [Validator Guide](docs/gurufin_chain/07_validator_guide.md)
-* [Whitepaper](docs/gurufin_chain/gurufin_chain_whitepaper.md)
+* Protocol Overview
+* Network Architecture
+* Interoperability
+* Guru Peg
+* Tokenomics
+* Governance
+* Validator Guide
+* Whitepaper
 
 ## GX Stablecoin Network
-* [Overview](docs/gx_chain/01_overview.md)
-* [Reserve & Backing](docs/gx_chain/02_reserve_and_backing.md)
-* [Mint & Burn](docs/gx_chain/03_mint_and_burn.md)
-* [Multi-Currency Support](docs/gx_chain/04_multi_currency_support.md)
-* [Compliance & Regulation](docs/gx_chain/05_compliance_and_regulation.md)
+* Overview
+* Reserve & Backing
+* Mint & Burn
+* Multi-Currency Support
+* Compliance & Regulation
 
 ## GuruDex (OPRS)
-* [DEX Overview](docs/gurudex/01_dex_overview.md)
-* [Hybrid Pools](docs/gurudex/02_hybrid_pools.md)
-* [Liquidity & Rewards](docs/gurudex/03_liquidity_and_rewards.md)
-* [Smart Contract Logic](docs/gurudex/04_smart_contract_logic.md)
-* [Risk Mitigation](docs/gurudex/05_risk_mitigation.md)
+* DEX Overview
+* Hybrid Pools
+* Liquidity & Rewards
+* Smart Contract Logic
+* Risk Mitigation
 
 ## Use Cases
-* [Cross-Border Payments](docs/use_cases/01_cross_border_payments.md)
-* [Stablecoin FX Trading](docs/use_cases/02_stablecoin_fx_trading.md)
-* [Institutional DeFi](docs/use_cases/03_institutional_defi.md)
-* [Government & CBDC](docs/use_cases/04_government_and_cbdc.md)
+* Cross-Border Payments
+* Stablecoin FX Trading
+* Institutional DeFi
+* Government & CBDC
 
 ## Developer Resources
-* [Testnet Access](docs/developer_resources/01_testnet_access.md)
-* [API Reference](docs/developer_resources/02_api_reference.md)
-* [Full Developer Docs](docs/developer_resources/03_full_developer_docs.md)
-* [Ecosystem Grant Program](docs/developer_resources/04_ecosystem_grant_program.md)
+* Testnet Access
+* API Reference
+* Full Developer Docs
+* Ecosystem Grant Program
