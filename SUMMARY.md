@@ -16,11 +16,11 @@
 
 
 ## GX Stablecoin Network
-* [Overview](./docs/gx_stablecoin_network/01_overview.md)
-* [Reserve & Backing](./docs/gx_stablecoin_network/02_reserve_and_backing.md)
-* [Mint & Burn](./docs/gx_stablecoin_network/03_mint_and_burn.md)
-* [Multi-Currency Support](./docs/gx_stablecoin_network/04_multi_currency_support.md)
-* [Compliance & Regulation](./docs/gx_stablecoin_network/05_compliance_and_regulation.md)
+* [Overview](./docs/gx_chain/01_overview.md)
+* [Reserve & Backing](./docs/gx_chain/02_reserve_and_backing.md)
+* [Mint & Burn](./docs/gx_chain/03_mint_and_burn.md)
+* [Multi-Currency Support](./docs/gx_chain/04_multi_currency_support.md)
+* [Compliance & Regulation](./docs/gx_chain/05_compliance_and_regulation.md)
 
 ## GuruDex (OPRS)
 * [DEX Overview](./docs/gurudex/01_dex_overview.md)
