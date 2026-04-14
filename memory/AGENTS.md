@@ -11,9 +11,11 @@ It defines every page and its position in the book.
 ## Structure
 
 ### Root files
+- `remove_links.py`
 - `.gitignore`
 - `SUMMARY.md`
 - `_sidebar.json`
+- `gurufin-x-posts.md`
 
 ### .concept_graph/
 - `.concept_graph/graph.json`

@@ -6,10 +6,10 @@
 
 ## 🚀 Quick Links
 
-- **Architecture**: [`02 OPRS Architecture`](/gurudex/02_hybrid_pools.md) | [`04 Smart Contracts`](/gurudex/04_smart_contract_logic.md)
-- **GX Stablecoins**: [`01 GX Overview`](/gx_chain/01_overview.md) | [`03 Mint & Burn`](/gx_chain/03_mint_and_burn.md)
-- **Use Cases**: [`02 Stablecoin FX Trading`](/use_cases/02_stablecoin_fx_trading.md) | [`01 Cross-Border Payments`](/use_cases/01_cross_border_payments.md)
-- **Developer**: [`Testnet Access`](/developer_resources/01_testnet_access.md) | [`API Reference`](/developer_resources/02_api_reference.md)
+- **Architecture**: `02 OPRS Architecture` | `04 Smart Contracts`
+- **GX Stablecoins**: `01 GX Overview` | `03 Mint & Burn`
+- **Use Cases**: `02 Stablecoin FX Trading` | `01 Cross-Border Payments`
+- **Developer**: `Testnet Access` | `API Reference`
 
 ---
 
@@ -41,7 +41,7 @@ AMMs (Automated Market Makers) are designed for volatile asset pairs where price
 
 AMM pools would introduce unnecessary slippage and fail to reflect actual FX rates. OPRS uses oracle-guided pricing with mint/burn mechanics, ensuring swaps execute at precise market rates.
 
-See: [`OPRS Architecture Details`](/gurudex/02_hybrid_pools.md)
+See: `OPRS Architecture Details`
 
 ---
 
@@ -68,7 +68,7 @@ Example: User swaps 1,000 USGX → KRGX
 6. User receives KRGX in their wallet
 ```
 
-See detailed flow: [`OPRS Architecture`](/gurudex/02_hybrid_pools.md#how-oprs-works)
+See detailed flow: `OPRS Architecture`
 
 ---
 
@@ -107,7 +107,7 @@ GuruDex on Gurufin Chain acts as the FX settlement hub, connecting these soverei
                     └───────────┘
 ```
 
-See: [`GX Chain Overview`](/gx_chain/01_overview.md) | [`Gurufin Chain Whitepaper`](/gurufin_chain/gurufin_chain_whitepaper.md)
+See: `GX Chain Overview` | `Gurufin Chain Whitepaper`
 
 ---
 
@@ -139,7 +139,7 @@ The platform is powered by four key contracts:
 - Enforces compliance requirements
 - Tier-based access control
 
-See complete contract details: [`Smart Contract Logic`](/gurudex/04_smart_contract_logic.md)
+See complete contract details: `Smart Contract Logic`
 
 ---
 
@@ -160,7 +160,7 @@ If validation fails, the swap reverts and the user is notified.
 - **Transaction Monitoring**: Real-time AML checks
 - **Jurisdictional Rules**: Chain-specific compliance policies
 
-See: [`GX Compliance Framework`](/gx_chain/05_compliance_and_regulation.md)
+See: `GX Compliance Framework`
 
 ---
 
@@ -173,7 +173,7 @@ GuruDex enables several key use cases:
 3. **Institutional Settlement**: FMI-grade settlement for large trades
 4. **CBDC Integration**: Bridge fiat and digital currency ecosystems
 
-See detailed use cases: [`01 Cross-Border Payments`](/use_cases/01_cross_border_payments.md) | [`02 Stablecoin FX Trading`](/use_cases/02_stablecoin_fx_trading.md) | [`03 Institutional DeFi`](/use_cases/03_institutional_defi.md)
+See detailed use cases: `01 Cross-Border Payments` | `02 Stablecoin FX Trading` | `03 Institutional DeFi`
 
 ---
 
@@ -184,13 +184,13 @@ See detailed use cases: [`01 Cross-Border Payments`](/use_cases/01_cross_border_
 **Testnet Access**:
 - Chain ID: `guru_631-1`
 - RPC: `https://trpc.gurufin.io`
-- Faucet: [`https://faucet.gurufin.io/`](https://faucet.gurufin.io/)
-- Explorer: [`https://tscan.gurufin.io/`](https://tscan.gurufin.io/)
+- Faucet: `https://faucet.gurufin.io/`
+- Explorer: `https://tscan.gurufin.io/`
 
 **Documentation**:
-- [`API Reference`](/developer_resources/02_api_reference.md)
-- [`Full Developer Docs`](/developer_resources/03_full_developer_docs.md)
-- [`Ecosystem Grant Program`](/developer_resources/04_ecosystem_grant_program.md)
+- `API Reference`
+- `Full Developer Docs`
+- `Ecosystem Grant Program`
 
 ### SDK Examples
 
@@ -207,16 +207,16 @@ const result = await client.swap({
 });
 ```
 
-See more examples: [`Full Developer Docs`](/developer_resources/03_full_developer_docs.md)
+See more examples: `Full Developer Docs`
 
 ---
 
 ## Related Documentation
 
-- **Architecture**: [`GX Chain Overview`](/gx_chain/01_overview.md)
-- **Settlement Layer**: [`Gurufin Chain Whitepaper`](/gurufin_chain/gurufin_chain_whitepaper.md)
-- **Reserves**: [`GX Reserve & Backing`](/gx_chain/02_reserve_and_backing.md)
-- **Liquidity**: [`Liquidity & Rewards`](/gurudex/03_liquidity_and_rewards.md)
+- **Architecture**: `GX Chain Overview`
+- **Settlement Layer**: `Gurufin Chain Whitepaper`
+- **Reserves**: `GX Reserve & Backing`
+- **Liquidity**: `Liquidity & Rewards`
 
 ---
 

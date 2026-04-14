@@ -6,12 +6,12 @@
 
 ## 🚀 Quick Links
 
-- **Introduction**: [`01 Vision & Mission`](/introduction/01_vision_mission.md) | [`02 What is Gurufin?`](/introduction/02_what_is_gurufin.md)
-- **GX Stablecoins**: [`02 Reserve & Backing`](/gx_chain/02_reserve_and_backing.md) | [`03 Mint & Burn`](/gx_chain/03_mint_and_burn.md) | [`04 Multi-Currency`](/gx_chain/04_multi_currency_support.md) | [`05 Compliance`](/gx_chain/05_compliance_and_regulation.md)
-- **GuruDex**: [`DEX Overview`](/gurudex/01_dex_overview.md) | [`OPRS Architecture`](/gurudex/02_hybrid_pools.md)
-- **Gurufin Chain**: [`Whitepaper`](/gurufin_chain/gurufin_chain_whitepaper.md)
-- **Use Cases**: [`01 Cross-Border Payments`](/use_cases/01_cross_border_payments.md) | [`02 Stablecoin FX Trading`](/use_cases/02_stablecoin_fx_trading.md)
-- **Developer**: [`Testnet Access`](/developer_resources/01_testnet_access.md)
+- **Introduction**: `01 Vision & Mission` | `02 What is Gurufin?`
+- **GX Stablecoins**: `02 Reserve & Backing` | `03 Mint & Burn` | `04 Multi-Currency` | `05 Compliance`
+- **GuruDex**: `DEX Overview` | `OPRS Architecture`
+- **Gurufin Chain**: `Whitepaper`
+- **Use Cases**: `01 Cross-Border Payments` | `02 Stablecoin FX Trading`
+- **Developer**: `Testnet Access`
 
 ---
 
@@ -41,7 +41,7 @@ Each GX chain is an independent Layer-1 blockchain governed by licensed validato
 - **EURGX Chain** — EUR-pegged, EU jurisdiction validators
 - **JPGX Chain** — JPY-pegged, Japan jurisdiction validators
 
-See: [`Sovereign Chain Architecture`](/gurudex/01_dex_overview.md#sovereign-chain-architecture)
+See: `Sovereign Chain Architecture`
 
 ### Proof-of-Authority Consensus
 
@@ -65,7 +65,7 @@ GX Chain supports local fiat currencies through its sovereign chain architecture
 
 The stablecoins are fully backed by fiat reserves held in regulated custodial accounts, with live proof-of-reserves available 24/7 to ensure transparency and trust. Automated minting and burning are anchored directly to bank API events, ensuring that the digital supply always corresponds to real-world fiat reserves.
 
-See: [`Reserve & Backing`](/gx_chain/02_reserve_and_backing.md)
+See: `Reserve & Backing`
 
 ### Mint & Burn Mechanics
 
@@ -81,9 +81,9 @@ When a user redeems USGX:
 3. USD is withdrawn from custodial account
 4. USD is transferred to user's bank account
 
-This process is fully automated and auditable in real-time via the [`Live Reserve Scanner`](https://rescan.gurufin.io/).
+This process is fully automated and auditable in real-time via the `Live Reserve Scanner`.
 
-See: [`Mint & Burn Process`](/gx_chain/03_mint_and_burn.md)
+See: `Mint & Burn Process`
 
 ---
 
@@ -99,7 +99,7 @@ Gas is paid in the local GX stablecoin, with transaction fees denominated and fi
 | Institutional | Negotiated rates | Volume-based discounts |
 | Cross-Chain | IBC relay + execution | ~$0.05 per transfer |
 
-See: [`Gurufin Chain Guru-PEG`](/gurufin_chain/gurufin_chain_whitepaper.md#fees-guru-peg)
+See: `Gurufin Chain Guru-PEG`
 
 ---
 
@@ -119,7 +119,7 @@ Every validator is legally bound to a jurisdiction, embedding AML, CFT, and KYC 
 - **Jurisdictional Rules**: Chain-specific compliance policies
 - **Audit Trail**: Complete transaction history for regulators
 
-See: [`GX Compliance & Regulation`](/gx_chain/05_compliance_and_regulation.md)
+See: `GX Compliance & Regulation`
 
 ---
 
@@ -145,7 +145,7 @@ GX stablecoins integrate with Gurufin Chain (the neutral settlement layer) for:
 - **DeFi Applications**: EVM-compatible smart contracts
 - **Cross-Chain Bridges**: Non-IBC interoperability
 
-See: [`Gurufin Chain Whitepaper`](/gurufin_chain/gurufin_chain_whitepaper.md) | [`GuruDex Overview`](/gurudex/01_dex_overview.md)
+See: `Gurufin Chain Whitepaper` | `GuruDex Overview`
 
 ---
 
@@ -159,7 +159,7 @@ GX chains provide regulated foundations for tokenized assets (e.g., RWAs, STOs, 
 - **Programmable Payments**: Automated payroll, subscriptions
 - **NFT Credentials**: Digital certificates, licenses
 
-See: [`Institutional DeFi Use Case`](/use_cases/03_institutional_defi.md)
+See: `Institutional DeFi Use Case`
 
 ---
 
@@ -200,13 +200,13 @@ Consistent with CBDC pilot benchmarks and institutional-grade requirements.
 **Testnet Access**:
 - Chain ID: `guru_631-1`
 - RPC: `https://trpc.gurufin.io`
-- Faucet: [`https://faucet.gurufin.io/`](https://faucet.gurufin.io/)
-- Explorer: [`https://tscan.gurufin.io/`](https://tscan.gurufin.io/)
+- Faucet: `https://faucet.gurufin.io/`
+- Explorer: `https://tscan.gurufin.io/`
 
 **Documentation**:
-- [`API Reference`](/developer_resources/02_api_reference.md)
-- [`Full Developer Docs`](/developer_resources/03_full_developer_docs.md)
-- [`Ecosystem Grant Program`](/developer_resources/04_ecosystem_grant_program.md)
+- `API Reference`
+- `Full Developer Docs`
+- `Ecosystem Grant Program`
 
 ### SDK Support
 
@@ -219,16 +219,16 @@ const balance = await client.getBalance('guru1...');
 console.log(`Balance: ${balance.amount} USGX`);
 ```
 
-See more examples: [`Full Developer Docs`](/developer_resources/03_full_developer_docs.md)
+See more examples: `Full Developer Docs`
 
 ---
 
 ## Related Documentation
 
-- **Gurufin Chain**: [`Whitepaper`](/gurufin_chain/gurufin_chain_whitepaper.md)
-- **GuruDex**: [`DEX Overview`](/gurudex/01_dex_overview.md) | [`OPRS Architecture`](/gurudex/02_hybrid_pools.md)
-- **Reserves**: [`Live Reserve Scanner`](https://rescan.gurufin.io/) | [`Reserve & Backing`](/gx_chain/02_reserve_and_backing.md)
-- **Use Cases**: [`Cross-Border Payments`](/use_cases/01_cross_border_payments.md) | [`Stablecoin FX Trading`](/use_cases/02_stablecoin_fx_trading.md)
+- **Gurufin Chain**: `Whitepaper`
+- **GuruDex**: `DEX Overview` | `OPRS Architecture`
+- **Reserves**: `Live Reserve Scanner` | `Reserve & Backing`
+- **Use Cases**: `Cross-Border Payments` | `Stablecoin FX Trading`
 
 ---
 

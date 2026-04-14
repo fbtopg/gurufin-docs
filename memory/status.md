@@ -96,12 +96,14 @@
     "docs/use_cases/01_cross_border_payments.md",
     "docs/use_cases/02_stablecoin_fx_trading.md",
     "docs/use_cases/03_institutional_defi.md",
-    "docs/use_cases/04_government_and_cbdc.md"
+    "docs/use_cases/04_government_and_cbdc.md",
+    "gurufin-x-posts.md",
+    "remove_links.py"
   ],
   "pages": [],
   "env_vars": [],
   "created": 1773716693.211852,
-  "updated": 1775824200.0584373,
+  "updated": 1776148535.33934,
   "source": "project-scan-v1 git:https://github.com/fbtopg/gurufin-docs.git"
 }
 ```
@@ -113,5 +115,5 @@
 - Framework: gitbook
 - Deploy Target: gitbook
 - Directory: /home/geonu/workspace/projects/gurufin-gitbook
-- Updated: 1775824200.058437
+- Updated: 1776148535.339340
 - Files: .concept_graph/graph.json, .concept_wiki/100-fiat-backed-reserves.md, .concept_wiki/24-7-live-proof-of-reserves.md, .concept_wiki/activation.md, .concept_wiki/api-ports.md, .concept_wiki/api-reference.md, .concept_wiki/application-process.md, .concept_wiki/atomic-pvp-settlement.md, .concept_wiki/bank-api-connectivity.md, .concept_wiki/benefits.md
