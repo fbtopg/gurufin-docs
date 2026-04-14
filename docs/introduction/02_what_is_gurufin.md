@@ -1,9 +1,5 @@
 # What is Gurufin?
 
-<figure><img src="../.gitbook/assets/Gemini_Generated_Image_iljs2xiljs2xiljs.jpg" alt=""><figcaption></figcaption></figure>
-
-
-
 Gurufin is a specialized financial infrastructure that combines the efficiency of blockchain technology with the stability and regulatory compliance required for institutional adoption.
 
 _The ecosystem is built on two interconnected pillars:_
