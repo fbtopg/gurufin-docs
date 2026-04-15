@@ -173,39 +173,4 @@ See detailed use cases: 01 Cross-Border Payments | 02 Stablecoin FX Trading | 03
 
 ---
 
-## Developer Resources
-
-### Getting Started
-
-**Testnet Access**:
-- Chain ID: guru_631-1
-- RPC:
-- Faucet:
-- Explorer:
-
-**Documentation**:
-- API Reference
-- Full Developer Docs
-- Ecosystem Grant Program
-
-### SDK Examples
-
-typescript
-// Example: Swap 1000 USGX → KRGX
-import { GuruDexClient } from '@gurufin/sdk';
-
-const client = new GuruDexClient('guru_631-1');
-const result = await client.swap({
-  fromToken: 'USGX',
-  toToken: 'KRGX',
-  amount: 1000,
-  recipient: 'guru1...'
-});
-
-See more examples: Full Developer Docs
-
----
-
 *GuruDex is the future of stablecoin FX trading — fast, accurate, and compliant.*
-
----
