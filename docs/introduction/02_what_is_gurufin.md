@@ -30,47 +30,26 @@ Together, these components create a complete system: GX Stablecoins are minted w
 
 ---
 
-## Deep Dive: Gurufin Chain
-
-For detailed technical information about Gurufin Chain:
-
-| Topic | Page |
-|-------|------|
-| **Protocol Overview** | Learn about the purpose-built Layer-1 for FX/DeFi |
-| **Network Architecture** | DPoS consensus and Tendermint BFT details |
-| **Interoperability** | IBC, EVM Gateway, and cross-chain communication |
-| **Guru-PEG Fees** | Fiat-indexed transaction fee mechanism |
-| **Tokenomics** | $GXN token utility and supply allocation |
-| **Governance** | On-chain decision-making framework |
-| **Validator Setup** | Requirements and operational standards |
-
 ---
 
-## Deep Dive: GX Stablecoin Network
+### Explore the Ecosystem
 
-For detailed information about the GX stablecoin framework:
+**Dive deeper into each pillar:**
 
-| Topic | Page |
-|-------|------|
-| **GX Overview** | Sovereign stablecoin network architecture |
-| **Reserve & Backing** | 1:1 fiat backing and proof-of-reserves |
-| **Mint & Burn** | Automated bank-API-anchored issuance |
-| **Multi-Currency** | Jurisdictional sovereignty and cross-chain FX |
-| **Compliance** | PoA consensus and regulatory framework |
+**🔗 Gurufin Chain**
+- Protocol overview, network architecture, and interoperability
+- Guru-PEG fee mechanism and tokenomics
+- Governance and validator operations
 
----
+**💵 GX Stablecoin Network**
+- Sovereign stablecoin architecture and reserve backing
+- Mint/burn operations and multi-currency support
+- Compliance framework and regulatory alignment
 
-## Deep Dive: GuruDex (OPRS)
-
-For detailed information about the exchange:
-
-| Topic | Page |
-|-------|------|
-| **DEX Overview** | OPRS architecture for stablecoin FX trading |
-| **Hybrid Pools** | Combined institutional and retail liquidity |
-| **Liquidity & Rewards** | LP mechanics and fee distribution |
-| **Smart Contracts** | Core contracts and swap routing |
-| **Risk Mitigation** | Four-layer defense strategy |
+**🔄 GuruDex (OPRS)**
+- Hybrid pool architecture for stablecoin FX trading
+- Liquidity mechanics and reward distribution
+- Smart contract design and risk mitigation
 
 ---
 
