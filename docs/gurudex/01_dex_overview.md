@@ -206,15 +206,6 @@ See more examples: Full Developer Docs
 
 ---
 
-## Related Documentation
-
-- **Architecture**: GX Chain Overview
-- **Settlement Layer**: Gurufin Chain Whitepaper
-- **Reserves**: GX Reserve & Backing
-- **Liquidity**: Liquidity & Rewards`
-
----
-
 *GuruDex is the future of stablecoin FX trading — fast, accurate, and compliant.*
 
 ---

@@ -74,22 +74,3 @@ For detailed information about the exchange:
 
 ---
 
-## Quick Start
-
-Looking to build on Gurufin? Start here:
-
-- Testnet Access - Get testnet tokens and network configuration
-- API Reference - Cosmos SDK and EVM endpoints
-- Full Developer Docs - Comprehensive documentation portal
-- Ecosystem Grants - Funding for builders
-
----
-
-## Explore Use Cases
-
-Real-world applications built on Gurufin:
-
-- Cross-Border Payments - Remittance and B2B solutions
-- FX Trading - Stablecoin exchange and arbitrage
-- Institutional DeFi - Tokenized assets and custody
-- Government & CBDC - Central bank applications

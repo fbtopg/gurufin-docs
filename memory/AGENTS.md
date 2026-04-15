@@ -11,13 +11,13 @@ It defines every page and its position in the book.
 ## Structure
 
 ### Root files
-- `remove_links.py`
-- `remove_links_v2.py`
 - `.gitignore`
 - `SUMMARY.md`
 - `_sidebar.json`
-- `clean_links.py`
 - `gurufin-x-posts.md`
+
+### .concept_graph/
+- `.concept_graph/graph.json`
 
 ### .gitbook/
 - `.gitbook/assets/Gemini_Generated_Image_iljs2xiljs2xiljs.jpg`

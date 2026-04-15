@@ -11,3 +11,4 @@
 - **2026-04-14 16:19**: Not the SUMMARY.md though.. — wrote 1 file(s): SUMMARY.md
 - **2026-04-14 16:24**: Vision & Mission is not linked to the right file. remove Whitepaper from SUMMARY file. — wrote 1 file(s): SUMMARY.md
 - **2026-04-14 16:27**: GX STABLECOIN NETWORK category's pages are not linked to the right files. — wrote 1 file(s): SUMMARY.md
+- **2026-04-15 09:28**: In Gurufin Chain's category, the Protocol Overview page, remove the "Related Pages" section — wrote 1 file(s): 01_protocol_overview.md
