@@ -5,14 +5,3 @@ Gurufin was founded to solve the fundamental inefficiencies in global finance. D
 Our vision is a world where value moves as freely and instantly as information. We are building a **Neutral FX/DeFi Hub**—a unified global settlement infrastructure where transactions settle in seconds, fees are fiat-predictable, and anyone with internet access can participate. By combining high-performance blockchain technology with a network of regulated, fiat-backed stablecoins, Gurufin creates the bridge between traditional finance and the decentralized economy.
 
 Our mission is to become the definitive infrastructure layer for stablecoin-based foreign exchange and cross-border payments, enabling developers, institutions, and users worldwide to build and access the next generation of financial services.
-
----
-
-## Related Resources
-
-- What is Gurufin? - Ecosystem overview and two-pillar architecture
-- Gurufin Chain Protocol - Layer-1 blockchain specifications
-- GX Stablecoin Network - Sovereign stablecoin framework
-- GuruDex OPRS - Oracle-priced reserve swap exchange
-- Cross-Border Payments Use Case - Remittance and B2B solutions
-- FX Trading Use Case - Stablecoin exchange applications
