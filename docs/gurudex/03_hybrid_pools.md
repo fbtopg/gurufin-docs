@@ -31,10 +31,10 @@ See: GuruDex Overview
 
 Instead of maintaining liquidity pools with constant product formulas, OPRS uses a mint-and-burn mechanism guided by oracle FX rates:
 
-1. **User initiates a swap** — e.g., 1,000 USGX → KRGX
+1. **User initiates a swap** — e.g., 1,000 GXUSD → GXKRW
 2. **Oracle provides real-time FX rate** — e.g., 1 USD = 1,300 KRW
-3. **Input stablecoin is burned** — 1,000 USGX is burned on the USGX Chain
-4. **Output stablecoin is minted** — 1,298,700 KRGX is minted on the KRGX Chain
+3. **Input stablecoin is burned** — 1,000 GXUSD is burned on the GXUSD Chain
+4. **Output stablecoin is minted** — 1,298,700 GXKRW is minted on the GXKRW Chain
 5. **IBC atomic settlement** — Cross-chain transfer completes atomically via IBC/HTLCs
 
 ---
@@ -55,14 +55,14 @@ Instead of maintaining liquidity pools with constant product formulas, OPRS uses
 
 Each GX stablecoin has its own sovereign L1 mainnet:
 
-- **USGX Chain** — USD-pegged, US jurisdiction validators
-- **KRGX Chain** — KRW-pegged, Korea jurisdiction validators
-- **EURGX Chain** — EUR-pegged, EU jurisdiction validators
+- **GXUSD Chain** — USD-pegged, US jurisdiction validators
+- **GXKRW Chain** — KRW-pegged, Korea jurisdiction validators
+- **GXEUR Chain** — EUR-pegged, EU jurisdiction validators
 - **JPGX Chain** — JPY-pegged, Japan jurisdiction validators
 
-When a user swaps USGX → KRGX on GuruDex:
-- USGX is burned on the USGX Chain
-- KRGX is minted on the KRGX Chain
+When a user swaps GXUSD → GXKRW on GuruDex:
+- GXUSD is burned on the GXUSD Chain
+- GXKRW is minted on the GXKRW Chain
 - IBC ensures atomic cross-chain settlement
 
 ---

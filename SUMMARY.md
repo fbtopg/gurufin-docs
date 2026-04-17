@@ -14,7 +14,6 @@
 * [Governance](./docs/gurufin_chain/06_governance.md)
 * [Validator Guide](./docs/gurufin_chain/07_validator_guide.md)
 
-
 ## GX Stablecoin Network
 * [Overview](./docs/gx_chain/01_overview.md)
 * [Reserve & Backing](./docs/gx_chain/02_reserve_and_backing.md)
@@ -24,10 +23,11 @@
 
 ## GuruDex (OPRS)
 * [DEX Overview](./docs/gurudex/01_dex_overview.md)
-* [Hybrid Pools](./docs/gurudex/02_hybrid_pools.md)
-* [Liquidity & Rewards](./docs/gurudex/03_liquidity_and_rewards.md)
-* [Smart Contract Logic](./docs/gurudex/04_smart_contract_logic.md)
-* [Risk Mitigation](./docs/gurudex/05_risk_mitigation.md)
+* [OPRS Architecture](./docs/gurudex/02_oprs_architecture.md)
+* [Hybrid Pools](./docs/gurudex/03_hybrid_pools.md)
+* [Liquidity & Rewards](./docs/gurudex/04_liquidity_and_rewards.md)
+* [Smart Contract Logic](./docs/gurudex/05_smart_contract_logic.md)
+* [Risk Mitigation](./docs/gurudex/06_risk_mitigation.md)
 
 ## Use Cases
 * [Cross-Border Payments](./docs/use_cases/01_cross_border_payments.md)
@@ -40,5 +40,6 @@
 * [API Reference](./docs/developer_resources/02_api_reference.md)
 * [Full Developer Docs](./docs/developer_resources/03_full_developer_docs.md)
 * [Ecosystem Grant Program](./docs/developer_resources/04_ecosystem_grant_program.md)
+
 ## Technical Review
 * [Action Items & Gaps](docs/technical_action_items.md)

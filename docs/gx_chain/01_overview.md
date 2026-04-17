@@ -3,7 +3,7 @@
 GX Chain is a sovereign stablecoin framework designed for the next generation of fiat-backed digital currencies. Rather than operating as a single blockchain, GX functions as a network of independent Layer-1 chains, each issuing a local sovereign stablecoin pegged 1:1 to its respective fiat currency. 
 
 **Key Features**
-* **Sovereign Chains:** Dedicated PoA blockchains for each supported currency (e.g., USGX, KRGX).
+* **Sovereign Chains:** Dedicated PoA blockchains for each supported currency (e.g., GXUSD, GXKRW).
 * **Jurisdictional Compliance:** Validators are licensed, regulated entities operating within their respective local legal frameworks.
 * **Live Proof-of-Reserves:** 24/7 on-chain reserve scanner tied to regulated custodial accounts.
 * **IBC Interoperability:** Atomic cross-chain transfers to the Gurufin Chain.
