@@ -1,12 +1,12 @@
 # Protocol Overview
 
-Gurufin Chain is a purpose-built Layer-1 blockchain serving as a global on-chain FX and DeFi hub. It is optimized for stablecoins, tokenized assets, and cross-border payments, solving traditional blockchain challenges via predictable transaction fees, cross-chain interoperability, and built-in compliance.
+Gurufin Chain is a public Delegated Proof-of-Stake (DPoS) Layer-1 blockchain designed as a high-performance, neutral settlement hub for the Web3 economy. 
 
-**Core Capabilities**
-* **High Performance:** Sub-second finality and throughput up to 10,000 TPS via deterministic consensus.
-* **Interoperability:** Native Cosmos IBC for trust-minimized communication and an EVM Gateway for Ethereum compatibility.
-* **Predictable Fees:** The Guru-PEG mechanism anchors transaction fees to fiat currency, insulating users from token volatility.
-* **Compliance by Design:** Embedded on-chain modules for address screening, transaction limits, and audit trails.
+**Core Architecture**
+Gurufin Chain provides the foundational infrastructure for fast, secure, and low-cost value transfer. Crucially, Gurufin Chain **does not** natively issue stablecoins or host Automated Market Makers (AMMs) at the protocol level. Instead, it serves as the central routing and settlement layer that connects sovereign ecosystem chains (like the GX Stablecoin network) and external liquidity hubs.
 
-**Technology Stack**
-Built on the Cosmos SDK utilizing Tendermint BFT (Comet BFT) consensus and Delegated Proof-of-Stake (DPoS). The modular architecture supports dual execution engines (Cosmos SDK native and EVM).
+**Consensus Mechanism**
+The network relies on **Tendermint BFT (CometBFT)** consensus coupled with DPoS. This architecture guarantees:
+* Deterministic sub-second finality.
+* High throughput capacity for enterprise-grade transaction volumes.
+* Robust resistance against Byzantine faults.
