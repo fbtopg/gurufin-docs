@@ -1,33 +1,15 @@
 # Risk Mitigation
 
-GuruDex implements a 4-layer defense strategy to protect against FX volatility, market manipulation, and operational risks. Each layer complements the others to ensure system robustness under adverse conditions.
-
----
+GuruDex implements a 4-layer defense strategy to protect against FX volatility and market manipulation.
 
 **Layer 1: Reserve Fund**
-
-An insurance fund holding 5–10% of pool liquidity compensates losses from rapid rate fluctuations. Reserves are managed separately for retail (3–5%) and institutional (5–10%) segments, with automatic replenishment from trading fees when thresholds are breached.
-
----
+An insurance fund holding 5–10% of total liquidity compensates for losses from rapid rate fluctuations. Reserves are segmented by user type (Retail: 3–5%, Institutional: 5–10%) and automatically replenish via trading fees.
 
 **Layer 2: Dynamic Fees**
-
-Retail fees adjust in real-time based on pool utilization and market volatility. During normal conditions, fees remain at the 0.3% base. Under stress, fees can scale up to 0.63%, suppressing speculative trading and protecting pool equilibrium.
-
----
+Retail fees adjust in real-time based on reserve utilization. During market stress, the standard 0.3% base fee can scale up to 0.63% to suppress speculative trading and protect equilibrium.
 
 **Layer 3: Limits & Validation**
+Individual retail swaps are capped at 5% of available liquidity to prevent whale manipulation. All trades are subject to strict Oracle Triple Validation (Freshness, Deviation, Confidence).
 
-Individual swaps are capped at 5% of pool liquidity to prevent whale manipulation. Institutional trades undergo oracle triple validation:
-
-* **Freshness** — Data must be less than 5 minutes old
-* **Deviation** — Price must be within 1% of stored rate
-* **Confidence** — Oracle confidence score must exceed 95%
-
----
-
-**Layer 4: Circuit Breaker**
-
-Trading halts automatically when critical thresholds are breached—such as >5% price swing, >20% liquidity drain, or suspicious transaction patterns. This secures response time for operators and prevents cascading losses during attacks or market crises.
-
----
+**Layer 4: Circuit Breakers**
+Trading halts automatically when critical thresholds are breached (e.g., >5% price swing, >20% liquidity drain, or suspicious transaction velocity). This secures response time for operators and prevents cascading losses.

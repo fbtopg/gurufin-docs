@@ -1,55 +1,17 @@
 # What is Gurufin?
 
-Gurufin is a specialized financial infrastructure that combines the efficiency of blockchain technology with the stability and regulatory compliance required for institutional adoption.
+Gurufin is a financial infrastructure combining blockchain efficiency with institutional regulatory compliance. The ecosystem relies on two interconnected pillars:
 
-_The ecosystem is built on two interconnected pillars:_
+**1. Gurufin Chain**
+* Public, permissionless Layer-1 blockchain (Cosmos SDK, Tendermint BFT).
+* Sub-second finality with throughput up to 10,000 TPS.
+* Serves as a neutral FX/DeFi settlement hub for cross-border payments.
+* Native token (GXN) powers staking, governance, and fiat-predictable fees via Guru-PEG.
+* IBC-first interoperability with an EVM Gateway for Ethereum compatibility.
 
----
+**2. GX Stablecoin Network**
+* Federation of sovereign stablecoin chains bound to jurisdictional Proof-of-Authority (PoA) consensus.
+* Fully backed 1:1 by fiat reserves in regulated custodians with 24/7 proof-of-reserves attestation.
+* Automated minting and burning via direct bank API integrations.
 
-**Gurufin Chain**
-
-* Public, permissionless Layer-1 blockchain built on Cosmos SDK with Tendermint BFT consensus
-* Sub-second finality and throughput of up to 10,000 TPS
-* Serves as a neutral FX/DeFi settlement hub where cross-border payments and trading occur
-* Native token (GXN) for staking, governance, and fee payment via Guru-PEG
-* IBC-first interoperability with EVM Gateway for Ethereum ecosystem compatibility
-
----
-
-**GX Stablecoin Network**
-
-* Federation of sovereign stablecoin chains, each operating under its own jurisdiction
-* Licensed validators bound to jurisdictional Proof-of-Authority (PoA) consensus
-* Fully backed 1:1 by fiat reserves held in regulated custodians
-* Automated minting and burning via bank API integration
-* 24/7 live proof-of-reserves attestation
-
----
-
-Together, these components create a complete system: GX Stablecoins are minted when users deposit fiat through licensed partners, flow to Gurufin Chain via IBC for trading and DeFi activities, and can be redeemed back to fiat at any time.
-
----
-
----
-
-### Explore the Ecosystem
-
-**Dive deeper into each pillar:**
-
-**🔗 Gurufin Chain**
-- Protocol overview, network architecture, and interoperability
-- Guru-PEG fee mechanism and tokenomics
-- Governance and validator operations
-
-**💵 GX Stablecoin Network**
-- Sovereign stablecoin architecture and reserve backing
-- Mint/burn operations and multi-currency support
-- Compliance framework and regulatory alignment
-
-**🔄 GuruDex (OPRS)**
-- Hybrid pool architecture for stablecoin FX trading
-- Liquidity mechanics and reward distribution
-- Smart contract design and risk mitigation
-
----
-
+**System Flow** GX Stablecoins are minted via licensed fiat deposits, flow to the Gurufin Chain via IBC for trading and DeFi activities, and can be redeemed for fiat at any time.

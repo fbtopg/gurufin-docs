@@ -1,7 +1,7 @@
 # Vision & Mission
 
-Gurufin was founded to solve the fundamental inefficiencies in global finance. Despite rapid technological advancement, moving money across borders remains slow, expensive, and inaccessible to billions. International transfers take 2-5 days to settle, cost 6-7% in fees, and require extensive banking infrastructure that excludes emerging markets from participating in the global economy.
+Gurufin addresses the fundamental inefficiencies in global finance, where cross-border transfers remain slow, expensive, and inaccessible. 
 
-Our vision is a world where value moves as freely and instantly as information. We are building a **Neutral FX/DeFi Hub**—a unified global settlement infrastructure where transactions settle in seconds, fees are fiat-predictable, and anyone with internet access can participate. By combining high-performance blockchain technology with a network of regulated, fiat-backed stablecoins, Gurufin creates the bridge between traditional finance and the decentralized economy.
+**Vision** A world where value moves as freely and instantly as information. We are building a Neutral FX/DeFi Hub—a global settlement infrastructure with sub-second finality, fiat-predictable fees, and open access, bridging traditional finance and the decentralized economy.
 
-Our mission is to become the definitive infrastructure layer for stablecoin-based foreign exchange and cross-border payments, enabling developers, institutions, and users worldwide to build and access the next generation of financial services.
+**Mission** To provide the definitive infrastructure layer for stablecoin-based foreign exchange and cross-border payments, empowering developers and institutions to build next-generation financial services.

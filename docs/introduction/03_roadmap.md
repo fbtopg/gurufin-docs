@@ -1,41 +1,26 @@
 # Roadmap
 
----
+**Phase 1: Foundation (Completed)**
+* Core technical infrastructure for Gurufin and GX chains.
+* Live Reserve Scanner (LRS) and Automated Mint/Burn mechanisms.
+* Guru-PEG implementation for fiat-predictable fees.
+* Independent security audit by Sherlock.
 
-**Phase 1: Foundation** *(Completed)*
-- Development of basic technical infrastructure for the Gurufin and GX chains
-- Implementation of the LRS Live Reserve Scanner for real-time proof of reserves
-- Integration of the Automated Mint and Burn Mechanism using bank API orchestration
-- Launch of the Guru-PEG mechanism for fiat-predictable transaction fees
-- Completion of a comprehensive independent security audit by Sherlock
+**Phase 2: Expansion (In Progress)**
+* Public Testnet launch.
+* GuruDex Oracle Priced Reserve Swap (OPRS) deployment.
+* Sovereign stablecoin PoC and IBC connectivity.
+* EVM Gateway and price oracle network integration.
+* Ecosystem Development Fund and governance parameter implementation.
 
----
+**Phase 3: Scale (Planned)**
+* Mainnet launch.
+* Expand sovereign stablecoins to new jurisdictions.
+* Multi-leg cross-currency PvP settlement and Layer-2 scaling.
+* Advanced governance implementation (quadratic voting).
 
-**Phase 2: Expansion** *(In Progress)*
-- Launch of Public Testnet (Season 1 Complete)
-- Deployment of GuruDex Oracle Priced Reserve Swap (OPRS) architecture
-- GX Stablecoin sovereign chain PoC using licensed validators
-- IBC connectivity for trust-minimized Cosmos ecosystem settlement
-- EVM Gateway for seamless Ethereum asset compatibility
-- Price oracle network for FX and benchmark rates
-- Launch of the Gurufin Ecosystem Development Fund for builders
-- Onboarding of dApps to the growing network ecosystem
-- Implementation of governance models and parameter registries
-
----
-
-**Phase 3: Scale** *(Planned)*
-- Expansion of sovereign stablecoins to additional jurisdictions
-- Enhanced PvP settlement with multi-leg cross-currency support
-- Layer-2 scaling solutions for high-frequency retail applications
-- Advanced governance models including quadratic voting
-- Official mainnet launch of the Gurufin Chain
-
----
-
-**Phase 4: Global** *(Future)*
-- CBDC bridge integration for central bank digital currency launches
-- Partnerships with traditional financial market infrastructures
-- Active participation in shaping global stablecoin regulations
-- Transition to fully community-governed protocol status
-- Target of 100M users and 50 sovereign stablecoins
+**Phase 4: Global (Future)**
+* CBDC bridge integration.
+* Traditional financial market partnerships.
+* Transition to full community governance.
+* Target: 100M users and 50 sovereign stablecoins.
