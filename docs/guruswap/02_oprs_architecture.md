@@ -1,10 +1,10 @@
 # OPRS Architecture
 
-The Oracle Priced Reserve Swap (OPRS) is the core engine of GuruDex, replacing liquidity pool dynamics with oracle-guided mint/burn mechanics.
+The Oracle Priced Reserve Swap (OPRS) is the core engine of Guruswap, replacing liquidity pool dynamics with oracle-guided mint/burn mechanics.
 
 **Step-by-Step Swap Flow**
 *Example: User swaps 1,000 GXUSD → GXKRW*
-1. User initiates a swap on GuruDex.
+1. User initiates a swap on Guruswap.
 2. The Oracle provides a real-time FX rate (e.g., 1 USD = 1,300 KRW).
 3. 1,000 GXUSD is burned on the GXUSD Sovereign Chain.
 4. 1,298,700 GXKRW is minted on the GXKRW Sovereign Chain.

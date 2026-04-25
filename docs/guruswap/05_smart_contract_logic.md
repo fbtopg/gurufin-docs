@@ -1,6 +1,6 @@
 # Smart Contract Logic
 
-GuruDex's swap execution is orchestrated by a modular smart contract system, enabling clean separation of concerns and independent upgradability.
+Guruswap's swap execution is orchestrated by a modular smart contract system, enabling clean separation of concerns and independent upgradability.
 
 **Core Contracts**
 * **FXSwapMaster:** Central orchestration, managing swap routing, governance, and system parameters.

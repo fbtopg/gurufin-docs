@@ -23,17 +23,17 @@ It defines every page and its position in the book.
 - `.gitbook/assets/Gemini_Generated_Image_iljs2xiljs2xiljs.jpg`
 
 ### docs/
+- `docs/guruswap/01_dex_overview.md`
+- `docs/guruswap/02_oprs_architecture.md`
+- `docs/guruswap/03_hybrid_pools.md`
+- `docs/guruswap/04_liquidity_and_rewards.md`
+- `docs/guruswap/05_smart_contract_logic.md`
+- `docs/guruswap/06_risk_mitigation.md`
+- `docs/SUMMARY.md`
 - `docs/developer_resources/01_testnet_access.md`
 - `docs/developer_resources/02_api_reference.md`
 - `docs/developer_resources/03_full_developer_docs.md`
-- `docs/developer_resources/04_ecosystem_grant_program.md`
-- `docs/gurudex/01_dex_overview.md`
-- `docs/gurudex/02_hybrid_pools.md`
-- `docs/gurudex/03_liquidity_and_rewards.md`
-- `docs/gurudex/04_smart_contract_logic.md`
-- `docs/gurudex/05_risk_mitigation.md`
-- `docs/gurufin_chain/01_protocol_overview.md`
-- ... and 18 more files
+- ... and 27 more files
 
 ## How To Make Changes
 

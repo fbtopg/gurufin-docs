@@ -1,6 +1,6 @@
 # Liquidity & Rewards
 
-While OPRS primarily relies on mint/burn mechanics, GuruDex utilizes liquidity inventory buffers to facilitate instant settlement and manage cross-chain transit times. 
+While OPRS primarily relies on mint/burn mechanics, Guruswap utilizes liquidity inventory buffers to facilitate instant settlement and manage cross-chain transit times. 
 
 **Virtual-Pair Mechanism**
 Liquidity Providers (LPs) deposit stablecoins into these inventory buffers. To simplify multi-currency provision, LPs receive a single Virtual LP token representing their proportional stake across two underlying single-coin reserves.

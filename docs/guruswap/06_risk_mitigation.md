@@ -1,6 +1,6 @@
 # Risk Mitigation
 
-GuruDex implements a 4-layer defense strategy to protect against FX volatility and market manipulation.
+Guruswap implements a 4-layer defense strategy to protect against FX volatility and market manipulation.
 
 **Layer 1: Reserve Fund**
 An insurance fund holding 5–10% of total liquidity compensates for losses from rapid rate fluctuations. Reserves are segmented by user type (Retail: 3–5%, Institutional: 5–10%) and automatically replenish via trading fees.

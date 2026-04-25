@@ -1,12 +1,12 @@
 # OPRS Architecture
 
-📊 Oracle Priced Reserve Swap — The Core of GuruDex
+📊 Oracle Priced Reserve Swap — The Core of Guruswap
 
 ---
 
 ## 🚀 Quick Links
 
-- **GuruDex Overview**: 01 DEX Overview
+- **Guruswap Overview**: 01 DEX Overview
 - **Smart Contracts**: 04 Smart Contract Logic
 - **GX Stablecoins**: 01 GX Overview | 03 Mint & Burn
 - **Use Cases**: 02 Stablecoin FX Trading
@@ -15,11 +15,11 @@
 
 ## Overview
 
-GuruDex uses an **Oracle Priced Reserve Swap (OPRS)** architecture instead of traditional AMM pools. This design is purpose-built for stablecoin FX trading, where prices are determined by real-world oracle rates rather than on-chain supply/demand dynamics.
+Guruswap uses an **Oracle Priced Reserve Swap (OPRS)** architecture instead of traditional AMM pools. This design is purpose-built for stablecoin FX trading, where prices are determined by real-world oracle rates rather than on-chain supply/demand dynamics.
 
 **Key Principle**: Instead of relying on liquidity pool dynamics, OPRS uses oracle-guided mint/burn mechanics to ensure trades execute at precise market rates with zero slippage.
 
-See: GuruDex Overview
+See: Guruswap Overview
 
 ---
 
@@ -41,7 +41,7 @@ Instead of maintaining liquidity pools with constant product formulas, OPRS uses
 
 **Why OPRS for Stablecoin FX?**
 
-| Traditional AMM | OPRS (GuruDex) |
+| Traditional AMM | OPRS (Guruswap) |
 |-----------------|----------------|
 | Price emerges from trading activity | Price from real-time oracle feeds |
 | Slippage increases with trade size | No slippage — oracle-verified rates |
@@ -60,7 +60,7 @@ Each GX stablecoin has its own sovereign L1 mainnet:
 - **GXEUR Chain** — EUR-pegged, EU jurisdiction validators
 - **JPGX Chain** — JPY-pegged, Japan jurisdiction validators
 
-When a user swaps GXUSD → GXKRW on GuruDex:
+When a user swaps GXUSD → GXKRW on Guruswap:
 - GXUSD is burned on the GXUSD Chain
 - GXKRW is minted on the GXKRW Chain
 - IBC ensures atomic cross-chain settlement

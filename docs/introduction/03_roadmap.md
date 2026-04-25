@@ -8,7 +8,7 @@
 
 **Phase 2: Expansion (In Progress)**
 * Public Testnet launch.
-* GuruDex Oracle Priced Reserve Swap (OPRS) deployment.
+* Guruswap Oracle Priced Reserve Swap (OPRS) deployment.
 * Sovereign stablecoin PoC and IBC connectivity.
 * EVM Gateway and price oracle network integration.
 * Ecosystem Development Fund and governance parameter implementation.

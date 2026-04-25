@@ -5,7 +5,7 @@ Each GX stablecoin operates on its own dedicated Layer-1 blockchain (e.g., GXUSD
 **FX Settlement and PvP**
 Cross-currency flows between sovereign chains utilize Payment-versus-Payment (PvP) settlement with escrowed holds via IBC/HTLCs. This ensures neither leg of a transaction settles unless both do, eliminating Herstatt (principal) risk.
 
-For correlated stablecoin pairs traded on the Gurufin Chain (GuruDex), pools use low-curvature stable-swap curves to minimize slippage. Large tickets can be time-weighted (TWAP/TWAMM) to reduce market footprint. FX liquidity is supplied by regulated LPs, banks, and Payment Service Providers (PSPs).
+For correlated stablecoin pairs traded on the Gurufin Chain (Guruswap), pools use low-curvature stable-swap curves to minimize slippage. Large tickets can be time-weighted (TWAP/TWAMM) to reduce market footprint. FX liquidity is supplied by regulated LPs, banks, and Payment Service Providers (PSPs).
 
 **Onboarding New Currencies**
 The GX framework is extensible. New sovereign chains require:

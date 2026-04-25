@@ -12,4 +12,4 @@ Central banks and financial institutions are increasingly exploring digital curr
 
 A major hurdle for CBDCs is international interoperability. By utilizing the Gurufin Chain as a neutral settlement hub, different national digital currencies (e.g., a digital USD and a digital KRW) can interact seamlessly.
 * **Atomic PvP Settlement:** Inter-Blockchain Communication (IBC) facilitates Payment-versus-Payment settlement between different CBDC chains, eliminating Herstatt (principal) risk in cross-border trade.
-* **Oracle-Guided Exchange:** The GuruDex OPRS architecture ensures that cross-border CBDC swaps execute at precise, oracle-verified FX rates with zero slippage, bypassing the need for speculative liquidity pools.
+* **Oracle-Guided Exchange:** The Guruswap OPRS architecture ensures that cross-border CBDC swaps execute at precise, oracle-verified FX rates with zero slippage, bypassing the need for speculative liquidity pools.

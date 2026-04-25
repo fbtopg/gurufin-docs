@@ -14,3 +14,4 @@
 - **2026-04-15 09:28**: In Gurufin Chain's category, the Protocol Overview page, remove the "Related Pages" section — wrote 1 file(s): 01_protocol_overview.md
 - **2026-04-15 11:03**: /home/geonu/workspace/gurufin-gitbook/docs/gurudex/01_dex_overview.md — wrote 1 file(s): 01_dex_overview.md
 - **2026-04-15 11:21**: home/geonu/workspace/projects/gurufin-gitbook/docs/introduction/02_what_is_gurufin.md file has to much information when other files in the same folder have been designated to each concept. — wrote 1 file(s): 02_what_is_gurufin.md
+- **2026-04-25 09:31**: Yes — wrote 3 file(s): SUMMARY.md, SUMMARY.md, _sidebar.json

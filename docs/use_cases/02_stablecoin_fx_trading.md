@@ -1,6 +1,6 @@
 # Stablecoin FX Trading on Gurufin
 
-Gurufin Chain presents a transformative approach to foreign exchange (FX) markets. By combining sovereign stablecoin chains with the central GuruDex FX settlement hub, traders can execute seamless, secure, and efficient FX trading, arbitrage, and derivative strategies.
+Gurufin Chain presents a transformative approach to foreign exchange (FX) markets. By combining sovereign stablecoin chains with the central Guruswap FX settlement hub, traders can execute seamless, secure, and efficient FX trading, arbitrage, and derivative strategies.
 
 **The OPRS Advantage in FX**
 Unlike traditional DeFi exchanges that rely on Automated Market Makers (AMMs) and liquidity pools—which suffer from slippage and rely on on-chain arbitrage for price discovery—Gurufin uses the **Oracle Priced Reserve Swap (OPRS)** architecture. All cross-currency stablecoin swaps execute at precise, real-world market rates guided by triple-validated oracles. 

@@ -5,7 +5,7 @@ Traditional remittance and B2B payment systems suffer from high costs, slow sett
 **Key Architectural Advantages**
 * **Cost-Efficiency:** The Guru-PEG mechanism indexes gas to fiat, providing predictable, retail-grade fee stability (~$0.013 per standard transfer).
 * **Atomic PvP Settlement:** IBC eliminates principal and bridge risk by ensuring the simultaneous exchange of payment legs.
-* **Zero Slippage FX:** GuruDex uses Oracle Priced Reserve Swaps (OPRS) rather than AMMs, ensuring cross-currency conversions execute at precise market rates.
+* **Zero Slippage FX:** Guruswap uses Oracle Priced Reserve Swaps (OPRS) rather than AMMs, ensuring cross-currency conversions execute at precise market rates.
 * **Embedded Compliance:** Wallet-tiered KYC/AML, sanctions screening, and FATF Travel Rule metadata are embedded directly at the consensus level.
 
 **Use Case Examples**
