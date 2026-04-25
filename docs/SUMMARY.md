@@ -21,13 +21,13 @@
 * [Multi-Currency Support](gx_chain/04_multi_currency_support.md)
 * [Compliance & Regulation](gx_chain/05_compliance_and_regulation.md)
 
-## GuruDex (OPRS)
-* [DEX Overview](gurudex/01_dex_overview.md)
-* [OPRS Architecture](gurudex/02_oprs_architecture.md)
-* [Hybrid Pools](gurudex/03_hybrid_pools.md)
-* [Liquidity & Rewards](gurudex/04_liquidity_and_rewards.md)
-* [Smart Contract Logic](gurudex/05_smart_contract_logic.md)
-* [Risk Mitigation](gurudex/06_risk_mitigation.md)
+## Guruswap (OPRS)
+* [DEX Overview](guruswap/01_dex_overview.md)
+* [OPRS Architecture](guruswap/02_oprs_architecture.md)
+* [Hybrid Pools](guruswap/03_hybrid_pools.md)
+* [Liquidity & Rewards](guruswap/04_liquidity_and_rewards.md)
+* [Smart Contract Logic](guruswap/05_smart_contract_logic.md)
+* [Risk Mitigation](guruswap/06_risk_mitigation.md)
 
 ## Use Cases
 * [Cross-Border Payments](use_cases/01_cross_border_payments.md)
