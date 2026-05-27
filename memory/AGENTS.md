@@ -14,7 +14,6 @@ It defines every page and its position in the book.
 - `.gitignore`
 - `SUMMARY.md`
 - `_sidebar.json`
-- `gurufin-x-posts.md`
 
 ### .concept_graph/
 - `.concept_graph/graph.json`
@@ -23,17 +22,30 @@ It defines every page and its position in the book.
 - `.gitbook/assets/Gemini_Generated_Image_iljs2xiljs2xiljs.jpg`
 
 ### docs/
-- `docs/guruswap/01_dex_overview.md`
-- `docs/guruswap/02_oprs_architecture.md`
-- `docs/guruswap/03_hybrid_pools.md`
-- `docs/guruswap/04_liquidity_and_rewards.md`
-- `docs/guruswap/05_smart_contract_logic.md`
-- `docs/guruswap/06_risk_mitigation.md`
 - `docs/SUMMARY.md`
 - `docs/developer_resources/01_testnet_access.md`
 - `docs/developer_resources/02_api_reference.md`
 - `docs/developer_resources/03_full_developer_docs.md`
-- ... and 27 more files
+- `docs/developer_resources/04_ecosystem_grant_program.md`
+- `docs/gurufin_chain/01_protocol_overview.md`
+- `docs/gurufin_chain/02_network_architecture.md`
+- `docs/gurufin_chain/03_interoperability.md`
+- `docs/gurufin_chain/04_guru_peg.md`
+- `docs/gurufin_chain/05_tokenomics.md`
+- ... and 21 more files
+
+### pr-drafts/
+- `pr-drafts/gurufin-pr-drafts-all.pdf`
+- `pr-drafts/01_주권안디지털통화_안정적_미래.md`
+- `pr-drafts/02_스테이블코인_규제_동향_글로벌_표준_논의.md`
+- `pr-drafts/03_온체인_환전_다국적_디지털경제의필수조건.md`
+- `pr-drafts/04_주권_디지털통화_신흥국_금융주권.md`
+- `pr-drafts/05_스테이블코인과_CBD_CBDvs스테이블코인.md`
+- `pr-drafts/06_주권스테이블코인_미래_금융_인프라.md`
+- `pr-drafts/07_다국적_디지털경제_통화_환전의_변화.md`
+- `pr-drafts/08_신흥국_스테이블코인_금융포용성.md`
+- `pr-drafts/09_Gurufin_그루핀_온체인_FX_해결_접근.md`
+- `pr-drafts/10_온체인_FX_금융_미래_변화_예측.md`
 
 ## How To Make Changes
 

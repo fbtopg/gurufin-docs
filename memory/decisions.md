@@ -15,3 +15,13 @@
 - **2026-04-15 11:03**: /home/geonu/workspace/gurufin-gitbook/docs/gurudex/01_dex_overview.md — wrote 1 file(s): 01_dex_overview.md
 - **2026-04-15 11:21**: home/geonu/workspace/projects/gurufin-gitbook/docs/introduction/02_what_is_gurufin.md file has to much information when other files in the same folder have been designated to each concept. — wrote 1 file(s): 02_what_is_gurufin.md
 - **2026-04-25 09:31**: Yes — wrote 3 file(s): SUMMARY.md, SUMMARY.md, _sidebar.json
+- **2026-05-21 13:55** [writer]: Continue — wrote 10 file(s): 01_주권안디지털통화_안정적_미래.md, 02_스테이블코인_규제_동향_글로벌_표준_논의.md, 03_온체인_환전_다국적_디지털경제의필수조건.md, 04_주권_디지털통화_신흥국_금융주권.md, 05_스테이블코인과_CBD_CBDvs스테이블코인.md (+5 more)
+- **2026-05-27 18:05** [writer]: for gurufin-gitbook project, in Tokenomics page, the allocation should be below.
+## 10.2.2 Total Supply & Allocation
+
+*Maximum Supply (Genesis):*
+
+
+$$\text{100,000,000,000 GXN.}$$
+
+### Table 3 Token A — wrote 1 file(s): 05_tokenomics.md
