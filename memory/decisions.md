@@ -26,3 +26,4 @@ $$\text{100,000,000,000 GXN.}$$
 
 ### Table 3 Token A — wrote 1 file(s): 05_tokenomics.md
 - **2026-05-27 18:13** [writer]: restructure the information in this page! — wrote 1 file(s): 05_tokenomics.md
+- **2026-05-27 18:19** [writer]: in gurufin-gitbook project, remove the GURUSWAP category and pages under it. no need to have guruswap pages in gurufin-gitbook. — wrote 2 file(s): SUMMARY.md, _sidebar.json

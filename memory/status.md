@@ -29,12 +29,6 @@
     "docs/gurufin_chain/05_tokenomics.md",
     "docs/gurufin_chain/06_governance.md",
     "docs/gurufin_chain/07_validator_guide.md",
-    "docs/guruswap/01_dex_overview.md",
-    "docs/guruswap/02_oprs_architecture.md",
-    "docs/guruswap/03_hybrid_pools.md",
-    "docs/guruswap/04_liquidity_and_rewards.md",
-    "docs/guruswap/05_smart_contract_logic.md",
-    "docs/guruswap/06_risk_mitigation.md",
     "docs/gx_chain/01_overview.md",
     "docs/gx_chain/02_reserve_and_backing.md",
     "docs/gx_chain/03_mint_and_burn.md",
@@ -63,7 +57,7 @@
   "pages": [],
   "env_vars": [],
   "created": 1773716693.211852,
-  "updated": 1779873238.6404698,
+  "updated": 1779873540.4216943,
   "source": "project-scan-v1 git:https://github.com/fbtopg/gurufin-docs.git"
 }
 ```
@@ -75,5 +69,5 @@
 - Framework: gitbook
 - Deploy Target: gitbook
 - Directory: /home/geonu/workspace/projects/gurufin-gitbook
-- Updated: 1779873238.640470
+- Updated: 1779873540.421694
 - Files: .concept_graph/graph.json, .gitbook/assets/Gemini_Generated_Image_iljs2xiljs2xiljs.jpg, .gitignore, SUMMARY.md, _sidebar.json, docs/SUMMARY.md, docs/developer_resources/01_testnet_access.md, docs/developer_resources/02_api_reference.md, docs/developer_resources/03_full_developer_docs.md, docs/developer_resources/04_ecosystem_grant_program.md
