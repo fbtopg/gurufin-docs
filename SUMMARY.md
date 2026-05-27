@@ -21,14 +21,6 @@
 * [Multi-Currency Support](./docs/gx_chain/04_multi_currency_support.md)
 * [Compliance & Regulation](./docs/gx_chain/05_compliance_and_regulation.md)
 
-## Guruswap (OPRS)
-* [DEX Overview](./docs/guruswap/01_dex_overview.md)
-* [OPRS Architecture](./docs/guruswap/02_oprs_architecture.md)
-* [Hybrid Pools](./docs/guruswap/03_hybrid_pools.md)
-* [Liquidity & Rewards](./docs/guruswap/04_liquidity_and_rewards.md)
-* [Smart Contract Logic](./docs/guruswap/05_smart_contract_logic.md)
-* [Risk Mitigation](./docs/guruswap/06_risk_mitigation.md)
-
 ## Use Cases
 * [Cross-Border Payments](./docs/use_cases/01_cross_border_payments.md)
 * [Stablecoin FX Trading](./docs/use_cases/02_stablecoin_fx_trading.md)
