@@ -8,7 +8,7 @@ GXN serves four primary functions within the Gurufin ecosystem:
 
 * **Staking** — Securing the DPoS network via validator delegation.
 * **Governance** — Voting on protocol upgrades and treasury allocations.
-* **Fee Payment** — Execution of network transactions via Guru-PEG.
+* **Fee Payment** — Execution of network transactions via GXN-PEG.
 * **Liquidity** — Provisioning for Guruswap OPRS trading infrastructure.
 
 ## Total Supply

@@ -6,7 +6,7 @@ Gurufin is a financial infrastructure combining blockchain efficiency with insti
 * Public, permissionless Layer-1 blockchain (Cosmos SDK, Tendermint BFT).
 * Sub-second finality with throughput up to 10,000 TPS.
 * Serves as a neutral FX/DeFi settlement hub for cross-border payments.
-* Native token (GXN) powers staking, governance, and fiat-predictable fees via Guru-PEG.
+* Native token (GXN) powers staking, governance, and fiat-predictable fees via GXN-PEG.
 * IBC-first interoperability with an EVM Gateway for Ethereum compatibility.
 
 **2. GX Stablecoin Network**

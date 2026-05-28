@@ -9,7 +9,7 @@
 * [Protocol Overview](gurufin_chain/01_protocol_overview.md)
 * [Network Architecture](gurufin_chain/02_network_architecture.md)
 * [Interoperability](gurufin_chain/03_interoperability.md)
-* [Guru Peg](gurufin_chain/04_guru_peg.md)
+* [GXN Peg](gurufin_chain/04_gx_peg.md)
 * [Tokenomics](gurufin_chain/05_tokenomics.md)
 * [Governance](gurufin_chain/06_governance.md)
 * [Validator Guide](gurufin_chain/07_validator_guide.md)

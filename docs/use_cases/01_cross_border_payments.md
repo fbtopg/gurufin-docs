@@ -3,7 +3,7 @@
 Traditional remittance and B2B payment systems suffer from high costs, slow settlement times, and counterparty risks. Gurufin Chain offers a transformative solution tailored for both retail remittances and enterprise-level B2B transactions.
 
 **Key Architectural Advantages**
-* **Cost-Efficiency:** The Guru-PEG mechanism indexes gas to fiat, providing predictable, retail-grade fee stability (~$0.013 per standard transfer).
+* **Cost-Efficiency:** The GXN-PEG mechanism indexes gas to fiat, providing predictable, retail-grade fee stability (~$0.013 per standard transfer).
 * **Atomic PvP Settlement:** IBC eliminates principal and bridge risk by ensuring the simultaneous exchange of payment legs.
 * **Zero Slippage FX:** Guruswap uses Oracle Priced Reserve Swaps (OPRS) rather than AMMs, ensuring cross-currency conversions execute at precise market rates.
 * **Embedded Compliance:** Wallet-tiered KYC/AML, sanctions screening, and FATF Travel Rule metadata are embedded directly at the consensus level.

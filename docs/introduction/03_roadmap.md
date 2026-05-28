@@ -3,7 +3,7 @@
 **Phase 1: Foundation (Completed)**
 * Core technical infrastructure for Gurufin and GX chains.
 * Live Reserve Scanner (LRS) and Automated Mint/Burn mechanisms.
-* Guru-PEG implementation for fiat-predictable fees.
+* GXN-PEG implementation for fiat-predictable fees.
 * Independent security audit by Sherlock.
 
 **Phase 2: Expansion (In Progress)**
