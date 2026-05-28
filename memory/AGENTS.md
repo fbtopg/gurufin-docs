@@ -32,10 +32,9 @@ It defines every page and its position in the book.
 - `docs/gurufin_chain/03_interoperability.md`
 - `docs/gurufin_chain/04_guru_peg.md`
 - `docs/gurufin_chain/05_tokenomics.md`
-- ... and 21 more files
+- ... and 15 more files
 
 ### pr-drafts/
-- `pr-drafts/gurufin-pr-drafts-all.pdf`
 - `pr-drafts/01_주권안디지털통화_안정적_미래.md`
 - `pr-drafts/02_스테이블코인_규제_동향_글로벌_표준_논의.md`
 - `pr-drafts/03_온체인_환전_다국적_디지털경제의필수조건.md`
@@ -46,6 +45,7 @@ It defines every page and its position in the book.
 - `pr-drafts/08_신흥국_스테이블코인_금융포용성.md`
 - `pr-drafts/09_Gurufin_그루핀_온체인_FX_해결_접근.md`
 - `pr-drafts/10_온체인_FX_금융_미래_변화_예측.md`
+- `pr-drafts/gurufin-pr-drafts-all.pdf`
 
 ## How To Make Changes
 
