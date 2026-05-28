@@ -1,12 +1,18 @@
 # Protocol Overview
 
-Gurufin Chain is a public Delegated Proof-of-Stake (DPoS) Layer-1 blockchain designed as a high-performance, neutral settlement hub for the Web3 economy. 
+Gurufin Chain is a public Delegated Proof-of-Stake (DPoS) Layer-1 blockchain built on Cosmos SDK and CometBFT. It serves as a high-performance, neutral settlement hub for cross-border payments and DeFi activities.
 
-**Core Architecture**
-Gurufin Chain provides the foundational infrastructure for fast, secure, and low-cost value transfer. Crucially, Gurufin Chain **does not** natively issue stablecoins or host Automated Market Makers (AMMs) at the protocol level. Instead, it serves as the central routing and settlement layer that connects sovereign ecosystem chains (like the GX Stablecoin network) and external liquidity hubs.
+**Key Characteristics**
 
-**Consensus Mechanism**
-The network relies on **Tendermint BFT (CometBFT)** consensus coupled with DPoS. This architecture guarantees:
-* Deterministic sub-second finality.
-* High throughput capacity for enterprise-grade transaction volumes.
-* Robust resistance against Byzantine faults.
+* **Fast finality** — Sub-second block times with deterministic consensus, ensuring transactions are confirmed almost instantly.
+* **High throughput** — Up to 10,000 TPS capacity, designed for enterprise-grade transaction volumes.
+* **Low cost** — Minimal gas fees make micro-transfers and frequent settlements practical.
+* **Neutral routing layer** — Connects sovereign stablecoin networks (like the GX Stablecoin network) and external liquidity hubs without requiring protocol-level AMMs or native stablecoin issuance.
+
+**Consensus**
+
+Gurufin Chain uses **Tendermint BFT** combined with **DPoS**. Validators stake GXN to participate in block production, and token holders delegate their tokens to vote for trusted validators. This model guarantees immediate, deterministic finality while remaining resistant to Byzantine faults.
+
+**Protocol Role**
+
+Within the Gurufin ecosystem, Gurufin Chain acts as the central settlement rail. Stablecoins are minted and managed on dedicated sovereign chains (GX Stablecoin network) and settle across Gurufin Chain via IBC for trading, FX, and DeFi use cases. The protocol focuses on fast, secure, and compliant value transfer — leaving complex financial logic to the ecosystem chains that plug into it.
