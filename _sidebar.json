@@ -20,11 +20,9 @@
     "docs/use_cases/01_cross_border_payments",
     "docs/use_cases/02_stablecoin_fx_trading",
     "docs/use_cases/03_institutional_defi",
-    "docs/use_cases/04_government_and_cbdc",
     "docs/developer_resources/01_testnet_access",
     "docs/developer_resources/02_api_reference",
-    "docs/developer_resources/03_full_developer_docs",
-    "docs/developer_resources/04_ecosystem_grant_program"
+    "docs/developer_resources/03_full_developer_docs"
   ],
   "themeVariables": {
     "$pageBackground1": "#ffffff",
