@@ -39,6 +39,3 @@
 * [Testnet Access](developer_resources/01_testnet_access.md)
 * [API Reference](developer_resources/02_api_reference.md)
 * [Full Developer Docs](developer_resources/03_full_developer_docs.md)
-
-## Technical Review
-* [Action Items & Gaps](technical_action_items.md)
