@@ -24,7 +24,7 @@
     "docs/gurufin_chain/01_protocol_overview.md",
     "docs/gurufin_chain/02_network_architecture.md",
     "docs/gurufin_chain/03_interoperability.md",
-    "docs/gurufin_chain/04_guru_peg.md",
+    "docs/gurufin_chain/04_gx_peg.md",
     "docs/gurufin_chain/05_tokenomics.md",
     "docs/gurufin_chain/06_governance.md",
     "docs/gurufin_chain/07_validator_guide.md",
@@ -56,7 +56,7 @@
   "pages": [],
   "env_vars": [],
   "created": 1773716693.211852,
-  "updated": 1779960600.0856588,
+  "updated": 1779961543.5659637,
   "source": "project-scan-v1 git:https://github.com/fbtopg/gurufin-docs.git"
 }
 ```
@@ -68,5 +68,5 @@
 - Framework: gitbook
 - Deploy Target: gitbook
 - Directory: /home/geonu/workspace/projects/gurufin-gitbook
-- Updated: 1779960600.085659
+- Updated: 1779961543.565964
 - Files: .concept_graph/graph.json, .gitbook/assets/Gemini_Generated_Image_iljs2xiljs2xiljs.jpg, .gitignore, SUMMARY.md, _sidebar.json, docs/SUMMARY.md, docs/developer_resources/01_testnet_access.md, docs/developer_resources/02_api_reference.md, docs/developer_resources/03_full_developer_docs.md, docs/gurufin_chain/01_protocol_overview.md
