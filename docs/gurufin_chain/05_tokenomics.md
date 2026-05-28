@@ -1,6 +1,6 @@
 # Tokenomics ($GXN)
 
-GXN is the native utility token powering the Gurufin Chain and GX Stablecoin networks. The maximum supply at genesis is 100,000,000,000 GXN.
+GXN is the native utility token powering Gurufin Chain. The maximum supply at genesis is 100,000,000,000 GXN.
 
 ## Core Utility
 
