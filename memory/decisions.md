@@ -42,3 +42,6 @@ $$\text{100,000,000,000 GXN.}$$
 
 - **2026-05-28 17:22** [writer]: i still see government & CBDC on sidebar and also ecosystem grant program on the sidebar. i don't want to see them. — wrote 1 file(s): _sidebar.json
 - **2026-05-28 17:30** [writer]: remove technical review category and pages under it. — wrote 1 file(s): SUMMARY.md
+- **2026-05-28 18:25** [writer]: Edit the existing **Guru Peg / Guru-PEG** page in the `gurufin-gitbook` project using the context below.
+
+Goal: make the page clearer, more polished, and technically credible for GitBook readers. Keep — wrote 1 file(s): 04_guru_peg.md
