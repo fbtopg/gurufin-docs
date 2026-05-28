@@ -33,7 +33,7 @@
 * [Cross-Border Payments](use_cases/01_cross_border_payments.md)
 * [Stablecoin FX Trading](use_cases/02_stablecoin_fx_trading.md)
 * [Institutional DeFi](use_cases/03_institutional_defi.md)
-* [Government & CBDC](use_cases/04_government_and_cbdc.md)
+* [Government & Institutional Use](use_cases/04_government_and_institutional.md)
 
 ## Developer Resources
 * [Testnet Access](developer_resources/01_testnet_access.md)

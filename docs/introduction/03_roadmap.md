@@ -20,7 +20,7 @@
 * Advanced governance implementation (quadratic voting).
 
 **Phase 4: Global (Future)**
-* CBDC bridge integration.
+* Sovereign bridge integration.
 * Traditional financial market partnerships.
 * Transition to full community governance.
 * Target: 100M users and 50 sovereign stablecoins.
