@@ -40,7 +40,7 @@
     "docs/use_cases/01_cross_border_payments.md",
     "docs/use_cases/02_stablecoin_fx_trading.md",
     "docs/use_cases/03_institutional_defi.md",
-    "docs/use_cases/04_government_and_cbdc.md",
+    "docs/use_cases/04_government_and_institutional.md",
     "pr-drafts/01_\uc8fc\uad8c\uc548\ub514\uc9c0\ud138\ud1b5\ud654_\uc548\uc815\uc801_\ubbf8\ub798.md",
     "pr-drafts/02_\uc2a4\ud14c\uc774\ube14\ucf54\uc778_\uaddc\uc81c_\ub3d9\ud5a5_\uae00\ub85c\ubc8c_\ud45c\uc900_\ub17c\uc758.md",
     "pr-drafts/03_\uc628\uccb4\uc778_\ud658\uc804_\ub2e4\uad6d\uc801_\ub514\uc9c0\ud138\uacbd\uc81c\uc758\ud544\uc218\uc870\uac74.md",
@@ -56,7 +56,7 @@
   "pages": [],
   "env_vars": [],
   "created": 1773716693.211852,
-  "updated": 1779955309.2507484,
+  "updated": 1779955605.9415617,
   "source": "project-scan-v1 git:https://github.com/fbtopg/gurufin-docs.git"
 }
 ```
@@ -68,5 +68,5 @@
 - Framework: gitbook
 - Deploy Target: gitbook
 - Directory: /home/geonu/workspace/projects/gurufin-gitbook
-- Updated: 1779955309.250748
+- Updated: 1779955605.941562
 - Files: .concept_graph/graph.json, .gitbook/assets/Gemini_Generated_Image_iljs2xiljs2xiljs.jpg, .gitignore, SUMMARY.md, _sidebar.json, docs/SUMMARY.md, docs/developer_resources/01_testnet_access.md, docs/developer_resources/02_api_reference.md, docs/developer_resources/03_full_developer_docs.md, docs/gurufin_chain/01_protocol_overview.md
