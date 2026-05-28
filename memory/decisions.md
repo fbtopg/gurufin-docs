@@ -31,3 +31,4 @@ $$\text{100,000,000,000 GXN.}$$
 - **2026-05-28 17:01** [writer]: for gurufin-gitbook, in tokenomics, GXN이 Gurufin Chain and GX Stablecoin networks를 powering한다고 표현. “GXN powers Gurufin Chain” 중심으로 수정 필요. GX Stablecoin network 는 제외. — wrote 1 file(s): 05_tokenomics.md
 - **2026-05-28 17:06** [writer]: let's remove any CBDC mention — wrote 3 file(s): 04_government_and_cbdc.md, 03_roadmap.md, SUMMARY.md
 - **2026-05-28 17:12** [writer]: the Protocol Overview page content is a bit weird. don't make it too long but write it again cause like it's emphasizing that it does not host automated market makers and stuff which is not the main c — wrote 1 file(s): 01_protocol_overview.md
+- **2026-05-28 17:22** [writer]: i still see government & CBDC on sidebar and also ecosystem grant program on the sidebar. i don't want to see them. — wrote 1 file(s): _sidebar.json
