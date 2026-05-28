@@ -25,13 +25,11 @@
 * [Cross-Border Payments](./docs/use_cases/01_cross_border_payments.md)
 * [Stablecoin FX Trading](./docs/use_cases/02_stablecoin_fx_trading.md)
 * [Institutional DeFi](./docs/use_cases/03_institutional_defi.md)
-* [Government & CBDC](./docs/use_cases/04_government_and_cbdc.md)
 
 ## Developer Resources
 * [Testnet Access](./docs/developer_resources/01_testnet_access.md)
 * [API Reference](./docs/developer_resources/02_api_reference.md)
 * [Full Developer Docs](./docs/developer_resources/03_full_developer_docs.md)
-* [Ecosystem Grant Program](./docs/developer_resources/04_ecosystem_grant_program.md)
 
 ## Technical Review
 * [Action Items & Gaps](docs/technical_action_items.md)
