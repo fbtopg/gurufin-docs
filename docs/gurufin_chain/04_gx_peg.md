@@ -47,6 +47,17 @@ Guru-PEG is designed with multiple layers of protection to handle edge cases and
 | **Peg Buffer** | A reserve mechanism absorbs short-term price shocks, smoothing the fee curve during periods of extreme volatility. |
 | **Emergency Fallback / Circuit Breaker** | If the oracle network becomes unresponsive or a critical fault is detected, the protocol falls back to a stale-but-safe price and locks the gas price at a fixed rate until normal operations resume. |
 
+## Known Limitations & Mitigations
+
+### Oracle Latency
+Guru-PEG price feeds update on a per-block basis. In rare cases where GXN price moves rapidly between oracle update intervals (typically ~2 seconds), the gas price may briefly diverge from the true market rate. The price deviation checks and gas fee floor/ceiling safeguards mitigate the impact of this divergence.
+
+### MEV Considerations
+Because Guru-PEG uses oracle-derived prices rather than on-chain order books, traditional MEV strategies (front-running, sandwich attacks) are not applicable to gas pricing itself. However, applications built on-chain should implement their own MEV protection measures (e.g., private transaction relays, commit-reveal schemes) where appropriate.
+
+### Extreme Market Events
+During periods of extreme token price volatility (e.g., >20% single-day moves), the emergency fallback / circuit breaker may activate, temporarily freezing gas price updates. The protocol falls back to the last confirmed price with a conservative buffer until the oracle network stabilizes.
+
 ## What This Enables
 
 By keeping transaction costs predictable and consumer-friendly, Guru-PEG makes Gurufin Chain suitable for:

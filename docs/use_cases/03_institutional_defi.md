@@ -4,8 +4,8 @@ Institutional DeFi on the Gurufin Chain allows traditional financial entities to
 
 **Institutional Value Propositions**
 
-* **Tokenized Asset Settlement:** Sub-second deterministic finality enables true, instant Delivery-versus-Payment (DvP) for tokenized securities, eliminating settlement latency and counterparty risk.
-* **Collateral & Treasury Management:** The Oracle Priced Reserve Swap (OPRS) architecture ensures that large-volume collateral rebalancing or FX hedging executes at precise real-world rates with zero slippage.
+* **Tokenized Asset Settlement:** Sub-second deterministic on-chain finality enables true, instant Delivery-versus-Payment (DvP) for tokenized securities within a single chain. For cross-chain IBC settlements, end-to-end finality is typically 5–30 seconds depending on the chain pair, but remains deterministic and trustless.
+* **Collateral & Treasury Management:** The Oracle Priced Reserve Swap (OPRS) architecture ensures that large-volume collateral rebalancing or FX hedging executes at precise real-world rates with **negligible slippage** for standard trade sizes, with larger orders benefiting from time-weighted execution to further minimize impact.
 * **Supervisory Observability & Privacy:** The platform embeds wallet-tier KYC/AML and FATF Travel Rule metadata directly at the consensus layer. Optional zero-knowledge proofs (zkGuru) allow institutions to maintain trade confidentiality while remaining fully auditable by authorized supervisors.
 
 **Core Use Cases**

@@ -46,7 +46,9 @@ The total supply is distributed across nine categories, designed to align incent
 
 ## Economic Sustainability
 
-A percentage of all collected GXN transaction fees is permanently burned by routing it to the **Gurufin Abyss Ledger (GAL)**, a keyless on-chain address that functions as a provably unspendable "burn address." When GXN is sent to GAL, it is removed from circulation forever, creating a deflationary pressure that scales with network usage.
+A percentage of all collected GXN transaction fees is permanently burned by routing it to the **Gurufin Abyss Ledger (GAL)**, a keyless on-chain address that functions as a provably unspendable "burn address." The GAL is a deterministic, publicly auditable address whose private key is mathematically derivable but computationally infeasible to reconstruct — effectively a cryptographic black hole. When GXN is sent to GAL, it is removed from circulation forever, creating a deflationary pressure that scales with network usage.
+
+**How the Burn Works in Practice:** A configurable percentage (set by governance) of each transaction fee is automatically routed to GAL at the protocol level. The remaining fees are distributed to validators and delegators. This means the burn operates transparently and continuously — every transaction on the chain contributes to the deflationary mechanism.
 
 **Why a Burn Address?**
 The burn mechanism reduces the circulating supply over time, aligning long-term usage of the network with token value accrual. As transaction volume grows, more GXN is burned — creating a natural feedback loop between network adoption and token scarcity.

@@ -12,4 +12,4 @@ Central banks and financial institutions require robust, regulatory-compliant in
 
 A major hurdle for institutional cross-border settlement is international interoperability. By utilizing the Gurufin Chain as a neutral settlement hub, different sovereign digital currencies can interact seamlessly.
 * **Atomic PvP Settlement:** Inter-Blockchain Communication (IBC) facilitates Payment-versus-Payment settlement between sovereign chains, eliminating Herstatt (principal) risk in cross-border trade.
-* **Oracle-Guided Exchange:** The Guruswap OPRS architecture ensures that cross-border swaps execute at precise, oracle-verified FX rates with zero slippage, bypassing the need for speculative liquidity pools.
+* **Oracle-Guided Exchange:** The Guruswap OPRS architecture ensures that cross-border swaps execute at precise, oracle-verified FX rates with **negligible slippage** under normal market conditions, bypassing the need for speculative liquidity pools. (Note: during extreme volatility events, slippage may occur if oracle updates lag real-market movements.)
