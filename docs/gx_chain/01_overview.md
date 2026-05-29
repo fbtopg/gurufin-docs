@@ -12,9 +12,11 @@ GX Chain is a sovereign stablecoin framework designed for the next generation of
 Gas is paid in the local GX stablecoin, with transaction fees denominated and fixed in local fiat terms within narrow bands (e.g., ~$0.01 per retail transaction). This ensures predictable point-of-sale usability.
 
 **Offline Payments**
-For intermittent-connectivity environments, GX supports an offline mode for low-value flows using secure hardware attestations, reconciled to the chain when connectivity returns.
+For intermittent-connectivity environments, GX supports an offline mode for low-value flows using secure hardware attestations, reconciled to the chain when connectivity returns. This feature is currently available for internal testing only and is not yet enabled on the public testnet.
 
-**Performance Benchmarks**
-* **Finality:** <1 second (~500ms achieved).
-* **Throughput:** 10,000+ TPS on commodity hardware.
-* **Uptime:** 99.97%.
+**Performance Targets**
+* **Finality:** Sub-second consensus on-chain (~500ms target, measured under controlled conditions).
+* **Throughput:** 10,000+ TPS target on commodity hardware (designed capacity, subject to mainnet validation).
+* **Uptime:** 99.97% uptime target.
+
+> **Note:** The above figures represent design targets achieved during internal testing. Actual mainnet performance may vary based on network load, validator distribution, and hardware configuration.
