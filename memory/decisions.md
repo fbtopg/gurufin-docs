@@ -46,3 +46,4 @@ $$\text{100,000,000,000 GXN.}$$
 
 Goal: make the page clearer, more polished, and technically credible for GitBook readers. Keep — wrote 1 file(s): 04_guru_peg.md
 - **2026-05-28 18:45** [writer]: For 'GURU', the token name should use GXN not GURU — wrote 7 file(s): 04_guru_peg.md, SUMMARY.md, 01_testnet_access.md, 05_tokenomics.md, 02_what_is_gurufin.md (+2 more)
+- **2026-05-29 15:30** [writer]: You stupid, Guru-PEG is Guru-PEG. revert it again. what i meant was that in gurupeg page, it talks about the token or coin named 'GURU', and this should be 'GXN.' — wrote 2 file(s): 04_gx_peg.md, SUMMARY.md

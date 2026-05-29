@@ -29,7 +29,7 @@ It defines every page and its position in the book.
 - `docs/gurufin_chain/01_protocol_overview.md`
 - `docs/gurufin_chain/02_network_architecture.md`
 - `docs/gurufin_chain/03_interoperability.md`
-- `docs/gurufin_chain/04_guru_peg.md`
+- `docs/gurufin_chain/04_gx_peg.md`
 - `docs/gurufin_chain/05_tokenomics.md`
 - `docs/gurufin_chain/06_governance.md`
 - ... and 14 more files
