@@ -9,6 +9,12 @@ Unlike traditional DeFi exchanges that rely on Automated Market Makers (AMMs) an
 * **Retail Spot Trading:** Users swap sovereign stablecoins (e.g., GXUSD to GXKRW) instantly via OPRS. Dynamic fees adjust based on the utilization of underlying inventory buffers, ensuring network equilibrium while maintaining minimal slippage on the FX rate. Oracle latency (typically <2s) is the primary source of any residual slippage. During periods of extreme market volatility, slippage may increase as oracle updates may lag rapid price movements.
 * **Institutional Trading:** Verified institutions execute large-volume trades via OPRS using real-time oracle pricing subject to custom compliance limits and a fixed fee structure.
 
+### Inventory Buffer Rebalancing Mechanism
+When sustained asymmetric flows drain a local buffer (e.g., massive GXKRW → GXUSD swaps), the protocol triggers a three-step rebalancing process:
+1. **Dynamic Fee Adjustment:** Swap fees increase automatically on the depleted chain, discouraging further one-sided flows and incentivizing reverse trades.
+2. **Cross-Chain Arbitrage Routing:** Excess stablecoins are routed via IBC to sovereign chains with buffer surplus, where they are sold at oracle-guided rates to restore equilibrium.
+3. **Banking API Top-Up:** If local bank reserves permit, licensed partners can instantly top up inventory buffers via the automated mint/burn API, maintaining deep liquidity without relying on external arbitrageurs.
+
 **Advanced Trading Applications**
 
 * **Cross-Chain Arbitrage:** Traders can exploit price differentials across jurisdiction-specific stablecoin chains. Inter-Blockchain Communication (IBC) allows atomic Payment-versus-Payment (PvP) settlement, eliminating principal risk. Note: while on-chain finality is sub-second (~500ms), cross-chain IBC transfers add packet relay overhead, so end-to-end settlement is typically 5–30 seconds depending on the chain pair.

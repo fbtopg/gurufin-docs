@@ -26,3 +26,9 @@ The Season 2 Testnet introduces the Tier 1 Hub and six Tier 2 sovereign stableco
 * **CometBFT RPC:** 26657
 * **Ethereum JSON-RPC:** 8545
 * **Ethereum WebSocket:** 8546
+
+### Endpoint Lifecycle & Migration
+Testnet endpoints (`trpc.gurufin.io`, `tscan.gurufin.io`) are subject to rotation, upgrades, or decommissioning as the testnet evolves. 
+* **Recommended Practice:** Always parameterize endpoint URLs in your integration code rather than hardcoding them.
+* **Migration Path:** Mainnet endpoints will follow the same hostname structure (`trpc.gurufin.io` → mainnet RPC, `tscan.gurufin.io` → mainnet explorer) and will be announced via official channels 30 days prior to mainnet launch.
+* **Status Page:** Real-time endpoint health and maintenance windows are published at [status.gurufin.io].

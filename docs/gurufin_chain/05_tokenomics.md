@@ -9,7 +9,7 @@ GXN serves four primary functions within the Gurufin ecosystem:
 * **Staking** — Securing the DPoS network via validator delegation.
 * **Governance** — Voting on protocol upgrades and treasury allocations.
 * **Fee Payment** — Execution of network transactions via GXN-PEG.
-* **Liquidity** — Provisioning for Guruswap OPRS trading infrastructure.
+* **Liquidity** — Provisioning for the Guruswap OPRS trading infrastructure.
 
 ## Total Supply
 
@@ -52,5 +52,7 @@ A percentage of all collected GXN transaction fees is permanently burned by rout
 
 **Why a Burn Address?**
 The burn mechanism reduces the circulating supply over time, aligning long-term usage of the network with token value accrual. As transaction volume grows, more GXN is burned — creating a natural feedback loop between network adoption and token scarcity.
+
+> **Note:** The burn rate is dynamically adjustable by governance based on network health. During periods of high inflationary pressure from Node Pool emissions, governance may increase the burn percentage to maintain deflationary balance.
 
 Validators and delegators are compensated via the Node Pool and an increasing share of network transaction fees. Burned fees are separate from validator rewards and do not reduce their earnings.

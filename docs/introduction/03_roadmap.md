@@ -4,7 +4,7 @@
 * Core technical infrastructure for Gurufin and GX chains.
 * Live Reserve Scanner (LRS) and Automated Mint/Burn mechanisms.
 * GXN-PEG implementation for fiat-predictable fees.
-* Independent security audit by Sherlock.
+* Independent security audit by Sherlock — Completed. Full report will be published alongside mainnet launch.
 
 **Phase 2: Expansion (In Progress)**
 * Public Testnet launch.

@@ -34,6 +34,14 @@ By applying these Basel-aligned metrics, the GX network ensures that its reserve
 
 The horizon-specific liquidity coverage formula is:
 
+### Plain-Language Summary
+
+**What does this formula actually mean?** In simple terms, it measures whether the network has enough liquid cash and committed backup funding to cover the worst-case redemption scenario over any given time horizon. The numerator represents available liquidity (cash on hand + pre-arranged backup lines, adjusted for haircuts). The denominator represents the expected maximum redemptions under stress. As long as the ratio is above 1, the network can fully satisfy all redemption requests even during severe stress events. The utilization ratio (\(\rho^*\)) must stay below 1 — meaning repo backup lines are never expected to be fully consumed in normal operations.
+
+### Technical Formula
+
+For technical reviewers, the calculation is:
+
 $$
 \text{GX-LCR}(H) = \frac{H_0 + (1 - h) \cdot \rho}{\text{ES}_\alpha[R_D^H]}
 $$
@@ -45,7 +53,5 @@ $$
 - \(\text{ES}_\alpha[R_D^H]\) — Expected Shortfall of redemptions over horizon \(H\) at confidence level \(\alpha\)
 
 The target is GX-LCR(H) ≥ 1 with a supervisory buffer. The utilization ratio \(\rho^* = \lambda/\mu\) must remain below 1 for operational stability, where \(\lambda\) is the redemption arrival rate and \(\mu\) is the service rate.
-
-### Plain-Language Summary
 
 **What does this formula actually mean?** In simple terms, it measures whether the network has enough liquid cash and committed backup funding to cover the worst-case redemption scenario over any given time horizon. The numerator represents available liquidity (cash on hand + pre-arranged backup lines, adjusted for haircuts). The denominator represents the expected maximum redemptions under stress. As long as the ratio is above 1, the network can fully satisfy all redemption requests even during severe stress events. The utilization ratio (\(\rho^*\)) must stay below 1 — meaning repo backup lines are never expected to be fully consumed in normal operations.

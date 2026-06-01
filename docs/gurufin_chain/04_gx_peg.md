@@ -53,7 +53,9 @@ Guru-PEG is designed with multiple layers of protection to handle edge cases and
 Guru-PEG price feeds update on a per-block basis. In rare cases where GXN price moves rapidly between oracle update intervals (typically ~2 seconds), the gas price may briefly diverge from the true market rate. The price deviation checks and gas fee floor/ceiling safeguards mitigate the impact of this divergence.
 
 ### MEV Considerations
-Because Guru-PEG uses oracle-derived prices rather than on-chain order books, traditional MEV strategies (front-running, sandwich attacks) are not applicable to gas pricing itself. However, applications built on-chain should implement their own MEV protection measures (e.g., private transaction relays, commit-reveal schemes) where appropriate.
+Because Guru-PEG uses oracle-derived prices rather than on-chain order books, traditional MEV strategies (front-running, sandwich attacks) are not applicable to gas pricing itself. 
+
+**OPRS MEV Protection:** For Oracle Priced Reserve Swaps, the protocol enforces an oracle staleness check (max 5-second delay) and a maximum slippage tolerance per swap. If the oracle update lags market movements beyond configured thresholds, the swap is either repriced conservatively or cancelled, preventing MEV bots from extracting value during latency windows. Applications built on-chain should also implement private transaction relays where appropriate.
 
 ### Extreme Market Events
 During periods of extreme token price volatility (e.g., >20% single-day moves), the emergency fallback / circuit breaker may activate, temporarily freezing gas price updates. The protocol falls back to the last confirmed price with a conservative buffer until the oracle network stabilizes.
