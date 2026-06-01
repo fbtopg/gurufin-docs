@@ -22,7 +22,6 @@ It defines every page and its position in the book.
 - `.gitbook/assets/Gemini_Generated_Image_iljs2xiljs2xiljs.jpg`
 
 ### docs/
-- `docs/SUMMARY.md`
 - `docs/developer_resources/01_testnet_access.md`
 - `docs/developer_resources/02_api_reference.md`
 - `docs/developer_resources/03_full_developer_docs.md`
@@ -32,7 +31,8 @@ It defines every page and its position in the book.
 - `docs/gurufin_chain/04_gx_peg.md`
 - `docs/gurufin_chain/05_tokenomics.md`
 - `docs/gurufin_chain/06_governance.md`
-- ... and 14 more files
+- `docs/gurufin_chain/07_validator_guide.md`
+- ... and 13 more files
 
 ### pr-drafts/
 - `pr-drafts/01_주권안디지털통화_안정적_미래.md`

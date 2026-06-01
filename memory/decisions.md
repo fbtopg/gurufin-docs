@@ -50,3 +50,4 @@ Goal: make the page clearer, more polished, and technically credible for GitBook
 - **2026-05-29 16:33** [writer]: from issue 1 to 19, what are the best ways to correct the issue or add text to include in the respective doc? — wrote 4 file(s): _sidebar.json, 02_api_reference.md, 06_governance.md, 01_cross_border_payments.md
 - **2026-05-29 18:21** [writer]: continue — wrote 7 file(s): _sidebar.json, 01_overview.md, 05_tokenomics.md, 02_reserve_and_backing.md, 06_governance.md (+2 more)
 - **2026-05-29 19:08** [writer]: continue — wrote 7 file(s): 03_institutional_defi.md, 04_government_and_institutional.md, 01_cross_border_payments.md, 02_stablecoin_fx_trading.md, 06_governance.md (+2 more)
+- **2026-06-01 10:40** [writer]: Apply them for me. — wrote 11 file(s): 01_protocol_overview.md, 04_gx_peg.md, 05_tokenomics.md, 02_reserve_and_backing.md, 06_governance.md (+6 more)
