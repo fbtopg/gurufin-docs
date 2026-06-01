@@ -6,10 +6,7 @@ Gurufin Chain utilizes an on-chain governance system where native token holders 
 The protocol enforces strict, hardcoded parameters to ensure rapid but secure decision-making:
 * **Voting Period:** Exactly **14 Days**. (This aligns with efficient network agility while allowing sufficient time for stakeholder review).
 * **Quorum Requirement:** **33.4%**. (At least 33.4% of the total staked voting power must participate for a proposal to be considered valid).
-* **Timelock:** **Phase 1 — None**. (If a proposal achieves quorum and passes the voting threshold, it is executed immediately upon the conclusion of the voting period). This is a deliberate tradeoff for rapid iteration during the testnet phase. **Institutional Note:** The absence of a timelock is a known limitation and a stated risk for mainnet. It will be replaced by a configurable 24–72 hour timelock before mainnet launch to allow users and protocols to hedge against unexpected parameter changes.
-
-**Phase 2 Timelock Upgrade**
-For mainnet, the protocol is designed to introduce a configurable timelock (typically 24–72 hours) between proposal passage and execution. This will provide a final window for users to withdraw or hedge against unexpected parameter changes, addressing a key concern of institutional participants. The timelock mechanism and duration will be set by governance before mainnet launch.
+* **Timelock:** **Phase 1 — None**. (If a proposal achieves quorum and passes the voting threshold, it is executed immediately upon the conclusion of the voting period). This is a deliberate tradeoff for rapid iteration during the testnet phase. **Institutional Note:** The absence of a timelock is a known limitation and a stated risk for mainnet. A timelock mechanism will be evaluated by governance ahead of mainnet launch to determine whether a configurable delay is appropriate to allow users and protocols to hedge against unexpected parameter changes.
 
 **Delegated Voting**
 Users who delegate their tokens to a validator inherit that validator's vote by default. However, delegators retain the right to override their validator's decision by casting an individual vote on any active proposal.
