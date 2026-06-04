@@ -30,3 +30,4 @@
 * [Testnet Access](./docs/developer_resources/01_testnet_access.md)
 * [API Reference](./docs/developer_resources/02_api_reference.md)
 * [Full Developer Docs](./docs/developer_resources/03_full_developer_docs.md)
+* [QnA (문서 정확성 검토)](./docs/QnA.md)
