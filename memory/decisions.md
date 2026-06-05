@@ -1,22 +1,6 @@
 ## Archived Decisions Summary
 
-- 2026-04-10 18:12: Do i have to do something? or you can just do something so gitbook knows what to read to structure the sidebar? — wrote 1 file(s): _sidebar.json
-- 2026-04-10 18:14: continue — wrote 1 file(s): _sidebar.json
-- 2026-04-10 18:19: but we are pushing this repo to github and gitbook imports(?) the github repo. — wrote 1 file(s): SUMMARY.md
-- 2026-04-10 18:28: i don't want a folder approach but you have to make a categorized sidebar that don't have dropdowns but pages are linked to md files respectively and they are grouped into categories accordingly. — wrote 2 file(s): SUMMARY.md, _sidebar.json
-- 2026-04-10 20:18: Continue — wrote 6 file(s): 01_protocol_overview.md, 03_interoperability.md, 04_guru_peg.md, 06_governance.md, 01_overview.md (+1 more)
-- 2026-04-11 10:56: Write ten X posts about Gurufin by understanding gurufin-gitbook project. Ten individual posts talking about each different concepts. — wrote 1 file(s): gurufin-x-posts.md
-- 2026-04-14 15:35: each file has links, hyperlinks, cross reference links that are making docs messy. remove all those links. — wrote 5 file(s): SUMMARY.md, 01_protocol_overview.md, 01_vision_mission.md, 02_what_is_gurufin.md, remove_links.py
-- 2026-04-14 15:57: go ahead — wrote 2 file(s): clean_links.py, 02_what_is_gurufin.md
-- 2026-04-14 16:19: Not the SUMMARY.md though.. — wrote 1 file(s): SUMMARY.md
-- 2026-04-14 16:24: Vision & Mission is not linked to the right file. remove Whitepaper from SUMMARY file. — wrote 1 file(s): SUMMARY.md
-- 2026-04-14 16:27: GX STABLECOIN NETWORK category's pages are not linked to the right files. — wrote 1 file(s): SUMMARY.md
-- 2026-04-15 09:28: In Gurufin Chain's category, the Protocol Overview page, remove the "Related Pages" section — wrote 1 file(s): 01_protocol_overview.md
-- 2026-04-15 11:03: /home/geonu/workspace/gurufin-gitbook/docs/gurudex/01_dex_overview.md — wrote 1 file(s): 01_dex_overview.md
-- 2026-04-15 11:21: home/geonu/workspace/projects/gurufin-gitbook/docs/introduction/02_what_is_gurufin.md file has to much information when other files in the same folder have been designated to each concept. — wrote 1 file(s): 02_what_is_gurufin.md
-- 2026-04-25 09:31: Yes — wrote 3 file(s): SUMMARY.md, SUMMARY.md, _sidebar.json
-
-- **2026-05-21 13:55** [writer]: Continue — wrote 10 file(s): 01_주권안디지털통화_안정적_미래.md, 02_스테이블코인_규제_동향_글로벌_표준_논의.md, 03_온체인_환전_다국적_디지털경제의필수조건.md, 04_주권_디지털통화_신흥국_금융주권.md, 05_스테이블코인과_CBD_CBDvs스테이블코인.md (+5 more)
+- 2026-05-21 13:55: Continue — wrote 10 file(s): 01_주권안디지털통화_안정적_미래.md, 02_스테이블코인_규제_동향_글로벌_표준_논의.md, 03_온체인_환전_다국적_디지털경제의필수조건.md, 04_주권_디지털통화_신흥국_금융주권.md, 05_스테이블코인과_CBD_CBDvs스테이블코인.md (+5 more)
 
 - **2026-05-27 18:05** [writer]: for gurufin-gitbook project, in Tokenomics page, the allocation should be below.
 ## 10.2.2 Total Supply & Allocation
@@ -41,17 +25,29 @@ $$\text{100,000,000,000 GXN.}$$
 - **2026-05-28 17:12** [writer]: the Protocol Overview page content is a bit weird. don't make it too long but write it again cause like it's emphasizing that it does not host automated market makers and stuff which is not the main c — wrote 1 file(s): 01_protocol_overview.md
 
 - **2026-05-28 17:22** [writer]: i still see government & CBDC on sidebar and also ecosystem grant program on the sidebar. i don't want to see them. — wrote 1 file(s): _sidebar.json
+
 - **2026-05-28 17:30** [writer]: remove technical review category and pages under it. — wrote 1 file(s): SUMMARY.md
+
 - **2026-05-28 18:25** [writer]: Edit the existing **Guru Peg / Guru-PEG** page in the `gurufin-gitbook` project using the context below.
 
 Goal: make the page clearer, more polished, and technically credible for GitBook readers. Keep — wrote 1 file(s): 04_guru_peg.md
+
 - **2026-05-28 18:45** [writer]: For 'GURU', the token name should use GXN not GURU — wrote 7 file(s): 04_guru_peg.md, SUMMARY.md, 01_testnet_access.md, 05_tokenomics.md, 02_what_is_gurufin.md (+2 more)
+
 - **2026-05-29 15:30** [writer]: You stupid, Guru-PEG is Guru-PEG. revert it again. what i meant was that in gurupeg page, it talks about the token or coin named 'GURU', and this should be 'GXN.' — wrote 2 file(s): 04_gx_peg.md, SUMMARY.md
+
 - **2026-05-29 16:33** [writer]: from issue 1 to 19, what are the best ways to correct the issue or add text to include in the respective doc? — wrote 4 file(s): _sidebar.json, 02_api_reference.md, 06_governance.md, 01_cross_border_payments.md
+
 - **2026-05-29 18:21** [writer]: continue — wrote 7 file(s): _sidebar.json, 01_overview.md, 05_tokenomics.md, 02_reserve_and_backing.md, 06_governance.md (+2 more)
+
 - **2026-05-29 19:08** [writer]: continue — wrote 7 file(s): 03_institutional_defi.md, 04_government_and_institutional.md, 01_cross_border_payments.md, 02_stablecoin_fx_trading.md, 06_governance.md (+2 more)
+
 - **2026-06-01 10:40** [writer]: Apply them for me. — wrote 11 file(s): 01_protocol_overview.md, 04_gx_peg.md, 05_tokenomics.md, 02_reserve_and_backing.md, 06_governance.md (+6 more)
+
 - **2026-06-01 17:20** [writer]: for the timelock, don't say it will be replaced by a configurable 24-72 hour timelock before mainnet cause nothing is confirmed about it yet. — wrote 1 file(s): 06_governance.md
+
 - **2026-06-04 15:51** [writer]: for gurufin-gitbook project, make QnA list of pdf in korean. Q is the fundamental and important operational/technical questions based on the docs and A is the answer based on the docs.
 
 Purpose of thi — wrote 2 file(s): QnA.md, SUMMARY.md
+
+- **2026-06-04 17:59** [builder]: There are 'QnA.md' file in both guruswap-gitbook and gurufin-gitbook project. Build website like a multiform quiz where each page shows one question and answer pair and viewer should press either '맞음' — wrote 3 file(s): index.html, build.js, generate.js

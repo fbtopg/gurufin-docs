@@ -17,6 +17,6 @@ When sustained asymmetric flows drain a local buffer (e.g., massive GXKRW → GX
 
 **Advanced Trading Applications**
 
-* **Cross-Chain Arbitrage:** Traders can exploit price differentials across jurisdiction-specific stablecoin chains. Inter-Blockchain Communication (IBC) allows atomic Payment-versus-Payment (PvP) settlement, eliminating principal risk. Note: while on-chain finality is sub-second (~500ms), cross-chain IBC transfers add packet relay overhead, so end-to-end settlement is typically 5–30 seconds depending on the chain pair.
+* **Cross-Chain Arbitrage:** Traders can exploit price differentials across jurisdiction-specific stablecoin chains. Inter-Blockchain Communication (IBC) allows atomic Payment-versus-Payment (PvP) settlement, eliminating principal risk. Note: while on-chain finality is sub-second (~500ms), cross-chain IBC transfers add packet relay overhead, so end-to-end settlement is typically 3-10 seconds depending on the chain pair.
 * **Tokenized FX Derivatives:** Developers can build tokenized FX derivatives (futures, options) that settle instantly on-chain. The OPRS architecture ensures the underlying spot rates are highly accurate and manipulation-resistant.
 * **Enterprise Treasury Management:** Corporates can automate FX conversions and manage global liquidity reserves with predictable costs, minimal slippage, and full regulatory transparency.

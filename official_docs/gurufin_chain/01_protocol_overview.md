@@ -16,7 +16,7 @@ Gurufin Chain uses **Tendermint BFT** combined with **DPoS**. Validators stake G
 ### Settlement Finality Clarification
 
 * **Single-Chain Finality:** ~500ms deterministic finality via Tendermint BFT.
-* **Cross-Chain Settlement (IBC):** 5–30 seconds end-to-end, depending on packet relay and chain pair. Cross-chain swaps are deterministic but bound by inter-chain communication overhead.
+* **Cross-Chain Settlement (IBC):** 3-10 seconds end-to-end, depending on packet relay and chain pair. Cross-chain swaps are deterministic but bound by inter-chain communication overhead.
 
 **Protocol Role**
 
