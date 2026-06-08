@@ -9,10 +9,10 @@ GX Chain is a sovereign stablecoin framework designed for the next generation of
 * **IBC Interoperability:** Atomic cross-chain transfers to the Gurufin Chain.
 
 **Fees & Gas**
-Gas is paid in the local GX stablecoin, with transaction fees denominated and fixed in local fiat terms within narrow bands (e.g., ~$0.01 per retail transaction). This ensures predictable point-of-sale usability.
+Gas is paid in the local GX stablecoin, with transaction fees denominated and fixed in local fiat terms within narrow bands (e.g., ~$0.01 per B2B transaction). This ensures predictable B2B usability.
 
 **Offline Payments**
-For intermittent-connectivity environments, GX supports an offline mode for low-value flows using secure hardware attestations, reconciled to the chain when connectivity returns. This feature is currently available for internal testing only and is not yet enabled on the public testnet.
+For intermittent-connectivity environments, GX supports an offline mode for low-frequency B2B flows using secure hardware attestations, reconciled to the chain when connectivity returns. This feature is currently available for internal testing only and is not yet enabled on the public testnet.
 
 **Performance Targets**
 * **Finality:** Sub-second consensus on-chain (~500ms target, measured under controlled conditions).

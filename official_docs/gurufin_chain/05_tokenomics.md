@@ -51,7 +51,7 @@ A percentage of all collected GXN transaction fees is permanently burned by rout
 **How the Burn Works in Practice:** A configurable percentage (set by governance) of each transaction fee is automatically routed to GAL at the protocol level. The remaining fees are distributed to validators and delegators. This means the burn operates transparently and continuously — every transaction on the chain contributes to the deflationary mechanism.
 
 **Why a Burn Address?**
-The burn mechanism reduces the circulating supply over time, aligning long-term usage of the network with token value accrual. As transaction volume grows, more GXN is burned — creating a natural feedback loop between network adoption and token scarcity.
+The burn mechanism reduces the circulating supply over time, aligning long-term network utilization with network value accrual. As transaction throughput grows, more GXN is burned — creating a natural feedback loop between network throughput volume and token scarcity.
 
 > **Note:** The burn rate is dynamically adjustable by governance based on network health. During periods of high inflationary pressure from Node Pool emissions, governance may increase the burn percentage to maintain deflationary balance.
 

@@ -1,12 +1,12 @@
 # Guru-PEG (Price Equilibrium Governance)
 
-Guru-PEG is the gas pricing mechanism of Gurufin Chain. It decouples user transaction costs from the volatility of the native GXN token, enabling predictable, fiat-indexed fees that remain stable regardless of market conditions.
+Guru-PEG is the gas pricing mechanism of Gurufin Chain. It decouples counterparty transaction costs from the volatility of the native GXN token, enabling predictable, fiat-indexed fees that remain stable regardless of market conditions.
 
 ## Why Guru-PEG Matters
 
-In most blockchain networks, gas fees are denominated in the native token. When the token price surges, a flat token-based fee translates into a much higher fiat cost for users. This volatility creates friction for everyday transactions and makes the chain unsuitable for high-frequency use cases like retail payments or enterprise operations.
+In most blockchain networks, gas fees are denominated in the native token. When the token price surges, a flat token-based fee translates into a much higher fiat cost for counterparties. This volatility creates friction for time-critical settlement workflows and makes the chain unsuitable for high-frequency use cases like enterprise operations.
 
-Guru-PEG solves this by designing the gas price so that a typical transfer costs approximately **$0.013** — a predictable, consumer-friendly rate — even as the GXN token price fluctuates.
+Guru-PEG solves this by designing the gas price so that a typical transfer costs approximately **$0.013** — a predictable, enterprise-grade rate — even as the GXN token price fluctuates.
 
 ## How It Works
 
@@ -32,7 +32,7 @@ When GXN's price rises, the required GXN per transaction decreases. When GXN's p
 2. **Validation & Aggregation** — Reported prices are validated against each other. An outlier filter removes anomalous readings, and the aggregated value is derived using median or quorum-based logic to reduce the impact of any single compromised feed.
 3. **Protocol Update** — The protocol contract reads the aggregated price and recalculates the `min_gas_price` in GXN using the formula above. This update occurs each block (or at a configured interval) to keep the fee responsive to market conditions.
 4. **Dynamic Inverse Adjustment** — As GXN's price rises, fewer GXN tokens are needed per gas unit, and vice versa. This inverse relationship is what keeps the fiat-equivalent cost stable for users.
-5. **User Experience** — Wallets and applications display the estimated fee in both GXN and the user's preferred fiat currency, so the stable cost is transparent at the point of interaction.
+5. **Counterparty Experience** — Wallets and applications display the estimated fee in both GXN and the counterparty's preferred fiat currency, so the stable cost is transparent at the point of interaction.
 
 ## Safeguards & Fault Tolerance
 
@@ -62,8 +62,8 @@ During periods of extreme token price volatility (e.g., >20% single-day moves), 
 
 ## What This Enables
 
-By keeping transaction costs predictable and consumer-friendly, Guru-PEG makes Gurufin Chain suitable for:
+By keeping transaction costs predictable and enterprise-grade, Guru-PEG makes Gurufin Chain suitable for:
 
-- **Retail payments** — micro-transactions and point-of-sale payments that require stable, low-cost settlement.
+- **Automated Corporate Settlements** — time-critical B2B payments that require stable, low-cost settlement.
 - **Enterprise operations** — supply chain tracking, automated invoicing, and recurring on-chain workflows.
 - **High-frequency use cases** — any application where volatile gas fees would introduce unacceptable cost uncertainty.

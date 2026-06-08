@@ -6,7 +6,7 @@ Gurufin Chain is a public Delegated Proof-of-Stake (DPoS) Layer-1 blockchain bui
 
 * **Fast finality** — Sub-second block times with deterministic consensus, ensuring transactions are confirmed almost instantly on-chain.
 * **High throughput** — Designed for up to 10,000 TPS under optimal conditions. (Benchmark targets will be published alongside mainnet audit results.)
-* **Low cost** — Minimal gas fees make micro-transfers and frequent settlements practical.
+* **Low cost** — Minimal gas fees make high-frequency B2B settlement and frequent transactions practical.
 * **Neutral routing layer** — Connects sovereign stablecoin networks (like the GX Stablecoin network) and external liquidity hubs without requiring protocol-level AMMs or native stablecoin issuance.
 
 **Consensus**

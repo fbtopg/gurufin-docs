@@ -9,7 +9,7 @@ The protocol enforces strict, hardcoded parameters to ensure rapid but secure de
 * **Timelock:** **Phase 1 — None**. (If a proposal achieves quorum and passes the voting threshold, it is executed immediately upon the conclusion of the voting period). This is a deliberate tradeoff for rapid iteration during the testnet phase. **Institutional Note:** The absence of a timelock is a known limitation and a stated risk for mainnet. A timelock mechanism will be evaluated by governance ahead of mainnet launch to determine whether a configurable delay is appropriate to allow users and protocols to hedge against unexpected parameter changes.
 
 **Delegated Voting**
-Users who delegate their tokens to a validator inherit that validator's vote by default. However, delegators retain the right to override their validator's decision by casting an individual vote on any active proposal.
+Counterparties who delegate their tokens to a validator inherit that validator's vote by default. However, delegators retain the right to override their validator's decision by casting an individual vote on any active proposal.
 
 **Proposal Types**
 | Type | Description | Execution |
