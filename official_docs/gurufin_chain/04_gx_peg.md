@@ -24,7 +24,7 @@ Where:
 - **`current_GXN_price_USD`** — the live USD price of GXN as reported by the oracle network
 - **`min_gas_price_GXN`** — the resulting minimum gas price in GXN per unit of computation
 
-When GXN's price rises, the required GXN per transaction decreases. When GXN's price falls, the required GXN increases. The user-facing fiat cost stays stable.
+When GXN's price rises, the required GXN per transaction decreases. When GXN's price falls, the required GXN increases. The counterparty-facing fiat cost stays stable.
 
 ### Step-by-Step Mechanism
 
@@ -32,7 +32,7 @@ When GXN's price rises, the required GXN per transaction decreases. When GXN's p
 2. **Validation & Aggregation** — Reported prices are validated against each other. An outlier filter removes anomalous readings, and the aggregated value is derived using median or quorum-based logic to reduce the impact of any single compromised feed.
 3. **Protocol Update** — The protocol contract reads the aggregated price and recalculates the `min_gas_price` in GXN using the formula above. This update occurs each block (or at a configured interval) to keep the fee responsive to market conditions.
 4. **Dynamic Inverse Adjustment** — As GXN's price rises, fewer GXN tokens are needed per gas unit, and vice versa. This inverse relationship is what keeps the fiat-equivalent cost stable for users.
-5. **Counterparty Experience** — Wallets and applications display the estimated fee in both GXN and the counterparty's preferred fiat currency, so the stable cost is transparent at the point of interaction.
+5. ****Counterparty Experience** — Wallets and applications display the estimated fee in both GXN and the counterparty's preferred fiat currency, so the stable cost is transparent at the point of interaction.
 
 ## Safeguards & Fault Tolerance
 

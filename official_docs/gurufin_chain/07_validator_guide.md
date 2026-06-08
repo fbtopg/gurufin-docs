@@ -18,5 +18,5 @@ Validators earn rewards from the Node Pool emissions (25% of total supply) and a
 **Economic Sustainability**
 Operating enterprise-grade nodes with HSMs, compliance screening, and SLA guarantees requires sustainable economics. The validator business model relies on two revenue streams:
 1. **Node Pool Emissions:** Fixed block rewards from the 25% Node Pool allocation, distributed proportionally to active validators and their delegators.
-2. **Transaction Fees:** While fees are pegged at ~$0.01/tx, high-frequency enterprise workflows (supply chain tracking, automated invoicing, micro-settlements) generate consistent base revenue. As network adoption scales, fee revenue compounds independently of token price volatility.
+2. **Transaction Fees:** While fees are pegged at ~$0.01/tx, high-frequency enterprise workflows (supply chain tracking, automated invoicing, batch settlements) generate consistent base revenue. As network throughput scales, fee revenue compounds independently of token price volatility.
 3. **Institutional SLAs:** Validators may offer premium uptime guarantees or compliance reporting to institutional clients for additional fee-based services, creating a diversified revenue model beyond protocol emissions.

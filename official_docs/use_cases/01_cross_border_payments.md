@@ -1,12 +1,12 @@
 # Cross-Border Payments
 
-Traditional remittance and B2B payment systems suffer from high costs, slow settlement times, and counterparty risks. Gurufin Chain offers a transformative solution tailored for both retail remittances and enterprise-level B2B transactions.
+Traditional remittance and B2B payment systems suffer from high costs, slow settlement times, and counterparty risks. Gurufin Chain offers a transformative solution tailored for enterprise-level B2B transactions and cross-border corporate payments.
 
 **Key Architectural Advantages**
-* **Cost-Efficiency:** The GXN-PEG mechanism indexes gas to fiat, providing predictable, retail-grade fee stability (~$0.013 per standard transfer).
+* **Cost-Efficiency:** The GXN-PEG mechanism indexes gas to fiat, providing predictable, enterprise-grade fee stability (~$0.013 per standard transfer).
 * **Atomic PvP Settlement:** IBC eliminates principal and bridge risk by ensuring the simultaneous exchange of payment legs.
 * **Minimal Slippage FX:** Guruswap uses Oracle Priced Reserve Swaps (OPRS) rather than AMMs, executing cross-currency conversions at precise oracle-guided market rates. Slippage is kept negligible under normal conditions; large-ticket trades may use time-weighted execution to further minimize impact.
-* **Embedded Compliance:** Wallet-tiered KYC/AML, sanctions screening, and FATF Travel Rule metadata are embedded directly at the consensus level.
+* **Embedded Compliance:** Compliance-tiered KYC/AML, sanctions screening, and FATF Travel Rule metadata are embedded directly at the consensus level.
 
 **Use Case Examples**
 

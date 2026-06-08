@@ -6,17 +6,17 @@ The Mint & Burn Mechanism enables automated issuance and redemption of sovereign
 
 **Minting Process**
 
-When a user deposits fiat into a custodian bank account, an automated minting event is initiated on the GX chain.
+When an institutional counterparty deposits fiat into a custodian bank account, an automated minting event is initiated on the GX chain.
 
-The bank API detects the fiat deposit and sends an event notification to the GX chain gateway module. A mint request is created referencing the bank event ID with a unique transaction identifier. Licensed validators review and verify the deposit authenticity, compliance status, and reserve sufficiency. The system performs an idempotency check to ensure this specific deposit hasn't already been processed. Upon reaching quorum approval, the mint transaction executes on-chain. The transaction reaches deterministic finality within sub-second, and stablecoins are credited to the user's wallet.
+The bank API detects the fiat deposit and sends an event notification to the GX chain gateway module. A mint request is created referencing the bank event ID with a unique transaction identifier. Licensed validators review and verify the deposit authenticity, compliance status, and reserve sufficiency. The system performs an idempotency check to ensure this specific deposit hasn't already been processed. Upon reaching quorum approval, the mint transaction executes on-chain. The transaction reaches deterministic finality within sub-second, and stablecoins are credited to the counterparty's custody account.
 
 ---
 
 **Burning Process**
 
-When a user redeems stablecoins, the burning process is initiated and fiat is released to the user.
+When an institutional counterparty redeems stablecoins, the burning process is initiated and fiat is released to the designated beneficiary account.
 
-The user submits a burn request via the GX chain gateway with a unique burn request ID. Validators verify compliance, reserve sufficiency, and user authorization. The system confirms the burn request hasn't been processed before. Stablecoins are burned on-chain, reducing circulating supply. The transaction reaches deterministic finality. The bank API triggers fiat release to the user's bank account, completing the redemption cycle.
+The counterparty submits a burn request via the GX chain gateway with a unique burn request ID. Validators verify compliance, reserve sufficiency, and counterparty authorization. The system confirms the burn request hasn't been processed before. Stablecoins are burned on-chain, reducing circulating supply. The transaction reaches deterministic finality. The bank API triggers fiat release to the designated beneficiary account, completing the settlement cycle.
 
 ---
 

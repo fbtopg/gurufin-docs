@@ -2,8 +2,8 @@
 
 GX stablecoins embed compliance directly into the consensus layer via the permissioned Proof-of-Authority model.
 
-**KYC/AML & Wallet Tiers**
-GX chains implement wallet-tier compliance. Users and institutions undergo identity verification before transacting. Different wallet tiers dictate transaction permissions, and all wallets are screened against global sanctions lists in real-time.
+**KYC/AML & Compliance Tiers**
+GX chains implement compliance-tier access control. Counterparties undergo identity verification before transacting. Different compliance tiers dictate transaction permissions, and all wallets are screened against global sanctions lists in real-time.
 
 **FATF Travel Rule**
 Transaction messages include encrypted originator and beneficiary details. Validators verify the presence of Travel Rule data before block inclusion, maintaining compliance even during cross-chain IBC transfers.
