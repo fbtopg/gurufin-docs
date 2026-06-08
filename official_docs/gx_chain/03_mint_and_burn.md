@@ -6,9 +6,11 @@ The Mint & Burn Mechanism enables automated issuance and redemption of sovereign
 
 **Minting Process**
 
-When an institutional counterparty deposits fiat into a custodian bank account, an automated minting event is initiated on the GX chain.
+When an institutional counterparty deposits fiat into a custodian bank account, the banking integration detects the incoming deposit and sends a deposit event to the GX chain gateway module. The gateway reconciles the event against bank settlement data, including the amount, sender, reference ID, and account details, then creates a mint request referencing the bank event ID with a unique idempotency key.
 
-The bank API detects the fiat deposit and sends an event notification to the GX chain gateway module. A mint request is created referencing the bank event ID with a unique transaction identifier. Licensed validators review and verify the deposit authenticity, compliance status, and reserve sufficiency. The system performs an idempotency check to ensure this specific deposit hasn't already been processed. Upon reaching quorum approval, the mint transaction executes on-chain. The transaction reaches deterministic finality within sub-second, and stablecoins are credited to the counterparty's custody account.
+Licensed validators or authorized approval parties verify the deposit authenticity, compliance status, counterparty authorization, and reserve sufficiency. The system also checks that the same bank event or transaction identifier has not already been processed, preventing duplicate issuance from repeated, delayed, or replayed deposit events.
+
+Once the required quorum approves the mint request, the mint transaction is submitted to the GX chain. When the transaction is executed in a block committed by the authorized validator set, the stablecoin contract updates the on-chain state by increasing circulating supply and crediting the counterparty’s custody account. Under GX chain’s PoA implementation of Tendermint BFT consensus, finality is reached when the validator quorum commits the block. At that point, the mint is final under the chain’s consensus rules and cannot be reversed through ordinary chain reorganization. This on-chain finality complements, but does not replace, the off-chain controls that verify fiat settlement, compliance status, idempotency, and reserve sufficiency before minting.
 
 ---
 

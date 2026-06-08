@@ -63,7 +63,7 @@
   "pages": [],
   "env_vars": [],
   "created": 1773716693.211852,
-  "updated": 1780905600.0883698,
+  "updated": 1780907400.0877566,
   "source": "project-scan-v1 git:https://github.com/fbtopg/gurufin-docs.git"
 }
 ```
@@ -75,5 +75,5 @@
 - Framework: gitbook
 - Deploy Target: gitbook
 - Directory: /home/geonu/workspace/projects/gurufin-gitbook
-- Updated: 1780905600.088370
+- Updated: 1780907400.087757
 - Files: .concept_graph/graph.json, .gitbook/assets/Gemini_Generated_Image_iljs2xiljs2xiljs.jpg, .gitignore, .pytest_cache/.gitignore, .pytest_cache/CACHEDIR.TAG, .pytest_cache/README.md, .pytest_cache/v/cache/nodeids, SUMMARY.md, _sidebar.json, internal_docs/technical_action_items.md
