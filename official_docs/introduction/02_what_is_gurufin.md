@@ -14,4 +14,4 @@ Gurufin is a financial infrastructure combining blockchain efficiency with insti
 * Fully backed 1:1 by fiat reserves in regulated custodians with 24/7 proof-of-reserves attestation.
 * Automated minting and burning via direct bank API integrations.
 
-**System Flow** GX Stablecoins are minted via licensed fiat deposits, flow to the Gurufin Chain via IBC for trading and DeFi activities, and can be redeemed for fiat at any time.
+**System Flow** GX Stablecoins are minted via licensed fiat deposits, flow to the Gurufin Chain via IBC for FX execution and DeFi activities, and can be redeemed for fiat at any time.

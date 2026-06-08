@@ -15,6 +15,10 @@
     ".concept_graph/graph.json",
     ".gitbook/assets/Gemini_Generated_Image_iljs2xiljs2xiljs.jpg",
     ".gitignore",
+    ".pytest_cache/.gitignore",
+    ".pytest_cache/CACHEDIR.TAG",
+    ".pytest_cache/README.md",
+    ".pytest_cache/v/cache/nodeids",
     "SUMMARY.md",
     "_sidebar.json",
     "internal_docs/technical_action_items.md",
@@ -59,7 +63,7 @@
   "pages": [],
   "env_vars": [],
   "created": 1773716693.211852,
-  "updated": 1780653600.0845695,
+  "updated": 1780905600.0883698,
   "source": "project-scan-v1 git:https://github.com/fbtopg/gurufin-docs.git"
 }
 ```
@@ -71,5 +75,5 @@
 - Framework: gitbook
 - Deploy Target: gitbook
 - Directory: /home/geonu/workspace/projects/gurufin-gitbook
-- Updated: 1780653600.084569
-- Files: .concept_graph/graph.json, .gitbook/assets/Gemini_Generated_Image_iljs2xiljs2xiljs.jpg, .gitignore, SUMMARY.md, _sidebar.json, internal_docs/technical_action_items.md, internal_docs/use_cases/04_government_and_institutional.md, official_docs/developer_resources/01_testnet_access.md, official_docs/developer_resources/02_api_reference.md, official_docs/developer_resources/03_full_developer_docs.md
+- Updated: 1780905600.088370
+- Files: .concept_graph/graph.json, .gitbook/assets/Gemini_Generated_Image_iljs2xiljs2xiljs.jpg, .gitignore, .pytest_cache/.gitignore, .pytest_cache/CACHEDIR.TAG, .pytest_cache/README.md, .pytest_cache/v/cache/nodeids, SUMMARY.md, _sidebar.json, internal_docs/technical_action_items.md

@@ -22,8 +22,8 @@
 * [Compliance & Regulation](./official_docs/gx_chain/05_compliance_and_regulation.md)
 
 ## Use Cases
-* [Cross-Border Payments](./official_docs/use_cases/01_cross_border_payments.md)
-* [Stablecoin FX Trading](./official_docs/use_cases/02_stablecoin_fx_trading.md)
+* [Corporate Cross-Border Payments](./official_docs/use_cases/01_cross_border_payments.md)
+* [Institutional FX Settlement & Execution](./official_docs/use_cases/02_stablecoin_fx_trading.md)
 * [Institutional DeFi](./official_docs/use_cases/03_institutional_defi.md)
 
 ## Developer Resources

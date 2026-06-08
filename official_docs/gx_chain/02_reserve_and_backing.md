@@ -1,6 +1,6 @@
 # Reserve & Backing
 
-The integrity and stability of GX stablecoins rest fundamentally on a robust reserve and backing framework. Every stablecoin issued on a GX chain is fully collateralized by fiat currency held in reserve at a 1:1 ratio. This strict backing model underpins the stablecoin's price stability and trustworthiness, ensuring that holders can redeem their tokens for fiat currency at any time without risk of shortfall.
+The integrity and stability of GX stablecoins rest fundamentally on a robust reserve and backing framework. Every stablecoin issued on a GX chain is fully collateralized by fiat currency held in reserve at a 1:1 ratio. This strict backing model underpins the stablecoin's price stability and trustworthiness, ensuring that institutional counterparties can redeem their tokens for fiat currency at any time without risk of shortfall.
 
 The 1:1 fiat backing is enforced through automated minting and burning mechanisms integrated with licensed banking partners via secure APIs. Token issuance only occurs upon verified receipt of fiat funds, and redemption triggers the corresponding fiat transfer, maintaining continuous parity between tokens in circulation and fiat reserves.
 
@@ -18,7 +18,7 @@ Liquidity against such securities is raised via **pre-arranged repo facilitiesâ€
 
 **24/7 Live Proof-of-Reserves**
 
-Transparency is a cornerstone of the GX ecosystem. To provide continuous assurance to users and regulators, the network implements a 24/7 live proof-of-reserves system leveraging blockchain technology and cryptographic proofs.
+Transparency is a cornerstone of the GX ecosystem. To provide continuous assurance to counterparties and regulators, the network implements a 24/7 live proof-of-reserves system leveraging blockchain technology and cryptographic proofs.
 
 The system features real-time reserve scanning that automatically and continuously verifies reserve account balances. Cryptographic verification uses zero-knowledge proofs and Merkle tree structures to confirm reserves without exposing sensitive financial details. Proof-of-reserves data is published on-chain and accessible via public dashboards, enabling independent audits and community scrutiny. Any discrepancies or anomalies trigger immediate alerts to governance and compliance teams for rapid investigation.
 

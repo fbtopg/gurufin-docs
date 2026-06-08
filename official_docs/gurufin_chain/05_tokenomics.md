@@ -8,8 +8,8 @@ GXN serves four primary functions within the Gurufin ecosystem:
 
 * **Staking** — Securing the DPoS network via validator delegation.
 * **Governance** — Voting on protocol upgrades and treasury allocations.
-* **Fee Payment** — Execution of network transactions via GXN-PEG.
-* **Liquidity** — Provisioning for the Guruswap OPRS trading infrastructure.
+* **Fee Payment** — Execution of network settlement activity via GXN-PEG.
+* **Liquidity** — Provisioning for the Guruswap OPRS FX execution infrastructure.
 
 ## Total Supply
 
@@ -46,13 +46,13 @@ The total supply is distributed across nine categories, designed to align incent
 
 ## Economic Sustainability
 
-A percentage of all collected GXN transaction fees is permanently burned by routing it to the **Gurufin Abyss Ledger (GAL)**, a keyless on-chain address that functions as a provably unspendable "burn address." The GAL is a deterministic, publicly auditable address whose private key is mathematically derivable but computationally infeasible to reconstruct — effectively a cryptographic black hole. When GXN is sent to GAL, it is removed from circulation forever, creating a deflationary pressure that scales with network usage.
+A percentage of all collected GXN settlement fees is permanently burned by routing it to the **Gurufin Abyss Ledger (GAL)**, a keyless on-chain address that functions as a provably unspendable "burn address." The GAL is a deterministic, publicly auditable address whose private key is mathematically derivable but computationally infeasible to reconstruct. When GXN is sent to GAL, it is removed from circulation forever, creating deflationary pressure that scales with network utilization.
 
-**How the Burn Works in Practice:** A configurable percentage (set by governance) of each transaction fee is automatically routed to GAL at the protocol level. The remaining fees are distributed to validators and delegators. This means the burn operates transparently and continuously — every transaction on the chain contributes to the deflationary mechanism.
+**How the Burn Works in Practice:** A configurable percentage (set by governance) of each settlement fee is automatically routed to GAL at the protocol level. The remaining fees are distributed to validators and delegators. This means the burn operates transparently and continuously — every settlement on the chain contributes to the deflationary mechanism.
 
 **Why a Burn Address?**
-The burn mechanism reduces the circulating supply over time, aligning long-term network utilization with network value accrual. As transaction throughput grows, more GXN is burned — creating a natural feedback loop between network throughput volume and token scarcity.
+The burn mechanism reduces the circulating supply over time, aligning long-term network utilization with network value accrual. As settlement throughput grows, more GXN is burned, creating a natural feedback loop between network throughput volume and supply dynamics.
 
 > **Note:** The burn rate is dynamically adjustable by governance based on network health. During periods of high inflationary pressure from Node Pool emissions, governance may increase the burn percentage to maintain deflationary balance.
 
-Validators and delegators are compensated via the Node Pool and an increasing share of network transaction fees. Burned fees are separate from validator rewards and do not reduce their earnings.
+Validators and delegators are compensated via the Node Pool and an increasing share of network settlement fees. Burned fees are separate from validator rewards and do not reduce their earnings.

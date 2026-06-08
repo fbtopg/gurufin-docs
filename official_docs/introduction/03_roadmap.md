@@ -23,4 +23,4 @@
 * Sovereign bridge integration.
 * Traditional financial market partnerships.
 * Transition to full community governance.
-* Target: 100M users and 50 sovereign stablecoins.
+* Target: institutional-scale transaction throughput across 50 sovereign stablecoins.

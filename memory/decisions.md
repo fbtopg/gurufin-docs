@@ -51,3 +51,6 @@ Goal: make the page clearer, more polished, and technically credible for GitBook
 Purpose of thi — wrote 2 file(s): QnA.md, SUMMARY.md
 
 - **2026-06-04 17:59** [builder]: There are 'QnA.md' file in both guruswap-gitbook and gurufin-gitbook project. Build website like a multiform quiz where each page shows one question and answer pair and viewer should press either '맞음' — wrote 3 file(s): index.html, build.js, generate.js
+- **2026-06-08 15:43** [researcher]: Look gurufin-gitbook project. The GXUSD and other GX stablecoin and our stablecoin FX, settlement, have the institutional focus where corporates use them for cross border settlement rather than retail — wrote 1 file(s): retail_to_institutional_audit.md
+- **2026-06-08 16:13** [writer]: [attachment: /home/geonu/workspace/inbox/1513438444637130762_message.txt] — wrote 7 file(s): 02_stablecoin_fx_trading.md, 01_overview.md, 04_gx_peg.md, 01_cross_border_payments.md, 05_tokenomics.md (+2 more)
+- **2026-06-08 16:35** [writer]: continue — wrote 6 file(s): 03_mint_and_burn.md, 04_gx_peg.md, 01_cross_border_payments.md, 05_compliance_and_regulation.md, 03_institutional_defi.md (+1 more)

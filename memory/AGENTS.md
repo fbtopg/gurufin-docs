@@ -21,6 +21,10 @@ It defines every page and its position in the book.
 ### .gitbook/
 - `.gitbook/assets/Gemini_Generated_Image_iljs2xiljs2xiljs.jpg`
 
+### internal_docs/
+- `internal_docs/technical_action_items.md`
+- `internal_docs/use_cases/04_government_and_institutional.md`
+
 ### official_docs/
 - `official_docs/developer_resources/01_testnet_access.md`
 - `official_docs/developer_resources/02_api_reference.md`
@@ -32,11 +36,7 @@ It defines every page and its position in the book.
 - `official_docs/gurufin_chain/05_tokenomics.md`
 - `official_docs/gurufin_chain/06_governance.md`
 - `official_docs/gurufin_chain/07_validator_guide.md`
-- ... and 13 more files
-
-### internal_docs/
-- `internal_docs/technical_action_items.md`
-- `internal_docs/use_cases/04_government_and_institutional.md`
+- ... and 11 more files
 
 ### pr-drafts/
 - `pr-drafts/01_주권안디지털통화_안정적_미래.md`
@@ -52,15 +52,15 @@ It defines every page and its position in the book.
 - `pr-drafts/gurufin-pr-drafts-all.pdf`
 
 ### quiz/
-- `quiz/qa_entries.js`
 - `quiz/build.js`
 - `quiz/generate.js`
 - `quiz/index.html`
+- `quiz/qa_entries.js`
 
 ## How To Make Changes
 
 1. Read SUMMARY.md to understand where target content sits in the book
-2. If changing a concept, grep across ALL .md files — official and internal docs cross-reference each other
+2. If changing a concept, grep across ALL .md files — docs cross-reference each other
 3. After editing any doc, check if SUMMARY.md needs updating
 4. Files with `-legacy` in the name are outdated — prefer new files over editing them
 

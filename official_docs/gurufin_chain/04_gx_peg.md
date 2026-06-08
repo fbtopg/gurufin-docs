@@ -31,8 +31,8 @@ When GXN's price rises, the required GXN per transaction decreases. When GXN's p
 1. **Oracle Feeds** — A decentralized oracle network continuously collects GXN/USD price data from multiple on-chain and off-chain sources.
 2. **Validation & Aggregation** — Reported prices are validated against each other. An outlier filter removes anomalous readings, and the aggregated value is derived using median or quorum-based logic to reduce the impact of any single compromised feed.
 3. **Protocol Update** — The protocol contract reads the aggregated price and recalculates the `min_gas_price` in GXN using the formula above. This update occurs each block (or at a configured interval) to keep the fee responsive to market conditions.
-4. **Dynamic Inverse Adjustment** — As GXN's price rises, fewer GXN tokens are needed per gas unit, and vice versa. This inverse relationship is what keeps the fiat-equivalent cost stable for users.
-5. ****Counterparty Experience** — Wallets and applications display the estimated fee in both GXN and the counterparty's preferred fiat currency, so the stable cost is transparent at the point of interaction.
+4. **Dynamic Inverse Adjustment** — As GXN's price rises, fewer GXN tokens are needed per gas unit, and vice versa. This inverse relationship is what keeps the fiat-equivalent cost stable for counterparties.
+5. **Counterparty Experience** — Wallets and applications display the estimated fee in both GXN and the counterparty's preferred fiat currency, so the stable cost is transparent at the point of interaction.
 
 ## Safeguards & Fault Tolerance
 
