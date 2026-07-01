@@ -1,28 +1,37 @@
 # Governance
 
-Gurufin Chain utilizes an on-chain governance system where delegated stakeholders and validators propose, vote on, and execute network upgrades and parameter changes.
+Gurufin Chain uses on-chain governance for protocol upgrades, parameter changes, treasury decisions, and network policy updates. Validators and delegated stakeholders participate through stake-weighted voting.
 
 **Governance Parameters**
-The protocol enforces strict, hardcoded parameters to ensure rapid but secure decision-making:
-* **Voting Period:** Exactly **14 Days**. (This aligns with efficient network agility while allowing sufficient time for stakeholder review).
-* **Quorum Requirement:** **33.4%**. (At least 33.4% of the total staked voting power must participate for a proposal to be considered valid).
-* **Timelock:** **Phase 1 — None**. (If a proposal achieves quorum and passes the voting threshold, it is executed immediately upon the conclusion of the voting period). This is a deliberate tradeoff for rapid iteration during the testnet phase. **Institutional Note:** The absence of a timelock is a known limitation and a stated risk for mainnet. A timelock mechanism will be evaluated by governance ahead of mainnet launch to determine whether a configurable delay is appropriate to allow counterparties and protocols to respond to unexpected parameter changes.
+
+Current governance parameters are designed for the testnet and early network phases. Mainnet parameters may change after additional testing, audits, legal review, and governance review.
+
+* **Voting period:** **14 days**.
+* **Quorum requirement:** **33.4%** of total staked voting power must participate for a proposal to be valid.
+* **Timelock:** **Phase 1 - none.** If a proposal reaches quorum and passes the voting threshold, it executes at the end of the voting period.
+
+The absence of a timelock is a testnet tradeoff that supports faster iteration. Before mainnet, governance is expected to review whether configurable timelocks should apply to sensitive proposal types so counterparties and protocols have time to respond to material parameter changes.
 
 **Delegated Voting**
-Counterparties who delegate their tokens to a validator inherit that validator's vote by default. However, delegators retain the right to override their validator's decision by casting an individual vote on any active proposal.
+
+Delegators inherit their validator's vote by default. They can override that vote by casting their own vote on any active proposal before the voting period ends.
 
 **Proposal Types**
+
 | Type | Description | Execution |
 |------|-------------|-----------|
-| **Parameter Change** | Adjusts network parameters (e.g., gas pricing, validator limits) | Immediate (Phase 1) / Timelocked (Phase 2) |
-| **Software Upgrade** | Proposes a network-wide software version upgrade | Requires supermajority quorum |
-| **Treasury Allocation** | Directs funds from the Ecosystem or Governance reserve | Requires supermajority quorum |
-| **Text Proposal** | Non-binding community sentiment gauge | Informational only |
+| **Parameter Change** | Adjusts network parameters, such as gas pricing or validator limits. | Immediate in Phase 1; future timelock settings subject to governance. |
+| **Software Upgrade** | Proposes a network-wide software version upgrade. | Requires a supermajority threshold. |
+| **Treasury Allocation** | Directs funds from ecosystem or governance reserves. | Requires a supermajority threshold for large allocations. |
+| **Text Proposal** | Records non-binding community or stakeholder sentiment. | Informational only. |
 
 **Quorum and Threshold**
-* **Standard proposals** require a simple majority (>50%) of votes cast, with the 33.4% quorum floor.
-* **Software upgrades** require a supermajority (>66%) to account for the critical nature of consensus-level changes.
-* **Treasury allocations** exceeding 1% of total reserves require a supermajority (>66%) and a separate emergency pause mechanism.
+* **Standard proposals** require a simple majority of votes cast, subject to the 33.4% quorum floor.
+* **Software upgrades** require a supermajority threshold because they can affect consensus behavior.
+* **Treasury allocations** exceeding 1% of total reserves require a supermajority threshold and additional review controls.
 
 **Emergency Governance**
-In the event of a critical security incident, the validator set may trigger an emergency pause through a simplified fast-track proposal (24-hour voting window). This mechanism is gated by a minimum of 66% validator agreement and is automatically reviewed by the Gurufin Foundation's security team.
+
+In a critical security incident, the validator set may initiate an emergency pause through a fast-track proposal with a shorter voting window. This mechanism requires at least 66% validator agreement and triggers review by the Gurufin Foundation security team.
+
+Emergency governance is intended for security and operational continuity, not routine parameter management.

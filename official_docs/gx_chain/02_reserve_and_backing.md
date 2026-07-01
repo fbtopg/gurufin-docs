@@ -2,13 +2,13 @@
 
 GX stablecoins are designed to be backed 1:1 by fiat reserves held with regulated custodians. The reserve framework is intended to support redemption reliability, price stability, and supervisory transparency for institutional counterparties.
 
-The 1:1 backing model is supported by automated minting and redemption controls integrated with licensed banking partners. Issuance requires verified receipt of fiat funds, and redemption requests are reconciled against both token supply and reserve balances.
+The 1:1 backing model is supported by automated minting and redemption controls integrated with licensed banking partners. Issuance requires verified receipt of fiat funds, and redemption requests are reconciled against token supply, reserve balances, and applicable compliance requirements.
 
 ## Reserve Composition
 
-Reserve assets are expected to prioritize liquidity, capital preservation, and regulatory eligibility. Composition may differ by jurisdiction based on local rules and banking partner capabilities.
+Reserve assets are expected to prioritize liquidity, capital preservation, and regulatory eligibility. Composition may differ by jurisdiction based on local rules, supervisory expectations, and banking partner capabilities.
 
-**At launch, reserves are expected to be maintained in cash** at licensed custodian banks, with concentration limits designed to preserve redemption capacity. Over time, and only where permitted by domestic regulation, a capped portion may be allocated to ultra-short Treasury bills, typically with maturities under three months, managed through a roll-down ladder.
+**At launch, reserves are expected to be maintained in cash** at licensed custodian banks, with concentration limits designed to preserve redemption capacity. Over time, and only where permitted by domestic regulation, a capped portion may be allocated to ultra-short government securities, typically with maturities under three months, managed through a roll-down ladder.
 
 Liquidity against eligible securities would be raised through **pre-arranged repo facilities rather than forced secondary-market sales**, helping preserve same-day cash availability under stress.
 
@@ -16,7 +16,7 @@ Liquidity against eligible securities would be raised through **pre-arranged rep
 
 GX uses a live proof-of-reserves model to provide continuous visibility into reserve coverage for counterparties, supervisors, and network participants.
 
-The system monitors reserve account balances and compares them with on-chain circulation. Cryptographic verification can use zero-knowledge proofs and Merkle tree structures to confirm reserve coverage without exposing sensitive account details. Proof-of-reserves data is published on-chain and through dashboards where appropriate. Discrepancies or anomalies trigger alerts for governance, operations, and compliance review.
+The system monitors reserve account balances and compares them with on-chain circulation. Cryptographic verification can use zero-knowledge proofs and Merkle tree structures to confirm reserve coverage without exposing sensitive account details. Proof-of-reserves data can be published on-chain and through dashboards where appropriate. Discrepancies or anomalies trigger alerts for governance, operations, and compliance review.
 
 Live proof-of-reserves is intended to complement, not replace, formal audits and supervisory reporting.
 
@@ -46,4 +46,4 @@ $$
 - \(h\) — conservative haircut  
 - \(\text{ES}_\alpha[R_D^H]\) — Expected Shortfall of redemptions over horizon \(H\) at confidence level \(\alpha\)
 
-The target is GX-LCR(H) ≥ 1 with a supervisory buffer. The utilization ratio \(\rho^* = \lambda/\mu\) should remain below 1 for operational stability, where \(\lambda\) is the redemption arrival rate and \(\mu\) is the service rate.
+The target is GX-LCR(H) >= 1 with a supervisory buffer. The utilization ratio \(\rho^* = \lambda/\mu\) should remain below 1 for operational stability, where \(\lambda\) is the redemption arrival rate and \(\mu\) is the service rate.

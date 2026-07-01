@@ -1,6 +1,6 @@
 # Testnet Access (Season 2)
 
-Use the Gurufin Public Testnet Season 2 to build and test applications before mainnet deployment.
+Use the Gurufin Public Testnet Season 2 to build, integrate, and test applications before mainnet deployment.
 
 **Season 2 Network Architecture**
 
@@ -39,3 +39,5 @@ Testnet endpoints (`trpc.gurufin.io`, `tscan.gurufin.io`) may rotate, upgrade, o
 * **Recommended practice:** Parameterize endpoint URLs in integration code instead of hardcoding them.
 * **Migration path:** Mainnet endpoints will be announced through official channels before launch.
 * **Status page:** Endpoint health and maintenance windows are published at [status.gurufin.io](https://status.gurufin.io).
+
+Testnet assets are for testing only and should not be treated as production assets or representations of mainnet value.

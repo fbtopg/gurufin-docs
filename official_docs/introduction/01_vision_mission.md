@@ -1,7 +1,13 @@
 # Vision & Mission
 
-Gurufin addresses the fundamental inefficiencies in global finance, where cross-border transfers remain slow, expensive, and inaccessible. 
+Gurufin is building settlement infrastructure for regulated cross-border value movement. The ecosystem focuses on three practical requirements: stablecoin-based FX execution, predictable network costs, and compliance controls that institutions, payment providers, and developers can integrate into production workflows.
 
-**Vision** A world where value moves as freely and instantly as information. We are building a Neutral FX/DeFi Hub—a global settlement infrastructure with sub-second finality, fiat-predictable fees, and open access, bridging traditional finance and the decentralized economy.
+**Vision:** A global settlement network where digital value can move across currencies and jurisdictions with fast finality, transparent rules, and clear compliance controls.
 
-**Mission** To provide the definitive infrastructure layer for stablecoin-based foreign exchange and cross-border payments, empowering developers and institutions to build next-generation financial services.
+**Mission:** Provide the infrastructure layer for stablecoin-based FX, corporate cross-border payments, and institutional DeFi by combining blockchain settlement, fiat-backed assets, predictable fees, and regulated access points.
+
+**Operating Principles**
+
+* **Institutional readiness:** Design core workflows around counterparties that require auditability, controls, and predictable settlement status.
+* **Jurisdictional flexibility:** Support local currency networks that can adapt to domestic banking, reserve, and compliance requirements.
+* **Technical transparency:** Separate design targets, testnet results, and production commitments so readers can evaluate the system clearly.

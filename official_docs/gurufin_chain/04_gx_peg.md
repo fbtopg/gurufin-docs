@@ -1,42 +1,42 @@
 # Guru-PEG (Price Equilibrium Governance)
 
-Guru-PEG is the gas pricing mechanism of Gurufin Chain. It decouples counterparty transaction costs from the volatility of the native GXN token, enabling predictable, fiat-indexed fees that remain stable regardless of market conditions.
+Guru-PEG is Gurufin Chain's gas pricing mechanism. It adjusts GXN-denominated gas prices using oracle-fed market data so standard transactions remain close to a fiat-indexed target cost.
 
 ## Why Guru-PEG Matters
 
-In most blockchain networks, gas fees are denominated in the native token. When the token price surges, a flat token-based fee translates into a much higher fiat cost for counterparties. This volatility creates friction for time-critical settlement workflows and makes the chain unsuitable for high-frequency use cases like enterprise operations.
+In many blockchain networks, gas fees are denominated in the native token. If the native token price changes sharply, a fixed token-based fee can become expensive or unpredictable in fiat terms. This volatility creates friction for business workflows that require stable operating costs.
 
-Guru-PEG solves this by designing the gas price so that a typical transfer costs approximately **$0.013** — a predictable, enterprise-grade rate — even as the GXN token price fluctuates.
+Guru-PEG addresses this by recalculating the minimum GXN gas price against a target fiat cost. For standard transfers, the current design target is approximately **$0.013**, subject to governance parameters, oracle availability, and network safeguards.
 
 ## How It Works
 
 ### Core Formula
 
-At its simplest, Guru-PEG applies the following relationship:
+At a high level, Guru-PEG applies the following relationship for a standard operation:
 
 ```
-min_gas_price_GXN = target_gas_fee_USD / current_GXN_price_USD
+target_operation_fee_GXN = target_operation_fee_USD / current_GXN_price_USD
 ```
 
 Where:
 
-- **`target_gas_fee_USD`** — the desired fiat-equivalent cost of a standard operation (e.g., a basic transfer)
-- **`current_GXN_price_USD`** — the live USD price of GXN as reported by the oracle network
-- **`min_gas_price_GXN`** — the resulting minimum gas price in GXN per unit of computation
+- **`target_operation_fee_USD`** - the target fiat-equivalent cost of a standard operation, such as a basic transfer.
+- **`current_GXN_price_USD`** - the current USD price of GXN reported by the oracle network.
+- **`target_operation_fee_GXN`** - the resulting GXN-denominated fee target, which is translated into gas pricing through protocol parameters.
 
-When GXN's price rises, the required GXN per transaction decreases. When GXN's price falls, the required GXN increases. The counterparty-facing fiat cost stays stable.
+When the GXN price rises, the required amount of GXN per transaction decreases. When the GXN price falls, the required amount of GXN increases. The goal is to keep the counterparty-facing fiat cost within a predictable range.
 
 ### Step-by-Step Mechanism
 
-1. **Oracle Feeds** — A decentralized oracle network continuously collects GXN/USD price data from multiple on-chain and off-chain sources.
-2. **Validation & Aggregation** — Reported prices are validated against each other. An outlier filter removes anomalous readings, and the aggregated value is derived using median or quorum-based logic to reduce the impact of any single compromised feed.
-3. **Protocol Update** — The protocol contract reads the aggregated price and recalculates the `min_gas_price` in GXN using the formula above. This update occurs each block (or at a configured interval) to keep the fee responsive to market conditions.
-4. **Dynamic Inverse Adjustment** — As GXN's price rises, fewer GXN tokens are needed per gas unit, and vice versa. This inverse relationship is what keeps the fiat-equivalent cost stable for counterparties.
-5. **Counterparty Experience** — Wallets and applications display the estimated fee in both GXN and the counterparty's preferred fiat currency, so the stable cost is transparent at the point of interaction.
+1. **Oracle feeds** - A decentralized oracle network collects GXN/USD price data from multiple on-chain and off-chain sources.
+2. **Validation and aggregation** - Reported prices are compared against one another. Outlier filters remove anomalous readings, and the aggregated value is calculated through median or quorum-based logic.
+3. **Protocol update** - The protocol reads the aggregated price and recalculates the GXN-denominated fee target using the formula above. Updates occur per block or at a configured interval.
+4. **Inverse adjustment** - As GXN's price rises, fewer GXN tokens are needed per gas unit. As GXN's price falls, more GXN tokens are needed.
+5. **Counterparty display** - Wallets and applications can show estimated fees in both GXN and the counterparty's preferred fiat currency.
 
 ## Safeguards & Fault Tolerance
 
-Guru-PEG is designed with multiple layers of protection to handle edge cases and maintain stability even under adverse conditions.
+Guru-PEG includes several safeguards to reduce oracle, volatility, and spam risks.
 
 | Safeguard | Purpose |
 |-----------|---------|
@@ -44,26 +44,29 @@ Guru-PEG is designed with multiple layers of protection to handle edge cases and
 | **Outlier Filtering** | Readings that deviate significantly from the consensus group are excluded from the aggregation calculation. |
 | **Price Deviation Checks** | If the reported price change exceeds a configurable threshold within a single interval, the protocol pauses the update until the deviation resolves. |
 | **Gas Fee Floor & Ceiling** | A minimum and maximum bound on `min_gas_price_GXN` prevents fees from becoming zero (which would enable spam) or prohibitively high (which would hurt usability). |
-| **Peg Buffer** | A reserve mechanism absorbs short-term price shocks, smoothing the fee curve during periods of extreme volatility. |
-| **Emergency Fallback / Circuit Breaker** | If the oracle network becomes unresponsive or a critical fault is detected, the protocol falls back to a stale-but-safe price and locks the gas price at a fixed rate until normal operations resume. |
+| **Peg Buffer** | A reserve mechanism can absorb short-term price shocks, smoothing the fee curve during periods of extreme volatility. |
+| **Emergency Fallback / Circuit Breaker** | If the oracle network becomes unresponsive or a critical fault is detected, the protocol can fall back to the last accepted price with conservative bounds until normal operations resume. |
 
 ## Known Limitations & Mitigations
 
 ### Oracle Latency
-Guru-PEG price feeds update on a per-block basis. In rare cases where GXN price moves rapidly between oracle update intervals (typically ~2 seconds), the gas price may briefly diverge from the true market rate. The price deviation checks and gas fee floor/ceiling safeguards mitigate the impact of this divergence.
+
+Guru-PEG price feeds update on a per-block basis or at a configured interval. If the GXN price moves rapidly between oracle updates, the gas price may briefly diverge from the current market rate. Price deviation checks and gas fee floor/ceiling safeguards reduce the impact of this divergence.
 
 ### MEV Considerations
-Because Guru-PEG uses oracle-derived prices rather than on-chain order books, traditional MEV strategies (front-running, sandwich attacks) are not applicable to gas pricing itself. 
 
-**OPRS MEV Protection:** For Oracle Priced Reserve Swaps, the protocol enforces an oracle staleness check (max 5-second delay) and a maximum slippage tolerance per swap. If the oracle update lags market movements beyond configured thresholds, the swap is either repriced conservatively or cancelled, preventing MEV bots from extracting value during latency windows. Applications built on-chain should also implement private transaction relays where appropriate.
+Because Guru-PEG uses oracle-derived prices rather than an on-chain order book, common exchange-related MEV strategies, such as front-running and sandwich attacks, are not directly applicable to gas pricing itself.
+
+**OPRS MEV Protection:** For Oracle Priced Reserve Swaps, the protocol enforces oracle staleness checks and maximum slippage tolerances per swap. If oracle updates lag market movement beyond configured thresholds, the swap can be repriced conservatively or cancelled. Applications should also use private transaction relays or similar protections where appropriate.
 
 ### Extreme Market Events
-During periods of extreme token price volatility (e.g., >20% single-day moves), the emergency fallback / circuit breaker may activate, temporarily freezing gas price updates. The protocol falls back to the last confirmed price with a conservative buffer until the oracle network stabilizes.
+
+During periods of extreme token price volatility, the emergency fallback or circuit breaker may temporarily freeze gas price updates. The protocol then uses the last accepted price with a conservative buffer until oracle conditions stabilize.
 
 ## What This Enables
 
-By keeping transaction costs predictable and enterprise-grade, Guru-PEG makes Gurufin Chain suitable for:
+By making transaction costs more predictable, Guru-PEG supports:
 
-- **Automated Corporate Settlements** — time-critical B2B payments that require stable, low-cost settlement.
-- **Enterprise operations** — supply chain tracking, automated invoicing, and recurring on-chain workflows.
-- **High-frequency use cases** — any application where volatile gas fees would introduce unacceptable cost uncertainty.
+- **Automated corporate settlements** - B2B payments that require predictable settlement costs.
+- **Enterprise operations** - supply chain tracking, automated invoicing, and recurring on-chain workflows.
+- **High-frequency use cases** - applications where volatile gas fees would create unacceptable cost uncertainty.

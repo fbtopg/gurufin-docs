@@ -4,7 +4,7 @@ GX stablecoins are designed for regulated payment and settlement environments. C
 
 **KYC/AML & Compliance Tiers**
 
-GX chains use compliance-tier access control. Counterparties complete identity verification before transacting, and their tier determines available transaction permissions, limits, and supported workflows. Wallets and counterparties are screened against applicable sanctions and risk lists during onboarding and transaction processing.
+GX chains use compliance-tier access control. Counterparties complete identity verification before transacting, and their tier determines available transaction permissions, limits, and supported workflows. Accounts and counterparties are screened against applicable sanctions and risk lists during onboarding and transaction processing.
 
 **FATF Travel Rule**
 
@@ -17,4 +17,4 @@ Where required, transaction messages include encrypted originator and beneficiar
 
 **Privacy Roadmap (Future Integration)**
 
-GX plans to integrate zero-knowledge proof tooling so wallets can prove selected compliance attributes, such as KYC completion or sanctions clearance, without exposing unnecessary personal data. Selective-disclosure view keys are expected to support authorized supervisory review while limiting broad data exposure.
+GX plans to integrate zero-knowledge proof tooling so accounts can prove selected compliance attributes, such as KYC completion or sanctions clearance, without exposing unnecessary personal data. Selective-disclosure view keys are expected to support authorized supervisory review while limiting broad data exposure.

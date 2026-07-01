@@ -1,6 +1,6 @@
 # Full Developer Docs
 
-For detailed technical documentation, API specifications, SDK references, and tutorials, visit the official Gurufin Docs portal.
+For detailed technical documentation, API specifications, SDK references, and tutorials, use the official Gurufin Docs portal.
 
 **External Resource**
 
@@ -8,4 +8,4 @@ For detailed technical documentation, API specifications, SDK references, and tu
 Gurufin Docs - developer documentation for building on Gurufin Chain
 {% endembed %}
 
-*This page links to the full developer documentation portal.*
+*Use the portal for the latest developer documentation and integration updates.*

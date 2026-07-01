@@ -1,6 +1,6 @@
 # API Reference
 
-Gurufin Chain exposes Cosmos SDK and EVM-compatible APIs for querying chain state, submitting transactions, and integrating applications.
+Gurufin Chain exposes Cosmos SDK and EVM-compatible APIs for querying chain state, submitting transactions, and integrating applications. This page provides an introductory reference for the Season 2 Public Testnet.
 
 ## Testnet Base URLs
 
@@ -46,7 +46,7 @@ Gurufin Chain exposes Cosmos SDK and EVM-compatible APIs for querying chain stat
 curl https://trpc.gurufin.io:26657/validators?height=latest
 ```
 
-**Query account balance:**
+**Query account data:**
 ```bash
 curl https://trpc.gurufin.io:9091/cosmos/auth/v1beta1/accounts
 ```
@@ -71,7 +71,8 @@ Testnet endpoints may enforce rate limits during periods of high traffic. Recomm
 - Using WebSocket subscriptions instead of polling for real-time data
 - Implementing exponential backoff on retry attempts
 - Caching frequently accessed data on the client side
+- Parameterizing endpoint URLs so testnet migrations do not require code rewrites
 
 Contact the developer team through official community channels for priority access during beta testing.
 
-*This page provides an introductory API overview.*
+*This page is an introductory API overview. Detailed SDK references and endpoint-specific behavior may change during testnet development.*

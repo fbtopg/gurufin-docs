@@ -4,18 +4,18 @@ The GX Stablecoin Network is a framework for fiat-backed digital currencies. Ins
 
 **Key Features**
 
-* **Jurisdiction-specific chains:** Dedicated PoA blockchains for each supported currency, such as GXUSD and GXKRW.
-* **Jurisdictional compliance:** Validator participation and operating rules are aligned with local licensing and regulatory requirements.
+* **Jurisdiction-specific chains:** Dedicated Proof-of-Authority chains for supported currencies, such as GXUSD and GXKRW.
+* **Jurisdictional compliance:** Validator participation and operating rules can be aligned with local licensing and regulatory requirements.
 * **Live proof-of-reserves:** Reserve monitoring connects on-chain supply data with regulated custodial account data.
 * **IBC interoperability:** Cross-chain transfers connect GX chains with Gurufin Chain for settlement and FX workflows.
 
 **Fees & Gas**
 
-Gas is paid in the local GX stablecoin. Transaction fees are designed to remain within narrow local fiat cost bands, such as approximately $0.01 per standard B2B transaction, depending on network parameters.
+Gas is paid in the local GX stablecoin. Transaction fees are designed to remain within narrow local fiat cost bands, such as approximately $0.01 per standard B2B transaction, depending on network parameters and operating conditions.
 
 **Offline Payments**
 
-For intermittent-connectivity environments, GX is testing an offline mode for low-frequency B2B flows using secure hardware attestations. Transactions are reconciled to the chain when connectivity returns. This feature is currently available for internal testing only and is not enabled on the public testnet.
+For intermittent-connectivity environments, GX is testing an offline mode for low-frequency B2B flows using secure hardware attestations. Transactions are reconciled to the chain when connectivity returns. This feature is for internal testing only and is not enabled on the public testnet.
 
 **Performance Targets**
 

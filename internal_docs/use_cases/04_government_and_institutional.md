@@ -1,15 +1,16 @@
-# Government & Institutional Use
+# Public-Sector & Institutional Use
 
-Central banks and financial institutions require robust, regulatory-compliant infrastructure for digital currency and sovereign settlement applications. The GX Stablecoin platform provides a ready-made, compliance-first architecture tailored for institutional deployment.
+Public-sector financial authorities, regulated payment networks, and financial institutions require resilient infrastructure for digital settlement applications. The GX Stablecoin platform is designed to support controlled institutional deployments with jurisdiction-specific compliance, reserve, and validator requirements.
 
-**Core Value Proposition for Institutions**
+**Core Value Proposition**
 
-* **Permissioned Sovereignty:** Because each GX stablecoin operates on its own Layer-1 blockchain with Proof-of-Authority (PoA) consensus, institutions or their designated proxies maintain absolute jurisdictional control over block production and network validation.
-* **Automated Monetary Supply Integration:** Direct integration with institutional APIs allows the automated mint/burn system to synchronize digital currency issuance directly with supply adjustments.
-* **Citizen Privacy & Systemic Compliance:** The platform embeds FATF Travel Rule metadata and wallet-tier compliance at the consensus layer. Crucially, upcoming zero-knowledge proof (zkGuru) integrations will allow users to transact confidentially while providing supervisory-grade observability to regulators.
+* **Jurisdiction-specific control:** Each GX stablecoin operates on its own Layer-1 chain with Proof-of-Authority (PoA) consensus, allowing validator policy and operating rules to be adapted to local requirements.
+* **Controlled issuance and redemption:** Banking integrations connect fiat settlement events with automated mint/burn workflows, reserve checks, and approval controls.
+* **Privacy with supervisory access:** FATF Travel Rule metadata and compliance tiers support regulated workflows. Planned zero-knowledge proof tooling would allow selected compliance attributes to be proven without broad disclosure of sensitive data.
 
 **Cross-Border Institutional Interoperability**
 
-A major hurdle for institutional cross-border settlement is international interoperability. By utilizing the Gurufin Chain as a neutral settlement hub, different sovereign digital currencies can interact seamlessly.
-* **Atomic PvP Settlement:** Inter-Blockchain Communication (IBC) facilitates Payment-versus-Payment settlement between sovereign chains, eliminating Herstatt (principal) risk in cross-border trade.
-* **Oracle-Guided Exchange:** The Guruswap OPRS architecture ensures that cross-border swaps execute at precise, oracle-verified FX rates with **negligible slippage** under normal market conditions, bypassing the need for speculative liquidity pools. (Note: during extreme volatility events, slippage may occur if oracle updates lag real-market movements.)
+Institutional cross-border settlement depends on interoperability between local currency networks, banking partners, and compliance regimes. Gurufin Chain can act as a neutral settlement hub for supported GX stablecoin chains.
+
+* **PvP settlement:** Inter-Blockchain Communication (IBC) facilitates Payment-versus-Payment settlement between supported currency chains, reducing principal risk in cross-border workflows.
+* **Oracle-guided exchange:** Guruswap OPRS uses oracle-verified FX rates and managed inventory buffers to reduce execution variance for supported order sizes. During stressed market conditions, oracle latency, inventory limits, or corridor rules may affect execution quality.

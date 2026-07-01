@@ -1,17 +1,21 @@
 # What is Gurufin?
 
-Gurufin is a financial infrastructure combining blockchain efficiency with institutional regulatory compliance. The ecosystem relies on two interconnected pillars:
+Gurufin is a financial infrastructure ecosystem that connects blockchain settlement with institutional compliance requirements. It is organized around two connected layers: Gurufin Chain, the settlement hub, and the GX Stablecoin Network, the set of fiat-backed currency chains.
 
-**1. Gurufin Chain**
-* Public, permissionless Layer-1 blockchain (Cosmos SDK, Tendermint BFT).
-* Sub-second finality with throughput up to 10,000 TPS.
-* Serves as a neutral FX/DeFi settlement hub for cross-border payments.
-* Native token (GXN) powers staking, governance, and fiat-predictable fees via GXN-PEG.
-* IBC-first interoperability with an EVM Gateway for Ethereum compatibility.
+## 1. Gurufin Chain
 
-**2. GX Stablecoin Network**
-* Federation of sovereign stablecoin chains bound to jurisdictional Proof-of-Authority (PoA) consensus.
-* Fully backed 1:1 by fiat reserves in regulated custodians with 24/7 proof-of-reserves attestation.
-* Automated minting and burning via direct bank API integrations.
+Gurufin Chain is a public Layer-1 blockchain built with Cosmos SDK and Tendermint/CometBFT consensus. It is designed to serve as the neutral settlement hub for FX execution, cross-border payments, and institutional DeFi.
 
-**System Flow** GX Stablecoins are minted via licensed fiat deposits, flow to the Gurufin Chain via IBC for FX execution and DeFi activities, and can be redeemed for fiat at any time.
+Key roles:
+
+* Provides deterministic settlement finality under the chain's consensus rules.
+* Uses GXN for staking, governance, and transaction fees through the Guru-PEG gas pricing mechanism.
+* Connects compatible chains through IBC and supports Ethereum-compatible application tooling through an EVM gateway.
+
+## 2. GX Stablecoin Network
+
+The GX Stablecoin Network is a set of jurisdiction-specific chains, each aligned with local legal, banking, and reserve requirements. GX stablecoins are intended to be backed 1:1 by fiat reserves held with regulated custodians, with minting and redemption flows integrated through licensed banking partners and reserve verification controls.
+
+## How the Layers Work Together
+
+GX stablecoins are issued after verified fiat deposits, transferred to Gurufin Chain through IBC for FX execution or DeFi activity, and redeemed through the relevant licensed banking partner. This structure separates local issuance and compliance from cross-currency settlement and liquidity routing.

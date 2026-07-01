@@ -1,15 +1,15 @@
 # Tokenomics ($GXN)
 
-GXN is the native utility token powering Gurufin Chain. The maximum supply at genesis is 100,000,000,000 GXN.
+GXN is the native utility token for Gurufin Chain. The maximum genesis supply is 100,000,000,000 GXN.
 
 ## Core Utility
 
-GXN serves four primary functions within the Gurufin ecosystem:
+GXN has four primary roles:
 
-* **Staking** — Securing the DPoS network via validator delegation.
-* **Governance** — Voting on protocol upgrades and treasury allocations.
-* **Fee Payment** — Execution of network settlement activity via GXN-PEG.
-* **Liquidity** — Provisioning for the Guruswap OPRS FX execution infrastructure.
+* **Staking** - Secures the DPoS network through validator bonding and delegation.
+* **Governance** - Supports voting on protocol upgrades, parameters, and treasury allocations.
+* **Fee payment** - Pays transaction fees through the Guru-PEG gas pricing mechanism.
+* **Liquidity support** - Supports Guruswap OPRS inventory and FX execution infrastructure where configured by governance or ecosystem policy.
 
 ## Total Supply
 
@@ -19,11 +19,11 @@ $$\text{100,000,000,000 GXN}$$
 
 ## Allocation Breakdown
 
-The total supply is distributed across nine categories, designed to align incentives among validators, investors, and the broader ecosystem.
+The total supply is distributed across nine categories intended to support network operations, ecosystem growth, validator incentives, contributors, investors, and reserves.
 
 ### Table 3 — Token Allocation Breakdown
 
-| No. | Category | Allocated Token | Ratio |
+| No. | Category | Allocated Tokens | Ratio |
 | --- | --- | --- | --- |
 | 1 | Ecosystem Funds | 27,000,000,000 | 27.00% |
 | 2 | Network Operations | 3,000,000,000 | 3.00% |
@@ -37,7 +37,7 @@ The total supply is distributed across nine categories, designed to align incent
 
 ### Allocation by Group
 
-| Group | Allocated Token | Ratio |
+| Group | Allocated Tokens | Ratio |
 | --- | --- | --- |
 | Ecosystem & Operations | 55,000,000,000 | 55.00% |
 | Team & Advisors | 21,500,000,000 | 21.50% |
@@ -46,13 +46,16 @@ The total supply is distributed across nine categories, designed to align incent
 
 ## Economic Sustainability
 
-A percentage of all collected GXN settlement fees is permanently burned by routing it to the **Gurufin Abyss Ledger (GAL)**, a keyless on-chain address that functions as a provably unspendable "burn address." The GAL is a deterministic, publicly auditable address whose private key is mathematically derivable but computationally infeasible to reconstruct. When GXN is sent to GAL, it is removed from circulation forever, creating deflationary pressure that scales with network utilization.
+A governance-defined percentage of collected GXN settlement fees can be permanently removed from circulation through a protocol burn route. For EVM-compatible flows, this may use the designated zero address; for native module accounting, it may use a chain-level burn module or another publicly auditable unspendable address defined by governance.
 
-**How the Burn Works in Practice:** A configurable percentage (set by governance) of each settlement fee is automatically routed to GAL at the protocol level. The remaining fees are distributed to validators and delegators. This means the burn operates transparently and continuously — every settlement on the chain contributes to the deflationary mechanism.
+**How the burn works in practice:** A configurable percentage of each settlement fee is routed to the burn mechanism at the protocol level. The remaining fees are distributed according to validator, delegator, and treasury rules. This creates a transparent link between network activity and token supply reduction.
 
-**Why a Burn Address?**
-The burn mechanism reduces the circulating supply over time, aligning long-term network utilization with network value accrual. As settlement throughput grows, more GXN is burned, creating a natural feedback loop between network throughput volume and supply dynamics.
+**Why burn fees?**
 
-> **Note:** The burn rate is dynamically adjustable by governance based on network health. During periods of high inflationary pressure from Node Pool emissions, governance may increase the burn percentage to maintain deflationary balance.
+The burn mechanism reduces circulating supply over time and ties network usage to supply dynamics. As settlement throughput grows, the amount of GXN burned can increase, depending on active governance parameters.
 
-Validators and delegators are compensated via the Node Pool and an increasing share of network settlement fees. Burned fees are separate from validator rewards and do not reduce their earnings.
+> **Note:** The burn rate is adjustable by governance. It should be evaluated alongside Node Pool emissions, validator economics, network usage, and treasury requirements.
+
+Validators and delegators are compensated through Node Pool emissions and transaction fee revenue. Burned fees are accounted for separately from validator rewards under the active fee distribution policy.
+
+> Tokenomics parameters describe protocol design and governance-controlled mechanics. They are not a forecast of token price or investment performance.
