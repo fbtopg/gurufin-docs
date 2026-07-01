@@ -1,22 +1,26 @@
-# GX Chain Overview
+# GX Stablecoin Network Overview
 
-GX Chain is a sovereign stablecoin framework designed for the next generation of fiat-backed digital currencies. Rather than operating as a single blockchain, GX functions as a network of independent Layer-1 chains, each issuing a local sovereign stablecoin pegged 1:1 to its respective fiat currency. 
+The GX Stablecoin Network is a framework for fiat-backed digital currencies. Instead of operating as a single blockchain, GX is structured as a network of independent Layer-1 chains, each issuing a local stablecoin intended to maintain a 1:1 peg with its corresponding fiat currency.
 
 **Key Features**
-* **Sovereign Chains:** Dedicated PoA blockchains for each supported currency (e.g., GXUSD, GXKRW).
-* **Jurisdictional Compliance:** Validators are licensed, regulated entities operating within their respective local legal frameworks.
-* **Live Proof-of-Reserves:** 24/7 on-chain reserve scanner tied to regulated custodial accounts.
-* **IBC Interoperability:** Atomic cross-chain transfers to the Gurufin Chain.
+
+* **Jurisdiction-specific chains:** Dedicated PoA blockchains for each supported currency, such as GXUSD and GXKRW.
+* **Jurisdictional compliance:** Validator participation and operating rules are aligned with local licensing and regulatory requirements.
+* **Live proof-of-reserves:** Reserve monitoring connects on-chain supply data with regulated custodial account data.
+* **IBC interoperability:** Cross-chain transfers connect GX chains with Gurufin Chain for settlement and FX workflows.
 
 **Fees & Gas**
-Gas is paid in the local GX stablecoin, with transaction fees denominated and fixed in local fiat terms within narrow bands (e.g., ~$0.01 per B2B transaction). This ensures predictable B2B usability.
+
+Gas is paid in the local GX stablecoin. Transaction fees are designed to remain within narrow local fiat cost bands, such as approximately $0.01 per standard B2B transaction, depending on network parameters.
 
 **Offline Payments**
-For intermittent-connectivity environments, GX supports an offline mode for low-frequency B2B flows using secure hardware attestations, reconciled to the chain when connectivity returns. This feature is currently available for internal testing only and is not yet enabled on the public testnet.
+
+For intermittent-connectivity environments, GX is testing an offline mode for low-frequency B2B flows using secure hardware attestations. Transactions are reconciled to the chain when connectivity returns. This feature is currently available for internal testing only and is not enabled on the public testnet.
 
 **Performance Targets**
-* **Finality:** Sub-second consensus on-chain (~500ms target, measured under controlled conditions).
-* **Throughput:** 10,000+ TPS target on commodity hardware (designed capacity, subject to mainnet validation).
-* **Uptime:** 99.97% uptime target.
 
-> **Note:** The above figures represent design targets achieved during internal testing. Actual mainnet performance may vary based on network load, validator distribution, and hardware configuration.
+* **Finality:** Sub-second on-chain consensus target, with approximately 500ms finality measured under controlled conditions.
+* **Throughput:** 10,000+ TPS design target on commodity hardware, subject to public testnet and mainnet validation.
+* **Uptime:** 99.97% uptime target for production validator operations.
+
+> **Note:** These figures are design and testing targets. Mainnet performance may vary based on network load, validator distribution, hardware configuration, and operational conditions.

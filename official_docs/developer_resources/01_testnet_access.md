@@ -1,9 +1,10 @@
 # Testnet Access (Season 2)
 
-Connect to the Gurufin Public Testnet Season 2 to develop and test your applications before mainnet deployment.
+Use the Gurufin Public Testnet Season 2 to build and test applications before mainnet deployment.
 
 **Season 2 Network Architecture**
-The Season 2 Testnet introduces the Tier 1 Hub and six Tier 2 sovereign stablecoin chains.
+
+Season 2 includes one Tier 1 hub chain and six Tier 2 GX stablecoin chains.
 
 | Chain | Display Name | Chain ID | EVM Chain ID | Native Denom | Prefix | Tier |
 |---|---|---|---|---|---|---|
@@ -16,19 +17,25 @@ The Season 2 Testnet introduces the Tier 1 Hub and six Tier 2 sovereign stableco
 | GXJPY | tGXJPY | gxjpy_231-1 | 231 | atgxjpy | gxjpy | Tier 2 |
 
 **Connection Endpoints (GXN Hub)**
+
 * **RPC Endpoint:** https://trpc.gurufin.io
 * **WebSocket:** wss://trpc.gurufin.io/websocket
 * **Block Explorer:** https://tscan.gurufin.io/
 
 **API Ports**
+
+These ports are relevant for direct node access, self-hosted infrastructure, or deployments that expose service-specific ports.
+
 * **Cosmos gRPC:** 9090
 * **Cosmos REST:** 9091
 * **CometBFT RPC:** 26657
 * **Ethereum JSON-RPC:** 8545
 * **Ethereum WebSocket:** 8546
 
-### Endpoint Lifecycle & Migration
-Testnet endpoints (`trpc.gurufin.io`, `tscan.gurufin.io`) are subject to rotation, upgrades, or decommissioning as the testnet evolves. 
-* **Recommended Practice:** Always parameterize endpoint URLs in your integration code rather than hardcoding them.
-* **Migration Path:** Mainnet endpoints will follow the same hostname structure (`trpc.gurufin.io` → mainnet RPC, `tscan.gurufin.io` → mainnet explorer) and will be announced via official channels 30 days prior to mainnet launch.
-* **Status Page:** Real-time endpoint health and maintenance windows are published at [status.gurufin.io].
+## Endpoint Lifecycle & Migration
+
+Testnet endpoints (`trpc.gurufin.io`, `tscan.gurufin.io`) may rotate, upgrade, or be decommissioned as the testnet evolves.
+
+* **Recommended practice:** Parameterize endpoint URLs in integration code instead of hardcoding them.
+* **Migration path:** Mainnet endpoints will be announced through official channels before launch.
+* **Status page:** Endpoint health and maintenance windows are published at [status.gurufin.io](https://status.gurufin.io).

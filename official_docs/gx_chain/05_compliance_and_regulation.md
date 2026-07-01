@@ -1,16 +1,20 @@
 # Compliance & Regulation
 
-GX stablecoins embed compliance directly into the consensus layer via the permissioned Proof-of-Authority model.
+GX stablecoins are designed for regulated payment and settlement environments. Compliance controls are enforced through the permissioned Proof-of-Authority validator set, counterparty onboarding, transaction screening, and jurisdiction-specific operating rules.
 
 **KYC/AML & Compliance Tiers**
-GX chains implement compliance-tier access control. Counterparties undergo identity verification before transacting. Different compliance tiers dictate transaction permissions, and all wallets are screened against global sanctions lists in real-time.
+
+GX chains use compliance-tier access control. Counterparties complete identity verification before transacting, and their tier determines available transaction permissions, limits, and supported workflows. Wallets and counterparties are screened against applicable sanctions and risk lists during onboarding and transaction processing.
 
 **FATF Travel Rule**
-Transaction messages include encrypted originator and beneficiary details. Validators verify the presence of Travel Rule data before block inclusion, maintaining compliance even during cross-chain IBC transfers.
+
+Where required, transaction messages include encrypted originator and beneficiary information. Validators verify that required Travel Rule fields are present before block inclusion, including for supported cross-chain IBC transfers.
 
 **Emergency Controls & Security**
-* **Hardware Security:** Validator keys are secured in HSMs using multi-party computation (MPC quorum).
-* **Circuit Breakers:** An Emergency Procedures Playbook defines supervised circuit breakers (e.g., rate limits, settlement pauses) activated under strict stress conditions with regulator involvement.
+
+* **Hardware security:** Validator keys should be protected with HSMs, MPC quorum controls, or equivalent institutional custody practices.
+* **Circuit breakers:** The Emergency Procedures Playbook defines supervised controls, such as rate limits or settlement pauses, that may be activated under predefined stress conditions with appropriate oversight.
 
 **Privacy Roadmap (Future Integration)**
-GX plans to integrate Zero-Knowledge Proofs (ZKPs) to allow wallets to demonstrate KYC/sanctions compliance without exposing personal data. Selective-disclosure "view keys" will allow authorized supervisors to inspect provenance without broad data exposure.
+
+GX plans to integrate zero-knowledge proof tooling so wallets can prove selected compliance attributes, such as KYC completion or sanctions clearance, without exposing unnecessary personal data. Selective-disclosure view keys are expected to support authorized supervisory review while limiting broad data exposure.

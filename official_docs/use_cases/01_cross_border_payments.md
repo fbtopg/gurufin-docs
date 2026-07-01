@@ -1,23 +1,30 @@
 # Corporate Cross-Border Payments
 
-Traditional cross-border B2B payment systems suffer from high costs, slow settlement times, and counterparty risks. Gurufin Chain offers a transformative solution tailored for corporate payments and institutional settlement workflows.
+Corporate cross-border payments often involve high fees, delayed settlement, fragmented banking relationships, and principal risk. Gurufin Chain is designed to support faster and more predictable settlement workflows using GX stablecoins, IBC transfers, and OPRS-based FX execution.
 
 **Key Architectural Advantages**
-* **Cost-Efficiency:** The GXN-PEG mechanism indexes gas to fiat, providing predictable, enterprise-grade fee stability (~$0.013 per standard transfer).
-* **Atomic PvP Settlement:** IBC eliminates principal and bridge risk by ensuring the simultaneous exchange of payment legs.
-* **Minimal Slippage FX:** Guruswap uses Oracle Priced Reserve Swaps (OPRS) rather than AMMs, executing cross-currency conversions at precise oracle-guided market rates. Slippage is kept negligible under normal conditions; large-ticket conversions may use time-weighted execution to further minimize impact.
-* **Embedded Compliance:** Compliance-tiered KYC/AML, sanctions screening, and FATF Travel Rule metadata are embedded directly at the consensus level.
+
+* **Predictable fees:** Guru-PEG indexes gas costs to fiat targets, reducing fee volatility for standard transfers.
+* **Atomic PvP settlement:** IBC-based coordination supports simultaneous payment-leg settlement and reduces principal risk.
+* **Oracle-guided FX execution:** Guruswap uses Oracle Priced Reserve Swaps (OPRS) to execute cross-currency conversions using validated market rates and managed inventory buffers.
+* **Compliance controls:** KYC/AML tiers, sanctions screening, and Travel Rule metadata are integrated into supported transaction workflows.
 
 **Use Case Examples**
 
 **1. Corporate Payment Service**
-Enterprise payment platforms can enable a corporate sender to deposit fiat into a local GX stablecoin (e.g., GXUSD). The payment is atomically swapped via OPRS into the receiving jurisdiction's stablecoin (e.g., GXPHP) at the oracle-guided rate with negligible FX slippage (typically <0.05% under normal market conditions). The recipient organization can redeem into local fiat through a licensed banking partner.
-* *Benefit:* Guaranteed atomic settlement, predictable B2B fees, and reduced reliance on correspondent banking intermediaries.
+
+Enterprise payment platforms can allow a corporate sender to deposit fiat and receive a local GX stablecoin, such as GXUSD. The payment can then be executed through OPRS into the receiving jurisdiction's stablecoin, such as GXPHP, using oracle-guided pricing. The recipient can redeem into local fiat through a licensed banking partner.
+
+* *Benefit:* Lower operational friction, predictable B2B fees, and reduced reliance on correspondent banking intermediaries.
 
 **2. Large-Value Institutional Settlement**
+
 Enterprise payment providers can facilitate large-value settlement across multiple jurisdictions.
-* *Benefit:* Deep inventory buffers for large conversions, oracle-guided pricing with minimal slippage, and guaranteed atomic Payment-versus-Payment (PvP) settlement accelerate working capital cycles and eliminate counterparty risk.
+
+* *Benefit:* Managed inventory buffers, oracle-guided pricing, and Payment-versus-Payment settlement can reduce settlement risk and improve working capital timing.
 
 **3. Multinational Treasury Management**
-Multinational corporations can tokenize fiat reserves into GX stablecoins, enabling instant cross-border transfers between global subsidiaries.
-* *Benefit:* Reduced FX overhead, real-time liquidity management, and seamless integration with existing corporate banking APIs.
+
+Multinational corporations can tokenize fiat reserves into GX stablecoins, enabling faster cross-border transfers between global subsidiaries.
+
+* *Benefit:* Reduced FX overhead, real-time liquidity visibility, and integration with corporate treasury and banking systems.

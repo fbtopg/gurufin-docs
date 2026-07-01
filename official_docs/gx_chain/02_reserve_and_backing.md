@@ -1,42 +1,36 @@
 # Reserve & Backing
 
-The integrity and stability of GX stablecoins rest fundamentally on a robust reserve and backing framework. Every stablecoin issued on a GX chain is fully collateralized by fiat currency held in reserve at a 1:1 ratio. This strict backing model underpins the stablecoin's price stability and trustworthiness, ensuring that institutional counterparties can redeem their tokens for fiat currency at any time without risk of shortfall.
+GX stablecoins are designed to be backed 1:1 by fiat reserves held with regulated custodians. The reserve framework is intended to support redemption reliability, price stability, and supervisory transparency for institutional counterparties.
 
-The 1:1 fiat backing is enforced through automated minting and burning mechanisms integrated with licensed banking partners via secure APIs. Token issuance only occurs upon verified receipt of fiat funds, and redemption triggers the corresponding fiat transfer, maintaining continuous parity between tokens in circulation and fiat reserves.
+The 1:1 backing model is supported by automated minting and redemption controls integrated with licensed banking partners. Issuance requires verified receipt of fiat funds, and redemption requests are reconciled against both token supply and reserve balances.
 
----
+## Reserve Composition
 
-**Reserve Composition**
+Reserve assets are expected to prioritize liquidity, capital preservation, and regulatory eligibility. Composition may differ by jurisdiction based on local rules and banking partner capabilities.
 
-The reserve assets consist primarily of highly liquid and low-risk instruments to maintain capital preservation and immediate liquidity. Reserve composition may differ by jurisdiction based on local regulatory requirements and banking partner capabilities.
+**At launch, reserves are expected to be maintained in cash** at licensed custodian banks, with concentration limits designed to preserve redemption capacity. Over time, and only where permitted by domestic regulation, a capped portion may be allocated to ultra-short Treasury bills, typically with maturities under three months, managed through a roll-down ladder.
 
-**At launch, 100% of reserves are maintained in cash** at licensed custodian banks with binding concentration limits to ensure immediate redemption capacity. Over time, only where expressly permitted by domestic regulation, a **capped fraction** may be allocated to ultra-short Treasury bills (typically under 3 months maturity) managed on a roll-down ladder.
+Liquidity against eligible securities would be raised through **pre-arranged repo facilities rather than forced secondary-market sales**, helping preserve same-day cash availability under stress.
 
-Liquidity against such securities is raised via **pre-arranged repo facilities—not secondary-market sales**—ensuring same-day cash availability without forced asset liquidation. This prudent diversification aligns with best practices for reserve management and regulatory expectations.
+## 24/7 Live Proof-of-Reserves
 
----
+GX uses a live proof-of-reserves model to provide continuous visibility into reserve coverage for counterparties, supervisors, and network participants.
 
-**24/7 Live Proof-of-Reserves**
+The system monitors reserve account balances and compares them with on-chain circulation. Cryptographic verification can use zero-knowledge proofs and Merkle tree structures to confirm reserve coverage without exposing sensitive account details. Proof-of-reserves data is published on-chain and through dashboards where appropriate. Discrepancies or anomalies trigger alerts for governance, operations, and compliance review.
 
-Transparency is a cornerstone of the GX ecosystem. To provide continuous assurance to counterparties and regulators, the network implements a 24/7 live proof-of-reserves system leveraging blockchain technology and cryptographic proofs.
+Live proof-of-reserves is intended to complement, not replace, formal audits and supervisory reporting.
 
-The system features real-time reserve scanning that automatically and continuously verifies reserve account balances. Cryptographic verification uses zero-knowledge proofs and Merkle tree structures to confirm reserves without exposing sensitive financial details. Proof-of-reserves data is published on-chain and accessible via public dashboards, enabling independent audits and community scrutiny. Any discrepancies or anomalies trigger immediate alerts to governance and compliance teams for rapid investigation.
+## Liquidity Standards
 
-This live proof-of-reserves system surpasses traditional periodic audits by providing ongoing, tamper-evident transparency.
+GX reserve management incorporates liquidity metrics adapted from international banking standards, including concepts similar to the Liquidity Coverage Ratio (LCR) and Net Stable Funding Ratio (NSFR). These metrics assess whether reserve assets and backup liquidity are sufficient under stressed redemption scenarios.
 
----
-
-**Liquidity Standards**
-
-To align with international banking regulatory standards, GX reserve management incorporates liquidity metrics adapted from Basel Committee standards. These include the Liquidity Coverage Ratio (LCR) to measure the ability to cover net cash outflows over a 30-day stress period, and the Net Stable Funding Ratio (NSFR) to assess funding stability over a one-year horizon.
-
-By applying these Basel-aligned metrics, the GX network ensures that its reserve portfolio is not only fully backed but also resilient under stress scenarios, meeting supervisory-grade liquidity standards.
+The goal is to maintain both full backing and resilience under stress, while allowing jurisdiction-specific supervisors to define exact reserve requirements.
 
 The horizon-specific liquidity coverage formula is:
 
 ### Plain-Language Summary
 
-**What does this formula actually mean?** In simple terms, it measures whether the network has enough liquid cash and committed backup funding to cover the worst-case redemption scenario over any given time horizon. The numerator represents available liquidity (cash on hand + pre-arranged backup lines, adjusted for haircuts). The denominator represents the expected maximum redemptions under stress. As long as the ratio is above 1, the network can fully satisfy all redemption requests even during severe stress events. The utilization ratio (\(\rho^*\)) must stay below 1 — meaning repo backup lines are never expected to be fully consumed in normal operations.
+The formula measures whether the network has enough same-day liquidity and committed backup funding to cover a stressed redemption scenario over a defined time horizon. The numerator represents available liquidity: cash on hand plus committed repo capacity after haircuts. The denominator represents expected stressed redemptions. A ratio above 1 means available liquidity is greater than the modeled stress requirement. The utilization ratio \(\rho^*\) should remain below 1 so backup facilities are not expected to be fully consumed during normal operations.
 
 ### Technical Formula
 
@@ -52,6 +46,4 @@ $$
 - \(h\) — conservative haircut  
 - \(\text{ES}_\alpha[R_D^H]\) — Expected Shortfall of redemptions over horizon \(H\) at confidence level \(\alpha\)
 
-The target is GX-LCR(H) ≥ 1 with a supervisory buffer. The utilization ratio \(\rho^* = \lambda/\mu\) must remain below 1 for operational stability, where \(\lambda\) is the redemption arrival rate and \(\mu\) is the service rate.
-
-**What does this formula actually mean?** In simple terms, it measures whether the network has enough liquid cash and committed backup funding to cover the worst-case redemption scenario over any given time horizon. The numerator represents available liquidity (cash on hand + pre-arranged backup lines, adjusted for haircuts). The denominator represents the expected maximum redemptions under stress. As long as the ratio is above 1, the network can fully satisfy all redemption requests even during severe stress events. The utilization ratio (\(\rho^*\)) must stay below 1 — meaning repo backup lines are never expected to be fully consumed in normal operations.
+The target is GX-LCR(H) ≥ 1 with a supervisory buffer. The utilization ratio \(\rho^* = \lambda/\mu\) should remain below 1 for operational stability, where \(\lambda\) is the redemption arrival rate and \(\mu\) is the service rate.
